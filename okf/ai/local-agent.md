@@ -447,7 +447,7 @@ belong beside the measurements above.
   enough. The twenty-minute run above was one such pair, on one input: the
   hosted model's answers are in OWL Planner's first pull request, the local
   model's in [the research
-  note](https://github.com/Collegica/collegica/blob/main/docs/research/2026-09-13-local-agent/notes/run.md).
+  note](https://github.com/Collegica/collegica-code/blob/main/docs/research/2026-09-13-local-agent/notes/run.md).
 - **Read the model card slowly.** Six things to look for before anything
   else: what the model is for, how big it is, its license, what hardware
   people run it on, which inputs it takes (text, images, audio, tool use),

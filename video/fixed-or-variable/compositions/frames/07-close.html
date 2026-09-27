@@ -1,0 +1,65 @@
+<template>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+    #root {
+      position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "IBM Plex Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    }
+    .f07-bg { position: absolute; inset: 0; background: #FBFAF7; }
+    .f07-title {
+      position: absolute; top: 148px; left: 0; right: 0; text-align: center;
+      font-size: 52px; font-weight: 600; color: #1E2333; letter-spacing: -0.01em;
+    }
+    .f07-qs { position: absolute; left: 430px; top: 288px; width: 1060px; }
+    .f07-q { display: flex; align-items: flex-start; gap: 26px; margin-bottom: 40px; }
+    .f07-dot { width: 20px; height: 20px; border-radius: 50%; margin-top: 16px; flex: none; }
+    .f07-q:nth-child(1) .f07-dot { background: #2F7268; }
+    .f07-q:nth-child(2) .f07-dot { background: #C97B1E; }
+    .f07-q:nth-child(3) .f07-dot { background: #3A4366; }
+    .f07-qt { font-size: 42px; font-weight: 500; color: #1E2333; line-height: 1.34; }
+    .f07-qt b { font-weight: 700; }
+    .f07-card {
+      position: absolute; left: 0; right: 0; bottom: 108px; text-align: center;
+    }
+    .f07-mark { display: flex; justify-content: center; gap: 15px; margin-bottom: 26px; }
+    .f07-mark span { width: 21px; height: 21px; border-radius: 50%; background: #3A4366; }
+    .f07-url { font-size: 44px; font-weight: 600; color: #3A4366; letter-spacing: -0.005em; }
+  </style>
+
+  <div id="root" data-composition-id="07-close" data-start="0" data-duration="11.52" data-width="1920" data-height="1080">
+    <div id="f07-bg" class="clip f07-bg" data-start="0" data-duration="11.52" data-track-index="0"></div>
+    <div id="f07-title" class="clip f07-title" data-start="0" data-duration="11.52" data-track-index="1">Better questions than &ldquo;which one wins&rdquo;</div>
+    <div id="f07-qs" class="clip f07-qs" data-start="0" data-duration="11.52" data-track-index="2">
+      <div class="f07-q"><div class="f07-dot"></div><div class="f07-qt">How likely are you to <b>break it early?</b> That penalty dwarfs the rate.</div></div>
+      <div class="f07-q"><div class="f07-dot"></div><div class="f07-qt">What is the payment if prime rises <b>two points?</b></div></div>
+      <div class="f07-q"><div class="f07-dot"></div><div class="f07-qt">Does your variable payment <b>adjust, or stay fixed?</b> Ask.</div></div>
+    </div>
+    <div id="f07-card" class="clip f07-card" data-start="0" data-duration="11.52" data-track-index="3">
+      <div class="f07-mark"><span></span><span></span><span></span></div>
+      <div class="f07-url">collegica.org/finance/fixed-or-variable</div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    (function () {
+      var title = document.getElementById("f07-title");
+      var qs = Array.prototype.slice.call(document.getElementById("f07-qs").children);
+      var card = document.getElementById("f07-card");
+      var dots = document.querySelectorAll("#f07-card .f07-mark span");
+      gsap.set(title, { opacity: 0, y: 22 });
+      gsap.set(qs, { opacity: 0, x: -22 });
+      gsap.set(card, { opacity: 0, y: 20 });
+      gsap.set(dots, { scale: 0 });
+
+      var tl = gsap.timeline({ paused: true });
+      tl.to(title, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0.3);
+      tl.to(qs, { opacity: 1, x: 0, duration: 0.55, stagger: 1.5, ease: "power2.out" }, 1.5);
+      tl.to(card, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 7.6);
+      tl.to(dots, { scale: 1, duration: 0.4, ease: "back.out(2)", stagger: 0.1 }, 7.8);
+      tl.to({}, { duration: 11.52 }, 0);
+      window.__timelines["07-close"] = tl;
+    })();
+  </script>
+</template>

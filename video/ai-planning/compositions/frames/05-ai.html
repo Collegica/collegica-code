@@ -1,0 +1,64 @@
+<template>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+
+    #root {
+      position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "IBM Plex Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    }
+    .f05-bg { position: absolute; inset: 0; background: #F4F2ED; }
+    .f05-stage {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center; gap: 0;
+    }
+    .f05-col { width: 820px; padding: 0 60px; }
+    .f05-col-head { font-weight: 700; font-size: 44px; margin-bottom: 30px; }
+    .f05-cant .f05-col-head { color: #8A5A46; }
+    .f05-can  .f05-col-head { color: #3A4366; }
+    .f05-item { font-weight: 500; font-size: 32px; color: #1E2333; margin-bottom: 20px; padding-inline-start: 34px; position: relative; }
+    .f05-item::before { content: ""; position: absolute; left: 0; top: 14px; width: 14px; height: 14px; border-radius: 50%; }
+    .f05-cant .f05-item::before { background: #C97B1E; }
+    .f05-can .f05-item::before { background: #3A4366; }
+    .f05-divider { width: 2px; height: 480px; background: #D8D3C6; }
+  </style>
+
+  <div id="root" data-composition-id="05-ai" data-start="0" data-duration="14.7" data-width="1920" data-height="1080">
+    <div id="f05-bg" class="clip f05-bg" data-start="0" data-duration="14.7" data-track-index="0"></div>
+    <div id="f05-stage" class="clip f05-stage" data-start="0" data-duration="14.7" data-track-index="1">
+      <div class="f05-col f05-cant">
+        <div class="f05-col-head">AI can&rsquo;t</div>
+        <div id="f05-c1" class="f05-item">Diagnose you</div>
+        <div id="f05-c2" class="f05-item">Know your real numbers</div>
+      </div>
+      <div class="f05-divider"></div>
+      <div class="f05-col f05-can">
+        <div class="f05-col-head">AI can</div>
+        <div id="f05-k1" class="f05-item">Turn intent into a plan</div>
+        <div id="f05-k2" class="f05-item">Design a training program</div>
+        <div id="f05-k3" class="f05-item">Draft a contribution schedule</div>
+        <div id="f05-k4" class="f05-item">Write the questions to ask a pro</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    (function () {
+      var ids = ["f05-c1", "f05-c2", "f05-k1", "f05-k2", "f05-k3", "f05-k4"];
+      var els = ids.map(function (id) { return document.getElementById(id); });
+      gsap.set(els, { opacity: 0, x: -20 });
+
+      var tl = gsap.timeline({ paused: true });
+      tl.to(els[0], { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 0.32);
+      tl.to(els[1], { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 1.70);
+      tl.to(els[2], { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 5.22);
+      tl.to(els[3], { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 7.03);
+      tl.to(els[4], { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 8.84);
+      tl.to(els[5], { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 10.65);
+      tl.to({}, { duration: 14.7 }, 0);
+
+      window.__timelines["05-ai"] = tl;
+    })();
+  </script>
+</template>

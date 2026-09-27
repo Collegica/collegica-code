@@ -23,7 +23,7 @@ A 90-second summary of the [next-job article](/aging-well/next-job.md),
 built with [HyperFrames](https://hyperframes.heygen.com) (`npx hyperframes`). Kinetic
 type and the article's own banner in Collegica's own palette — no generated
 imagery, renders locally for free. Same approach as the
-[`ai-planning` video](https://github.com/Collegica/collegica/tree/main/video/ai-planning); read that project's README for
+[`ai-planning` video](https://github.com/Collegica/collegica-code/tree/main/video/ai-planning); read that project's README for
 the full rationale (Kokoro TTS setup, the "Collegica" pronunciation fix,
 the render/check/deploy loop) — this one only notes what differs.
 

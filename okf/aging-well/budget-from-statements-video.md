@@ -24,7 +24,7 @@ A 90-second summary of the [budget-from-statements article](/aging-well/budget-f
 built with [HyperFrames](https://hyperframes.heygen.com) (`npx hyperframes`). Kinetic
 type and the article's own banner in Collegica's own palette — no generated
 imagery, renders locally for free. Same approach as the
-[`ai-planning`](https://github.com/Collegica/collegica/tree/main/video/ai-planning) and [`next-job`](https://github.com/Collegica/collegica/tree/main/video/next-job)
+[`ai-planning`](https://github.com/Collegica/collegica-code/tree/main/video/ai-planning) and [`next-job`](https://github.com/Collegica/collegica-code/tree/main/video/next-job)
 videos; read either project's README for the full rationale (Kokoro TTS
 setup, the "Collegica" pronunciation fix, the render/check/deploy loop) —
 this one only notes what differs.

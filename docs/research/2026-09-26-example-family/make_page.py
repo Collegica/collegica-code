@@ -43,7 +43,7 @@ out += ["## Notes", ""] + [f"- ¹ **{k}**: {v}." for k, v in NOTE.items()] + [
  "- Statistics Canada, [Household spending by household type](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1110022401), table 11-10-0224-01, 2023: couples with children, Canada.",
  "- Statistics Canada, [Household spending, Canada, regions and provinces](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1110022201), table 11-10-0222-01, 2023: each category scaled by Ontario ÷ Canada.",
  "- Statistics Canada, [Distribution of market, total and after-tax income by economic family type](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1110023701), table 11-10-0237-01, 2024: Toronto, economic families, average total income.", "",
- "How the figures were put together: [`docs/research/2026-09-26-example-family`](https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-26-example-family).", "",
+ "How the figures were put together: [`docs/research/2026-09-26-example-family`](https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-26-example-family).", "",
  "Back to [the event page](index.qmd).", ""]
 (Path("website/events/monthly-budget/example.qmd")).write_text("\n".join(out))
 print(f"wrote example.qmd: expenses {M(total)}, results {M(result)}")

@@ -5,7 +5,7 @@ type: software
 authors:
   - family-names: Samadi
     given-names: Behzad
-repository-code: https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-13-agent-interfaces/example
+repository-code: https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-13-agent-interfaces/example
 url: https://www.collegica.org/ai/agent-interfaces/
 license: MIT
 version: 0.1.0

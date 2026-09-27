@@ -19,7 +19,7 @@ between files work here as they do there.
 | [An Agent on Your Own Machine](https://www.collegica.org/ai/local-agent/) | [`docs/research/2026-09-13-local-agent`](docs/research/2026-09-13-local-agent) |
 | [A Voice in the Room](https://www.collegica.org/ai/voice-agents/) | [`docs/research/2026-09-13-voice-agents`](docs/research/2026-09-13-voice-agents) |
 | [Sixteen Times Smaller](https://www.collegica.org/ai/turbovec/) | [`docs/research/2026-09-14-turbovec`](docs/research/2026-09-14-turbovec) |
-| [Videos from HTML](https://www.collegica.org/ai/video-from-html/) | [`docs/research/2026-09-13-video-from-html`](docs/research/2026-09-13-video-from-html) |
+| [Videos from HTML](https://www.collegica.org/ai/video-from-html/) | [`docs/research/2026-09-13-video-from-html`](docs/research/2026-09-13-video-from-html), and the four explainers' sources in [`video/`](video) |
 | [One Repository, Three Agents](https://www.collegica.org/software/three-agents/) | [`docs/research/2026-09-13-three-agents`](docs/research/2026-09-13-three-agents) |
 | [Train the Robot Before You Build It](https://www.collegica.org/robotics/nvidia-robotics/) | [`docs/research/2026-09-13-nvidia-robotics`](docs/research/2026-09-13-nvidia-robotics) |
 | [Words In, Joints Out](https://www.collegica.org/robotics/vla-models/) | [`docs/research/2026-09-13-vla-models`](docs/research/2026-09-13-vla-models) |

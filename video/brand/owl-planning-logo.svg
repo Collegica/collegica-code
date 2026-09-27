@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1280" viewBox="0 0 1280 1280" role="img" aria-labelledby="title desc">
+  <title id="title">OWL Planning owl logo</title>
+  <desc id="desc">Cream geometric owl on a navy circular badge, with transparent surroundings.</desc>
+  <circle id="badge" cx="640" cy="640" r="576" fill="#062544"/>
+  <g id="owl" fill="#FAF1E1">
+    <path id="brow" d="M328 220 L502 297 C550 297 600 320 640 320 C680 320 730 297 778 297 L952 220 L876 370 C837 339 800 330 777 330 C714 330 653 374 640 434 C627 374 566 330 503 330 C480 330 443 339 404 370 Z"/>
+    <path id="left-eye" fill-rule="evenodd" d="M622 484 A121 121 0 1 1 380 484 A121 121 0 1 1 622 484 Z M562 484 A61 61 0 1 0 440 484 A61 61 0 1 0 562 484 Z"/>
+    <path id="right-eye" fill-rule="evenodd" d="M900 484 A121 121 0 1 1 658 484 A121 121 0 1 1 900 484 Z M840 484 A61 61 0 1 0 718 484 A61 61 0 1 0 840 484 Z"/>
+    <path id="beak" d="M640 534 L680 584 L640 677 L600 584 Z"/>
+    <path id="left-wing" d="M388 585 C328 643 296 694 309 776 C325 899 458 1021 627 1106 C579 1008 543 900 507 802 C474 709 439 628 388 585 Z"/>
+    <path id="right-wing" d="M892 585 C952 643 984 694 971 776 C955 899 822 1021 653 1106 C701 1008 737 900 773 802 C806 709 841 628 892 585 Z"/>
+    <path id="left-breast" d="M460 618 C513 635 559 644 600 646 L630 698 L630 1054 C579 931 536 764 460 618 Z"/>
+    <path id="right-breast" d="M820 618 C767 635 721 644 680 646 L650 698 L650 1054 C701 931 744 764 820 618 Z"/>
+  </g>
+</svg>

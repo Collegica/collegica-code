@@ -535,7 +535,7 @@ Research notes — what was read in full, what was not obtained, and the claims
 left unverified — are in [the accompanying
 folder](/ai/research/).
 The worked example is
-[`docs/research/2026-09-13-agent-interfaces/example/`](https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-13-agent-interfaces/example);
+[`docs/research/2026-09-13-agent-interfaces/example/`](https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-13-agent-interfaces/example);
 `pixi run test` runs every door.
 
 - **The video.** ActionableOps, *Hermes Agent: Use Hermes as a Python Library*,

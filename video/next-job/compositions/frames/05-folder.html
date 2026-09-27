@@ -1,0 +1,70 @@
+<template>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap");
+
+    #root {
+      position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "IBM Plex Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    }
+    .f05-bg { position: absolute; inset: 0; background: #F4F2ED; }
+    .f05-stage {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 40px;
+    }
+    .f05-title { font-weight: 700; font-size: 52px; color: #1E2333; }
+    .f05-files { display: flex; flex-direction: column; gap: 18px; width: 900px; }
+    .f05-file {
+      display: flex; align-items: center; gap: 20px;
+      background: #FBFAF7; border-radius: 10px; padding: 18px 28px;
+      box-shadow: 0 6px 18px rgba(30,35,51,0.06);
+    }
+    .f05-dot { width: 16px; height: 16px; border-radius: 50%; flex: none; }
+    .f05-file.a .f05-dot { background: #664F3A; }
+    .f05-file.b .f05-dot { background: #3A4366; }
+    .f05-file.c .f05-dot { background: #C97B1E; }
+    .f05-name { font-family: "IBM Plex Mono", monospace; font-weight: 500; font-size: 30px; color: #1E2333; }
+    .f05-desc { font-size: 22px; color: #4C5782; }
+    .f05-punch { font-weight: 500; font-size: 30px; color: #4C5782; max-width: 1100px; text-align: center; }
+  </style>
+
+  <div id="root" data-composition-id="05-folder" data-start="0" data-duration="12.9" data-width="1920" data-height="1080">
+    <div id="f05-bg" class="clip f05-bg" data-start="0" data-duration="12.9" data-track-index="0"></div>
+    <div id="f05-stage" class="clip f05-stage" data-start="0" data-duration="12.9" data-track-index="1">
+      <div id="f05-title" class="f05-title">One folder for the whole search</div>
+      <div class="f05-files">
+        <div id="f05-f1" class="f05-file a"><div class="f05-dot"></div><div class="f05-name">evidence.md</div><div class="f05-desc">everything you have actually done</div></div>
+        <div id="f05-f2" class="f05-file b"><div class="f05-dot"></div><div class="f05-name">portfolio.yaml</div><div class="f05-desc">your r&eacute;sum&eacute;, as data</div></div>
+        <div id="f05-f3" class="f05-file c"><div class="f05-dot"></div><div class="f05-name">applications/</div><div class="f05-desc">one folder per job you pursue</div></div>
+      </div>
+      <div id="f05-punch" class="f05-punch">Every claim a model drafts traces back to something you actually did.</div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    (function () {
+      var title = document.getElementById("f05-title");
+      var f1 = document.getElementById("f05-f1");
+      var f2 = document.getElementById("f05-f2");
+      var f3 = document.getElementById("f05-f3");
+      var punch = document.getElementById("f05-punch");
+
+      gsap.set(title, { opacity: 0, y: 16 });
+      gsap.set([f1, f2, f3], { opacity: 0, x: -24 });
+      gsap.set(punch, { opacity: 0, y: 16 });
+
+      var tl = gsap.timeline({ paused: true });
+      tl.to(title, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.1);
+      tl.to(f1, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 3.78);
+      tl.to(f2, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 4.94);
+      tl.to(f3, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 6.88);
+      tl.to(punch, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 8.8);
+      tl.to({}, { duration: 12.9 }, 0);
+
+      window.__timelines["05-folder"] = tl;
+    })();
+  </script>
+</template>

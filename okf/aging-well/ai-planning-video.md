@@ -63,6 +63,6 @@ shown.
   short crossfade.
 - `compositions/frames/0N-*.html` — one self-contained composition per frame.
 - `assets/owl-mmm.jpg` — the article's own banner image, reused as-is (the OWL Planning
-  logo baked into it is composited from [`../brand/`](https://github.com/Collegica/collegica/tree/main/video/brand), the shared logo
+  logo baked into it is composited from [`../brand/`](https://github.com/Collegica/collegica-code/tree/main/video/brand), the shared logo
   library — not referenced directly by any composition here).
 - `audio/` — narration WAVs (24 kHz mono, as Kokoro writes them).

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1842 1842" role="img" aria-label="Collegica">
+  <title>Collegica</title>
+  <g fill="#3A4366">
+  <circle cx="285" cy="285" r="273"/>
+  <circle cx="921" cy="285" r="273"/>
+  <circle cx="1557" cy="285" r="273"/>
+  <circle cx="285" cy="921" r="273"/>
+  <circle cx="285" cy="1557" r="273"/>
+  <circle cx="921" cy="1557" r="273"/>
+  <circle cx="1557" cy="1557" r="273"/>
+  </g>
+</svg>

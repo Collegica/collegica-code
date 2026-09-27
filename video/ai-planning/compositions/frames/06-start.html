@@ -1,0 +1,61 @@
+<template>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+
+    #root {
+      position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "IBM Plex Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    }
+    .f06-bg { position: absolute; inset: 0; background: #FBFAF7; }
+    .f06-stage {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 54px;
+    }
+    .f06-title { font-weight: 700; font-size: 64px; color: #1E2333; }
+    .f06-list { display: flex; flex-direction: column; gap: 30px; }
+    .f06-row { display: flex; align-items: center; gap: 26px; font-weight: 500; font-size: 38px; color: #1E2333; }
+    .f06-check {
+      width: 46px; height: 46px; border-radius: 50%; flex: none;
+      display: flex; align-items: center; justify-content: center; color: #FBFAF7; font-size: 26px; font-weight: 700;
+    }
+    .f06-row.money .f06-check  { background: #C97B1E; }
+    .f06-row.muscle .f06-check { background: #3A4366; }
+    .f06-row.mind .f06-check   { background: #664F3A; }
+  </style>
+
+  <div id="root" data-composition-id="06-start" data-start="0" data-duration="11.1" data-width="1920" data-height="1080">
+    <div id="f06-bg" class="clip f06-bg" data-start="0" data-duration="11.1" data-track-index="0"></div>
+    <div id="f06-stage" class="clip f06-stage" data-start="0" data-duration="11.1" data-track-index="1">
+      <div id="f06-title" class="f06-title">Start this week</div>
+      <div class="f06-list">
+        <div id="f06-row1" class="f06-row money"><div class="f06-check">&#10003;</div><div>Measure what a year actually costs you</div></div>
+        <div id="f06-row2" class="f06-row muscle"><div class="f06-check">&#10003;</div><div>One squat &middot; one hinge &middot; one push &middot; one pull</div></div>
+        <div id="f06-row3" class="f06-row mind"><div class="f06-check">&#10003;</div><div>Pick one genuinely new skill</div></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    (function () {
+      var title = document.getElementById("f06-title");
+      var row1 = document.getElementById("f06-row1");
+      var row2 = document.getElementById("f06-row2");
+      var row3 = document.getElementById("f06-row3");
+
+      gsap.set(title, { opacity: 0, y: 16 });
+      gsap.set([row1, row2, row3], { opacity: 0, x: -26 });
+
+      var tl = gsap.timeline({ paused: true });
+      tl.to(title, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.1);
+      tl.to(row1, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 1.4);
+      tl.to(row2, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 3.8);
+      tl.to(row3, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 8.0);
+      tl.to({}, { duration: 11.1 }, 0);
+
+      window.__timelines["06-start"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,65 @@
+<template>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+
+    #root {
+      position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "IBM Plex Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    }
+    .f02-bg { position: absolute; inset: 0; background: #FBFAF7; }
+    .f02-stage {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 44px;
+    }
+    .f02-img-wrap {
+      width: 1180px; height: 590px; border-radius: 14px; overflow: hidden;
+      box-shadow: 0 24px 60px rgba(30, 35, 51, 0.16);
+    }
+    .f02-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .f02-badges { display: flex; gap: 40px; }
+    .f02-badge {
+      font-weight: 600; font-size: 40px; color: #FBFAF7;
+      padding: 12px 40px; border-radius: 999px;
+    }
+    .f02-badge.mind   { background: #664F3A; }
+    .f02-badge.muscle { background: #3A4366; }
+    .f02-badge.money  { background: #C97B1E; }
+  </style>
+
+  <div id="root" data-composition-id="02-three-ms" data-start="0" data-duration="15.9" data-width="1920" data-height="1080">
+    <div id="f02-bg" class="clip f02-bg" data-start="0" data-duration="15.9" data-track-index="0"></div>
+    <div id="f02-stage" class="clip f02-stage" data-start="0" data-duration="15.9" data-track-index="1">
+      <div id="f02-img" class="f02-img-wrap"><img src="assets/owl-mmm.jpg" alt=""></div>
+      <div class="f02-badges">
+        <div id="f02-mind" class="f02-badge mind">Mind</div>
+        <div id="f02-muscle" class="f02-badge muscle">Muscle</div>
+        <div id="f02-money" class="f02-badge money">Money</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    (function () {
+      var img = document.getElementById("f02-img");
+      var mind = document.getElementById("f02-mind");
+      var muscle = document.getElementById("f02-muscle");
+      var money = document.getElementById("f02-money");
+
+      gsap.set(img, { opacity: 0, scale: 0.96 });
+      gsap.set([mind, muscle, money], { opacity: 0, y: 24 });
+
+      var tl = gsap.timeline({ paused: true });
+      tl.to(img, { opacity: 1, scale: 1, duration: 0.9, ease: "power2.out" }, 0.1);
+      tl.to(img, { scale: 1.03, duration: 14, ease: "none", overwrite: "auto" }, 1.1);
+      tl.to(mind,   { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.6)" }, 1.3);
+      tl.to(muscle, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.6)" }, 6.1);
+      tl.to(money,  { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.6)" }, 11.5);
+      tl.to({}, { duration: 15.9 }, 0);
+
+      window.__timelines["02-three-ms"] = tl;
+    })();
+  </script>
+</template>

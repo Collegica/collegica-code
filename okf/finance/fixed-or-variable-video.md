@@ -28,9 +28,9 @@ A 100-second summary of the [Fixed or Variable
 article](/finance/fixed-or-variable.md), built with
 [HyperFrames](https://hyperframes.heygen.com) (`npx hyperframes`). Kinetic type
 and data in Collegica's own palette — no generated imagery, renders locally for
-free. Same approach as the [`ai-planning`](https://github.com/Collegica/collegica/tree/main/video/ai-planning),
-[`next-job`](https://github.com/Collegica/collegica/tree/main/video/next-job) and
-[`budget-from-statements`](https://github.com/Collegica/collegica/tree/main/video/budget-from-statements) videos; read any
+free. Same approach as the [`ai-planning`](https://github.com/Collegica/collegica-code/tree/main/video/ai-planning),
+[`next-job`](https://github.com/Collegica/collegica-code/tree/main/video/next-job) and
+[`budget-from-statements`](https://github.com/Collegica/collegica-code/tree/main/video/budget-from-statements) videos; read any
 of those READMEs for the full rationale (Kokoro TTS setup, the render/check
 loop). This one only notes what differs.
 

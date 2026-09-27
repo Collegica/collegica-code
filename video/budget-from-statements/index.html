@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #000; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #FBFAF7; }
+      .scene { position: absolute; inset: 0; width: 100%; height: 100%; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="80.51" data-width="1920" data-height="1080">
+
+      <div id="el-01" class="scene" data-composition-id="01-hook" data-composition-src="compositions/frames/01-hook.html" data-start="0" data-duration="11.7" data-track-index="0"></div>
+      <audio id="el-01-voice" src="audio/frame-01.wav" data-start="0.3" data-duration="10.20" data-track-index="10" data-volume="1"></audio>
+
+      <div id="el-02" class="scene" data-composition-id="02-six-kinds" data-composition-src="compositions/frames/02-six-kinds.html" data-start="11.7" data-duration="11.92" data-track-index="1"></div>
+      <audio id="el-02-voice" src="audio/frame-02.wav" data-start="12.0" data-duration="10.62" data-track-index="10" data-volume="1"></audio>
+
+      <div id="el-03" class="scene" data-composition-id="03-reads" data-composition-src="compositions/frames/03-reads.html" data-start="23.62" data-duration="14.68" data-track-index="0"></div>
+      <audio id="el-03-voice" src="audio/frame-03.wav" data-start="23.92" data-duration="13.38" data-track-index="10" data-volume="1"></audio>
+
+      <div id="el-04" class="scene" data-composition-id="04-writes" data-composition-src="compositions/frames/04-writes.html" data-start="38.30" data-duration="12.46" data-track-index="1"></div>
+      <audio id="el-04-voice" src="audio/frame-04.wav" data-start="38.6" data-duration="11.16" data-track-index="10" data-volume="1"></audio>
+
+      <div id="el-05" class="scene" data-composition-id="05-lessons" data-composition-src="compositions/frames/05-lessons.html" data-start="50.76" data-duration="10.15" data-track-index="0"></div>
+      <audio id="el-05-voice" src="audio/frame-05.wav" data-start="51.06" data-duration="8.85" data-track-index="10" data-volume="1"></audio>
+
+      <div id="el-06" class="scene" data-composition-id="06-checklist" data-composition-src="compositions/frames/06-checklist.html" data-start="60.91" data-duration="12.69" data-track-index="1"></div>
+      <audio id="el-06-voice" src="audio/frame-06.wav" data-start="61.21" data-duration="11.39" data-track-index="10" data-volume="1"></audio>
+
+      <div id="el-07" class="scene" data-composition-id="07-close" data-composition-src="compositions/frames/07-close.html" data-start="73.60" data-duration="6.91" data-track-index="0"></div>
+      <audio id="el-07-voice" src="audio/frame-07.wav" data-start="73.9" data-duration="4.61" data-track-index="10" data-volume="1"></audio>
+
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+      (function () {
+        var tl = window.__timelines["main"];
+        var cuts = [
+          ["#el-01", "#el-02", 11.7],
+          ["#el-02", "#el-03", 23.62],
+          ["#el-03", "#el-04", 38.30],
+          ["#el-04", "#el-05", 50.76],
+          ["#el-05", "#el-06", 60.91],
+          ["#el-06", "#el-07", 73.60],
+        ];
+        cuts.forEach(function (c) {
+          tl.to(c[0], { opacity: 0, duration: 0.35, ease: "power2.inOut" }, c[2] - 0.35);
+          tl.fromTo(c[1], { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.inOut" }, c[2] - 0.35);
+        });
+        tl.to({}, { duration: 80.51 }, 0);
+      })();
+    </script>
+  </body>
+</html>

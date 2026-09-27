@@ -1,0 +1,92 @@
+<template>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+    #root {
+      position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "IBM Plex Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    }
+    .f06-bg { position: absolute; inset: 0; background: #FBFAF7; }
+    .f06-title {
+      position: absolute; top: 110px; left: 0; right: 0; text-align: center;
+      font-size: 50px; font-weight: 600; color: #1E2333; letter-spacing: -0.01em;
+    }
+    .f06-rows { position: absolute; left: 268px; top: 250px; width: 1180px; }
+    .f06-row { display: flex; align-items: center; gap: 18px; height: 62px; }
+    .f06-date { width: 210px; font-size: 30px; font-weight: 600; color: #1E2333; }
+    .f06-track { flex: 1; height: 26px; border-radius: 13px; background: #EDE9DE; position: relative; overflow: hidden; }
+    .f06-bar { position: absolute; left: 0; top: 0; bottom: 0; width: 0; border-radius: 13px; }
+    .f06-row.fx .f06-bar { background: #2F7268; }
+    .f06-row.vr .f06-bar { background: #C97B1E; }
+    .f06-who { width: 168px; font-size: 27px; font-weight: 600; text-align: right; }
+    .f06-row.fx .f06-who { color: #2F7268; }
+    .f06-row.vr .f06-who { color: #C97B1E; }
+    .f06-split {
+      position: absolute; left: 268px; width: 1180px; height: 4px; background: #1E2333; border-radius: 2px;
+      transform-origin: left center;
+    }
+    .f06-split-lbl {
+      position: absolute; right: 0; font-size: 29px; font-weight: 700; color: #1E2333;
+      background: #FBFAF7; padding: 4px 14px; white-space: nowrap;
+    }
+    .f06-kicker {
+      position: absolute; left: 0; right: 0; bottom: 92px; text-align: center;
+      font-size: 42px; font-weight: 600; color: #1E2333;
+    }
+    .f06-kicker b { color: #C97B1E; }
+  </style>
+
+  <div id="root" data-composition-id="06-crossover" data-start="0" data-duration="15.17" data-width="1920" data-height="1080">
+    <div id="f06-bg" class="clip f06-bg" data-start="0" data-duration="15.17" data-track-index="0"></div>
+    <div id="f06-title" class="clip f06-title" data-start="0" data-duration="15.17" data-track-index="1">Twelve signing dates, one pattern</div>
+    <div id="f06-rows" class="clip f06-rows" data-start="0" data-duration="15.17" data-track-index="2">
+      <div class="f06-row fx"><div class="f06-date">Jun 2021</div><div class="f06-track"><div class="f06-bar" data-w="97.7"></div></div><div class="f06-who">fixed</div></div>
+      <div class="f06-row fx"><div class="f06-date">Sep 2021</div><div class="f06-track"><div class="f06-bar" data-w="100"></div></div><div class="f06-who">fixed</div></div>
+      <div class="f06-row fx"><div class="f06-date">Jan 2022</div><div class="f06-track"><div class="f06-bar" data-w="68.9"></div></div><div class="f06-who">fixed</div></div>
+      <div class="f06-row fx"><div class="f06-date">Jun 2022</div><div class="f06-track"><div class="f06-bar" data-w="32.4"></div></div><div class="f06-who">fixed</div></div>
+      <div class="f06-row fx"><div class="f06-date">Oct 2022</div><div class="f06-track"><div class="f06-bar" data-w="11"></div></div><div class="f06-who">fixed</div></div>
+      <div class="f06-row fx"><div class="f06-date">Jan 2023</div><div class="f06-track"><div class="f06-bar" data-w="8.9"></div></div><div class="f06-who">fixed</div></div>
+      <div class="f06-row fx"><div class="f06-date">Jun 2023</div><div class="f06-track"><div class="f06-bar" data-w="2.5"></div></div><div class="f06-who">fixed</div></div>
+      <div class="f06-row vr"><div class="f06-date">Sep 2023</div><div class="f06-track"><div class="f06-bar" data-w="22.3"></div></div><div class="f06-who">variable</div></div>
+      <div class="f06-row vr"><div class="f06-date">Jan 2024</div><div class="f06-track"><div class="f06-bar" data-w="15.7"></div></div><div class="f06-who">variable</div></div>
+      <div class="f06-row vr"><div class="f06-date">Jun 2024</div><div class="f06-track"><div class="f06-bar" data-w="17.1"></div></div><div class="f06-who">variable</div></div>
+      <div class="f06-row vr"><div class="f06-date">Jan 2025</div><div class="f06-track"><div class="f06-bar" data-w="4.9"></div></div><div class="f06-who">variable</div></div>
+      <div class="f06-row vr"><div class="f06-date">Jun 2025</div><div class="f06-track"><div class="f06-bar" data-w="3"></div></div><div class="f06-who">variable</div></div>
+    </div>
+    <div id="f06-split" class="clip f06-split" data-start="0" data-duration="15.17" data-track-index="3" style="top: 684px;"></div>
+    <div id="f06-split-lbl" class="clip f06-split-lbl" data-start="0" data-duration="15.17" data-track-index="4" style="top: 666px; left: 1480px;">the Bank stopped hiking</div>
+    <div id="f06-kicker" class="clip f06-kicker" data-start="0" data-duration="15.17" data-track-index="5">Not a rate. Not a spread. <b>A date.</b></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    (function () {
+      var title = document.getElementById("f06-title"), rows = document.getElementById("f06-rows");
+      var split = document.getElementById("f06-split"), lbl = document.getElementById("f06-split-lbl");
+      var kicker = document.getElementById("f06-kicker");
+      var rowEls = Array.prototype.slice.call(rows.children);
+      var bars = rowEls.map(function (r) { return r.querySelector(".f06-bar"); });
+      var whos = rowEls.map(function (r) { return r.querySelector(".f06-who"); });
+
+      gsap.set(title, { opacity: 0, y: 20 });
+      gsap.set(rowEls, { opacity: 0, x: -18 });
+      gsap.set(whos, { opacity: 0 });
+      gsap.set(split, { scaleX: 0, opacity: 0 });
+      gsap.set(lbl, { opacity: 0 });
+      gsap.set(kicker, { opacity: 0, y: 20 });
+
+      var tl = gsap.timeline({ paused: true });
+      tl.to(title, { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, 0.3);
+      tl.to(rowEls, { opacity: 1, x: 0, duration: 0.34, stagger: 0.13, ease: "power2.out" }, 1.4);
+      bars.forEach(function (b, i) {
+        tl.to(b, { width: b.getAttribute("data-w") + "%", duration: 0.5, ease: "power2.out" }, 1.55 + i * 0.13);
+        tl.to(whos[i], { opacity: 1, duration: 0.3 }, 1.75 + i * 0.13);
+      });
+      tl.to(split, { opacity: 1, scaleX: 1, duration: 0.6, ease: "power2.out" }, 9.3);
+      tl.to(lbl, { opacity: 1, duration: 0.45 }, 9.7);
+      tl.to(kicker, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 11.6);
+      tl.to({}, { duration: 15.17 }, 0);
+      window.__timelines["06-crossover"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,87 @@
+<template>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+    #root {
+      position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "IBM Plex Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    }
+    .f02-bg { position: absolute; inset: 0; background: #FBFAF7; }
+    .f02-title {
+      position: absolute; top: 118px; left: 0; right: 0; text-align: center;
+      font-size: 50px; font-weight: 600; color: #1E2333; letter-spacing: -0.01em;
+    }
+    .f02-sub {
+      position: absolute; top: 188px; left: 0; right: 0; text-align: center;
+      font-size: 30px; font-weight: 500; color: #6B6657; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .f02-chart { position: absolute; left: 370px; top: 292px; width: 1180px; height: 430px; }
+    .f02-chart svg { width: 1180px; height: 430px; overflow: visible; }
+    .f02-grid { stroke: #D8D2C2; stroke-width: 2; }
+    .f02-axis { stroke: #B7AE98; stroke-width: 2; }
+    .f02-gl { font-size: 22px; fill: #6B6657; font-weight: 500; }
+    .f02-yr { font-size: 24px; fill: #6B6657; font-weight: 500; }
+    .f02-note {
+      position: absolute; font-size: 34px; font-weight: 600; color: #1E2333;
+      background: #FBFAF7; padding: 6px 16px; border-radius: 8px; white-space: nowrap;
+    }
+    .f02-note.lo { left: 378px; top: 586px; color: #2F7268; }
+    .f02-note.hi { left: 952px; top: 266px; color: #A8541A; }
+    .f02-note.now { left: 1380px; top: 560px; color: #3A4366; }
+  </style>
+
+  <div id="root" data-composition-id="02-rate-path" data-start="0" data-duration="13.70" data-width="1920" data-height="1080">
+    <div id="f02-bg" class="clip f02-bg" data-start="0" data-duration="13.70" data-track-index="0"></div>
+    <div id="f02-title" class="clip f02-title" data-start="0" data-duration="13.70" data-track-index="1">The rate path everything is measured against</div>
+    <div id="f02-sub" class="clip f02-sub" data-start="0" data-duration="13.70" data-track-index="2">Bank of Canada overnight rate</div>
+
+    <div id="f02-chart" class="clip f02-chart" data-start="0" data-duration="13.70" data-track-index="3">
+      <svg viewBox="0 0 1180 380" xmlns="http://www.w3.org/2000/svg">
+        <line class="f02-grid" x1="0" y1="362.7" x2="1180" y2="362.7"/>
+        <line class="f02-grid" x1="0" y1="224.5" x2="1180" y2="224.5"/>
+        <line class="f02-grid" x1="0" y1="86.4" x2="1180" y2="86.4"/>
+        <text class="f02-gl" x="-16" y="369" text-anchor="end">0%</text>
+        <text class="f02-gl" x="-16" y="231" text-anchor="end">2%</text>
+        <text class="f02-gl" x="-16" y="93" text-anchor="end">4%</text>
+        <text class="f02-yr" x="0" y="410">2021</text>
+        <text class="f02-yr" x="211.3" y="410" text-anchor="middle">2022</text>
+        <text class="f02-yr" x="422.7" y="410" text-anchor="middle">2023</text>
+        <text class="f02-yr" x="634.0" y="410" text-anchor="middle">2024</text>
+        <text class="f02-yr" x="845.4" y="410" text-anchor="middle">2025</text>
+        <text class="f02-yr" x="1056.7" y="410" text-anchor="middle">2026</text>
+        <line class="f02-axis" x1="0" y1="380" x2="1180" y2="380"/>
+        <polyline id="f02-line" fill="none" stroke="#3A4366" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"
+          points="0.0,362.7 264.2,362.7 264.2,345.5 281.8,345.5 281.8,310.9 317.0,310.9 317.0,276.4 334.6,276.4 334.6,207.3 369.9,207.3 369.9,155.5 387.5,155.5 387.5,120.9 422.7,120.9 422.7,86.4 440.3,86.4 440.3,69.1 528.4,69.1 528.4,51.8 546.0,51.8 546.0,34.5 739.7,34.5 739.7,51.8 757.3,51.8 757.3,69.1 792.5,69.1 792.5,86.4 810.1,86.4 810.1,120.9 845.4,120.9 845.4,155.5 863.0,155.5 863.0,172.7 898.2,172.7 898.2,190.0 1003.9,190.0 1003.9,207.3 1021.5,207.3 1021.5,224.5 1180.0,224.5"/>
+      </svg>
+    </div>
+
+    <div id="f02-lo" class="clip f02-note lo" data-start="0" data-duration="13.70" data-track-index="4">0.25%</div>
+    <div id="f02-hi" class="clip f02-note hi" data-start="0" data-duration="13.70" data-track-index="5">5.00%</div>
+    <div id="f02-now" class="clip f02-note now" data-start="0" data-duration="13.70" data-track-index="6">2.25% today</div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    (function () {
+      var title = document.getElementById("f02-title"), sub = document.getElementById("f02-sub");
+      var chart = document.getElementById("f02-chart"), line = document.getElementById("f02-line");
+      var lo = document.getElementById("f02-lo"), hi = document.getElementById("f02-hi"), now = document.getElementById("f02-now");
+      var len = line.getTotalLength ? line.getTotalLength() : 4000;
+      gsap.set([title, sub], { opacity: 0, y: 22 });
+      gsap.set(chart, { opacity: 0 });
+      gsap.set(line, { strokeDasharray: len, strokeDashoffset: len });
+      gsap.set([lo, hi, now], { opacity: 0, y: 14 });
+
+      var tl = gsap.timeline({ paused: true });
+      tl.to(title, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0.3);
+      tl.to(sub, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0.55);
+      tl.to(chart, { opacity: 1, duration: 0.4 }, 1.1);
+      tl.to(lo, { opacity: 1, y: 0, duration: 0.45 }, 1.4);
+      tl.to(line, { strokeDashoffset: 0, duration: 7.6, ease: "none" }, 1.6);
+      tl.to(hi, { opacity: 1, y: 0, duration: 0.5 }, 5.4);
+      tl.to(now, { opacity: 1, y: 0, duration: 0.5 }, 9.4);
+      tl.to({}, { duration: 13.70 }, 0);
+      window.__timelines["02-rate-path"] = tl;
+    })();
+  </script>
+</template>

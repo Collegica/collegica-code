@@ -1,0 +1,66 @@
+<template>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+
+    #root {
+      position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "IBM Plex Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    }
+    .f06-bg { position: absolute; inset: 0; background: #FBFAF7; }
+    .f06-stage {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 48px;
+    }
+    .f06-title { font-weight: 700; font-size: 52px; color: #1E2333; }
+    .f06-list { display: flex; flex-direction: column; gap: 24px; }
+    .f06-row { display: flex; align-items: center; gap: 24px; font-weight: 500; font-size: 34px; color: #1E2333; }
+    .f06-check {
+      width: 42px; height: 42px; border-radius: 50%; flex: none;
+      display: flex; align-items: center; justify-content: center; color: #FBFAF7; font-size: 24px; font-weight: 700;
+    }
+    .f06-row.n1 .f06-check { background: #664F3A; }
+    .f06-row.n2 .f06-check { background: #3A4366; }
+    .f06-row.n3 .f06-check { background: #C97B1E; }
+    .f06-row.n4 .f06-check { background: #4C5782; }
+    .f06-row.n5 .f06-check { background: #8A5A46; }
+  </style>
+
+  <div id="root" data-composition-id="06-checklist" data-start="0" data-duration="11.3" data-width="1920" data-height="1080">
+    <div id="f06-bg" class="clip f06-bg" data-start="0" data-duration="11.3" data-track-index="0"></div>
+    <div id="f06-stage" class="clip f06-stage" data-start="0" data-duration="11.3" data-track-index="1">
+      <div id="f06-title" class="f06-title">Five plans</div>
+      <div class="f06-list">
+        <div id="f06-r1" class="f06-row n1"><div class="f06-check">&#10003;</div><div>Evaluate before you apply</div></div>
+        <div id="f06-r2" class="f06-row n2"><div class="f06-check">&#10003;</div><div>Tailor honestly</div></div>
+        <div id="f06-r3" class="f06-row n3"><div class="f06-check">&#10003;</div><div>Ask for twenty minutes, not a job</div></div>
+        <div id="f06-r4" class="f06-row n4"><div class="f06-check">&#10003;</div><div>Rehearse the hard questions</div></div>
+        <div id="f06-r5" class="f06-row n5"><div class="f06-check">&#10003;</div><div>Measure your own funnel</div></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    (function () {
+      var title = document.getElementById("f06-title");
+      var ids = ["f06-r1", "f06-r2", "f06-r3", "f06-r4", "f06-r5"];
+      var els = ids.map(function (id) { return document.getElementById(id); });
+
+      gsap.set(title, { opacity: 0, y: 16 });
+      gsap.set(els, { opacity: 0, x: -26 });
+
+      var tl = gsap.timeline({ paused: true });
+      tl.to(title, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.1);
+      tl.to(els[0], { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 0.5);
+      tl.to(els[1], { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 2.4);
+      tl.to(els[2], { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 3.6);
+      tl.to(els[3], { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 6.1);
+      tl.to(els[4], { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 7.8);
+      tl.to({}, { duration: 11.3 }, 0);
+
+      window.__timelines["06-checklist"] = tl;
+    })();
+  </script>
+</template>

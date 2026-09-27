@@ -22,7 +22,7 @@ source_file: docs/research/2026-09-13-voice-agents/notes/voice-run.md
 # The household cascade on a machine with no GPU — the run
 
 What was run on 2026-09-13, on this session's container, and what it
-measured. The script is [`pipeline.py`](https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-13-voice-agents/notes/pipeline.py); the numbers below are
+measured. The script is [`pipeline.py`](https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-13-voice-agents/notes/pipeline.py); the numbers below are
 its printed output, from the third and final run (the first two died on a
 truncated download and an API change, both recorded under *Traps*).
 

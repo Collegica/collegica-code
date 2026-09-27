@@ -1,0 +1,84 @@
+<template>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+    #root {
+      position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "IBM Plex Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    }
+    .f05-bg { position: absolute; inset: 0; background: #FBFAF7; }
+    .f05-date {
+      position: absolute; top: 112px; left: 0; right: 0; text-align: center;
+      font-size: 30px; font-weight: 600; color: #6B6657; letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .f05-lede {
+      position: absolute; top: 168px; left: 0; right: 0; text-align: center;
+      font-size: 44px; font-weight: 500; color: #1E2333;
+    }
+    .f05-cards { position: absolute; top: 290px; left: 0; right: 0; display: flex; justify-content: center; gap: 64px; }
+    .f05-card {
+      width: 460px; border-radius: 18px; padding: 40px 44px 44px;
+      background: #F4F2ED; border: 3px solid #E3DFD2;
+    }
+    .f05-card .lbl { font-size: 28px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #6B6657; }
+    .f05-card .rate { font-size: 104px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.06; margin-top: 10px; }
+    .f05-card .sub { font-size: 27px; font-weight: 500; color: #6B6657; margin-top: 8px; }
+    .f05-card.fx .rate { color: #2F7268; }
+    .f05-card.vr .rate { color: #A8541A; }
+    .f05-verdict {
+      position: absolute; top: 640px; left: 0; right: 0; text-align: center;
+    }
+    .f05-vline { font-size: 42px; font-weight: 500; color: #1E2333; }
+    .f05-vline b { font-weight: 700; }
+    .f05-num { font-size: 128px; font-weight: 700; letter-spacing: -0.035em; margin-top: 6px; color: #A8541A; font-variant-numeric: tabular-nums; }
+    .f05-vsub { font-size: 30px; font-weight: 500; color: #6B6657; margin-top: 10px; }
+  </style>
+
+  <div id="root" data-composition-id="05-2023" data-start="0" data-duration="15.43" data-width="1920" data-height="1080">
+    <div id="f05-bg" class="clip f05-bg" data-start="0" data-duration="15.43" data-track-index="0"></div>
+    <div id="f05-date" class="clip f05-date" data-start="0" data-duration="15.43" data-track-index="1">Signed September 2023</div>
+    <div id="f05-lede" class="clip f05-lede" data-start="0" data-duration="15.43" data-track-index="2">$500,000 — the rates on offer that month</div>
+    <div id="f05-cards" class="clip f05-cards" data-start="0" data-duration="15.43" data-track-index="3">
+      <div class="f05-card fx" id="f05-c1">
+        <div class="lbl">Five-year fixed</div>
+        <div class="rate">5.24%</div>
+        <div class="sub">the cheap-looking one</div>
+      </div>
+      <div class="f05-card vr" id="f05-c2">
+        <div class="lbl">Variable</div>
+        <div class="rate">5.95%</div>
+        <div class="sub">prime &minus; 1.25</div>
+      </div>
+    </div>
+    <div id="f05-verdict" class="clip f05-verdict" data-start="0" data-duration="15.43" data-track-index="4">
+      <div class="f05-vline">Over three years, <b>variable</b> cost less interest by</div>
+      <div class="f05-num" id="f05-num">$0</div>
+      <div class="f05-vsub">having started as the most expensive rate on the table</div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    (function () {
+      var date = document.getElementById("f05-date"), lede = document.getElementById("f05-lede");
+      var c1 = document.getElementById("f05-c1"), c2 = document.getElementById("f05-c2");
+      var verdict = document.getElementById("f05-verdict"), num = document.getElementById("f05-num");
+      gsap.set([date, lede], { opacity: 0, y: 20 });
+      gsap.set([c1, c2], { opacity: 0, y: 34 });
+      gsap.set(verdict, { opacity: 0, y: 26 });
+      var counter = { v: 0 };
+      var tl = gsap.timeline({ paused: true });
+      tl.to(date, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.3);
+      tl.to(lede, { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, 0.5);
+      tl.to(c1, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 2.4);
+      tl.to(c2, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 3.2);
+      tl.to(verdict, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 8.6);
+      tl.to(counter, {
+        v: 10935, duration: 1.9, ease: "power2.out",
+        onUpdate: function () { num.textContent = "$" + Math.round(counter.v).toLocaleString("en-CA"); }
+      }, 8.6 + 0.3);
+      tl.to({}, { duration: 15.43 }, 0);
+      window.__timelines["05-2023"] = tl;
+    })();
+  </script>
+</template>

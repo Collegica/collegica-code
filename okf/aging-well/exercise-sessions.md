@@ -288,7 +288,7 @@ Research notes — the movement families, the session structure, the
 five-model comparison, and every clip's contact sheet — are in [the
 accompanying folder](/aging-well/research/exercise-sessions.md);
 the app's source is in [`apps/owl-sessions`](/apps/owl-sessions.md)
-and [`website/static/js/sessions`](https://github.com/Collegica/collegica/tree/main/website/static/js/sessions).
+and [`website/static/js/sessions`](https://github.com/Collegica/collegica-code/tree/main/website/static/js/sessions).
 
 - **The framework.** [Planning to Age Well, with AI](/aging-well/ai-planning.md),
   plan two, and its sources.

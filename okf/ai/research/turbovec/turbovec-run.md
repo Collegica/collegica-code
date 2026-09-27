@@ -16,18 +16,18 @@ generated:
   by: claude/fable-5.1
   at: "2026-09-14T00:00:00Z"
 sources:
-- resource: https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-14-turbovec/notes/bench.py
-- resource: https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-14-turbovec/notes/results_t1.json
-- resource: https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-14-turbovec/notes/results_t4.json
+- resource: https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-14-turbovec/notes/bench.py
+- resource: https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-14-turbovec/notes/results_t1.json
+- resource: https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-14-turbovec/notes/results_t4.json
 source_file: docs/research/2026-09-14-turbovec/notes/turbovec-run.md
 ---
 
 # turbovec against FAISS on four CPU cores — the run
 
 What was run on 2026-09-14, on this session's container, and what it
-measured. The script is [`bench.py`](https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-14-turbovec/notes/bench.py); the raw output is
-[`results_t1.json`](https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-14-turbovec/notes/results_t1.json) (one thread) and
-[`results_t4.json`](https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-14-turbovec/notes/results_t4.json) (four threads). Every number below is
+measured. The script is [`bench.py`](https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-14-turbovec/notes/bench.py); the raw output is
+[`results_t1.json`](https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-14-turbovec/notes/results_t1.json) (one thread) and
+[`results_t4.json`](https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-14-turbovec/notes/results_t4.json) (four threads). Every number below is
 copied from those files.
 
 ## The machine

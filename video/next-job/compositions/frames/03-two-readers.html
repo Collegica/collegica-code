@@ -1,0 +1,64 @@
+<template>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+
+    #root {
+      position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "IBM Plex Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    }
+    .f03-bg { position: absolute; inset: 0; background: #F4F2ED; }
+    .f03-stage {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 46px;
+    }
+    .f03-cols { display: flex; gap: 0; align-items: stretch; }
+    .f03-col { width: 620px; padding: 0 50px; text-align: center; }
+    .f03-col-head { font-weight: 700; font-size: 38px; margin-bottom: 14px; }
+    .f03-model .f03-col-head { color: #3A4366; }
+    .f03-person .f03-col-head { color: #664F3A; }
+    .f03-col-sub { font-size: 26px; color: #4C5782; line-height: 1.4; }
+    .f03-divider { width: 2px; align-self: center; height: 200px; background: #D8D3C6; }
+    .f03-punch { font-weight: 600; font-size: 44px; color: #1E2333; text-align: center; max-width: 1300px; line-height: 1.3; }
+    .f03-punch b { color: #C97B1E; }
+  </style>
+
+  <div id="root" data-composition-id="03-two-readers" data-start="0" data-duration="15.7" data-width="1920" data-height="1080">
+    <div id="f03-bg" class="clip f03-bg" data-start="0" data-duration="15.7" data-track-index="0"></div>
+    <div id="f03-stage" class="clip f03-stage" data-start="0" data-duration="15.7" data-track-index="1">
+      <div class="f03-cols">
+        <div id="f03-model" class="f03-col f03-model">
+          <div class="f03-col-head">The model</div>
+          <div class="f03-col-sub">Prefers AI-written text almost every time it screens</div>
+        </div>
+        <div class="f03-divider"></div>
+        <div id="f03-person" class="f03-col f03-person">
+          <div class="f03-col-head">The person</div>
+          <div class="f03-col-sub">Can tell &mdash; and rejects it, most of the time</div>
+        </div>
+      </div>
+      <div id="f03-punch" class="f03-punch">Neither can fake <b>a long, specific work history.</b><br>That is your advantage.</div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    (function () {
+      var model = document.getElementById("f03-model");
+      var person = document.getElementById("f03-person");
+      var punch = document.getElementById("f03-punch");
+
+      gsap.set([model, person], { opacity: 0, y: 24 });
+      gsap.set(punch, { opacity: 0, y: 20 });
+
+      var tl = gsap.timeline({ paused: true });
+      tl.to(model, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 2.46);
+      tl.to(person, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 6.78);
+      tl.to(punch, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 11.1);
+      tl.to({}, { duration: 15.7 }, 0);
+
+      window.__timelines["03-two-readers"] = tl;
+    })();
+  </script>
+</template>

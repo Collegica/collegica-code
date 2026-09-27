@@ -1,0 +1,67 @@
+<template>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+
+    #root {
+      position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "IBM Plex Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    }
+    .f03-bg { position: absolute; inset: 0; background: #F4F2ED; }
+    .f03-stage {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 40px; padding: 0 150px; text-align: center;
+    }
+    .f03-owl { font-weight: 700; font-size: 96px; letter-spacing: 0.04em; color: #3A4366; }
+    .f03-owl-sub { font-weight: 500; font-size: 34px; color: #4C5782; margin-top: -18px; }
+    .f03-rooms { display: flex; gap: 56px; }
+    .f03-room {
+      width: 300px; padding: 30px 0; border-radius: 16px; background: #FBFAF7;
+      box-shadow: 0 10px 26px rgba(30,35,51,0.08); border: 2px solid #E2E5EE;
+    }
+    .f03-room-label { font-weight: 600; font-size: 30px; color: #1E2333; }
+    .f03-room-tag { font-size: 20px; color: #6B76A0; margin-top: 6px; }
+    .f03-punch { font-weight: 600; font-size: 52px; line-height: 1.32; color: #1E2333; max-width: 1400px; }
+    .f03-punch b { color: #C97B1E; }
+  </style>
+
+  <div id="root" data-composition-id="03-owl" data-start="0" data-duration="17.9" data-width="1920" data-height="1080">
+    <div id="f03-bg" class="clip f03-bg" data-start="0" data-duration="17.9" data-track-index="0"></div>
+    <div id="f03-stage" class="clip f03-stage" data-start="0" data-duration="17.9" data-track-index="1">
+      <div id="f03-owl-group">
+        <div class="f03-owl">OWL</div>
+        <div class="f03-owl-sub">Optimal Wealth and Longevity</div>
+      </div>
+      <div id="f03-rooms" class="f03-rooms">
+        <div class="f03-room"><div class="f03-room-label">Mind</div><div class="f03-room-tag">a doctor, 11 minutes</div></div>
+        <div class="f03-room"><div class="f03-room-label">Muscle</div><div class="f03-room-tag">a physiotherapist</div></div>
+        <div class="f03-room"><div class="f03-room-label">Money</div><div class="f03-room-tag">a planner</div></div>
+      </div>
+      <div id="f03-punch" class="f03-punch">Optimize only the money, and you can fund a <b>very comfortable confinement.</b></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    (function () {
+      var owlGroup = document.getElementById("f03-owl-group");
+      var rooms = document.getElementById("f03-rooms");
+      var punch = document.getElementById("f03-punch");
+
+      gsap.set(owlGroup, { opacity: 0, y: 20 });
+      gsap.set(rooms.children, { opacity: 0, y: 24 });
+      gsap.set(punch, { opacity: 0, y: 20 });
+
+      var tl = gsap.timeline({ paused: true });
+      tl.to(owlGroup, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 0.23);
+      tl.to(owlGroup, { opacity: 0.55, duration: 0.5, ease: "power2.out" }, 5.24);
+      tl.to(rooms.children, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out", stagger: 0.34 }, 5.7);
+      tl.to(rooms, { opacity: 0.4, duration: 0.5 }, 12.08);
+      tl.to(punch, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 12.54);
+      tl.to({}, { duration: 17.9 }, 0);
+
+      window.__timelines["03-owl"] = tl;
+    })();
+  </script>
+</template>

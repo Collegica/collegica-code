@@ -1,0 +1,64 @@
+<template>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+
+    #root {
+      position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "IBM Plex Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    }
+    .f03-bg { position: absolute; inset: 0; background: #FBFAF7; }
+    .f03-stage {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 36px;
+    }
+    .f03-img-wrap {
+      width: 1180px; height: 590px; border-radius: 14px; overflow: hidden;
+      box-shadow: 0 24px 60px rgba(30, 35, 51, 0.16);
+    }
+    .f03-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; display: block; }
+    .f03-badges { display: flex; gap: 32px; }
+    .f03-badge {
+      display: flex; align-items: center; gap: 14px;
+      background: #FBFAF7; border: 2px solid #E2E5EE; border-radius: 14px;
+      padding: 14px 28px; box-shadow: 0 10px 26px rgba(30,35,51,0.08);
+      font-weight: 600; font-size: 26px; color: #1E2333;
+    }
+    .f03-badge .dot { width: 14px; height: 14px; border-radius: 50%; flex: none; }
+    .f03-badge.a .dot { background: #3A4366; }
+    .f03-badge.b .dot { background: #C97B1E; }
+  </style>
+
+  <div id="root" data-composition-id="03-reads" data-start="0" data-duration="14.68" data-width="1920" data-height="1080">
+    <div id="f03-bg" class="clip f03-bg" data-start="0" data-duration="14.68" data-track-index="0"></div>
+    <div id="f03-stage" class="clip f03-stage" data-start="0" data-duration="14.68" data-track-index="1">
+      <div id="f03-img" class="f03-img-wrap"><img src="assets/owl-budget.jpg" alt=""></div>
+      <div class="f03-badges">
+        <div id="f03-b1" class="f03-badge a"><div class="dot"></div>CSV, every account you spend from</div>
+        <div id="f03-b2" class="f03-badge b"><div class="dot"></div>PDF? Reconciled &mdash; or refused</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    (function () {
+      var img = document.getElementById("f03-img");
+      var b1 = document.getElementById("f03-b1");
+      var b2 = document.getElementById("f03-b2");
+
+      gsap.set(img, { opacity: 0, scale: 0.96 });
+      gsap.set([b1, b2], { opacity: 0, y: 24 });
+
+      var tl = gsap.timeline({ paused: true });
+      tl.to(img, { opacity: 1, scale: 1, duration: 0.9, ease: "power2.out" }, 0.1);
+      tl.to(img, { scale: 1.03, duration: 13, ease: "none", overwrite: "auto" }, 1.0);
+      tl.to(b1, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.6)" }, 1.2);
+      tl.to(b2, { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.6)" }, 10.0);
+      tl.to({}, { duration: 14.68 }, 0);
+
+      window.__timelines["03-reads"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,57 @@
+<template>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+
+    #root {
+      position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "IBM Plex Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    }
+    .f01-bg { position: absolute; inset: 0; background: #FBFAF7; }
+    .f01-stage {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 0 170px; text-align: center;
+    }
+    .f01-line { font-weight: 600; font-size: 62px; line-height: 1.32; letter-spacing: -0.01em; color: #1E2333; }
+    .f01-line.two { color: #4C5782; font-weight: 500; }
+    .f01-line b { color: #C97B1E; }
+    .f01-dot-row { display: flex; gap: 18px; margin-top: 44px; }
+    .f01-dot { width: 22px; height: 22px; border-radius: 50%; background: #664F3A; }
+    .f01-dot:nth-child(2) { background: #3A4366; }
+    .f01-dot:nth-child(3) { background: #C97B1E; }
+  </style>
+
+  <div id="root" data-composition-id="01-hook" data-start="0" data-duration="11.7" data-width="1920" data-height="1080">
+    <div id="f01-bg" class="clip f01-bg" data-start="0" data-duration="11.7" data-track-index="0"></div>
+    <div id="f01-stage" class="clip f01-stage" data-start="0" data-duration="11.7" data-track-index="1">
+      <div id="f01-line1" class="f01-line">A bank statement records every dollar that left an account.</div>
+      <div id="f01-line2" class="f01-line two">Only <b>one of six</b> kinds of movement is actually spending.</div>
+      <div id="f01-dots" class="f01-dot-row">
+        <div class="f01-dot"></div><div class="f01-dot"></div><div class="f01-dot"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    (function () {
+      var line1 = document.getElementById("f01-line1");
+      var line2 = document.getElementById("f01-line2");
+      var dots = document.getElementById("f01-dots");
+
+      gsap.set([line1, line2], { opacity: 0, y: 30 });
+      gsap.set(dots, { opacity: 0 });
+      gsap.set(dots.children, { scale: 0 });
+
+      var tl = gsap.timeline({ paused: true });
+      tl.to(line1, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 0.2);
+      tl.to(line2, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 3.4);
+      tl.to(dots, { opacity: 1, duration: 0.2 }, 9.0);
+      tl.to(dots.children, { scale: 1, duration: 0.45, ease: "back.out(2)", stagger: 0.12 }, 9.0);
+      tl.to({}, { duration: 11.7 }, 0);
+
+      window.__timelines["01-hook"] = tl;
+    })();
+  </script>
+</template>

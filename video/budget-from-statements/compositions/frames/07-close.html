@@ -1,0 +1,59 @@
+<template>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+
+    #root {
+      position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "IBM Plex Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    }
+    .f07-bg { position: absolute; inset: 0; background: #FBFAF7; }
+    .f07-stage {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 30px; text-align: center;
+    }
+    .f07-line { font-weight: 600; font-size: 44px; color: #1E2333; max-width: 1300px; line-height: 1.3; }
+    .f07-mark { width: 90px; height: 90px; margin-top: 10px; }
+    .f07-url-wrap { margin-top: 6px; }
+    .f07-url-title { font-weight: 700; font-size: 38px; color: #1E2333; }
+    .f07-url { font-weight: 500; font-size: 28px; color: #3A4366; margin-top: 8px; }
+  </style>
+
+  <div id="root" data-composition-id="07-close" data-start="0" data-duration="6.91" data-width="1920" data-height="1080">
+    <div id="f07-bg" class="clip f07-bg" data-start="0" data-duration="6.91" data-track-index="0"></div>
+    <div id="f07-stage" class="clip f07-stage" data-start="0" data-duration="6.91" data-track-index="1">
+      <div id="f07-line1" class="f07-line">Read the full method, and the prompts that get you started.</div>
+      <div id="f07-url-wrap" class="f07-url-wrap">
+        <svg class="f07-mark" viewBox="0 0 1842 1842" role="img" aria-label="Collegica">
+          <g fill="#3A4366">
+            <circle cx="285" cy="285" r="273"/><circle cx="921" cy="285" r="273"/><circle cx="1557" cy="285" r="273"/>
+            <circle cx="285" cy="921" r="273"/>
+            <circle cx="285" cy="1557" r="273"/><circle cx="921" cy="1557" r="273"/><circle cx="1557" cy="1557" r="273"/>
+          </g>
+        </svg>
+        <div class="f07-url-title">A Year of Spending, from Your Own Statements</div>
+        <div class="f07-url">collegica.org/aging-well/budget-from-statements</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    (function () {
+      var line1 = document.getElementById("f07-line1");
+      var urlWrap = document.getElementById("f07-url-wrap");
+
+      gsap.set(line1, { opacity: 0, y: 16 });
+      gsap.set(urlWrap, { opacity: 0, y: 20 });
+
+      var tl = gsap.timeline({ paused: true });
+      tl.to(line1, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.3);
+      tl.to(line1, { opacity: 0.45, duration: 0.4 }, 3.2);
+      tl.to(urlWrap, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 3.6);
+      tl.to({}, { duration: 6.91 }, 0);
+
+      window.__timelines["07-close"] = tl;
+    })();
+  </script>
+</template>

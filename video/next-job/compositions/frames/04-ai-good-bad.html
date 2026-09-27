@@ -1,0 +1,64 @@
+<template>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+
+    #root {
+      position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "IBM Plex Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    }
+    .f04-bg { position: absolute; inset: 0; background: #FBFAF7; }
+    .f04-stage {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .f04-col { width: 780px; padding: 0 60px; }
+    .f04-col-head { font-weight: 700; font-size: 42px; margin-bottom: 28px; }
+    .f04-good .f04-col-head { color: #3A4366; }
+    .f04-bad .f04-col-head { color: #8A5A46; }
+    .f04-item { font-weight: 500; font-size: 30px; color: #1E2333; margin-bottom: 20px; padding-inline-start: 34px; position: relative; }
+    .f04-item::before { content: ""; position: absolute; left: 0; top: 13px; width: 14px; height: 14px; border-radius: 50%; }
+    .f04-good .f04-item::before { background: #3A4366; }
+    .f04-bad .f04-item::before { background: #C97B1E; }
+    .f04-divider { width: 2px; height: 460px; background: #E2E5EE; }
+  </style>
+
+  <div id="root" data-composition-id="04-ai-good-bad" data-start="0" data-duration="13.2" data-width="1920" data-height="1080">
+    <div id="f04-bg" class="clip f04-bg" data-start="0" data-duration="13.2" data-track-index="0"></div>
+    <div id="f04-stage" class="clip f04-stage" data-start="0" data-duration="13.2" data-track-index="1">
+      <div class="f04-col f04-good">
+        <div class="f04-col-head">AI is good at</div>
+        <div id="f04-g1" class="f04-item">Structure &mdash; 25 years, organized</div>
+        <div id="f04-g2" class="f04-item">Research on the company and role</div>
+        <div id="f04-g3" class="f04-item">Rehearsal for the hard questions</div>
+      </div>
+      <div class="f04-divider"></div>
+      <div class="f04-col f04-bad">
+        <div class="f04-col-head">AI is not good at</div>
+        <div id="f04-b1" class="f04-item">Applying for you</div>
+        <div id="f04-b2" class="f04-item">Inventing evidence</div>
+        <div id="f04-b3" class="f04-item">The phone call that gets you hired</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    (function () {
+      var ids = ["f04-g1", "f04-g2", "f04-g3", "f04-b1", "f04-b2", "f04-b3"];
+      var els = ids.map(function (id) { return document.getElementById(id); });
+      gsap.set(els, { opacity: 0, x: -20 });
+
+      var tl = gsap.timeline({ paused: true });
+      tl.to(els[0], { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 0.3);
+      tl.to(els[1], { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 1.7);
+      tl.to(els[2], { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 3.2);
+      tl.to(els[3], { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 6.4);
+      tl.to(els[4], { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 7.9);
+      tl.to(els[5], { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 9.4);
+      tl.to({}, { duration: 13.2 }, 0);
+
+      window.__timelines["04-ai-good-bad"] = tl;
+    })();
+  </script>
+</template>

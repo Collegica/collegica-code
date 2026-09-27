@@ -367,7 +367,7 @@ raw result, not instead of it.
 
 ## Tier three, continued: the Kotlin app
 
-The [example](https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-13-edge-agent/example)
+The [example](https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-13-edge-agent/example)
 is a one-screen Android app — a question, an Ask button, the answer, the
 time it took — with the same two tools. The whole runtime is one
 dependency:
@@ -550,10 +550,10 @@ Research notes — what was read in full, what was measured, and the phone
 run — are in [the accompanying
 folder](/ai/research/edge-agent/),
 with the CLI preset and the Android project in its
-[example](https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-13-edge-agent/example)
+[example](https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-13-edge-agent/example)
 directory. The phone measurements — the Gallery benchmark, the Kotlin
 example's engine-start and turn times, and the storage-permission fix —
-are in [`notes/phone-run.md`](https://github.com/Collegica/collegica/blob/main/docs/research/2026-09-13-edge-agent/notes/phone-run.md).
+are in [`notes/phone-run.md`](https://github.com/Collegica/collegica-code/blob/main/docs/research/2026-09-13-edge-agent/notes/phone-run.md).
 
 - **LiteRT-LM.** The [repository](https://github.com/google-ai-edge/LiteRT-LM)
   (Apache-2.0; v0.17.0, 9 September 2026); the developer pages for the

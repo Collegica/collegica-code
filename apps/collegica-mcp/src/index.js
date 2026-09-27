@@ -27,7 +27,7 @@ export async function handle(request, env = {}, deps = {}) {
       transport: "streamable-http (stateless, JSON responses)",
       tools: ["search_concepts", "read_concept", "list_signing_months", "compare_mortgage"],
       concepts: concepts.length,
-      docs: "https://github.com/Collegica/collegica/tree/main/apps/collegica-mcp",
+      docs: "https://github.com/Collegica/collegica-code/tree/main/apps/collegica-mcp",
     }));
   }
   if (url.pathname !== "/mcp") return withCors(new Response("Not found", { status: 404 }));

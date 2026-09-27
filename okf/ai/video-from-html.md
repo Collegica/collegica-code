@@ -321,7 +321,7 @@ Research notes — what was read, what was measured, and the correction on
 `--low-memory-mode` — are in [the accompanying
 folder](/ai/research/video-from-html/).
 The four video projects are in
-[`video/`](https://github.com/Collegica/collegica/tree/main/video).
+[`video/`](https://github.com/Collegica/collegica-code/tree/main/video).
 
 - **HyperFrames.** [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)
   (Apache-2.0); the docs pages [How a HyperFrames project
