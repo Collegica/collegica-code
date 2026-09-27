@@ -1,0 +1,19 @@
+[project]
+name = "onedoor"
+version = "0.1.0"
+description = "One agent core behind four doors: CLI, REST, MCP, AG-UI"
+requires-python = ">=3.11"
+dependencies = ["fastapi", "mcp>=2,<3", "ag-ui-protocol>=0.1.22"]
+
+[project.scripts]
+onedoor = "onedoor.doors.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/onedoor"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

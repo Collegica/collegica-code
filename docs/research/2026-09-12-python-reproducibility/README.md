@@ -1,0 +1,132 @@
+# Python reproducibility — plan and research
+
+Plan and working notes for rebuilding Collegica's [Python
+section](https://www.collegica.org/python/). Started 2026-09-12. Audience:
+technically literate researchers and engineers who may have used pip, conda or
+Poetry for years without ever drawing the line this section is about.
+
+Source that prompted it: *Python for Reproducible Research* (Behzad Samadi,
+Telegraph, 5 September 2026) — a course outline whose pipeline is
+**Explore → Analyze → Organize → Reproduce → Package → Share**, built on pixi,
+Poetry, git, Jupyter, pytest and The Turing Way.
+
+## The audit that set the scope
+
+| | Words | Dated | Notes |
+|---|---:|---|---|
+| `python/index.qmd` | 118 | — | "Learning Python in small steps" |
+| `python/poetry/` | 451 | Jan 2023 | *Publish Your First Python Package* — an introduction to Poetry ending in a PyPI release, paired with a talk |
+| `python/top-five-books/` | 523 | Jan 2023 | Book list |
+
+About 1,100 words for the whole track, against 6,400 for one finance article.
+
+**A correction to an earlier version of this note.** It described the Poetry
+piece as "tool-dated" and as presenting Poetry as the answer to everything. That
+was unfair and wrong: the article is titled *Publish Your First Python Package*,
+it is an introduction to Poetry, and it spends most of its length on building and
+publishing — which is exactly the half the new articles say Poetry owns. There is
+no contradiction to manage. The real gap in the section was never that something
+existing was wrong; it was that nothing covered environments or the wider
+pipeline at all.
+
+## Decisions taken
+
+1. **Do not transcribe the course.** Six modules with an assessment is a good
+   course and a bad reference section. Readers arrive from search with one
+   question. Extract the two ideas that travel: the environment/package
+   boundary, and the pipeline.
+2. **Two strong articles**, matching how `aging-well` and `finance` are built —
+   not a six-page syllabus track.
+3. **The worked example is this repository.** Verified below. Nothing invented,
+   nothing to maintain, and a reader can clone it today.
+4. **Reframe the track** from "Learning Python in small steps" to handing work
+   to someone else. The book list stays but stops defining the section.
+
+## Phases
+
+| # | Deliverable | Status |
+|---|---|---|
+| 2 | **"Environments are not packages"** — the pixi/Poetry boundary | **written** |
+| 1 | **"Python for Reproducible Research"** — Explore → Organize → Share, with a runnable example | **written** |
+| — | Landing page + `_quarto.yml` sidebar | **done, alongside the articles** |
+| 4 | Supporting assets: video, slides (extend, do not duplicate, the existing [reproducibility talk](https://www.collegica.org/slides/problem-solving/reproducibility/)) | not started |
+
+**Phase 3 is cancelled**, and it should never have been in the plan. It proposed
+revising the 2023 Poetry article on the grounds that it was wrong by omission
+about environments. It is not: it is an introduction to Poetry that ends in a
+PyPI release, and it does that job. The landing page now simply describes it as
+what it is — the practical companion that shows the commands — rather than
+framing it as something the new articles correct. No existing article was
+touched.
+
+Phase 2 was written before Phase 1 deliberately: it is self-contained, it is the
+sharpest idea in the course, and it tested the reframing before the larger
+article committed to it.
+
+## The worked example, verified 2026-09-12
+
+All of this is checked against the repo as it stands, not recalled:
+
+- **`pixi.toml` declares one dependency**: `quarto = ">=1.6,<2"`, from
+  `conda-forge`, for four platforms (`osx-arm64`, `osx-64`, `linux-64`,
+  `win-64`).
+- **`pixi.lock` (v7, 539 lines) pins 39 distinct packages — 78 platform-specific
+  entries** — each with its exact URL, `sha256` and `md5`, size, timestamp,
+  licence and its own dependency list.
+- **The resolved stack is barely Python at all.** One line asking for Quarto
+  pulls in `dart-sass`, `deno`, `_openmp_mutex`, `libgomp`. Quarto is not a
+  Python tool and `pip` could never have installed it. This is the clearest
+  available illustration of why the conda-forge side of the world exists.
+- **The lock records the platform contract too**: virtual packages per platform
+  (`__glibc=2.28`, `__osx=13.0`, `__archspec`), so the solve is pinned to an
+  ABI, not just to version numbers.
+- **CI consumes the same lockfile.** `.github/workflows/quatro-publish.yml`
+  pins `pixi-version: v0.72.2` and its own comment reads: *"Quarto comes from
+  pixi.lock, so CI renders with the exact version used locally."* The local
+  `pixi --version` is also 0.72.2.
+- **And this repo builds no package at all** — no `pyproject.toml`, no wheel,
+  no `poetry build`. Which is exactly the article's point: it is an
+  *application*, so it pins hard and ships a lockfile. A library would do the
+  opposite.
+
+## Research
+
+- [`notes/pipeline.md`](notes/pipeline.md) — the Explore → Organize → Share
+  arc: the notebook reproducibility evidence (Pimentel 2019/2021, Samuel &
+  Mietchen 2024), `src/` vs flat layout, Cookiecutter Data Science v2, jupytext,
+  testing research code, what goes in git and what does not, Zenodo/`CITATION.cff`
+  archiving, The Turing Way, and what a minimal exemplar repo contains.
+- [`notes/tooling.md`](notes/tooling.md) — pixi, Poetry and **uv** (the course
+  predates uv's rise and the article must not ignore it); the lockfile-in-an-app
+  versus ranges-in-a-library boundary; non-Python dependencies; The Turing Way;
+  and genuine criticism of all three tools.
+
+## The second worked example, verified 2026-09-12
+
+[`example/`](example/) is a genuinely runnable minimal analysis, built and run
+*before* the article describing it was written. Eleven committed files; `pixi
+run all` runs 5 tests then regenerates `outputs/annual-average.csv` from 69
+real Bank of Canada observations, byte-identically on re-run.
+
+Two deliberate choices, both stated in the article rather than hidden:
+
+- **It uses pixi although it is pure Python**, which contradicts the companion
+  article's own default of uv for pure-Python work. The reason is that uv has no
+  task runner, and for an *analysis* the commands you ran are half the
+  reproducibility story. The article names this as a real trade-off.
+- **`outputs/` is gitignored; `data/` is committed.** The data is small and
+  public; the outputs are regenerable by definition. That is the article's own
+  advice, demonstrated rather than asserted.
+
+## Open questions
+
+- **Where uv belongs.** It can now build and publish packages *and* manage
+  environments, which blurs the boundary the article is drawing. The honest
+  version of the article has to say where uv lands rather than pretend the
+  choice is binary. Pending the research note.
+- **The Poetry half has no live example in this repo.** The site is pure pixi
+  and OWL Planner is a pixi project too, so the packaging half will need either
+  a minimal invented-but-runnable manifest or a reference to a real public
+  package. Invented is acceptable here as long as it is marked and correct —
+  unlike a rate table, a `pyproject.toml` is verifiable by running it.
+- **Whether the book list stays in the section** or moves. Deferred to Phase 5.

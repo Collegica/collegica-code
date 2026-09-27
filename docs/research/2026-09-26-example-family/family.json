@@ -1,0 +1,285 @@
+{
+ "FORM": {
+  "Housing": [
+   [
+    "Mortgage",
+    18680.0
+   ],
+   [
+    "Rent",
+    3900.0
+   ],
+   [
+    "Municipal taxes",
+    3960.0
+   ],
+   [
+    "School taxes",
+    0
+   ],
+   [
+    "Home insurance",
+    1490.0
+   ],
+   [
+    "Condo fees",
+    520.0
+   ],
+   [
+    "Furniture, accessories, tools",
+    4810.0
+   ],
+   [
+    "Other housing expenses",
+    2340.0
+   ]
+  ],
+  "Utilities": [
+   [
+    "Electricity",
+    1660.0
+   ],
+   [
+    "Heating",
+    1460.0
+   ],
+   [
+    "Telephone",
+    180.0
+   ],
+   [
+    "Mobile",
+    2260.0
+   ],
+   [
+    "Cable",
+    500.0
+   ],
+   [
+    "Internet",
+    1180.0
+   ],
+   [
+    "Other utilities",
+    1040.0
+   ]
+  ],
+  "Transportation": [
+   [
+    "Public transit",
+    2820.0
+   ],
+   [
+    "Car loan / Lease",
+    6670.0
+   ],
+   [
+    "Gas",
+    3290.0
+   ],
+   [
+    "Car insurance",
+    2490.0
+   ],
+   [
+    "Registration",
+    80.0
+   ],
+   [
+    "Driver's licence",
+    60.0
+   ],
+   [
+    "Parking",
+    380.0
+   ],
+   [
+    "Maintenance and repairs",
+    1910.0
+   ],
+   [
+    "Taxi",
+    70.0
+   ],
+   [
+    "Other transportation fees",
+    130.0
+   ]
+  ],
+  "Food": [
+   [
+    "Groceries",
+    12040.0
+   ],
+   [
+    "Restaurants",
+    5020.0
+   ],
+   [
+    "Alcohol",
+    1110.0
+   ],
+   [
+    "Other food expenses",
+    0
+   ]
+  ],
+  "Recreation / education": [
+   [
+    "Cultural activities",
+    2200.0
+   ],
+   [
+    "Sports",
+    240.0
+   ],
+   [
+    "Newspapers, magazines, music",
+    630.0
+   ],
+   [
+    "Movies and game rentals",
+    230.0
+   ],
+   [
+    "Lottery tickets",
+    0
+   ],
+   [
+    "Travel",
+    3180.0
+   ],
+   [
+    "Courses",
+    560.0
+   ],
+   [
+    "School fees",
+    4200.0
+   ],
+   [
+    "School supplies",
+    310.0
+   ],
+   [
+    "Others",
+    1350.0
+   ]
+  ],
+  "Health care": [
+   [
+    "Pharmacy",
+    440.0
+   ],
+   [
+    "Dentist",
+    820.0
+   ],
+   [
+    "Optometrist",
+    370.0
+   ],
+   [
+    "Other health care expenses",
+    1310.0
+   ],
+   [
+    "Life insurance",
+    1040.0
+   ],
+   [
+    "Other insurance",
+    1180.0
+   ]
+  ],
+  "Debt repayment": [
+   [
+    "Credit card 1",
+    0
+   ],
+   [
+    "Credit card 2",
+    0
+   ],
+   [
+    "Line of credit",
+    0
+   ],
+   [
+    "Personal loan",
+    0
+   ],
+   [
+    "Student loan",
+    0
+   ],
+   [
+    "RRSP loan",
+    0
+   ],
+   [
+    "HBP",
+    0
+   ],
+   [
+    "Other loans",
+    0
+   ]
+  ],
+  "Personal": [
+   [
+    "Clothing",
+    4820.0
+   ],
+   [
+    "Hairdresser",
+    880.0
+   ],
+   [
+    "Esthetician",
+    490.0
+   ],
+   [
+    "Gifts",
+    650.0
+   ],
+   [
+    "Pets",
+    1030.0
+   ],
+   [
+    "Tobacco",
+    440.0
+   ],
+   [
+    "Children's allowance",
+    0
+   ],
+   [
+    "Banking fees",
+    890.0
+   ],
+   [
+    "Alimony",
+    0
+   ],
+   [
+    "Childcare",
+    1240.0
+   ],
+   [
+    "Other personal expenses",
+    10160.0
+   ]
+  ]
+ },
+ "savings": {
+  "Registered investments": 9200.0,
+  "Non-registered investments": 0,
+  "TFSA": 0,
+  "Other savings": 0
+ },
+ "taxes": 35120.0,
+ "ei": 1280.0,
+ "income": 177700
+}

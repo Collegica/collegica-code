@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this example, please cite it as below."
+title: "bocrates: annual summaries of the Bank of Canada overnight rate"
+version: 0.1.0
+date-released: 2026-09-12
+authors:
+  - family-names: Samadi
+    given-names: Behzad
+repository-code: "https://github.com/Collegica/collegica"
+license: MIT
+abstract: >-
+  A deliberately minimal, genuinely runnable example of a reproducible
+  analysis: data in, tested pure functions, one script that regenerates
+  every output, and a locked environment.

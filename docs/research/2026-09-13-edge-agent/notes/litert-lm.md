@@ -1,0 +1,162 @@
+# LiteRT-LM — the runtime, its APIs, and Google's numbers, read 2026-09-13
+
+## Access and confidence
+
+- **Read in full:** the LiteRT-LM repository README (google-ai-edge/LiteRT-LM,
+  Apache-2.0, 6,437 stars, release v0.17.0 on 2026-09-09), the developer
+  pages for the CLI, Python, Android (Kotlin), Swift and JavaScript, the
+  Gemma 4 model page with its benchmark tables, and the model card of
+  `litert-community/gemma-4-E2B-it-litert-lm` on Hugging Face.
+- **Run here:** the CLI (`litert-lm` 0.17.0, installed with `uv tool
+  install`) on a 24 GB M4 MacBook — describe, run, benchmark on CPU and GPU,
+  tool use from a preset, and `serve`. See `run.md`.
+- **Not run:** anything on a phone. The phone numbers below are Google's,
+  from the model page, and are labelled so in the article.
+
+## What it is
+
+"Google's production-ready, high-performance, open-source inference
+framework for deploying Large Language Models on edge devices." Targets
+"Android, iOS, Web, Desktop, and IoT (e.g. Raspberry Pi)." The README's
+feature list includes "Function calling support for agentic workflows" and
+"Multi-Token Prediction (MTP) drafters." Language bindings and their status
+as the README states them:
+
+| Language | Status | Best for |
+|---|---|---|
+| Python | Stable | prototyping and scripting |
+| Kotlin | Stable | Android apps and JVM |
+| C++ | Stable | native |
+| Swift | Early preview | iOS and macOS |
+| JavaScript (web) | Early preview | browsers, WebGPU |
+| Flutter | Community | cross-platform |
+
+The model file is `.litertlm`, one file per model per target: for Gemma 4
+E2B the community repository holds a generic file (2,468 MB), a `-gpu`
+file (1,915 MB), a `-web` file (1,915 MB) and NPU builds for Google
+Tensor G5/G6, Intel Lunar Lake and Panther Lake, and two Qualcomm chips
+(2,811–3,160 MB). E4B: generic 3,490 MB, gpu/web 2,831 MB. Both
+repositories are Apache-2.0 on Hugging Face; the E2B one had 1.13 million
+downloads in the month before this was read.
+
+The quantisation, from the model card: "a mixture of 2bit, 4bit and 8 bit
+weights. This means that for text only use cases the weight footprint in
+memory can be as low as 0.8 GB while the runtime uses memory mapping to
+support the 1.12GB of embedding parameters… Additionally the Vision and
+Audio models are loaded on demand." Context: "The model can support up to
+32k context length"; Google's benchmarks used 2,048.
+
+`litert-lm describe` on the E2B file here reported: Supports Function
+Call: NO; Supports Thinking: NO; Speculative Decoding: YES; Input
+Modalities: Text Vision Audio. The function-call flag is metadata; the
+tool-use run in `run.md` shows what the model actually did.
+
+## The CLI (0.17.0)
+
+`uv tool install litert-lm` (Python ≥ 3.10; wheels for macOS arm64, Linux
+x86_64/aarch64, Windows, and Android arm64/x86_64 — the last two are how
+Termux gets it). Commands: `run`, `benchmark`, `serve` (OpenAI-compatible:
+`/v1/models`, `/v1/chat/completions`, `/v1/embeddings`; default port
+9379), `import`, `list`, `describe`, `pack`, `unpack`. Useful flags:
+`--backend cpu|gpu|npu`, `--max-num-tokens`, `--thinking` and
+`--thinking-budget`, `--attachment` (image or audio), `--preset FILE` (a
+Python file: every top-level function becomes a tool; `system_instruction`
+and `extra_context` are read if present; a `tools` list overrides), and
+for `benchmark`: `-p/--prefill-tokens`, `-d/--decode-tokens`, `--runs`,
+`--speculative-decoding`, `--cache disk|memory|no`. Cache directory
+`~/.litert-lm`.
+
+## The Python API (`litert-lm-api` 0.17.0)
+
+```python
+import litert_lm
+with litert_lm.Engine("model.litertlm", backend=litert_lm.Backend.GPU()) as engine:
+    with engine.create_conversation(tools=[add_numbers]) as conversation:
+        response = conversation.send_message("What is 123 + 456?")
+```
+
+Tools are plain Python functions; the docstring and type hints become the
+declaration. `send_message_async` streams chunks.
+
+## The Kotlin API (`com.google.ai.edge.litertlm:litertlm-android:0.17.0`)
+
+Published on Google's Maven on 2026-09-04; the POM pulls Gson 2.14,
+kotlin-reflect 2.4.0 and kotlinx-coroutines-android 1.11.0. The Kotlin
+metadata is 2.4.0, so a project on Kotlin 2.2 fails to compile against it
+(hit here; fixed by moving the example to the Kotlin 2.4.0 plugin). The
+Gallery app pins 0.11.0 with Kotlin 2.2.21 and minSdk 31.
+
+Engine: `EngineConfig(modelPath, backend = Backend.GPU())` — the GPU
+backend needs two `uses-native-library` lines in the manifest
+(`libvndksupport.so`, `libOpenCL.so`, both `required="false"`); NPU is
+`Backend.NPU(nativeLibraryDir = context.applicationInfo.nativeLibraryDir)`.
+`engine.initialize()` "can take a significant amount of time (e.g., up to
+10 seconds)" — background thread. Conversation:
+`engine.createConversation(ConversationConfig(systemInstruction =
+Contents.of(...), tools = listOf(tool(MyToolSet())), automaticToolCalling
+= true))`. A tool set is a class implementing `ToolSet` with `@Tool(description)`
+methods and `@ToolParam(description)` parameters; return a `Map` or a
+value, which the runtime serialises back to the model. With
+`automaticToolCalling = false`, `sendMessage` returns a message whose
+`toolCalls` the app executes itself, replying with
+`Message.tool(Contents.of(toolResponses))`. `ExperimentalFlags.enableSpeculativeDecoding`
+turns on the MTP drafter.
+
+## Swift and JavaScript
+
+Swift: `.package(url: "https://github.com/google-ai-edge/LiteRT-LM", from:
+"0.12.0")`; `EngineConfig(modelPath:, backend: .gpu, cacheDir:)`,
+`try await engine.initialize()`, `createConversation()`, `sendMessage`.
+Metal for GPU. Tool use "supported"; tools conform to a `Tool` protocol
+with `@ToolParam`. Release assets carry `CLiteRTLM.xcframework.zip` (116
+MB) and a macOS one (44 MB). JavaScript: `@litert-lm/core` from a CDN,
+`Engine.create({model: <url of the -web.litertlm>})`, WebGPU, "early
+preview", text in and text out, no tools mentioned.
+
+## Google's numbers for Gemma 4 on LiteRT-LM (model page, read 2026-09-13)
+
+"LiteRT-LM supports E2B and E4B models today, with support for larger
+models coming soon." Benchmarks at 1,024 prefill and 256 decode tokens,
+context 2,048, CPU via XNNPACK with 4 threads; TTFT excludes load time;
+caches warm.
+
+E2B, 2.58 GB:
+
+| Platform | Backend | Prefill tok/s | Decode tok/s | TTFT s | Peak memory MB |
+|---|---|---|---|---|---|
+| Android, Galaxy S26 Ultra | CPU | 557 | 47 | 1.8 | 1,733 |
+| Android, Galaxy S26 Ultra | GPU | 3,808 | 52 | 0.3 | 676 |
+| iPhone 17 Pro | CPU | 532 | 25 | 1.9 | 607 |
+| iPhone 17 Pro | GPU | 2,878 | 56 | 0.3 | 1,450 |
+| macOS M4 | CPU | 901 | 42 | 1.1 | 736 |
+| macOS M4 | GPU | 7,835 | 160 | 0.1 | 1,623 |
+| Linux, RTX 4090 | GPU | 11,234 | 143 | 0.1 | 913 |
+| Windows, Lunar Lake | GPU | 3,751 | 48 | 0.3 | 3,540 |
+| Raspberry Pi 5, 16 GB | CPU | 133 | 8 | 7.8 | 1,546 |
+
+E4B, 3.65 GB:
+
+| Platform | Backend | Prefill tok/s | Decode tok/s | TTFT s | Peak memory MB |
+|---|---|---|---|---|---|
+| Android, Galaxy S26 Ultra | CPU | 195 | 18 | 5.3 | 3,283 |
+| Android, Galaxy S26 Ultra | GPU | 1,293 | 22 | 0.8 | 710 |
+| iPhone 17 Pro | CPU | 159 | 10 | 6.5 | 961 |
+| iPhone 17 Pro | GPU | 1,189 | 25 | 0.9 | 3,380 |
+| macOS M4 Max | GPU | 2,560 | 101 | 0.4 | 3,217 |
+| Raspberry Pi 5, 16 GB | CPU | 51 | 3 | 20.5 | 3,069 |
+
+Speculative decoding on the S26 Ultra (E2B card, task-dependent): GPU
+baseline 51.5 decode tok/s; with the drafter 66–92 depending on task
+(summarise 91.7, code 84.4, rewrite 87.4, free-form 66.5). CPU: 40.7 →
+36–48. "If you download this model before May 5, 2026, you should
+re-download the model if you want to use speculative decoding."
+
+NPU, from the same card: Qualcomm Dragonwing IQ8 (IQ-8275) 3,747 prefill /
+31.7 decode, 4,096 context.
+
+## Blog posts read for context (dates as published)
+
+- *Bring state-of-the-art agentic skills to the edge with Gemma 4*, 2026-04-02: "4,000 input tokens across 2 distinct skills in under 3 seconds"; E2B "<1.5GB memory on some devices."
+- *Accelerating Gemma 4 with multi-token prediction drafters*, 2026-05-05: drafters for 26B and 31B "up to a 3x speedup", "Zero quality degradation: because the primary Gemma 4 model retains the final verification."
+- *Bringing Gemma 4 12B to your laptop*, 2026-06-03: introduces `litert-lm serve` — "a drop-in local LLM server" — with `litert-lm import --from-huggingface-repo=litert-community/gemma-4-12B-it-litert-lm gemma-4-12B-it.litertlm gemma4-12b`.
+- *On-device function calling in Google AI Edge Gallery*, 2026-02-26: FunctionGemma 270M; Pixel 7 Pro CPU "1916 tokens/sec (prefill)" and "142 tokens/sec (decode)."

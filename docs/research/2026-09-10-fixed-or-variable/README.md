@@ -1,0 +1,108 @@
+# Fixed or variable — research and simulation
+
+Research and working files behind [Fixed or
+Variable](https://www.collegica.org/finance/fixed-or-variable/). Research date:
+2026-09-10. Audience assumption: Canadian (Ontario-first) homeowners and
+buyers, 45–65, technically literate and skeptical.
+
+Three research streams fed it, each with its own note in [`notes/`](notes/):
+
+| Note | Covers |
+|---|---|
+| [`historical-rates.md`](notes/historical-rates.md) | Every Bank of Canada overnight change and prime move, Jan 2021 → Sep 2026, cross-checked against the BoC Valet series; best rates on offer at each signing date from archived Ratehub/WOWA snapshots; trigger-rate and negative-amortization figures; the renewal wall; penalty mechanics |
+| [`rates-and-forecasts.md`](notes/rates-and-forecasts.md) | Today's advertised rates across six comparison sites; every forecaster's numeric call for 2026–2028; how each site argues fixed vs variable; CMHC and lender data on what borrowers are actually choosing |
+| [`social-discourse.md`](notes/social-discourse.md) | 30 Reddit threads and ~15 X/LinkedIn posts read in full, plus broker commentary; the argument tally; the hindsight accounts from both cohorts |
+
+Each note opens with an **Access and confidence** section recording what was
+fetched in full, what was blocked, and which figures are snippet-only, stale or
+inferred. Nothing in the article should assert a number that its note flags as
+uncertain.
+
+## The simulation
+
+The arithmetic is not in this folder. It lives in
+[`website/static/js/fixed-or-variable/`](../../../website/static/js/fixed-or-variable/)
+because the article's tables and the article's in-page calculator have to be
+the same code — if they diverge, one of them is lying.
+
+- `mortgage.js` — the simulator. Canadian semi-annual compounding, three
+  contract modes (fixed; variable with adjusting payment; variable with the
+  payment fixed at signing, including the trigger rate and negative
+  amortization), plus the SVG chart generator.
+- `rates.json` — the inputs, every one of them sourced in
+  `notes/historical-rates.md`. Best broadly available **insured** rates, one
+  consistent basis across all fifteen signing months (June 2021 → September
+  2026), plus the documented mid-term conversion rates under `conversions`.
+- `calculator.js` — the browser front end. Offers only signing months that
+  `rates.json` actually pins; it will not interpolate a contract nobody was
+  offered.
+
+[`build.mjs`](build.mjs) imports that same module under Node and regenerates
+the article's tables and its chart:
+
+```bash
+node docs/research/2026-09-10-fixed-or-variable/build.mjs         # tables, as markdown
+node docs/research/2026-09-10-fixed-or-variable/build.mjs --svg   # tables + the chart
+```
+
+`--svg` writes `website/static/img/finance/rate-path.svg` and the include
+fragment `website/finance/fixed-or-variable/_rate-path.md` that the article
+pulls in. Both are committed, because the Quarto render on CI has no Node.
+
+## Rebuilding after a rate move
+
+1. Add the new Bank of Canada change to `overnight` in `rates.json`, and the
+   corresponding line to section 1 of `notes/historical-rates.md`.
+2. Bump `dataThrough` (last complete month) and `asOf` (today's quoted rates),
+   and add an `offers` entry for the current month.
+3. Re-run `build.mjs --svg`, then `pixi run website`.
+4. Update the dated figures in the article's *So what about today?* section —
+   they are written to be re-dated, not silently left to rot.
+
+## Modelling assumptions, and what they cost
+
+The simulator is deliberately simple, and the article now says so beside the
+tables. The assumptions that matter, in rough order of how much they move the
+numbers:
+
+- **Semi-annual compounding is applied to every product.** It is the legal
+  default for fixed-rate mortgages, but not universal for variable ones — TD
+  compounds variable mortgages monthly. This understates interest on the
+  variable rows slightly. Fixing it properly means a per-product compounding
+  field in `rates.json`, which the archives do not support.
+- **A month is charged the rate in force on its first day.** Real changes take
+  effect on the lender's own date, mid-month, and many borrowers pay
+  bi-weekly.
+- **Negative amortization runs unchecked.** `replay`'s `vrm` mode lets unpaid
+  interest capitalise for the whole term. Real contracts frequently intervene
+  (RBC does not permit negative amortization at all; TD's materials describe
+  raising the payment or requiring a prepayment). The $478,848 figure is
+  therefore a no-intervention ceiling, and the article labels it as one.
+- **No fees, penalties, prepayments, taxes or insurance.**
+
+None of these change which column wins in either look-back; they move the
+dollar figures by a modest amount. The article frames the results as
+illustrative simulations rather than quotes.
+
+## Open questions
+
+- **Two months carry a first-of-month artifact.** The simulator charges each
+  month the prime in force on its first day, but the archived captures for
+  `2022-06` and `2024-06` postdate a prime change within that month, so the
+  first month's variable rate runs 50 bp and 25 bp high respectively. Every
+  later month of those terms is correct, and the verdicts do not move. Fixing
+  it properly means sampling mid-month, which would shift most rate changes one
+  month earlier and re-base every published table.
+- **Mid-term conversion has one data point, not a series.** `conversions` holds
+  the September 2022 broker-reported ~4.70%. No archived Big-5 *conversion*
+  rate sheet from 2022 was found (as distinct from new-business specials), and
+  no June 2022 equivalent, so the article uses the one documented figure and
+  says where it comes from.
+- **Six grid cells are Ratehub's anonymised "Big 6 Bank" row** rather than a
+  named lender, and three 2022 three-year cells take their insured basis by
+  inference from the Big-5 comparison table. All flagged per-cell in
+  `notes/historical-rates.md` §3E.
+- **Insured vs uninsured.** The simulation runs on insured rates because those
+  are what the archives pin consistently. A 45–65 renewer is usually uninsured,
+  where both columns sit roughly 25–30 bp higher. The verdict does not change;
+  the gap moves a little.

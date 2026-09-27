@@ -1,0 +1,1920 @@
+# OKF sidecar manifest — the metadata that cannot be generated.
+#
+# Source files (website/, docs/, video/) stay exactly as they are. Everything
+# OKF needs that Quarto frontmatter does not carry — type, sources with ids,
+# who verified what and when, when a fact goes stale — is authored here and
+# merged in by scripts/okf.py. `at: git:<path-or-ref>` resolves to a commit
+# date so timestamps are never typed by hand.
+#
+# Actors follow OKF §7: human:<id> for people, <producer>/<version> for agents.
+# Most of this bundle was drafted by an agent and reviewed by a person; OKF
+# makes that distinction first-class, so it is recorded honestly here.
+
+okf_version: "0.2"
+
+bundle:
+  title: Collegica
+  site: https://www.collegica.org
+  description: >-
+    Collegica, projected for agents. The human site is written in Quarto at
+    collegica.org; this bundle carries the same knowledge as plain markdown with
+    OKF provenance, trust and lifecycle frontmatter, regenerated from the
+    source tree on every build. This is a proof of concept covering the Finance
+    subject; other subjects follow the same projection.
+
+defaults:
+  generated_by: claude/opus-5
+  # An explicit instant, deliberately. Deriving this from the manifest's own
+  # commit would move under every squash merge and make the committed bundle
+  # drift from a fresh projection. Bump it when the manifest changes materially.
+  generated_at: "2026-09-13T00:00:00Z"
+
+# Prefix rewrites applied to every link in every body. Turns pointers at the
+# GitHub repo or at relative source paths into in-bundle edges.
+link_map:
+  "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-10-fixed-or-variable": "/finance/research/"
+  "https://github.com/Collegica/collegica/tree/main/website/static/js/fixed-or-variable": "/finance/computations/mortgage.md"
+  "../../website/finance/fixed-or-variable/index.md": "/finance/fixed-or-variable.md"
+  "../../../website/finance/fixed-or-variable/index.md": "/finance/fixed-or-variable.md"
+  "../../website/static/js/fixed-or-variable/": "/finance/computations/mortgage.md"
+  "../../../website/static/js/fixed-or-variable/": "/finance/computations/mortgage.md"
+  "notes/historical-rates.md": "/finance/research/historical-rates.md"
+  "notes/rates-and-forecasts.md": "/finance/research/rates-and-forecasts.md"
+  "notes/social-discourse.md": "/finance/research/social-discourse.md"
+  "../ai-planning/README.md": "https://github.com/Collegica/collegica/tree/main/video/ai-planning"
+  "../next-job/README.md": "https://github.com/Collegica/collegica/tree/main/video/next-job"
+  "../budget-from-statements/README.md": "https://github.com/Collegica/collegica/tree/main/video/budget-from-statements"
+  # Python. Keys are matched longest-first by the generator, so the example
+  # subtree wins over its parent docs folder regardless of order here.
+  # Exact rule first: without it the prefix rule below would rewrite the
+  # example folder into /ai/research//example. The example is code, not a
+  # concept; it stays a pointer at the repository.
+  "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-13-agent-interfaces/example": "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-13-agent-interfaces/example"
+  "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-13-agent-interfaces": "/ai/research/"
+  "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-13-local-agent": "/ai/research/local-agent/"
+  "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-13-video-from-html": "/ai/research/video-from-html/"
+  "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-13-three-agents": "/software/research/three-agents/"
+  "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-13-nvidia-robotics": "/robotics/research/nvidia-robotics/"
+  "notes/stack.md": "/robotics/research/nvidia-robotics/stack.md"
+  "notes/cpu-run.md": "/robotics/research/nvidia-robotics/cpu-run.md"
+  "cpu-run.md": "/robotics/research/nvidia-robotics/cpu-run.md"
+  # The kernel script is code, not a concept; it stays a pointer at the repository.
+  "saxpy.py": "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-13-nvidia-robotics/notes/saxpy.py"
+  "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-13-vla-models": "/robotics/research/vla-models/"
+  "notes/models.md": "/robotics/research/vla-models/models.md"
+  "notes/lerobot-run.md": "/robotics/research/vla-models/lerobot-run.md"
+  "lerobot-run.md": "/robotics/research/vla-models/lerobot-run.md"
+  "configs.py": "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-13-vla-models/notes/configs.py"
+  "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-13-voice-agents": "/ai/research/voice-agents/"
+  "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-13-voice-agents/notes/voice-run.md": "/ai/research/voice-agents/voice-run.md"
+  "../local-agent/index.md": "/ai/local-agent.md"
+  "notes/voice-models.md": "/ai/research/voice-agents/voice-models.md"
+  "notes/voice-run.md": "/ai/research/voice-agents/voice-run.md"
+  "voice-run.md": "/ai/research/voice-agents/voice-run.md"
+  "pipeline.py": "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-13-voice-agents/notes/pipeline.py"
+  "notes/pipeline.py": "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-13-voice-agents/notes/pipeline.py"
+  "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-13-edge-agent/example": "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-13-edge-agent/example"
+  "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-13-edge-agent": "/ai/research/edge-agent/"
+  "notes/litert-lm.md": "/ai/research/edge-agent/litert-lm.md"
+  "notes/gallery.md": "/ai/research/edge-agent/gallery.md"
+  "notes/laptop-run.md": "/ai/research/edge-agent/laptop-run.md"
+  "notes/phone-run.md": "/ai/research/edge-agent/phone-run.md"
+  "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-14-turbovec": "/ai/research/turbovec/"
+  "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-14-turbovec/notes/turbovec-run.md": "/ai/research/turbovec/turbovec-run.md"
+  "notes/turbovec.md": "/ai/research/turbovec/turbovec.md"
+  "notes/turbovec-run.md": "/ai/research/turbovec/turbovec-run.md"
+  "turbovec-run.md": "/ai/research/turbovec/turbovec-run.md"
+  "bench.py": "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-14-turbovec/notes/bench.py"
+  "notes/bench.py": "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-14-turbovec/notes/bench.py"
+  "results_t1.json": "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-14-turbovec/notes/results_t1.json"
+  "results_t4.json": "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-14-turbovec/notes/results_t4.json"
+  "notes/tools.md": "/ai/research/video-from-html/tools.md"
+  "notes/components.md": "/ai/research/local-agent/components.md"
+  "notes/serving-options.md": "/ai/research/local-agent/serving-options.md"
+  "notes/run.md": "/ai/research/local-agent/run.md"
+  "run.md": "/ai/research/local-agent/run.md"
+  "notes/bionic.md": "/ai/research/local-agent/bionic.md"
+  "notes/braxman.md": "/ai/research/local-agent/braxman.md"
+  "notes/isenberg.md": "/ai/research/local-agent/isenberg.md"
+  "../../website/ai.qmd": "https://www.collegica.org/ai/"
+  "../../../website/ai.qmd": "https://www.collegica.org/ai/"
+  "notes/hermes.md": "/ai/research/hermes.md"
+  "notes/protocols.md": "/ai/research/protocols.md"
+  "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-12-python-reproducibility/example": "/python/computations/bocrates.md"
+  "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-12-python-reproducibility": "/python/research/"
+  "../environments-and-packages/index.md": "/python/environments-and-packages.md"
+  "../reproducible-research/index.md": "/python/reproducible-research.md"
+  "../../website/python/index.qmd": "https://www.collegica.org/python/"
+  "../../../website/python/index.qmd": "https://www.collegica.org/python/"
+  "../../website/python/environments-and-packages/index.md": "/python/environments-and-packages.md"
+  "../../../website/python/environments-and-packages/index.md": "/python/environments-and-packages.md"
+  "../../slides/problem-solving/reproducibility/index.md": "https://www.collegica.org/slides/problem-solving/reproducibility/"
+  "../../../slides/problem-solving/reproducibility/index.md": "https://www.collegica.org/slides/problem-solving/reproducibility/"
+  "notes/tooling.md": "/python/research/tooling.md"
+  "notes/pipeline.md": "/python/research/pipeline.md"
+  "example/": "/python/computations/bocrates.md"
+  "img/": "https://www.collegica.org/python/top-five-books/img/"
+  "/slides/": "https://www.collegica.org/slides/"
+  # Aging well, and the app specs that its next-job article commits to.
+  "../budget-from-statements/index.md": "/aging-well/budget-from-statements.md"
+  "../ai-planning/index.md": "/aging-well/ai-planning.md"
+  "/owl/": "https://www.collegica.org/owl/"
+  "notes/": "/aging-well/research/"
+  "../../website/aging-well/ai-planning/index.md": "/aging-well/ai-planning.md"
+  "../../../website/aging-well/ai-planning/index.md": "/aging-well/ai-planning.md"
+  "../../website/aging-well/budget-from-statements/index.md": "/aging-well/budget-from-statements.md"
+  "../../../website/aging-well/budget-from-statements/index.md": "/aging-well/budget-from-statements.md"
+  "../../website/aging-well/next-job/index.md": "/aging-well/next-job.md"
+  "../../../website/aging-well/next-job/index.md": "/aging-well/next-job.md"
+  "../brand/": "https://github.com/Collegica/collegica/tree/main/video/brand"
+  "../docs/research/2026-09-10-next-job-with-ai/README.md": "/aging-well/research/next-job-with-ai.md"
+  "../website/aging-well/budget-from-statements/index.md": "/aging-well/budget-from-statements.md"
+  "../website/aging-well/next-job/index.md": "/aging-well/next-job.md"
+  "../../docs/research/2026-09-10-next-job-with-ai/README.md": "/aging-well/research/next-job-with-ai.md"
+  "../../docs/research/2026-09-10-next-job-with-ai/notes/github-open-source.md": "/aging-well/research/github-open-source.md"
+  "../../docs/research/2026-09-10-next-job-with-ai/notes/landscape.md": "/aging-well/research/landscape.md"
+  "funnel/": "/apps/funnel.md"
+  # The exercise-sessions article, its research folder and the app it ships.
+  "../../website/aging-well/exercise-sessions/index.md": "/aging-well/exercise-sessions.md"
+  "../../../website/aging-well/exercise-sessions/index.md": "/aging-well/exercise-sessions.md"
+  "../website/aging-well/exercise-sessions/index.md": "/aging-well/exercise-sessions.md"
+  "/sessions/": "https://www.collegica.org/sessions/"
+  "https://github.com/Collegica/collegica/blob/main/docs/research/2026-09-13-exercise-sessions/clips/README.md": "/aging-well/research/exercise-clips.md"
+  "https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-13-exercise-sessions": "/aging-well/research/exercise-sessions.md"
+  "https://github.com/Collegica/collegica/blob/main/apps/owl-sessions/README.md": "/apps/owl-sessions.md"
+  "https://github.com/Collegica/collegica/tree/main/apps/owl-sessions": "/apps/owl-sessions.md"
+  "clips/README.md": "/aging-well/research/exercise-clips.md"
+  "../../apps/owl-sessions/README.md": "/apps/owl-sessions.md"
+  "../../../apps/owl-sessions/README.md": "/apps/owl-sessions.md"
+  "notes/routines.md": "/aging-well/research/routines.md"
+  "owl-sessions/": "/apps/owl-sessions.md"
+  "../../docs/research/2026-09-13-exercise-sessions/": "/aging-well/research/exercise-sessions.md"
+  "clips/": "/aging-well/research/exercise-clips.md"
+  "../../apps/owl-sessions/": "/apps/owl-sessions.md"
+  "../../../apps/owl-sessions/": "/apps/owl-sessions.md"
+  "morning-digest/": "/apps/morning-digest.md"
+  "parse-and-gap/": "/apps/parse-and-gap.md"
+
+# Raw files copied into references/ so computations and datasets resolve inside the bundle.
+copies:
+  - { from: website/static/js/fixed-or-variable/mortgage.js, to: references/computations/mortgage.js }
+  - { from: website/static/js/fixed-or-variable/rates.json,  to: references/data/rates.json }
+  # The Python reproducible-research example, as a runnable tree.
+  - { from: docs/research/2026-09-12-python-reproducibility/example/data/overnight.csv,          to: references/computations/bocrates/data/overnight.csv }
+  - { from: docs/research/2026-09-12-python-reproducibility/example/src/bocrates/__init__.py,    to: references/computations/bocrates/src/bocrates/__init__.py }
+  - { from: docs/research/2026-09-12-python-reproducibility/example/src/bocrates/summary.py,     to: references/computations/bocrates/src/bocrates/summary.py }
+  - { from: docs/research/2026-09-12-python-reproducibility/example/analysis/annual_summary.py,  to: references/computations/bocrates/analysis/annual_summary.py }
+  - { from: docs/research/2026-09-12-python-reproducibility/example/tests/test_summary.py,       to: references/computations/bocrates/tests/test_summary.py }
+  - { from: docs/research/2026-09-12-python-reproducibility/example/pyproject.toml,              to: references/computations/bocrates/pyproject.toml }
+  - { from: docs/research/2026-09-12-python-reproducibility/example/pixi.toml,                   to: references/computations/bocrates/pixi.toml }
+  - { from: docs/research/2026-09-12-python-reproducibility/example/pixi.lock,                   to: references/computations/bocrates/pixi.lock }
+  - { from: docs/research/2026-09-12-python-reproducibility/example/CITATION.cff,                to: references/computations/bocrates/CITATION.cff }
+
+directories:
+  finance:
+    title: Finance
+    description: >-
+      Mortgages, penalties, and the fine print — starting with the question of
+      fixed versus variable, answered by replaying real contracts against the
+      rate path that actually happened.
+  finance/research:
+    title: Research
+    description: >-
+      The notes behind the Finance articles. Each opens with an "Access and
+      confidence" section separating what was read in full from what is
+      snippet-only or unverified — read that before trusting a figure.
+  finance/computations:
+    title: Computations
+    description: The sanctioned arithmetic behind the Finance articles, as attested computations.
+  finance/newsletter:
+    title: Newsletter
+    description: Related pieces from the Mechatronics3D newsletter, the site's human-authored companion.
+  references:
+    title: References
+    description: Data files, computation code, and the executor and attester for running and checking them.
+  references/data:
+    title: Data
+  references/computations:
+    title: Computation code
+  references/executors:
+    title: Executors
+  references/attesters:
+    title: Attesters
+  references/skills:
+    title: Skills
+    description: Skills that teach an agent to consume this bundle — fetch one into your agent's skills directory and restart.
+  references/skills/collegica:
+    title: collegica
+    description: The public skill for Claude Code — every path a fetch from collegica.org, with the download-and-run recipe for both attested computations.
+  python:
+    title: Python
+    description: >-
+      Handing Python work to someone else: recreating an environment, building
+      something installable, and making an analysis a stranger can run. Two
+      articles from September 2026, two from January 2023, and a runnable
+      example carried as an attested computation.
+  python/research:
+    title: Research
+    description: >-
+      The notes behind the Python articles. Each opens with an "Access and
+      confidence" section separating what was read in full from what is
+      snippet-only or unverified — and lists what could not be verified at all.
+  python/computations:
+    title: Computations
+    description: The reproducible-research example, as an attested computation with a Python runtime.
+  software:
+    title: Software development
+    description: >-
+      Structure, dependencies, packaging, and keeping a codebase tractable
+      — and, from September 2026, the setup that lets several AI agents
+      work one repository. The Python track is its own section.
+  software/research:
+    title: Research
+    description: The notes behind the Software articles; each opens with what was read and what was not.
+  software/research/three-agents:
+    title: Three agents
+    description: >-
+      The notes behind One Repository, Three Agents: the four tools checked
+      at the source, and the three CLIs asked the same question here.
+  robotics:
+    title: Robotics
+    description: >-
+      The founding subject: robotics learned in simulation. From September
+      2026, two articles: a map of NVIDIA's stack — open physics engines at
+      the bottom, a proprietary simulator on top, open-weight models beside
+      it — and a reading of vision-language-action models, the one shape
+      they share and which ones are actually open; each with the part that
+      could be checked from a machine with no GPU.
+  robotics/research:
+    title: Research
+    description: The notes behind the Robotics articles; each opens with what was read and what was not.
+  robotics/research/nvidia-robotics:
+    title: NVIDIA's stack
+    description: >-
+      The notes behind Train the Robot Before You Build It: the stack checked
+      at GitHub and PyPI with the vendor's own pages out of reach, and Warp
+      and Newton run and timed on a CPU-only box.
+  robotics/research/vla-models:
+    title: Vision-language-action models
+    description: >-
+      The notes behind Words In, Joints Out: eleven models checked at their
+      repositories and on PyPI, the papers and vendors' pages out of reach,
+      and LeRobot installed here so each model's shape could be read from
+      its configuration.
+  ai:
+    title: AI
+    description: >-
+      Agents, protocols, and models as tools rather than magic. From September
+      2026: an agent packaged behind four doors — CLI, REST, MCP, AG-UI — a
+      guide to running an agent entirely on your own machine, the local
+      voice agents you can talk to, and the compressed vector index a private
+      RAG stack would use — each with the research that checked its claims
+      against the source.
+  ai/research:
+    title: Research
+    description: >-
+      The notes behind the AI articles. Each opens with an "Access and
+      confidence" section separating what was read in full from what was not
+      obtained — and names the claims left unverified.
+  ai/research/local-agent:
+    title: Local agent
+    description: >-
+      The notes behind the local-agent guide: the components, the three ways
+      of serving a model, and the measured run on a 24 GB Mac.
+  ai/research/turbovec:
+    title: turbovec
+    description: >-
+      The notes behind Sixteen Times Smaller: the repository, API and
+      changelog read at the source, the RaBitQ authors' reproduction, and
+      turbovec run against FAISS on two real embedding sets on four CPU
+      cores.
+  ai/research/voice-agents:
+    title: Local voice agents
+    description: >-
+      The notes behind A Voice in the Room: thirty repositories and two dozen
+      PyPI records checked at the source, and the household cascade — Kokoro,
+      Silero, three sherpa-onnx recognisers, openWakeWord — timed on four CPU
+      cores.
+  ai/research/edge-agent:
+    title: Edge agent
+    description: >-
+      The notes behind the pocket-agent guide: LiteRT-LM and its APIs with
+      Google's phone numbers, the AI Edge Gallery and FunctionGemma, and the
+      runs on a 24 GB Mac — CLI, tools, server, Hermes through the server.
+  ai/research/video-from-html:
+    title: Videos from HTML
+    description: >-
+      The notes behind the guide to the site's own videos: the two tools
+      checked at the source, and the pipeline re-run and timed.
+  aging-well:
+    title: Aging well
+    description: >-
+      Three kinds of capital — mind, muscle and money — and a plan for each,
+      with AI as a tool rather than an oracle. Three articles, their videos,
+      and the research behind the job-search one.
+  aging-well/research:
+    title: Research
+    description: >-
+      The four research streams behind Finding Your Next Job, with AI, plus the
+      report that synthesises them. Each note opens with an "Access and
+      confidence" section; read it before trusting a figure.
+  apps:
+    title: Apps
+    description: >-
+      Small, local-first tools that ship as pages on the site: two built (the
+      OWL Planner, in its own repository, and OWL Sessions, in this one) and
+      three specced but not built, each because an article commits to it.
+
+concepts:
+
+  # ---- The article ---------------------------------------------------------
+  - id: finance/fixed-or-variable
+    source: website/finance/fixed-or-variable/index.md
+    type: Article
+    resource: https://www.collegica.org/finance/fixed-or-variable/
+    tags: [finance, mortgage, canada, interest-rates, fixed-vs-variable]
+    status: stable
+    # The "So what about today?" section carries a dated rate snapshot; the
+    # next Bank of Canada announcement is the moment it stops being current.
+    stale_after: "2026-10-28T13:45:00Z"
+    generated: { by: claude/opus-5, at: "git:d56b8aa" }   # PR #34 merge: the TL;DR, the last content change
+    verified:
+      # Two independent human checks (OKF §5.2 allows a list): the line-by-line
+      # review with five substantive corrections applied in PR #27, and the
+      # review of the final TL;DR ordering before PR #34 went live.
+      - { by: human:behzad, at: "git:b71cd72" }
+      - { by: human:behzad, at: "git:d56b8aa" }
+    html_blocks:
+      - >-
+        **Video:** a 100-second summary of this article —
+        [fixed-or-variable.mp4](https://www.collegica.org/static/video/finance/fixed-or-variable.mp4),
+        described in [the video concept](/finance/fixed-or-variable-video.md).
+      - >-
+        **Interactive calculator** — browser-only on the human site. The same
+        arithmetic is available to agents as
+        [an attested computation](/finance/computations/mortgage.md): supply a
+        signing month and a term and run it, rather than reading the numbers
+        off this page.
+    includes:
+      - >-
+        *Figure: the Bank of Canada prime rate 2021–2026 against the fixed and
+        variable rates on offer in September 2021 and September 2023. Generated
+        from [the rates dataset](/references/data/rates.md) by
+        [the mortgage computation](/finance/computations/mortgage.md).*
+    sources:
+      # In-bundle lineage: the notes this article was written from.
+      - { id: research-report,   resource: /finance/research/fixed-or-variable.md,  title: Research report and plan }
+      - { id: historical-rates,  resource: /finance/research/historical-rates.md,   title: Historical rate data }
+      - { id: rates-forecasts,   resource: /finance/research/rates-and-forecasts.md, title: Current rates and forecasts }
+      - { id: social-discourse,  resource: /finance/research/social-discourse.md,   title: Social-media discourse }
+      - { id: rates-data,        resource: /references/data/rates.md,               title: Rate inputs to the simulation }
+      # Primary external sources, with the credibility signals OKF §5.1 asks for.
+      - id: boc-key-rate
+        resource: https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/
+        title: Bank of Canada — policy interest rate
+        author: process:bankofcanada
+      - id: boc-2026-09-02
+        resource: https://www.bankofcanada.ca/2026/09/fad-press-release-2026-09-02/
+        title: Bank of Canada rate decision, 2 September 2026
+        author: process:bankofcanada
+        last_modified: "2026-09-02T13:45:00Z"
+      - id: boc-san-2022-19
+        resource: https://www.bankofcanada.ca/2022/11/staff-analytical-notes-2022-19/
+        title: BoC Staff Analytical Note 2022-19 — trigger rates
+        author: process:bankofcanada
+      - id: boc-san-2023-19
+        resource: https://www.bankofcanada.ca/2023/12/staff-analytical-note-2023-19/
+        title: BoC Staff Analytical Note 2023-19 — negative amortization
+        author: process:bankofcanada
+      - id: boc-fsr-2026
+        resource: https://www.bankofcanada.ca/publications/financial-stability-report/financial-stability-report-2026/households/
+        title: Financial Stability Report 2026 — households
+        author: process:bankofcanada
+      - id: cmhc-observer-2026
+        resource: https://www.cmhc-schl.gc.ca/observer/2026/what-do-canadians-do-when-interest-rates-are-high
+        title: CMHC — What do Canadians do when interest rates are high?
+        author: human:aled-ab-iorwerth
+        last_modified: "2026-09-08T00:00:00Z"
+      - id: cmhc-rmir
+        resource: https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research/housing-research/research-reports/housing-finance/residential-mortgage-industry-report
+        title: CMHC Residential Mortgage Industry Report, Q1 2026
+        author: process:cmhc
+      - id: ratehub
+        resource: https://www.ratehub.ca/best-mortgage-rates
+        title: Ratehub best mortgage rates
+        last_modified: "2026-09-11T00:00:00Z"
+      - id: wowa
+        resource: https://wowa.ca/mortgage-rates
+        title: WOWA mortgage rates
+        last_modified: "2026-09-11T00:00:00Z"
+      - id: milevsky
+        resource: https://www.theglobeandmail.com/globe-investor/personal-finance/is-a-variable-rate-mortgage-always-best/article4330257/
+        title: Globe and Mail on Milevsky's 2001 study and 2008 update
+      - id: schreiner-caps
+        resource: https://iscinumpy.dev/post/poetry-versions/
+        title: Henry Schreiner on upper-bound version constraints
+      - id: nesto-penalties
+        resource: https://www.nesto.ca/featured-articles/mortgage-prepayment-penalties-surge-after-big-banks-cut-posted-rates/
+        title: nesto on posted-rate penalties, January 2026
+      - id: osfi-switch-ratehub
+        resource: https://www.ratehub.ca/blog/breaking-news-osfi-drops-stress-test-requirement-for-mortgage-renewal-switches/
+        title: Ratehub on OSFI dropping the stress test for straight switches
+      - id: osfi-switch-cmt
+        resource: https://www.canadianmortgagetrends.com/2024/11/stress-test-removal-on-mortgage-switches-what-you-need-to-know/
+        title: Canadian Mortgage Trends on the straight-switch rule
+      - id: beyond-the-rate
+        resource: https://mechatronics3d.substack.com/p/beyond-the-rate-4-mortgage-truths
+        title: Beyond the Rate — 4 Mortgage Truths
+        author: human:behzad
+        last_modified: "2025-11-19T00:00:00Z"
+      - id: mcfadyen-video
+        resource: https://youtu.be/_FPIQ7zMHz8
+        title: Alex McFadyen — what precedes a Bank of Canada hike
+        author: human:alex-mcfadyen
+        last_modified: "2026-09-02T20:00:00Z"
+      - id: mitchell-video
+        resource: https://youtu.be/rvRJGFB-X1A
+        title: Mark Mitchell — Fixed Mortgage Rates SKYROCKET
+        author: human:mark-mitchell
+        last_modified: "2026-09-11T15:49:34Z"
+      - id: turing-way
+        resource: https://book.the-turing-way.org/reproducible-research/overview/overview-definitions
+        title: The Turing Way — definitions
+
+  # ---- The video -----------------------------------------------------------
+  - id: finance/fixed-or-variable-video
+    source: video/fixed-or-variable/README.md
+    type: Video
+    title: "Fixed or Variable — the 100-second video"
+    description: >-
+      A seven-frame kinetic-type summary of the article, with every figure
+      generated by the article's own simulator rather than retyped.
+    resource: https://www.collegica.org/static/video/finance/fixed-or-variable.mp4
+    tags: [finance, mortgage, video]
+    generated: { by: claude/opus-5, at: "git:546cca0" }   # PR #30 merge
+    sources:
+      - { id: article, resource: /finance/fixed-or-variable.md, title: The article it summarises }
+      - { id: computation, resource: /finance/computations/mortgage.md, title: Source of every on-screen figure }
+
+  # ---- The research --------------------------------------------------------
+  - id: finance/research/fixed-or-variable
+    source: docs/research/2026-09-10-fixed-or-variable/README.md
+    type: Research Report
+    title: "Fixed or variable — research plan and simulation notes"
+    description: >-
+      How the article was researched and built: three research streams, the
+      simulator that generates its tables, the modelling assumptions and what
+      they cost, and the questions left open.
+    tags: [finance, mortgage, research, methodology]
+    generated: { by: claude/opus-5 }
+    sources:
+      - { id: historical-rates,  resource: /finance/research/historical-rates.md }
+      - { id: rates-forecasts,   resource: /finance/research/rates-and-forecasts.md }
+      - { id: social-discourse,  resource: /finance/research/social-discourse.md }
+
+  - id: finance/research/historical-rates
+    source: docs/research/2026-09-10-fixed-or-variable/notes/historical-rates.md
+    type: Research Note
+    title: "Historical rate data, 2021–2026"
+    description: >-
+      Every Bank of Canada overnight change and prime move cross-checked against
+      the Valet API; best rates on offer at each signing date from archived
+      Ratehub and WOWA snapshots; trigger-rate, negative-amortization and
+      penalty figures. Opens with what was archived, inferred, or stale.
+    tags: [finance, mortgage, canada, interest-rates, primary-data]
+    generated: { by: claude/opus-5 }
+    auto_sources: true
+
+  - id: finance/research/rates-and-forecasts
+    source: docs/research/2026-09-10-fixed-or-variable/notes/rates-and-forecasts.md
+    type: Research Note
+    title: "Current rates and forecasts, September 2026"
+    description: >-
+      Advertised rates across six comparison sites, every forecaster's numeric
+      call for 2026–2028, how each site argues fixed versus variable, and what
+      borrowers are actually choosing. Flags which pages were stale or wrong.
+    tags: [finance, mortgage, canada, forecasts]
+    stale_after: "2026-10-28T13:45:00Z"
+    generated: { by: claude/opus-5 }
+    auto_sources: true
+
+  - id: finance/research/social-discourse
+    source: docs/research/2026-09-10-fixed-or-variable/notes/social-discourse.md
+    type: Research Note
+    title: "What borrowers and brokers say, 2021–2026"
+    description: >-
+      Thirty Reddit threads and around fifteen broker posts read in full, with
+      engagement figures; the argument tally; and the asymmetry between the
+      loud variable-2021 regret genre and the quiet fixed-2023 one.
+    tags: [finance, mortgage, canada, discourse]
+    generated: { by: claude/opus-5 }
+    auto_sources: true
+
+  # ---- The computation and its data ---------------------------------------
+  - id: finance/computations/mortgage
+    source: website/static/js/fixed-or-variable/mortgage.js
+    build: reference
+    type: Attested Computation
+    title: "Fixed versus variable, replayed against the real rate path"
+    description: >-
+      Replays a Canadian mortgage from a signing month against the Bank of
+      Canada's actual overnight path, for a fixed contract and for a variable
+      one with adjustable or fixed payments, and returns interest charged,
+      payments and balance. The single implementation behind the article's
+      tables, its chart and its calculator.
+    resource: /references/computations/mortgage.js
+    tags: [finance, mortgage, simulation]
+    status: stable
+    runtime: node
+    computation: /references/computations/mortgage.js
+    parameters:
+      - { name: start,      type: string,  required: true,  description: "Signing month, YYYY-MM; must be a month rates.json has an offer for" }
+      - { name: term,       type: integer, required: true,  description: "3 or 5" }
+      - { name: principal,  type: number,  required: false, description: "Defaults to 500000" }
+      - { name: amortYears, type: integer, required: false, description: "Defaults to 25" }
+    executor:
+      resource: /references/executors/run-compare.md
+      receipt: [computation_sha256, rates_sha256, parameters, result]
+    attester:
+      resource: /references/attesters/mortgage-attester.mjs
+    generated: { by: claude/opus-5, at: "git:b71cd72" }   # PR #27 merge, which shipped the simulator
+    verified:
+      - { by: human:behzad, at: "git:b71cd72" }
+    stale_after: "2026-10-28T13:45:00Z"
+    sources:
+      - { id: rates-data, resource: /references/data/rates.md, title: The rate inputs it reads }
+    body: |
+      # Computation
+
+      The computation is the `compare()` export of
+      [`mortgage.js`](/references/computations/mortgage.js). It reads
+      [`rates.json`](/references/data/rates.json) — the overnight-rate path,
+      the prime spread, and the best rates on offer at each pinned signing
+      month — and replays one contract of each kind month by month.
+
+      Canadian convention throughout: rates are annual, compounded
+      semi-annually. Each month is charged the rate in force on its first day.
+      Fixed-payment variables let unpaid interest capitalise past the trigger
+      rate; real lenders often intervene, so that branch is a ceiling on the
+      damage, not the typical outcome. The full list of assumptions and what
+      they cost is in [the article](/finance/fixed-or-variable.md#how-to-read-the-simulations-below).
+
+      ## Running it
+
+      Follow [the executor](/references/executors/run-compare.md). It prints a
+      receipt carrying the SHA-256 of the computation and of the data it ran
+      against, the bound parameters, and the result.
+
+      ## Checking a run
+
+      Pass that receipt to [the attester](/references/attesters/mortgage-attester.mjs).
+      It re-hashes the bundled computation and data, re-runs the computation
+      with the receipt's own parameters, and reports a verdict. A rewritten
+      computation, a swapped data file, or a result that does not match the
+      re-run all fail.
+
+      ## Consumers
+
+      * [The article](/finance/fixed-or-variable.md) — every table is generated by this computation, never retyped.
+      * The in-page calculator on the human site — same module, loaded in the browser.
+      * [The video](/finance/fixed-or-variable-video.md) — every on-screen figure.
+
+  - id: references/data/rates
+    source: website/static/js/fixed-or-variable/rates.json
+    build: dataset
+    copy_to: references/data/rates.json
+    title: "Rate inputs for the mortgage simulation"
+    description: >-
+      Bank of Canada overnight-rate changes by effective date, the big-bank
+      prime spread, and the best insured rates on offer at fifteen signing
+      months from June 2021 to September 2026 — each sourced line by line in the
+      historical-rates note.
+    tags: [finance, mortgage, canada, interest-rates, dataset]
+    status: stable
+    stale_after: "2026-10-28T13:45:00Z"
+    generated: { by: claude/opus-5, at: "git:b71cd72" }   # PR #27 merge, which pinned the fifteen-month grid
+    verified:
+      - { by: human:behzad, at: "git:b71cd72" }
+    sources:
+      - { id: historical-rates, resource: /finance/research/historical-rates.md, title: Provenance for every value in this file }
+      - id: boc-valet-v39079
+        resource: https://www.bankofcanada.ca/valet/observations/V39079/json
+        title: Bank of Canada Valet — overnight rate target (V39079)
+        author: process:bankofcanada
+      - id: ratehub-archive
+        resource: "Wayback Machine captures of ratehub.ca/best-mortgage-rates, 2021-06 through 2026-09"
+        title: Archived Ratehub rate tables
+    body: |
+      # Known artifacts
+
+      Two signing months carry a first-of-month artifact: the 2022-06 and
+      2024-06 captures postdate a prime change within their month, so the first
+      month's variable rate runs 50 and 25 basis points high respectively. Every
+      later month of those terms is unaffected. Recorded rather than silently
+      corrected, because correcting it re-bases every published table.
+
+  # ---- Newsletter references ----------------------------------------------
+  - id: finance/newsletter/beyond-the-rate
+    build: reference
+    type: Reference
+    title: "Beyond the Rate: 4 Mortgage Truths That Could Save You Thousands"
+    description: >-
+      The 3P rule (Product, Penalty, Price), a $75,000 interest-rate
+      differential, what mortgage insurance actually protects, and the
+      broker-versus-bank obligation question. Cited throughout the article.
+    resource: https://mechatronics3d.substack.com/p/beyond-the-rate-4-mortgage-truths
+    tags: [finance, mortgage, newsletter]
+    generated: { by: claude/opus-5 }
+    sources:
+      - { id: post, resource: https://mechatronics3d.substack.com/p/beyond-the-rate-4-mortgage-truths, author: human:behzad, last_modified: "2025-11-19T00:00:00Z" }
+
+  - id: finance/newsletter/community-finance-institutions
+    build: reference
+    type: Reference
+    title: "Community Finance Institutions in Canada"
+    description: A comprehensive overview of credit unions, caisses populaires and community lenders.
+    resource: https://mechatronics3d.substack.com/p/community-finance-institutions-in
+    tags: [finance, canada, newsletter]
+    generated: { by: claude/opus-5 }
+    sources:
+      - { id: post, resource: https://mechatronics3d.substack.com/p/community-finance-institutions-in, author: human:behzad }
+
+  - id: finance/newsletter/when-toyota-forgot-the-toyota-way
+    build: reference
+    type: Reference
+    title: "When Toyota Forgot The Toyota Way"
+    description: How a collections department fails vulnerable customers.
+    resource: https://mechatronics3d.substack.com/p/when-toyota-forgot-the-toyota-way
+    tags: [finance, newsletter]
+    generated: { by: claude/opus-5 }
+    sources:
+      - { id: post, resource: https://mechatronics3d.substack.com/p/when-toyota-forgot-the-toyota-way, author: human:behzad }
+
+  # ==========================================================================
+  # Python
+  # ==========================================================================
+
+  - id: python/reproducible-research
+    source: website/python/reproducible-research/index.md
+    type: Article
+    resource: https://www.collegica.org/python/reproducible-research/
+    tags: [python, reproducibility, jupyter, testing, research-software]
+    status: stable
+    generated: { by: claude/opus-5, at: "git:bf24d7c" }   # PR #35 merge
+    # Projected unverified at first — approved for publication but not yet
+    # read against its sources — then reviewed and approved by the author.
+    verified: { by: human:behzad, at: "2026-09-13T01:02:00Z" }
+    sources:
+      - { id: research-report, resource: /python/research/python-reproducibility.md, title: Research plan and notes }
+      - { id: pipeline-note,   resource: /python/research/pipeline.md,  title: The Explore → Organize → Share research }
+      - { id: tooling-note,    resource: /python/research/tooling.md,   title: Environment and packaging tooling research }
+      - { id: example,         resource: /python/computations/bocrates.md, title: The eleven-file worked example }
+      - id: pimentel-2019
+        resource: https://doi.org/10.1109/MSR.2019.00077
+        title: "Pimentel et al., A Large-Scale Study About Quality and Reproducibility of Jupyter Notebooks (MSR 2019)"
+        last_modified: "2019-05-01T00:00:00Z"
+      - id: pimentel-2021
+        resource: https://doi.org/10.1007/s10664-021-09961-9
+        title: "Pimentel et al., Understanding and improving the quality and reproducibility of Jupyter notebooks (EMSE 2021)"
+      - id: samuel-mietchen-2024
+        resource: https://doi.org/10.1093/gigascience/giad113
+        title: "Samuel & Mietchen, Computational reproducibility of Jupyter notebooks from biomedical publications (2024)"
+      - id: rule-2019
+        resource: https://doi.org/10.1371/journal.pcbi.1007007
+        title: "Rule et al., Ten simple rules for writing and sharing computational analyses in Jupyter Notebooks (2019)"
+      - id: pypa-src-layout
+        resource: https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/
+        title: PyPA on src layout versus flat layout
+      - id: github-large-files
+        resource: https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github
+        title: GitHub docs on large files
+      - id: cff
+        resource: https://citation-file-format.github.io/
+        title: Citation File Format (schema 1.2.0)
+      - id: turing-way
+        resource: https://book.the-turing-way.org/reproducible-research/overview/overview-definitions
+        title: The Turing Way — definitions
+
+  - id: python/environments-and-packages
+    source: website/python/environments-and-packages/index.md
+    type: Article
+    resource: https://www.collegica.org/python/environments-and-packages/
+    tags: [python, packaging, pixi, poetry, uv, lockfiles]
+    status: stable
+    # The version callout is dated 12 September 2026; pixi and uv are pre-1.0
+    # and move quickly. The argument is durable, the specific versions are not.
+    stale_after: "2026-12-12T00:00:00Z"
+    generated: { by: claude/opus-5, at: "git:bf24d7c" }
+    # Same history as its companion: unverified at first, then reviewed.
+    verified: { by: human:behzad, at: "2026-09-13T01:02:00Z" }
+    sources:
+      - { id: tooling-note, resource: /python/research/tooling.md, title: The research note behind this article }
+      - { id: companion,    resource: /python/reproducible-research.md, title: Companion article }
+      - { id: pep-621, resource: https://peps.python.org/pep-0621/, title: PEP 621 — project metadata in pyproject.toml, author: process:python-steering-council }
+      - { id: pep-517, resource: https://peps.python.org/pep-0517/, title: PEP 517 — build backends }
+      - { id: pep-751, resource: https://peps.python.org/pep-0751/, title: PEP 751 — pylock.toml, accepted 2025-03-31 }
+      - { id: pixi-docs, resource: https://pixi.prefix.dev/, title: pixi documentation, last_modified: "2026-09-07T00:00:00Z" }
+      - { id: pixi-lockfile, resource: https://pixi.prefix.dev/latest/workspace/lock_file/, title: pixi — the lock file }
+      - { id: pixi-poetry, resource: https://pixi.prefix.dev/latest/switching_from/poetry/, title: pixi — switching from Poetry }
+      - { id: poetry-basic, resource: https://python-poetry.org/docs/basic-usage/, title: "Poetry — basic usage (\"the application ignores your library's lock file\")" }
+      - { id: poetry-faq, resource: https://python-poetry.org/docs/faq/, title: Poetry FAQ }
+      - { id: uv-layout, resource: https://docs.astral.sh/uv/concepts/projects/layout/, title: uv — project layout }
+      - { id: uv-pytorch, resource: https://docs.astral.sh/uv/guides/integration/pytorch/, title: uv — PyTorch integration }
+      - { id: schreiner, resource: https://iscinumpy.dev/post/poetry-versions/, title: Henry Schreiner on upper-bound version constraints, author: human:henry-schreiner }
+      - { id: willison, resource: https://simonwillison.net/2026/Mar/19/openai-acquiring-astral/, title: Simon Willison on OpenAI acquiring Astral, author: human:simon-willison, last_modified: "2026-03-19T00:00:00Z" }
+      - { id: pydevtools, resource: https://pydevtools.com/handbook/explanation/uv-vs-pixi-vs-conda-for-scientific-python/, title: Tim Hopper — uv vs pixi vs conda }
+      - { id: tomlinson, resource: https://jacobtomlinson.dev/posts/2025/python-package-managers-uv-vs-pixi/, title: Jacob Tomlinson — uv vs pixi, author: human:jacob-tomlinson }
+      - { id: turing-way, resource: https://book.the-turing-way.org/reproducible-research/overview/overview-definitions, title: The Turing Way — definitions }
+
+  - id: python/poetry
+    source: website/python/poetry/index.md
+    type: Guide
+    title: "Publish Your First Python Package — with Poetry"
+    description: An introduction to Poetry, from `poetry new` through building and publishing a package on PyPI, paired with a recorded talk.
+    resource: https://www.collegica.org/python/poetry/
+    tags: [python, packaging, poetry, pypi]
+    # Human-authored in January 2023 and published by its author; publication
+    # is taken as the author's confirmation, so this is human-reviewed.
+    generated: { by: human:behzad }
+    verified: { by: human:behzad, at: "2023-01-15T00:00:00Z" }
+    includes:
+      - "**Video:** [Publish Your First Python Package — with Poetry](https://www.youtube.com/watch?v=0d4O0zSMtQo), the recorded talk this guide accompanies."
+    sources:
+      - { id: poetry-docs, resource: https://python-poetry.org/docs/, title: Poetry documentation }
+
+  - id: python/top-five-books
+    source: website/python/top-five-books/index.md
+    type: Slides
+    title: Top Five Books for Learning Python
+    description: Where to start and what to read next — five books, with the recorded talk.
+    resource: https://www.collegica.org/python/top-five-books/
+    tags: [python, books, learning]
+    generated: { by: human:behzad }
+    verified: { by: human:behzad, at: "2023-01-16T00:00:00Z" }
+    includes:
+      - "**Video:** [Top Five Books for Learning Python](https://www.youtube.com/watch?v=kreCzE5N7A0), the recorded talk these slides accompany."
+
+  # ---- Research ------------------------------------------------------------
+  - id: python/research/python-reproducibility
+    source: docs/research/2026-09-12-python-reproducibility/README.md
+    type: Research Report
+    title: "Python reproducibility — plan and research"
+    description: >-
+      The plan that rebuilt the Python track: the audit that set the scope, the
+      decisions taken, what the two worked examples verify, and what is left
+      open — including a correction the note records against itself.
+    tags: [python, reproducibility, research, methodology]
+    generated: { by: claude/opus-5 }
+    sources:
+      - { id: tooling,  resource: /python/research/tooling.md }
+      - { id: pipeline, resource: /python/research/pipeline.md }
+
+  - id: python/research/tooling
+    source: docs/research/2026-09-12-python-reproducibility/notes/tooling.md
+    type: Research Note
+    title: "pixi, Poetry and uv — environment and packaging tooling, September 2026"
+    description: >-
+      Versions checked live; what pixi.lock actually pins; Poetry's build and
+      publish path; where uv lands and the OpenAI acquisition; the
+      lockfile-in-an-application versus ranges-in-a-library boundary; non-Python
+      dependencies; and genuine criticism of all three tools.
+    tags: [python, packaging, pixi, poetry, uv]
+    stale_after: "2026-12-12T00:00:00Z"
+    generated: { by: claude/opus-5 }
+    auto_sources: true
+
+  - id: python/research/pipeline
+    source: docs/research/2026-09-12-python-reproducibility/notes/pipeline.md
+    type: Research Note
+    title: "Explore → Organize → Share — the notebook-to-repository research"
+    description: >-
+      The notebook reproducibility evidence with the actual percentages; src
+      versus flat layout; testing research code, including the characterisation
+      test; what goes in git and GitHub's real size limits; Zenodo, CITATION.cff
+      and FAIR4RS; and ten things explicitly not verified.
+    tags: [python, reproducibility, jupyter, testing, archiving]
+    generated: { by: claude/opus-5 }
+    auto_sources: true
+
+  # ---- The computation and its data ---------------------------------------
+  - id: python/computations/bocrates
+    source: docs/research/2026-09-12-python-reproducibility/example/src/bocrates/summary.py
+    build: reference
+    type: Attested Computation
+    title: "bocrates — annual averages of the Bank of Canada overnight rate"
+    description: >-
+      The eleven-file worked example from the reproducible-research article:
+      pure functions, five tests, one script that regenerates every output, and
+      a locked environment. Carried here as a runnable tree with a Python
+      executor and attester.
+    resource: /references/computations/bocrates/src/bocrates/summary.py
+    tags: [python, reproducibility, simulation, example]
+    status: stable
+    runtime: python
+    computation: /references/computations/bocrates/src/bocrates/summary.py
+    parameters: []
+    executor:
+      resource: /references/executors/run-bocrates.md
+      receipt: [computation_sha256, data_sha256, parameters, result]
+    attester:
+      resource: /references/attesters/bocrates-attester.py
+    generated: { by: claude/opus-5, at: "git:bf24d7c" }
+    # Machine-confirmed: the project's own five-test suite ran green and the
+    # output regenerated byte-identically before the article was written. A
+    # process actor, not a human one — which is exactly the middle trust tier.
+    verified: { by: process:pytest, at: "git:bf24d7c" }
+    sources:
+      - { id: data, resource: /references/data/overnight.md, title: The data it reads }
+      - { id: article, resource: /python/reproducible-research.md, title: The article it illustrates }
+    body: |
+      # Computation
+
+      The computation is `annual_average()` in
+      [`summary.py`](/references/computations/bocrates/src/bocrates/summary.py):
+      the mean overnight rate per calendar year, from dated observations. It is
+      a pure function — everything arrives as an argument, everything leaves as
+      a return value — which is what makes it testable, and the reason the
+      analysis script that reads the file and writes the output is a separate
+      file.
+
+      It declares **no parameters**. The data is fixed and committed, so the
+      result is a function of that data alone; there is nothing for an agent to
+      supply and nothing for it to edit.
+
+      ## Running it
+
+      Follow [the executor](/references/executors/run-bocrates.md). Standard
+      library only, Python 3.11+. It prints a receipt carrying the SHA-256 of
+      the computation and of the data, and the result.
+
+      ## Checking a run
+
+      Pass the receipt to [the attester](/references/attesters/bocrates-attester.py).
+      It re-hashes the bundled code and data, re-runs the computation, and
+      reports a verdict.
+
+      ## The rest of the tree
+
+      The whole example project is under `references/computations/bocrates/`:
+      `data/`, `src/`, `tests/`, `analysis/`, `pyproject.toml`, `pixi.toml`,
+      `pixi.lock` and `CITATION.cff`. Its own `pixi run all` runs the tests and
+      regenerates `outputs/`. The example's README is not carried, because a
+      markdown file without frontmatter would break bundle conformance; this
+      concept is its description.
+
+  - id: references/data/overnight
+    source: docs/research/2026-09-12-python-reproducibility/example/data/overnight.csv
+    build: reference
+    type: Dataset
+    title: "Bank of Canada overnight rate, monthly, 2021–2026"
+    description: >-
+      Sixty-nine observations — the first of each month from January 2021 to
+      September 2026 — of the Bank of Canada's target for the overnight rate,
+      from the Valet API series V39079.
+    resource: /references/computations/bocrates/data/overnight.csv
+    tags: [finance, canada, interest-rates, dataset]
+    generated: { by: claude/opus-5, at: "git:bf24d7c" }
+    sources:
+      - id: boc-valet-v39079
+        resource: https://www.bankofcanada.ca/valet/observations/V39079/csv?start_date=2021-01-01
+        title: Bank of Canada Valet — overnight rate target (V39079)
+        author: process:bankofcanada
+    body: |
+      # Schema
+
+      | Column | Type | Description |
+      |---|---|---|
+      | `date` | ISO-8601 date | First observation of the month |
+      | `rate` | number | Target for the overnight rate, per cent |
+
+      The full daily series has about 1,470 rows; this keeps the first
+      observation of each month to stay small enough to commit. The same
+      upstream series feeds the `overnight` table in
+      [the mortgage rates dataset](/references/data/rates.md), which records
+      every change by effective date rather than a monthly sample.
+
+  # ---- About the bundle itself ---------------------------------------------
+  - id: about
+    source: docs/plans/2026-09-12-okf/README.md
+    type: Research Report
+    title: How this bundle is made
+    description: >-
+      The design behind the projection: what OKF is, the finding that shaped the
+      approach, the decisions taken, what the generator deliberately does not
+      do, and how to extend it to the rest of the site.
+    tags: [okf, meta, provenance]
+    generated: { by: claude/fable-5.1 }
+  # ---- AI ------------------------------------------------------------------
+  - id: ai/agent-interfaces
+    source: website/ai/agent-interfaces/index.md
+    type: Article
+    resource: https://www.collegica.org/ai/agent-interfaces/
+    tags: [ai, agents, hermes, mcp, ag-ui, slim, ports-and-adapters, python]
+    status: stable
+    # Pins mcp 2.2.0, ag-ui-protocol 0.1.22 and a reading of hermes-agent's
+    # main branch on 2026-09-13. The argument is durable; the versions are not.
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    sources:
+      - { id: hermes-note,    resource: /ai/research/hermes.md,    title: The Hermes research note }
+      - { id: protocols-note, resource: /ai/research/protocols.md, title: The protocols research note }
+      - { id: video, resource: https://youtu.be/X13ZtyNKB0I, title: "Hermes Agent: Use Hermes as a Python Library", author: process:actionableops }
+      - { id: hermes-repo, resource: https://github.com/NousResearch/hermes-agent, title: NousResearch/hermes-agent, last_modified: "2026-09-13T04:50:33Z" }
+      - { id: hermes-library-guide, resource: https://hermes-agent.nousresearch.com/docs/guides/python-library, title: Using Hermes as a Python Library }
+      - { id: hermes-mcp-guide, resource: https://hermes-agent.nousresearch.com/docs/guides/use-mcp-with-hermes, title: Use MCP with Hermes }
+      - { id: hermes-run-agent, resource: https://github.com/NousResearch/hermes-agent/blob/main/run_agent.py, title: "run_agent.py — the AIAgent constructor" }
+      - { id: mcp-sdk, resource: https://pypi.org/project/mcp/, title: "mcp 2.2.0 (Python SDK)" }
+      - { id: mcp-migration, resource: https://py.sdk.modelcontextprotocol.io/v2/migration/, title: "mcp Python SDK — v2 migration guide" }
+      - { id: agui-repo, resource: https://github.com/ag-ui-protocol/ag-ui, title: ag-ui-protocol/ag-ui, last_modified: "2026-09-12T10:30:24Z" }
+      - { id: agui-pypi, resource: https://pypi.org/project/ag-ui-protocol/, title: "ag-ui-protocol 0.1.22" }
+      - { id: slim-repo, resource: https://github.com/agntcy/slim, title: agntcy/slim }
+      - { id: slim-rename, resource: https://github.com/agntcy/slim/pull/293, title: "PR #293 — refactor: rename AGP to SLIM, merged 2025-06-03" }
+      - { id: cockburn, resource: https://alistair.cockburn.us/hexagonal-architecture/, title: Hexagonal architecture, author: human:alistair-cockburn }
+
+  # ---- Research ------------------------------------------------------------
+  - id: ai/research/agent-interfaces
+    source: docs/research/2026-09-13-agent-interfaces/README.md
+    type: Research Report
+    title: "One agent, four doors — plan and research"
+    description: >-
+      The plan behind the first AI article: what was verified and against
+      what, the six design decisions, what the worked example proves over
+      real transports, the traps hit, and what is left open.
+    tags: [ai, agents, research, methodology]
+    generated: { by: claude/fable-5.1 }
+    sources:
+      - { id: hermes,    resource: /ai/research/hermes.md }
+      - { id: protocols, resource: /ai/research/protocols.md }
+
+  - id: ai/research/hermes
+    source: docs/research/2026-09-13-agent-interfaces/notes/hermes.md
+    type: Research Note
+    title: "Hermes Agent — what the video shows, what the docs say, what the source says"
+    description: >-
+      The project's size and licence; the video's script; the library guide's
+      API; the ~25 constructor callbacks the guide omits, with the one whose
+      signature the source confirms; and which side of MCP Hermes is on.
+    tags: [ai, hermes, agents, python]
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+
+  - id: ai/research/protocols
+    source: docs/research/2026-09-13-agent-interfaces/notes/protocols.md
+    type: Research Note
+    title: "The protocols — MCP, AG-UI, and the one that changed its name"
+    description: >-
+      mcp 2.x's FastMCP-to-MCPServer rename; AG-UI's 36 event types against
+      its README's sixteen; and the June 2025 rename of AGP to SLIM, with the
+      pull request that did it.
+    tags: [ai, mcp, ag-ui, slim, agntcy, protocols]
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+
+  - id: ai/local-agent
+    source: website/ai/local-agent/index.md
+    type: Guide
+    resource: https://www.collegica.org/ai/local-agent/
+    tags: [ai, agents, hermes, gemma, ollama, docker, vllm, local, privacy]
+    status: stable
+    # Versions and sizes are dated 2026-09-13: Ollama 0.33.3, Hermes 0.21.2,
+    # the gemma4 tags. The procedure is durable; the numbers are not.
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    html_blocks:
+      - "**Hero image:** a paper-craft study at night — a laptop glowing amber on a desk, a window on a starry sky, a closed door with light around its frame, the five-dot AI glyph on the wall — under the title. https://www.collegica.org/static/img/ai/local-agent-hero.jpg"
+    sources:
+      - { id: components, resource: /ai/research/local-agent/components.md, title: The components note }
+      - { id: serving,    resource: /ai/research/local-agent/serving-options.md, title: The serving-options note }
+      - { id: run,        resource: /ai/research/local-agent/run.md, title: The measured run }
+      - { id: bionic,     resource: /ai/research/local-agent/bionic.md, title: The Bionic note }
+      - { id: braxman-note, resource: /ai/research/local-agent/braxman.md, title: The prefill and KV-cache note }
+      - { id: braxman-video, resource: https://youtu.be/d4EWA6yd5cE, title: "Finally! A Local AI Breakthrough! So Much Faster!", author: human:rob-braxman, last_modified: "2026-09-11T16:00:08Z" }
+      - { id: isenberg-note, resource: /ai/research/local-agent/isenberg.md, title: The good-enough note }
+      - { id: isenberg-video, resource: https://youtu.be/UtFo1ZNC2ns, title: "I'm Obsessed With Local AI. Here's Why", author: human:greg-isenberg, last_modified: "2026-09-08T16:30:21Z" }
+      - { id: llamacpp-server, resource: https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md, title: llama.cpp server README }
+      - { id: bionic-docs, resource: https://lmstudio.ai/docs/bionic, title: Welcome to LM Studio Bionic }
+      - { id: bionic-models, resource: https://lmstudio.ai/docs/bionic/models, title: "Bionic — choose a cloud, local, or remote model" }
+      - { id: lmstudio-requirements, resource: https://lmstudio.ai/docs/app/system-requirements, title: LM Studio system requirements }
+      - { id: lmstudio-gemma4, resource: https://lmstudio.ai/models/google/gemma-4-12b, title: gemma-4-12b in the LM Studio catalogue }
+      - { id: gemma4-overview, resource: https://ai.google.dev/gemma/docs/core, title: Gemma 4 model overview, author: process:google }
+      - { id: ollama-gemma4, resource: https://ollama.com/library/gemma4, title: "gemma4 on the Ollama library" }
+      - { id: ollama-faq, resource: https://docs.ollama.com/faq, title: Ollama FAQ }
+      - { id: ollama-hermes, resource: https://docs.ollama.com/integrations/hermes, title: "Ollama — Hermes Agent integration" }
+      - { id: hermes-install, resource: https://hermes-agent.nousresearch.com/docs/getting-started/installation, title: Hermes installation }
+      - { id: hermes-desktop, resource: https://hermes-agent.nousresearch.com/docs/user-guide/desktop, title: Hermes Desktop }
+      - { id: hermes-providers, resource: https://hermes-agent.nousresearch.com/docs/integrations/providers, title: Hermes model providers }
+      - { id: dmr, resource: https://docs.docker.com/ai/model-runner/, title: Docker Model Runner }
+      - { id: dmr-api, resource: https://docs.docker.com/ai/model-runner/api-reference/, title: Docker Model Runner API reference }
+      - { id: vllm-quickstart, resource: https://docs.vllm.ai/en/latest/getting_started/quickstart.html, title: vLLM quickstart }
+      - { id: vllm-tools, resource: https://docs.vllm.ai/en/latest/features/tool_calling.html, title: vLLM tool calling }
+      - { id: vllm-models, resource: https://docs.vllm.ai/en/latest/models/supported_models.html, title: vLLM supported models }
+
+  - id: ai/research/local-agent/local-agent
+    source: docs/research/2026-09-13-local-agent/README.md
+    type: Research Report
+    title: "A local agent on your own machine — plan and research"
+    description: >-
+      What was verified and against what, the decisions behind the guide,
+      what was and was not run on this machine, and the traps hit.
+    tags: [ai, local, research, methodology]
+    generated: { by: claude/fable-5.1 }
+    sources:
+      - { id: components, resource: /ai/research/local-agent/components.md }
+      - { id: serving,    resource: /ai/research/local-agent/serving-options.md }
+      - { id: run,        resource: /ai/research/local-agent/run.md }
+      - { id: bionic,     resource: /ai/research/local-agent/bionic.md }
+      - { id: braxman,    resource: /ai/research/local-agent/braxman.md }
+      - { id: isenberg,   resource: /ai/research/local-agent/isenberg.md }
+
+  - id: ai/research/local-agent/components
+    source: docs/research/2026-09-13-local-agent/notes/components.md
+    type: Research Note
+    title: "The three components — Gemma 4, Ollama, Hermes and Hermes Desktop"
+    description: >-
+      Gemma 4's sizes, modalities and 4-bit memory table from Google; Ollama's
+      tags and the 4,096-token default; Hermes's 64K rule and where Desktop
+      really lives on disk.
+    tags: [ai, gemma, ollama, hermes]
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+
+  - id: ai/research/local-agent/serving-options
+    source: docs/research/2026-09-13-local-agent/notes/serving-options.md
+    type: Research Note
+    title: "Three ways to serve a local model — Ollama, Docker Model Runner, vLLM"
+    description: >-
+      The endpoint, the install, the context setting and the tool-call flags
+      for each, with which of the three was run on this machine and why the
+      other two were not.
+    tags: [ai, ollama, docker, vllm, hermes]
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+
+  - id: ai/research/local-agent/run
+    source: docs/research/2026-09-13-local-agent/notes/run.md
+    type: Research Note
+    title: "The measured run — Gemma 4 12B through Ollama and Hermes on a 24 GB Mac"
+    description: >-
+      Cold load, warm generation speed, memory, the context check, and a
+      tool-using task end to end, with the thinking cost an interviewer pays.
+    tags: [ai, gemma, ollama, hermes, benchmark]
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+
+  - id: ai/research/local-agent/bionic
+    source: docs/research/2026-09-13-local-agent/notes/bionic.md
+    type: Research Note
+    title: "LM Studio Bionic — an agent with the runtime inside it"
+    description: >-
+      What Bionic is from its own docs: projects and sessions, the local /
+      remote / cloud choice per session and what costs credits, skills in
+      the Agent Skills format, and LM Studio as a server for Hermes. Not run.
+    tags: [ai, lmstudio, bionic, local]
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+
+  - id: ai/research/local-agent/braxman
+    source: docs/research/2026-09-13-local-agent/notes/braxman.md
+    type: Research Note
+    title: "Prefill, the KV cache, and a Strix Halo — from Rob Braxman's video"
+    description: >-
+      What a twenty-minute practitioner video claims — the 16K-token agent
+      prompt, prefill versus generation, the KV cache, four tuning levers,
+      688/53 tokens a second on gpt-oss-120b — with every flag checked
+      against llama.cpp's README and none of the numbers reproduced.
+    tags: [ai, local, llama-cpp, prefill, kv-cache, video]
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+
+  - id: ai/turbovec
+    source: website/ai/turbovec/index.md
+    type: Article
+    resource: https://www.collegica.org/ai/turbovec/
+    tags: [ai, rag, vector-search, quantization, turboquant, turbovec, rabitq, faiss, rust, embeddings, local, privacy]
+    status: stable
+    # turbovec 1.0.0 is four weeks old; the project shipped nineteen releases in five months.
+    stale_after: "2026-12-14T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    sources:
+      - { id: note, resource: /ai/research/turbovec/turbovec.md, title: The turbovec note }
+      - { id: run,  resource: /ai/research/turbovec/turbovec-run.md, title: turbovec against FAISS on four CPU cores }
+      - { id: turbovec-repo, resource: https://github.com/RyanCodrai/turbovec, title: turbovec }
+      - { id: turbovec-api, resource: https://github.com/RyanCodrai/turbovec/blob/main/docs/api.md, title: turbovec API reference }
+      - { id: turbovec-changelog, resource: https://github.com/RyanCodrai/turbovec/blob/main/CHANGELOG.md, title: turbovec changelog }
+      - { id: turbovec-pypi, resource: https://pypi.org/project/turbovec/, title: turbovec on PyPI }
+      - { id: turboquant-paper, resource: https://arxiv.org/abs/2504.19874, title: "TurboQuant: Online Vector Quantization with Near-optimal Distortion Rate" }
+      - { id: ntu-comparison, resource: https://github.com/VectorDB-NTU/rabitq-turboquant-comparison, title: "Revisiting RaBitQ and TurboQuant — code and results" }
+      - { id: rabitq-paper, resource: https://arxiv.org/abs/2405.12497, title: "RaBitQ: Quantizing High-Dimensional Vectors with a Theoretical Error Bound" }
+      - { id: faiss-fastscan, resource: "https://github.com/facebookresearch/faiss/wiki/Fast-accumulation-of-PQ-and-AQ-codes-(FastScan)", title: FAISS FastScan }
+      - { id: faiss-pypi, resource: https://pypi.org/project/faiss-cpu/, title: faiss-cpu on PyPI }
+
+  - id: ai/research/turbovec/turbovec-report
+    source: docs/research/2026-09-14-turbovec/README.md
+    type: Research Report
+    title: "Sixteen times smaller — plan and research"
+    description: >-
+      What was verified and against what, the decisions behind the article —
+      the method before the library, the dispute sourced from both sides, a
+      rerank column in every table — and the traps hit.
+    tags: [ai, vector-search, research, methodology]
+    generated: { by: claude/fable-5.1 }
+    sources:
+      - { id: note, resource: /ai/research/turbovec/turbovec.md }
+      - { id: run,  resource: /ai/research/turbovec/turbovec-run.md }
+
+  - id: ai/research/turbovec/turbovec
+    source: docs/research/2026-09-14-turbovec/notes/turbovec.md
+    type: Research Note
+    title: "turbovec and TurboQuant — checked at the source on 2026-09-14"
+    description: >-
+      The library in its own words — API, file format, 1.0 guarantees, its
+      benchmark numbers and how they were produced; the TurboQuant method
+      step by step; the RaBitQ authors' reproduction and the Elastic and
+      Qdrant positions; the other paper called TurboVec; which pages could
+      not be fetched.
+    tags: [ai, vector-search, quantization, turboquant, turbovec, rabitq, faiss]
+    stale_after: "2026-12-14T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+
+  - id: ai/research/turbovec/turbovec-run
+    source: docs/research/2026-09-14-turbovec/notes/turbovec-run.md
+    type: Research Note
+    title: "turbovec against FAISS on four CPU cores — the run"
+    description: >-
+      turbovec 1.0.0 and faiss-cpu 1.15.0 on GloVe-100 and DBpedia/OpenAI-1536,
+      100K vectors each — index bytes, build time, search latency at one and
+      four threads, recall with and without a float32 rerank, and the
+      kernel-level allowlist against a post-filter.
+    tags: [ai, vector-search, benchmark, turbovec, faiss]
+    stale_after: "2026-12-14T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+
+  - id: ai/voice-agents
+    source: website/ai/voice-agents/index.md
+    type: Article
+    resource: https://www.collegica.org/ai/voice-agents/
+    tags: [ai, voice, speech-to-speech, local, privacy, stt, tts, moshi, unmute, pipecat, livekit, home-assistant, voicebox, voicestudio, voxcpm, dograh]
+    status: stable
+    # Thirty projects dated 2026-09-13; Pipecat released the day before, Pocket TTS ten days before.
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    sources:
+      - { id: models, resource: /ai/research/voice-agents/voice-models.md, title: The field note }
+      - { id: run,    resource: /ai/research/voice-agents/voice-run.md, title: The household cascade timed on four CPU cores }
+      - { id: voicebox-repo, resource: https://github.com/jamiepine/voicebox, title: Voicebox }
+      - { id: voicestudio-repo, resource: https://github.com/debpalash/VoiceStudio, title: VoiceStudio }
+      - { id: voxcpm-repo, resource: https://github.com/OpenBMB/VoxCPM, title: VoxCPM }
+      - { id: voxcpm-pypi, resource: https://pypi.org/project/voxcpm/, title: voxcpm on PyPI }
+      - { id: dograh-repo, resource: https://github.com/dograh-hq/dograh, title: Dograh }
+      - { id: unmute-repo, resource: https://github.com/kyutai-labs/unmute, title: Unmute }
+      - { id: dsm-repo, resource: https://github.com/kyutai-labs/delayed-streams-modeling, title: Kyutai STT and TTS }
+      - { id: moshi-repo, resource: https://github.com/kyutai-labs/moshi, title: Moshi }
+      - { id: personaplex-repo, resource: https://github.com/NVIDIA/personaplex, title: PersonaPlex }
+      - { id: pipecat-repo, resource: https://github.com/pipecat-ai/pipecat, title: Pipecat }
+      - { id: pipecat-pypi, resource: https://pypi.org/project/pipecat-ai/, title: pipecat-ai on PyPI }
+      - { id: smart-turn-repo, resource: https://github.com/pipecat-ai/smart-turn, title: Smart Turn }
+      - { id: livekit-repo, resource: https://github.com/livekit/agents, title: LiveKit Agents }
+      - { id: speaches-repo, resource: https://github.com/speaches-ai/speaches, title: Speaches }
+      - { id: wyoming-repo, resource: https://github.com/OHF-Voice/wyoming, title: Wyoming }
+      - { id: speech-to-phrase-repo, resource: https://github.com/OHF-Voice/speech-to-phrase, title: Speech-to-Phrase }
+      - { id: qwen3-omni-repo, resource: https://github.com/QwenLM/Qwen3-Omni, title: Qwen3-Omni }
+      - { id: minicpm-o-repo, resource: https://github.com/OpenBMB/MiniCPM-o, title: MiniCPM-o }
+      - { id: kokoro-repo, resource: https://github.com/hexgrad/kokoro, title: Kokoro }
+      - { id: moonshine-repo, resource: https://github.com/usefulsensors/moonshine, title: Moonshine }
+      - { id: silero-repo, resource: https://github.com/snakers4/silero-vad, title: Silero VAD }
+      - { id: openwakeword-repo, resource: https://github.com/dscripka/openWakeWord, title: openWakeWord }
+      - { id: sherpa-onnx-repo, resource: https://github.com/k2-fsa/sherpa-onnx, title: sherpa-onnx }
+
+  - id: ai/research/voice-agents/voice-agents
+    source: docs/research/2026-09-13-voice-agents/README.md
+    type: Research Report
+    title: "A voice in the room — plan and research"
+    description: >-
+      What was verified and against what, the decisions behind the article —
+      three shapes before thirty names, the three projects in the question as
+      three kinds of thing — and the traps hit: a truncated download that
+      reads as a parser error, a resolver handing out a 2023 release, the
+      model hub out of reach.
+    tags: [ai, voice, research, methodology]
+    generated: { by: claude/fable-5.1 }
+    sources:
+      - { id: models, resource: /ai/research/voice-agents/voice-models.md }
+      - { id: run,    resource: /ai/research/voice-agents/voice-run.md }
+
+  - id: ai/research/voice-agents/voice-models
+    source: docs/research/2026-09-13-voice-agents/notes/voice-models.md
+    type: Research Note
+    title: "Local voice agents — the field checked at the source on 2026-09-13"
+    description: >-
+      Two dozen packages' versions and dates from PyPI; Voicebox, VoxCPM and
+      Dograh in their own words; the three shapes — cascade, speech-native,
+      full-duplex — and every project in each with sizes, hardware lines,
+      latency claims and licences from their repositories; which pages could
+      not be fetched.
+    tags: [ai, voice, stt, tts, vad, wake-word, moshi, unmute, pipecat, livekit, home-assistant, voicebox, voxcpm, dograh, licences]
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+
+  - id: ai/research/voice-agents/voice-run
+    source: docs/research/2026-09-13-voice-agents/notes/voice-run.md
+    type: Research Note
+    title: "The household cascade on a machine with no GPU — the run"
+    description: >-
+      Kokoro, Silero VAD, whisper-tiny, Moonshine, a streaming Zipformer and
+      openWakeWord installed from GitHub releases and timed on four CPU
+      cores — real-time factors, per-chunk compute, wake-word latency — and
+      what did not run because the model hub was unreachable.
+    tags: [ai, voice, benchmark, kokoro, sherpa-onnx, silero, openwakeword]
+  - id: ai/research/local-agent/isenberg
+    source: docs/research/2026-09-13-local-agent/notes/isenberg.md
+    type: Research Note
+    title: "Good enough for the job — from Greg Isenberg's video"
+    description: >-
+      What a thirty-nine-minute founder's map of local AI claims — the
+      four pieces, the vocabulary, the Gemma family, three ways to run it,
+      the local-then-hosted pipeline, ten runs then a comparison — what the
+      guide took from it, where it disagrees, and that it is sponsored.
+    tags: [ai, local, gemma, hybrid, evaluation, video]
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+
+  - id: ai/edge-agent
+    source: website/ai/edge-agent/index.md
+    type: Guide
+    resource: https://www.collegica.org/ai/edge-agent/
+    tags: [ai, agents, edge, mobile, android, litert-lm, gemma, functiongemma, hermes, local, privacy]
+    status: stable
+    # Versions dated 2026-09-13: LiteRT-LM 0.17.0 (CLI, Python, Kotlin), the
+    # Gallery 1.0.19, the gemma-4 litert-lm files. Google's claimed phone
+    # numbers are from its model page; the laptop numbers and the phone
+    # numbers (Galaxy S26 Ultra, 2026-09-14) were both measured here.
+    stale_after: "2026-12-14T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    html_blocks:
+      - "**Hero image:** a paper-craft scene — a phone in the chest pocket of a navy jacket, its screen glowing amber, the five-dot AI glyph floating above it, a cut-paper hillside with a cottage behind — under the title. https://www.collegica.org/static/img/ai/edge-agent-hero.jpg"
+    sources:
+      - { id: litert-lm-note, resource: /ai/research/edge-agent/litert-lm.md, title: The LiteRT-LM note }
+      - { id: gallery-note, resource: /ai/research/edge-agent/gallery.md, title: The Gallery and FunctionGemma note }
+      - { id: laptop-run, resource: /ai/research/edge-agent/laptop-run.md, title: The laptop run }
+      - { id: phone-run, resource: /ai/research/edge-agent/phone-run.md, title: The phone run }
+      - { id: litert-lm-repo, resource: https://github.com/google-ai-edge/LiteRT-LM, title: LiteRT-LM repository README, author: process:google }
+      - { id: litert-lm-gemma4, resource: https://developers.google.com/edge/litert-lm/models/gemma-4, title: "Gemma 4 on LiteRT-LM — model page and benchmarks", author: process:google }
+      - { id: litert-lm-android, resource: https://developers.google.com/edge/litert-lm/android, title: LiteRT-LM Kotlin guide, author: process:google }
+      - { id: litert-lm-python, resource: https://developers.google.com/edge/litert-lm/python, title: LiteRT-LM Python guide, author: process:google }
+      - { id: e2b-card, resource: https://huggingface.co/litert-community/gemma-4-E2B-it-litert-lm, title: gemma-4-E2B-it-litert-lm model card }
+      - { id: gallery-repo, resource: https://github.com/google-ai-edge/gallery, title: Google AI Edge Gallery repository, author: process:google }
+      - { id: functiongemma, resource: https://ai.google.dev/gemma/docs/functiongemma, title: FunctionGemma overview, author: process:google }
+      - { id: hermes-termux, resource: https://hermes-agent.nousresearch.com/docs/getting-started/termux, title: Hermes on Android (Termux) }
+
+  - id: ai/research/edge-agent/edge-agent
+    source: docs/research/2026-09-13-edge-agent/README.md
+    type: Research Report
+    title: "An agent in your pocket — plan and research"
+    description: >-
+      What was verified and against what, the decisions behind the guide,
+      what was run on this Mac, what was run on a Galaxy S26 Ultra, and
+      the traps hit on both.
+    tags: [ai, edge, mobile, research, methodology]
+    generated: { by: claude/fable-5.1 }
+    sources:
+      - { id: litert-lm, resource: /ai/research/edge-agent/litert-lm.md }
+      - { id: gallery,   resource: /ai/research/edge-agent/gallery.md }
+      - { id: laptop-run, resource: /ai/research/edge-agent/laptop-run.md }
+      - { id: phone-run, resource: /ai/research/edge-agent/phone-run.md }
+
+  - id: ai/research/edge-agent/litert-lm
+    source: docs/research/2026-09-13-edge-agent/notes/litert-lm.md
+    type: Research Note
+    title: "LiteRT-LM — the runtime, its APIs, and Google's numbers"
+    description: >-
+      The runtime and its five language bindings, the .litertlm files and
+      their quantisation, the CLI's commands, the Kotlin tool API, and
+      Google's benchmark tables for Gemma 4 E2B and E4B on phones, laptops
+      and a Raspberry Pi.
+    tags: [ai, edge, litert-lm, gemma, android, ios]
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+
+  - id: ai/research/edge-agent/gallery
+    source: docs/research/2026-09-13-edge-agent/notes/gallery.md
+    type: Research Note
+    title: "The AI Edge Gallery, FunctionGemma, and Hermes on Termux"
+    description: >-
+      What the Gallery app does with skills, MCP and Mobile Actions; how
+      FunctionGemma's 270M parameters call tools on a phone; and what
+      Hermes's Termux page says works on Android.
+    tags: [ai, edge, gallery, functiongemma, mcp, hermes, termux]
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+
+  - id: ai/research/edge-agent/laptop-run
+    source: docs/research/2026-09-13-edge-agent/notes/laptop-run.md
+    type: Research Note
+    title: "The laptop run — Gemma 4 E2B and E4B through LiteRT-LM on a 24 GB Mac"
+    description: >-
+      Every command run for the guide and what it returned: benchmarks on
+      CPU and GPU, a two-tool task from a preset, the OpenAI-compatible
+      server, Hermes through that server, and the Android example built.
+    tags: [ai, edge, litert-lm, gemma, measurements]
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+
+  - id: ai/research/edge-agent/phone-run
+    source: docs/research/2026-09-13-edge-agent/notes/phone-run.md
+    type: Research Note
+    title: "The phone run — Gemma 4 E2B on a Galaxy S26 Ultra"
+    description: >-
+      A storage-permission trap that blocks the GPU backend on
+      /data/local/tmp and its fix; the Kotlin example on both backends,
+      including the CPU summary omission reproduced from the laptop; and
+      the AI Edge Gallery's own Benchmark screen measured against Google's
+      claimed table on the exact phone that table names.
+    tags: [ai, edge, litert-lm, gemma, measurements, android]
+    stale_after: "2026-12-14T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+
+  - id: ai/video-from-html
+    source: website/ai/video-from-html/index.md
+    type: Guide
+    resource: https://www.collegica.org/ai/video-from-html/
+    tags: [ai, video, hyperframes, kokoro, tts, agents]
+    status: stable
+    # Versions dated 2026-09-13: hyperframes 0.8.33 pinned / 0.8.36 latest, kokoro-onnx 0.4.7.
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    html_blocks:
+      - "**Video:** the 100-second *Fixed or Variable* explainer this guide dissects, https://www.collegica.org/static/video/finance/fixed-or-variable.mp4 — one of the four made this way."
+    sources:
+      - { id: tools, resource: /ai/research/video-from-html/tools.md, title: The tools note }
+      - { id: run,   resource: /ai/research/video-from-html/run.md,   title: The measured re-run }
+      - { id: fov-video, resource: /finance/fixed-or-variable-video.md, title: The video dissected }
+      - { id: hyperframes-repo, resource: https://github.com/heygen-com/hyperframes, title: heygen-com/hyperframes, last_modified: "2026-09-13T04:20:36Z" }
+      - { id: hyperframes-concepts, resource: https://hyperframes.heygen.com/concepts/, title: How a HyperFrames project works }
+      - { id: hyperframes-rules, resource: https://hyperframes.heygen.com/prompting/rules-and-anti-patterns, title: Rules and anti-patterns }
+      - { id: hyperframes-export, resource: https://hyperframes.heygen.com/guides/export-and-share, title: Finish and share a video }
+      - { id: hyperframes-audio, resource: https://hyperframes.heygen.com/guides/voice-and-audio, title: "Use voice, music, sound, and captions" }
+      - { id: kokoro-repo, resource: https://github.com/hexgrad/kokoro, title: hexgrad/kokoro }
+      - { id: kokoro-card, resource: https://huggingface.co/hexgrad/Kokoro-82M, title: Kokoro-82M model card }
+      - { id: kokoro-onnx, resource: https://github.com/thewh1teagle/kokoro-onnx, title: kokoro-onnx }
+
+  - id: ai/research/video-from-html/video-from-html
+    source: docs/research/2026-09-13-video-from-html/README.md
+    type: Research Report
+    title: "Videos from HTML — plan and research"
+    description: >-
+      What was verified and against what, the correction on what
+      --low-memory-mode does, the decisions, and what was not run.
+    tags: [ai, video, research, methodology]
+    generated: { by: claude/fable-5.1 }
+    sources:
+      - { id: tools, resource: /ai/research/video-from-html/tools.md }
+      - { id: run,   resource: /ai/research/video-from-html/run.md }
+
+  - id: ai/research/video-from-html/tools
+    source: docs/research/2026-09-13-video-from-html/notes/tools.md
+    type: Research Note
+    title: "HyperFrames and Kokoro — checked at the source"
+    description: >-
+      What each tool is, how HyperFrames renders and why it forbids
+      non-determinism, Kokoro's size, licence and voices, and how the four
+      videos in this repository are built.
+    tags: [ai, video, hyperframes, kokoro]
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+
+  - id: ai/research/video-from-html/run
+    source: docs/research/2026-09-13-video-from-html/notes/run.md
+    type: Research Note
+    title: "The pipeline, re-run and timed"
+    description: >-
+      check, Kokoro synthesis and the 100-second render on a 24 GB Mac:
+      wall times, what Kokoro caches, output size, and whether a re-render
+      matches the shipped file byte for byte.
+    tags: [ai, video, hyperframes, kokoro, benchmark]
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+
+  # ---- Software development -------------------------------------------------
+  - id: software/three-agents
+    source: website/software/three-agents/index.md
+    type: Article
+    resource: https://www.collegica.org/software/three-agents/
+    tags: [software, git, github, antigravity, claude-code, codex, chatgpt, agents]
+    status: stable
+    # Versions dated 2026-09-13; all four tools ship weekly. Ubuntu and
+    # Windows install coverage added in a later session — see notes/tools.md.
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/sonnet-5 }
+    sources:
+      - { id: tools, resource: /software/research/three-agents/tools.md, title: The tools note }
+      - { id: run,   resource: /software/research/three-agents/run.md,   title: The three-CLI probe }
+      - { id: antigravity-gs, resource: https://antigravity.google/docs/getting-started/, title: Getting Started with Antigravity 2.0 }
+      - { id: antigravity-cli-modes, resource: https://antigravity.google/docs/cli/modes/, title: "Antigravity CLI — execution modes" }
+      - { id: antigravity-permissions, resource: https://antigravity.google/docs/permissions/, title: "Antigravity — agent permissions" }
+      - { id: antigravity-plans, resource: https://antigravity.google/docs/plans/, title: "Antigravity — plans" }
+      - { id: claude-desktop, resource: https://code.claude.com/docs/en/desktop, title: Claude Code in the Claude Desktop app }
+      - { id: claude-memory, resource: https://code.claude.com/docs/en/memory, title: "Claude Code — CLAUDE.md and memory" }
+      - { id: claude-setup, resource: https://code.claude.com/docs/en/setup, title: "Claude Code — advanced setup (platforms, package managers, Windows/WSL)" }
+      - { id: chatgpt-app, resource: https://learn.chatgpt.com/docs/app, title: ChatGPT desktop app }
+      - { id: codex-cli, resource: https://learn.chatgpt.com/docs/codex/cli, title: Codex CLI }
+      - { id: codex-worktrees, resource: https://learn.chatgpt.com/docs/environments/git-worktrees, title: "Codex — worktrees" }
+      - { id: codex-agents-md, resource: https://learn.chatgpt.com/docs/agent-configuration/agents-md, title: "Codex — AGENTS.md" }
+      - { id: codex-security, resource: https://learn.chatgpt.com/docs/agent-approvals-security, title: "Codex — approvals and security" }
+      - { id: gh-manual, resource: https://cli.github.com/manual/, title: GitHub CLI manual }
+
+  - id: software/research/three-agents/three-agents
+    source: docs/research/2026-09-13-three-agents/README.md
+    type: Research Report
+    title: "One repository, three agents — plan and research"
+    description: >-
+      What was verified and against what, the decisions behind the article,
+      and the traps hit — two of three CLIs refusing to run until updated.
+    tags: [software, agents, research, methodology]
+    generated: { by: claude/sonnet-5 }
+    sources:
+      - { id: tools, resource: /software/research/three-agents/tools.md }
+      - { id: run,   resource: /software/research/three-agents/run.md }
+
+  - id: software/research/three-agents/tools
+    source: docs/research/2026-09-13-three-agents/notes/tools.md
+    type: Research Note
+    title: "The four tools — git and gh, Antigravity, Claude Code, ChatGPT and Codex"
+    description: >-
+      Versions installed here; each tool's install, sign-in, project model,
+      worktrees, permissions and instruction files on macOS, Ubuntu and
+      Windows, from the vendors' docs where they could be fetched, and
+      cross-corroborated secondary sources where a later session's network
+      policy blocked the vendor page directly.
+    tags: [software, git, github, antigravity, claude-code, codex]
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/sonnet-5 }
+    auto_sources: true
+
+  - id: software/research/three-agents/run
+    source: docs/research/2026-09-13-three-agents/notes/run.md
+    type: Research Note
+    title: "Three CLIs, one question — the probe"
+    description: >-
+      The same read-only question put to claude, codex and agy on this
+      repository: what each answered, how long it took, and what refused to
+      run until updated or permitted.
+    tags: [software, agents, benchmark]
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+
+  # ---- Robotics -------------------------------------------------------------
+  - id: robotics/nvidia-robotics
+    source: website/robotics/nvidia-robotics/index.md
+    type: Article
+    resource: https://www.collegica.org/robotics/nvidia-robotics/
+    tags: [robotics, simulation, nvidia, isaac-sim, isaac-lab, newton, warp, cosmos, gr00t, jetson]
+    status: stable
+    # Versions dated 2026-09-13; Isaac Sim, Isaac Lab and Newton ship monthly.
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    sources:
+      - { id: stack, resource: /robotics/research/nvidia-robotics/stack.md, title: The stack note }
+      - { id: run,   resource: /robotics/research/nvidia-robotics/cpu-run.md, title: Warp and Newton on a CPU }
+      - { id: warp-repo, resource: https://github.com/NVIDIA/warp, title: NVIDIA Warp }
+      - { id: newton-repo, resource: https://github.com/newton-physics/newton, title: Newton }
+      - { id: isaacsim-repo, resource: https://github.com/isaac-sim/IsaacSim, title: Isaac Sim }
+      - { id: isaacsim-pypi, resource: https://pypi.org/project/isaacsim/, title: isaacsim on PyPI }
+      - { id: isaacsim-6-edr, resource: https://github.com/isaac-sim/IsaacSim/discussions/538, title: Isaac Sim 6.0 early developer release }
+      - { id: isaacsim-6-ga, resource: https://github.com/isaac-sim/IsaacSim/discussions/655, title: Isaac Sim 6.0 general availability }
+      - { id: isaaclab-repo, resource: https://github.com/isaac-sim/IsaacLab, title: Isaac Lab }
+      - { id: isaaclab-pypi, resource: https://pypi.org/project/isaaclab/, title: isaaclab on PyPI }
+      - { id: isaaclab-3-beta, resource: https://github.com/isaac-sim/IsaacLab/releases/tag/v3.0.0-beta, title: Isaac Lab 3.0 Beta }
+      - { id: isaaclab-3-beta2, resource: https://github.com/isaac-sim/IsaacLab/discussions/6249, title: Isaac Lab 3.0 Beta 2 }
+      - { id: cosmos-org, resource: https://github.com/nvidia-cosmos, title: NVIDIA Cosmos on GitHub }
+      - { id: gr00t-repo, resource: https://github.com/NVIDIA/Isaac-GR00T, title: Isaac GR00T N1.7 }
+      - { id: isaac-ros-common, resource: https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common, title: Isaac ROS common }
+      - { id: curobo-repo, resource: https://github.com/NVlabs/curobo, title: cuRobo }
+      - { id: isaac-launchable, resource: https://github.com/isaac-sim/isaac-launchable, title: Isaac launchable for Brev }
+
+  - id: robotics/research/nvidia-robotics/nvidia-robotics
+    source: docs/research/2026-09-13-nvidia-robotics/README.md
+    type: Research Report
+    title: "Train the robot before you build it — plan and research"
+    description: >-
+      What was verified and against what, the decisions behind the article,
+      and the traps hit — pip hiding a Python-3.12-only release, a licence
+      that is not Apache, vendor pages out of reach.
+    tags: [robotics, nvidia, research, methodology]
+    generated: { by: claude/fable-5.1 }
+    sources:
+      - { id: stack, resource: /robotics/research/nvidia-robotics/stack.md }
+      - { id: run,   resource: /robotics/research/nvidia-robotics/cpu-run.md }
+
+  - id: robotics/research/nvidia-robotics/stack
+    source: docs/research/2026-09-13-nvidia-robotics/notes/stack.md
+    type: Research Note
+    title: "NVIDIA's robotics stack — Warp, Newton, Isaac Sim, Isaac Lab, Cosmos, GR00T, Isaac ROS, Jetson"
+    description: >-
+      Every version and date from PyPI; what each piece is, needs and is
+      licensed under, from the projects' READMEs; which vendor pages could
+      not be fetched and what was taken from search instead.
+    tags: [robotics, nvidia, isaac-sim, isaac-lab, newton, warp, cosmos, gr00t, jetson]
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+
+  - id: robotics/research/nvidia-robotics/cpu-run
+    source: docs/research/2026-09-13-nvidia-robotics/notes/cpu-run.md
+    type: Research Note
+    title: "Warp and Newton on a machine with no GPU — the run"
+    description: >-
+      Install, a Warp kernel, and four Newton examples — a pendulum, a
+      quadruped from URDF, an Allegro hand on MuJoCo Warp, a USD export —
+      timed on a four-core container without a GPU.
+    tags: [robotics, newton, warp, benchmark]
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+
+  - id: robotics/vla-models
+    source: website/robotics/vla-models/index.md
+    type: Article
+    resource: https://www.collegica.org/robotics/vla-models/
+    tags: [robotics, vla, vision-language-action, lerobot, smolvla, openvla, pi0, gr00t, helix, gemini-robotics]
+    status: stable
+    # Eleven models dated 2026-09-13; three had releases in the preceding twelve weeks.
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    sources:
+      - { id: models, resource: /robotics/research/vla-models/models.md, title: The models note }
+      - { id: run,    resource: /robotics/research/vla-models/lerobot-run.md, title: LeRobot installed and its configurations read }
+      - { id: lerobot-repo, resource: https://github.com/huggingface/lerobot, title: LeRobot }
+      - { id: lerobot-pypi, resource: https://pypi.org/project/lerobot/, title: lerobot on PyPI }
+      - { id: lerobot-hardware, resource: https://github.com/huggingface/lerobot/blob/main/docs/source/hardware_guide.mdx, title: LeRobot hardware guide }
+      - { id: lerobot-dataset, resource: https://github.com/huggingface/lerobot/blob/main/docs/source/lerobot-dataset-v3.mdx, title: LeRobotDataset v3 }
+      - { id: openvla-repo, resource: https://github.com/openvla/openvla, title: OpenVLA }
+      - { id: openpi-repo, resource: https://github.com/Physical-Intelligence/openpi, title: openpi }
+      - { id: gr00t-repo, resource: https://github.com/NVIDIA/Isaac-GR00T, title: Isaac GR00T N1.7 }
+      - { id: xvla-repo, resource: https://github.com/2toINF/X-VLA, title: X-VLA }
+      - { id: molmoact2-repo, resource: https://github.com/allenai/molmoact2, title: MolmoAct2 }
+      - { id: wallx-repo, resource: https://github.com/X-Square-Robot/wall-x, title: WALL-OSS }
+      - { id: oxe-repo, resource: https://github.com/google-deepmind/open_x_embodiment, title: Open X-Embodiment }
+
+  - id: robotics/research/vla-models/vla-models
+    source: docs/research/2026-09-13-vla-models/README.md
+    type: Research Report
+    title: "Words in, joints out — plan and research"
+    description: >-
+      What was verified and against what, the decisions behind the article,
+      and the traps hit — pip hiding a Python-3.12-only release again, a
+      configuration that needs the model hub to exist, vendor pages out of
+      reach.
+    tags: [robotics, vla, research, methodology]
+    generated: { by: claude/fable-5.1 }
+    sources:
+      - { id: models, resource: /robotics/research/vla-models/models.md }
+      - { id: run,    resource: /robotics/research/vla-models/lerobot-run.md }
+
+  - id: robotics/research/vla-models/models
+    source: docs/research/2026-09-13-vla-models/notes/models.md
+    type: Research Note
+    title: "Vision-language-action models — RT-2 to π0.7, checked at the source"
+    description: >-
+      What a VLA is in the words of the papers that named it; LeRobot's
+      versions from PyPI; eleven models one by one — backbone, action head,
+      chunk, size, licences — from their repositories and LeRobot's
+      configurations; which pages could not be fetched.
+    tags: [robotics, vla, lerobot, smolvla, openvla, pi0, gr00t, xvla, molmoact, helix, gemini-robotics]
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+
+  - id: robotics/research/vla-models/lerobot-run
+    source: docs/research/2026-09-13-vla-models/notes/lerobot-run.md
+    type: Research Note
+    title: "LeRobot on a machine with no GPU and no Hugging Face — the run"
+    description: >-
+      Two installs (Python 3.11 gets 0.4.4, Python 3.12 gets 0.6.1) and
+      every VLA's configuration instantiated from the installed code — the
+      backbones, chunk sizes and image sizes the framework assumes, and the
+      one configuration that cannot exist offline.
+    tags: [robotics, vla, lerobot, benchmark]
+    stale_after: "2026-12-13T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+
+
+  # ==========================================================================
+  # Aging well
+  # ==========================================================================
+
+  - id: aging-well/ai-planning
+    source: website/aging-well/ai-planning/index.md
+    type: Article
+    resource: https://www.collegica.org/aging-well/ai-planning/
+    tags: [aging-well, retirement, cognitive-reserve, strength, finance, ai]
+    status: stable
+    generated: { by: claude/opus-5 }
+    # Reviewed and approved by the author on 2026-09-12.
+    verified: { by: human:behzad, at: "2026-09-12T23:41:00Z" }
+    html_blocks:
+      - >-
+        **Video:** a 90-second summary of this article —
+        [ai-planning.mp4](https://www.collegica.org/static/video/aging-well/ai-planning.mp4),
+        described in [the video concept](/aging-well/ai-planning-video.md).
+    auto_sources: true
+    sources:
+      - { id: budget-tool, resource: /aging-well/budget-from-statements.md, title: "The funds plan's first step, as a tool" }
+      - { id: sessions, resource: /aging-well/exercise-sessions.md, title: "The muscle plan's routine, and the app that runs it" }
+      - { id: next-job,    resource: /aging-well/next-job.md, title: The companion on the job search after 45 }
+
+  - id: aging-well/budget-from-statements
+    source: website/aging-well/budget-from-statements/index.md
+    type: Article
+    resource: https://www.collegica.org/aging-well/budget-from-statements/
+    tags: [aging-well, finance, budgeting, owl-planner, local-first]
+    status: stable
+    generated: { by: claude/opus-5 }
+    # Reviewed and approved by the author on 2026-09-12.
+    verified: { by: human:behzad, at: "2026-09-12T23:41:00Z" }
+    html_blocks:
+      - >-
+        **Video:** a 90-second summary of this article —
+        [budget-from-statements.mp4](https://www.collegica.org/static/video/aging-well/budget-from-statements.mp4),
+        described in [the video concept](/aging-well/budget-from-statements-video.md).
+    auto_sources: true
+    sources:
+      - { id: funds-plan, resource: /aging-well/ai-planning.md, title: The plan whose first step this tool is }
+      - { id: owl-planner, resource: /apps/owl-planner.md, title: The tool itself }
+
+  - id: aging-well/exercise-sessions
+    source: website/aging-well/exercise-sessions/index.md
+    type: Article
+    resource: https://www.collegica.org/aging-well/exercise-sessions/
+    tags: [aging-well, exercise, muscle, routines, strength, balance, apps]
+    status: stable
+    # The library and its clips are dated 2026-09-14; the routine is durable.
+    stale_after: "2026-12-14T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    html_blocks:
+      - "**Hero image:** a paper-craft corner of a living room in morning light — a mat, a kettlebell, a low step, a band on a door handle, a laptop on a stool showing a countdown — under the title. https://www.collegica.org/static/img/aging-well/exercise-sessions-hero.jpg"
+    sources:
+      - { id: framework, resource: /aging-well/ai-planning.md, title: "Planning to Age Well, with AI — plan two, the muscles" }
+      - { id: app, resource: /apps/owl-sessions.md, title: OWL Sessions }
+      - { id: research, resource: /aging-well/research/exercise-sessions.md, title: Research report }
+      - { id: routines, resource: /aging-well/research/routines.md, title: The routines note }
+      - { id: clips, resource: /aging-well/research/exercise-clips.md, title: The five-model comparison }
+      - { id: who, resource: https://www.who.int/publications/i/item/9789240015128, title: "WHO guidelines on physical activity and sedentary behaviour (2020)", author: process:who }
+
+  - id: aging-well/research/exercise-sessions
+    source: docs/research/2026-09-13-exercise-sessions/README.md
+    type: Research Report
+    title: "A session you can keep — plan and research"
+    description: >-
+      What was verified and against what, the decisions behind the routine and
+      the app, what was judgement rather than evidence, and the traps hit
+      generating the clips.
+    tags: [aging-well, exercise, research, methodology]
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+    sources:
+      - { id: routines, resource: /aging-well/research/routines.md }
+      - { id: clips,    resource: /aging-well/research/exercise-clips.md }
+
+  - id: aging-well/research/routines
+    source: docs/research/2026-09-13-exercise-sessions/notes/routines.md
+    type: Research Note
+    title: "Routines — the families, the session, the sources"
+    description: >-
+      The anti-movement, loaded and on-the-feet families with their moves;
+      the five-block session and its 30, 45 and 60 minute arithmetic; what
+      is in the library and what was left out.
+    tags: [aging-well, exercise, routines]
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+
+  - id: aging-well/research/exercise-clips
+    source: docs/research/2026-09-13-exercise-sessions/clips/README.md
+    type: Research Note
+    title: "One dead bug, five video models — cost and form"
+    description: >-
+      The same prompt to five text-to-video models: credits per clip, what
+      each produced, and the finding that price did not predict form and
+      that the failure mode is a clean performance of a different exercise.
+    tags: [aging-well, exercise, generated-video, evaluation]
+    stale_after: "2026-12-14T00:00:00Z"
+    generated: { by: claude/fable-5.1 }
+    auto_sources: true
+
+  - id: aging-well/next-job
+    source: website/aging-well/next-job/index.md
+    type: Article
+    resource: https://www.collegica.org/aging-well/next-job/
+    tags: [aging-well, employment, job-search, ai, ontario]
+    status: stable
+    generated: { by: claude/opus-5 }
+    # Reviewed line by line: the "career repo", applications-folder and Acme
+    # clarity corrections, applied in PR #19.
+    verified: { by: human:behzad, at: "git:b614fbe" }
+    html_blocks:
+      - >-
+        **Video:** a 90-second summary of this article —
+        [next-job.mp4](https://www.collegica.org/static/video/aging-well/next-job.mp4),
+        described in [the video concept](/aging-well/next-job-video.md).
+    auto_sources: true
+    sources:
+      - { id: research-report, resource: /aging-well/research/next-job-with-ai.md, title: Research report and series plan }
+      - { id: landscape,       resource: /aging-well/research/landscape.md }
+      - { id: github-oss,      resource: /aging-well/research/github-open-source.md }
+      - { id: x-discourse,     resource: /aging-well/research/x-discourse.md }
+      - { id: coverage,        resource: /aging-well/research/existing-coverage.md }
+      - { id: mind-plan,       resource: /aging-well/ai-planning.md, title: The plan whose habits this article reuses }
+      - { id: resume-typst, resource: https://github.com/eLearningHub/resume-typst, title: "resume-typst — the author's earlier résumé tooling", author: human:behzad }
+
+  # ---- Videos --------------------------------------------------------------
+  - id: aging-well/ai-planning-video
+    source: video/ai-planning/README.md
+    type: Video
+    title: "Planning to Age Well, with AI — the 90-second video"
+    description: A seven-frame kinetic-type summary of the article, with the OWL Planning identity.
+    resource: https://www.collegica.org/static/video/aging-well/ai-planning.mp4
+    tags: [aging-well, video]
+    generated: { by: claude/opus-5, at: "git:d86bf0f" }
+    sources:
+      - { id: article, resource: /aging-well/ai-planning.md }
+
+  - id: aging-well/budget-from-statements-video
+    source: video/budget-from-statements/README.md
+    type: Video
+    title: "A Year of Spending, from Your Own Statements — the 90-second video"
+    description: Only one of six kinds of money movement is spending, and why that is the whole problem the tool solves.
+    resource: https://www.collegica.org/static/video/aging-well/budget-from-statements.mp4
+    tags: [aging-well, finance, video]
+    generated: { by: claude/opus-5, at: "git:bfa5532" }
+    sources:
+      - { id: article, resource: /aging-well/budget-from-statements.md }
+
+  - id: aging-well/next-job-video
+    source: video/next-job/README.md
+    type: Video
+    title: "Finding Your Next Job, with AI — the 90-second video"
+    description: After 45 the search is a targeting problem, not a volume problem.
+    resource: https://www.collegica.org/static/video/aging-well/next-job.mp4
+    tags: [aging-well, employment, video]
+    generated: { by: claude/opus-5, at: "git:673f1f7" }
+    sources:
+      - { id: article, resource: /aging-well/next-job.md }
+
+  # ---- Research ------------------------------------------------------------
+  - id: aging-well/research/next-job-with-ai
+    source: docs/research/2026-09-10-next-job-with-ai/README.md
+    type: Research Report
+    title: "Finding the next job, with AI — research report and series plan"
+    description: >-
+      Four research streams synthesised: the argument in five lines, the numbers
+      on duration and pay after 45, what the employer's AI actually does, and
+      the plan to build on resume-typst. Canadian, Ontario-first.
+    tags: [aging-well, employment, job-search, research, ontario]
+    generated: { by: claude/opus-5 }
+    auto_sources: true
+    sources:
+      - { id: landscape,  resource: /aging-well/research/landscape.md }
+      - { id: github-oss, resource: /aging-well/research/github-open-source.md }
+      - { id: x,          resource: /aging-well/research/x-discourse.md }
+      - { id: coverage,   resource: /aging-well/research/existing-coverage.md }
+
+  - id: aging-well/research/landscape
+    source: docs/research/2026-09-10-next-job-with-ai/notes/landscape.md
+    type: Research Note
+    title: "The landscape: labour-market facts, what the ATS really does, and the Ontario rules"
+    description: Primary sources on long-term unemployment after 45, re-employment pay, ATS and knockout questions, and the Ontario AI-disclosure requirement.
+    tags: [aging-well, employment, research, primary-data]
+    generated: { by: claude/opus-5 }
+    auto_sources: true
+
+  - id: aging-well/research/github-open-source
+    source: docs/research/2026-09-10-next-job-with-ai/notes/github-open-source.md
+    type: Research Note
+    title: "Open-source AI job-search tools on GitHub"
+    description: Around thirty repositories surveyed — auto-appliers, résumé tailoring, ATS matching — and which ones refuse to auto-submit.
+    tags: [aging-well, employment, open-source, research]
+    generated: { by: claude/opus-5 }
+    auto_sources: true
+
+  - id: aging-well/research/x-discourse
+    source: docs/research/2026-09-10-next-job-with-ai/notes/x-discourse.md
+    type: Research Note
+    title: "X discourse: AI in the job hunt, mid-career and older workers"
+    description: Around twenty fetched posts with engagement figures, the Workday age-discrimination case, and a viral post identified as satire.
+    tags: [aging-well, employment, discourse, research]
+    generated: { by: claude/opus-5 }
+    auto_sources: true
+
+  - id: aging-well/research/existing-coverage
+    source: docs/research/2026-09-10-next-job-with-ai/notes/existing-coverage.md
+    type: Research Note
+    title: "Existing coverage of AI-assisted job search for older workers"
+    description: Around thirty-five pieces surveyed, what each owns, and the gaps that map onto habits Collegica had already published.
+    tags: [aging-well, employment, research]
+    generated: { by: claude/opus-5 }
+    auto_sources: true
+
+  # ==========================================================================
+  # Apps
+  # ==========================================================================
+
+  - id: apps/owl-planner
+    build: reference
+    type: Application
+    title: OWL Planner
+    description: >-
+      A Pyodide budget tool that reads bank exports and PDF statements entirely
+      in the browser, reconciled against the statements' own totals. Collegica's
+      first shipped app, in its own repository.
+    resource: https://www.collegica.org/owl/
+    tags: [aging-well, finance, budgeting, pyodide, local-first, application]
+    status: stable
+    generated: { by: claude/fable-5.1 }
+    sources:
+      - { id: repo, resource: https://github.com/Collegica/owl-planner, title: "Collegica/owl-planner — source and releases", author: human:behzad }
+      - { id: article, resource: /aging-well/budget-from-statements.md, title: The article that describes it }
+    body: |
+      Runs at [collegica.org/owl/](https://www.collegica.org/owl/). Nothing is
+      uploaded: the CSV or PDF is parsed in the tab, reconciled against the
+      statement's own totals or refused. Built and released independently from
+      [its own repository](https://github.com/Collegica/owl-planner) and
+      unpacked into the site at deploy time.
+
+      Described, with the rules it follows and the prompts to use once you have
+      the number, in [A Year of Spending, from Your Own
+      Statements](/aging-well/budget-from-statements.md).
+
+  - id: apps/owl-sessions
+    source: apps/owl-sessions/README.md
+    type: Application
+    title: OWL Sessions
+    description: >-
+      Thirty, forty-five or sixty minute exercise sessions from a library of
+      seventeen generated clips, each move shown under a timer and a rep
+      count, a minute of rest between blocks, everything in the page. The
+      muscle tool beside OWL Planner.
+    resource: https://www.collegica.org/sessions/
+    tags: [aging-well, exercise, muscle, local-first, application, generated-video]
+    status: stable
+    stale_after: "2026-12-14T00:00:00Z"
+    # An explicit instant: the README has no date frontmatter and no dated
+    # folder, so the default would be its last commit, which every squash
+    # merge rewrites — and the bundle would drift from a fresh projection.
+    generated: { by: claude/fable-5.1, at: "2026-09-14T00:00:00Z" }
+    html_blocks:
+      - "**Hero image:** a paper-craft figure holding a bird dog on a navy mat, a small owl on a stool beside a laptop showing a countdown, a kettlebell on the floor — under the title. https://www.collegica.org/static/img/aging-well/owl-sessions-hero.jpg"
+    auto_sources: true
+    sources:
+      - { id: article, resource: /aging-well/exercise-sessions.md, title: The article that describes it }
+      - { id: clips, resource: /aging-well/research/exercise-clips.md, title: The five-model comparison the clips came out of }
+
+  - id: apps/parse-and-gap
+    source: apps/parse-and-gap/README.md
+    type: Specification
+    title: Parse-and-gap
+    description: A local tool that parses a résumé the way an ATS does and shows the gap against a posting — specced, not built.
+    tags: [apps, employment, specification]
+    status: draft
+    generated: { by: claude/opus-5, at: "git:bbec80a" }
+    sources:
+      - { id: article, resource: /aging-well/next-job.md, title: The article that commits to it }
+
+  - id: apps/morning-digest
+    source: apps/morning-digest/README.md
+    type: Specification
+    title: Morning digest
+    description: A daily digest of postings worth a targeted application, filtered by your own criteria — specced, not built.
+    tags: [apps, employment, specification]
+    status: draft
+    generated: { by: claude/opus-5, at: "git:bbec80a" }
+    sources:
+      - { id: article, resource: /aging-well/next-job.md, title: The article that commits to it }
+
+  - id: apps/funnel
+    source: apps/funnel/README.md
+    type: Specification
+    title: Funnel
+    description: The weekly review of an applications folder as a funnel, from the article's one-subfolder-per-job convention — specced, not built.
+    tags: [apps, employment, specification]
+    status: draft
+    generated: { by: claude/opus-5, at: "git:bbec80a" }
+    sources:
+      - { id: article, resource: /aging-well/next-job.md, title: The article that commits to it }

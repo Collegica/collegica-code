@@ -1,0 +1,181 @@
+# The laptop run — Gemma 4 E2B and E4B through LiteRT-LM on a 24 GB Mac, 2026-09-13
+
+## Access and confidence
+
+- **Machine:** MacBook, Apple M4, 24 GB, macOS; `litert-lm` 0.17.0 installed
+  with `uv tool install litert-lm`; Hermes 0.21.2. The machine was under
+  memory pressure from other work for part of the day; the benchmarks
+  below were taken one at a time, but not on a freshly booted machine.
+- **What this measures:** LiteRT-LM on the same Mac Google benchmarks in
+  its table, so the two can be compared, and every phone number in the
+  guide can be read against a number the reader can reproduce. It does
+  not measure a phone.
+- **Not run:** the Android example on a device (built, not installed —
+  no phone on the desk), the Gallery app, FunctionGemma, Termux.
+
+## Getting the models
+
+```
+uv tool install litert-lm                                   # 0.17.0
+litert-lm import --from-huggingface-repo=litert-community/gemma-4-E2B-it-litert-lm gemma-4-E2B-it.litertlm
+litert-lm import --from-huggingface-repo=litert-community/gemma-4-E4B-it-litert-lm gemma-4-E4B-it.litertlm
+```
+
+E2B: 2.4 GiB, 53 s. E4B: 3.3 GiB, 2 min 29 s. After a first run each model's
+folder under `~/.litert-lm/models/` roughly doubles — `Cache: disk`
+"persists compiled artifacts to a file next to the model" — to 5.0 and
+5.5 GB. `litert-lm describe` on both files: Supports Function Call NO,
+Supports Thinking NO, Speculative Decoding YES, Input Modalities Text
+Vision Audio. (The function-call flag is model metadata; both models
+called tools correctly below.)
+
+## Benchmarks
+
+`litert-lm benchmark <model> --backend <b> [-p 4096 -d 128]`; the default
+is 256 prefill and 256 decode tokens, one warm-up, one measured run, KV
+cache sized to 4,096.
+
+| Model | Backend | Prefill / decode | Prefill tok/s | Decode tok/s | Time to first token |
+|---|---|---|---|---|---|
+| E2B | CPU | 256 / 256 | 445 | 33.9 | 0.60 s |
+| E2B | GPU | 256 / 256 | 1,387 | 75.8 | 0.20 s |
+| E2B | CPU | 4,096 / 128 | 318 | 26.6 | 12.9 s |
+| E2B | GPU | 4,096 / 128 | 1,641 | 65.3 | 2.5 s |
+| E4B | CPU | 256 / 256 | 159 | 17.0 | 1.7 s |
+| E4B | GPU | 256 / 256 | 483 | 34.6 | 0.56 s |
+| E4B | CPU | 4,096 / 128 | 115 | 8.6 | 35.7 s |
+| E4B | GPU | 4,096 / 128 | 581 | 29.9 | 7.1 s |
+
+Against Google's table for the same chip (E2B, macOS M4, 1,024 / 256):
+CPU 901 / 42, GPU 7,835 / 160. This machine reached a third to a half of
+those on CPU and a fifth of the GPU prefill. The gap is not explained
+here: different prefill length, a loaded machine, and possibly a different
+M4 (Google does not say which). The phone numbers in the guide are
+Google's and are labelled so; the reader should expect the same kind of
+gap on a phone in a pocket rather than on a bench.
+
+Peak memory footprint from `/usr/bin/time -l` on a single E2B prompt: 1.29
+GB on CPU, 0.84 GB on GPU.
+
+## A prompt
+
+```
+litert-lm run gemma-4-E2B-it.litertlm --prompt "In one sentence, what is a bank statement?"
+```
+
+CPU: 3.6 s wall; GPU: 1.8 s, both including engine start. The answer, on
+both: "A bank statement is a document that summarizes the financial
+transactions, such as deposits and withdrawals, that have occurred in a
+bank account over a specific period."
+
+## Two tools from a preset
+
+`example/owl_tools.py` defines two functions over four made-up rows —
+`list_unclassified(month)` and `total_for(description)` — and a system
+instruction ("never invent a figure"). The CLI turns each top-level
+function into a tool from its docstring and type hints.
+
+```
+litert-lm run gemma-4-E2B-it.litertlm --backend gpu --preset example/owl_tools.py \
+  --prompt "Which outflows in 2026-08 are unclassified, and what did the cafe cost in total?"
+```
+
+E2B on GPU, 3.9 s wall: called `list_unclassified {"month": "2026-08"}`,
+then `total_for {"description": "SQ *CAFE 4471"}` → 13.5, and answered
+with the four rows and "$13.50". E2B on CPU, 7.6 s: the same two calls
+(the second with `"CAFE"`), but the answer listed three of the four rows —
+it dropped NEWTOWN DENTAL from its summary while the tool response had
+it. E4B on GPU, 9.6 s: called `total_for` first, then `list_unclassified`,
+and listed all four rows correctly, without the dollar signs.
+
+So: the 2B model does two-step tool use on a laptop in under four seconds
+on GPU, and its summary of a tool result is not to be trusted without the
+tool result beside it — which is the argument for keeping the arithmetic
+in the tool and the list on the screen.
+
+## The server
+
+```
+litert-lm serve            # OpenAI-compatible on 0.0.0.0:9379
+```
+
+`/v1/models` lists the imported models; the engine loads on the first
+chat request (about 4 s here, then 3.6 s for the first completion). A
+request with a `tools` array returned `finish_reason: "tool_calls"` and a
+proper `tool_calls` entry (`total_for`, `{"description": "cafe"}`) in 2 s,
+with `usage` (76 prompt tokens, 15 completion). With `--verbose` the log
+shows the model running through the XNNPACK delegate — CPU — with the KV
+cache set to 4,096 tokens, and a constrained-decoding grammar ("Converted
+262158 tokens into 278614 state FST in 193 ms") built per request. Nothing
+on the `serve` command line chooses the backend or the context size.
+
+## Hermes through the server
+
+A Hermes profile pointed at the server:
+
+```
+hermes profile create pocket --no-skills
+hermes -p pocket config set model.default gemma-4-E2B-it.litertlm
+hermes -p pocket config set model.provider custom
+hermes -p pocket config set model.base_url http://localhost:9379/v1
+hermes -p pocket config set model.context_length 32000
+hermes -p pocket chat -Q -t terminal -q "Run the shell command 'date' and tell me the year it printed. Use the terminal tool."
+```
+
+With the context declared as the model card's 32K, Hermes refused to
+start: "Model gemma-4-E2B-it.litertlm has a context window of 32,000
+tokens, which is below the minimum 64,000 required by Hermes Agent." The
+same message says to raise `model.context_length` only "if your server
+reports a window smaller than the model's true window." Declared as
+64,000 anyway, to see what happens: the loop ran — three requests to the
+server, 25.5 s wall, the answer "The year printed is 2026." A second run,
+22.8 s. What Hermes sent per request is in the section below. The
+declaration is a lie the model will be held to the day a session grows
+past 32K, and the server's own cache was 4,096, so the honest reading is:
+it works for short sessions and nobody has promised more.
+
+### What Hermes sends
+
+A logging proxy between Hermes and the server (a non-streaming probe of
+each request with `max_tokens: 1`, to read `usage.prompt_tokens`, then the
+real streaming request forwarded) saw three requests for the task above,
+with only the `terminal` toolset enabled and no skills:
+
+| Request | Messages | Tools | Prompt tokens |
+|---|---|---|---|
+| Session title | 2 | 0 | 273 |
+| First turn | 2 | 4 | 2,956 |
+| After the tool result | 4 | 4 | 3,019 |
+
+So a minimal Hermes turn is about 3,000 tokens of prefill on this model —
+the system prompt and four tool schemas — and it fitted inside the
+server's 4,096-token cache with room for one exchange. The 16,000-token
+agent prompt the local-agent guide quotes from Rob Braxman is what a full
+toolset and skills add up to; on a phone through this server that would
+not fit at all until the cache is raised, and at the S26 Ultra's 3,808
+prefill tokens a second it would cost four seconds a turn on GPU, thirty
+on CPU.
+
+## The Android example
+
+`example/android/` is a one-screen app: a question box, an Ask button,
+the answer, and the time it took; the same two tools as the preset,
+declared as a `ToolSet` with `@Tool` and `@ToolParam`; engine created on
+a background thread from `/data/local/tmp/gemma-4-E2B-it.litertlm`, GPU
+backend. Built with Android Studio's JDK and the SDK already on the
+machine:
+
+```
+cd example/android && ./gradlew assembleDebug        # app-debug.apk, 55 MB, 22 s warm
+```
+
+The first build failed: `litertlm-android:0.17.0` is compiled with Kotlin
+2.4.0 metadata, and the Kotlin 2.2.20 plugin "can read versions up to
+2.3.0". Moving the project to the Kotlin 2.4.0 plugin fixed it (the
+Gallery pins 0.11.0 with Kotlin 2.2.21). Not installed on a device; no
+device. The steps for when there is one:
+
+```
+adb push ~/.litert-lm/models/gemma-4-E2B-it.litertlm/model.litertlm /data/local/tmp/gemma-4-E2B-it.litertlm
+adb install app/build/outputs/apk/debug/app-debug.apk
+```

@@ -1,0 +1,83 @@
+# The two tools — HyperFrames and Kokoro, checked at the source on 2026-09-13
+
+## Access and confidence
+
+- **Read in full:** the HyperFrames repository README; its docs pages
+  *How a HyperFrames project works*, *Use voice, music, sound, and
+  captions*, *Finish and share a video*, *Rules and anti-patterns*; the CLI's
+  own `render --help`; the four video projects in this repository (their
+  READMEs, `index.html`, every composition, `AGENTS.md`); the Kokoro
+  repository README and the Kokoro-82M model card; the npm and PyPI records
+  for `hyperframes`, `kokoro` and `kokoro-onnx`.
+- **Measured here:** see [`run.md`](run.md).
+- **Not verified:** Kokoro's quality claims ("comparable quality to larger
+  models") — the model card's own words, not tested against anything here.
+
+## HyperFrames (HeyGen)
+
+[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes),
+Apache-2.0, created 2026-03-10, 49,338 stars on 2026-09-13; npm `hyperframes`
+0.8.36 (published 2026-09-12), Node ≥ 22. The README's line: *"Write HTML.
+Render video. Built for agents."* — "an open-source framework for turning
+HTML, CSS, media, and seekable animations into deterministic MP4 videos."
+
+How it works, from the concepts page: a project is a folder of HTML; a
+**composition** is a finite, seekable piece — `index.html` is the root and
+scenes are sub-compositions pulled in with `data-composition-src`. Time is
+in the markup: every timed element carries `data-start` and
+`data-duration`. Each composition registers one paused GSAP timeline on
+`window.__timelines[id]`; the renderer **seeks** that timeline to an exact
+time, captures the frame, and encodes — which is why the same timestamp
+resolves to the same pixels, and why the rules forbid `Date.now()`,
+`Math.random()` and network fetches.
+
+The CLI: `init`, `preview` (Studio, a browser editor that writes back to the
+source), `lint`, `check` (lint plus a browser pass: runtime, layout,
+motion, WCAG contrast), `render`, `publish`, `tts`, `docs`. Twenty skills for
+coding agents, installed with `npx hyperframes skills update`; `/hyperframes`
+is the router. The docs are on `llms.txt`.
+
+**Render options that mattered here:** `--crf 23` (H.264 quality) and
+`--low-memory-mode`, which streams frames into the encoder instead of
+writing every frame as a PNG first. The rules page's whole second half is
+about *cold seeks*: a render worker jumps straight to a frame, so an element
+hidden by a `fromTo` without an explicit visible end state, a relative tween,
+a measurement inside a timeline callback, or a round-capped stroke can all
+look right in the sequential preview and wrong in the render. The linter
+has codes for eight of them.
+
+## Kokoro (hexgrad)
+
+[hexgrad/kokoro](https://github.com/hexgrad/kokoro), Apache-2.0, 8,815
+stars; model card [hexgrad/Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M),
+Apache-licensed weights. *"An open-weight TTS model with 82 million
+parameters."* v1.0 released 2025-01-27, trained on "a few hundred hours",
+8 languages and 54 voices (VOICES.md); the voice used in every Collegica
+video is `af_heart` (American English, female). The reference library is
+`pip install kokoro` (0.9.4), which uses the `misaki` G2P and falls back to
+`espeak-ng` for out-of-dictionary English and some other languages; the
+alternative used here is `kokoro-onnx` (0.6.1 on PyPI; 0.4.7 in the
+project's venv), which runs the model on ONNX Runtime with no PyTorch.
+
+The model card's own price comparison, for scale: served over an API,
+under $1 per million characters — about a minute of audio per thousand
+characters. Locally it costs the electricity.
+
+**Pronunciation:** Kokoro reads "Collegica" wrong by default. Every
+project's frame-7 script spells it "College-ika" for the audio only; the
+on-screen text keeps the real spelling.
+
+## The four videos in this repository
+
+| Video | Made | Length | Frames | Notes |
+|---|---|---|---|---|
+| Planning to Age Well, with AI | 2026-09-09 | 90 s | 7 | first; `say -v Samantha` tried and rejected as robotic before Kokoro |
+| Finding Your Next Job, with AI | 2026-09-10 | 90 s | 7 | |
+| A Year of Spending, from Your Own Statements | 2026-09-10 | 90 s | 7 | |
+| Fixed or Variable | 2026-09-11 | 100.41 s | 7 | longest; needed `--low-memory-mode`; every number from the mortgage simulator |
+
+All pin `hyperframes@0.8.33`, all 1920×1080, kinetic type in the site's
+palette with no generated imagery, one Kokoro WAV per frame, hard cuts
+with a 0.35 s crossfade, the article's own hero reused as an asset where one
+exists. Brand marks are copied into each project from `video/brand/` because
+a composition cannot reach outside its project (`invalid_parent_traversal_in_asset_path`).

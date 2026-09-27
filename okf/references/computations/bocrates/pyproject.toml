@@ -1,0 +1,16 @@
+[project]
+name = "bocrates"
+version = "0.1.0"
+description = "Annual summaries of the Bank of Canada overnight rate"
+requires-python = ">=3.11"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bocrates"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

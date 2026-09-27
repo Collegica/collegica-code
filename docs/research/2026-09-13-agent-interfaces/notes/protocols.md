@@ -1,0 +1,63 @@
+# The protocols — MCP, AG-UI, and the one that changed its name
+
+## Access and confidence
+
+- **Read in full:** the AG-UI repository README; the AGNTCY organisation's
+  repository list; the SLIM README; PR agntcy/slim#293; the installed
+  `mcp` 2.2.0 and `ag-ui-protocol` 0.1.22 packages, introspected.
+- **Not obtained:** web search (the session's budget was spent earlier). Every
+  fact below came from fetching a primary source directly.
+
+## MCP — Model Context Protocol
+
+Tools, resources and prompts over JSON-RPC; transports are stdio and
+Streamable HTTP. The Python SDK is `mcp`, 2.2.0 on PyPI and conda-forge as of
+2026-09-13. **Breaking change in 2.x:** `from mcp.server.fastmcp import
+FastMCP` raises `ModuleNotFoundError` with a message that says so — "FastMCP
+was renamed to MCPServer (from mcp.server.mcpserver import MCPServer)". The
+server handshake in the example negotiated protocol version `2025-11-25`.
+
+`MCPServer` offers `run("stdio" | "sse" | "streamable-http")`,
+`streamable_http_app()` (a Starlette app to mount), and in-process
+`list_tools()` / `call_tool()` — the latter is what the tests use; the
+stdio check uses `mcp.client.stdio.stdio_client` with a `ClientSession`.
+
+## AG-UI — Agent-User Interaction Protocol
+
+[ag-ui-protocol/ag-ui](https://github.com/ag-ui-protocol/ag-ui), CopilotKit.
+MIT. Created 2025-05-07; 15,860 stars; last push 2026-09-12. Its own framing:
+"MCP gives agents tools; A2A allows agents to communicate with other agents;
+AG-UI brings agents into user-facing applications."
+
+An event protocol: the backend accepts a `RunAgentInput` (`threadId`, `runId`,
+`messages`, `tools`, `context`, `state`, `forwardedProps`) and emits typed
+events, by default over SSE. The README says "~16 standard event types";
+`ag_ui.core.EventType` in 0.1.22 has **36**: the text-message and tool-call
+lifecycles, thinking and reasoning lifecycles, `STATE_SNAPSHOT`/`STATE_DELTA`,
+`MESSAGES_SNAPSHOT`, activity events, step and run lifecycles, subagent
+events, `RAW` and `CUSTOM`. The Python package ships `ag_ui.encoder.
+EventEncoder`, which writes `data: {...}\n\n` with camel-cased keys and
+reports `text/event-stream`. Models accept camel-cased input.
+
+First-party integrations listed: Microsoft Agent Framework, Google ADK, AWS
+Strands, Mastra, Pydantic AI, Agno, LlamaIndex, AG2; partnerships with
+LangGraph and CrewAI; community integrations for the Claude Agent SDK and
+Claude Managed Agents.
+
+## "AGP" — Agent Gateway Protocol, now SLIM
+
+The AGNTCY collective (Cisco-led; agntcy.org) has no repository called `agp`.
+Commit history in `agntcy/slim` carries crates named `agp-config`,
+`agp-tracing`, `agp-mcp`, and **PR #293, "refactor: rename AGP to SLIM",
+merged 2025-06-03**. The project is now **SLIM — Secure Low-Latency
+Interactive Messaging**: "the secure, scalable transport layer for AI agent
+protocols like A2A and MCP." Three components: a data plane that routes on
+hierarchical names without inspecting content, a session layer with MLS
+end-to-end encryption and group membership, a control plane. Bindings for
+Python, Go, .NET, Java, Kotlin; integrations `slim-mcp-python` and
+`slim-a2a-python`.
+
+Consequence for the question that started this: SLIM is not a fifth door. It
+is what the MCP door's traffic could run over. And anyone specifying "AGP" in
+2026 is naming something that has not existed under that name for fifteen
+months.

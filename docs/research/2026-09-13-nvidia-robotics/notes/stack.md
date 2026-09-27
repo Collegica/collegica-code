@@ -1,0 +1,272 @@
+# NVIDIA's robotics stack — checked at the source on 2026-09-13
+
+## Access and confidence
+
+- **Read in full, first-hand:** the GitHub READMEs (raw, `main`) of
+  `isaac-sim/IsaacSim` and its `VERSION` file, `isaac-sim/IsaacLab`,
+  `newton-physics/newton`, `NVIDIA/warp`, `NVIDIA/Isaac-GR00T` and its
+  `LICENSE`, `nvidia-cosmos/cosmos-predict2.5` and `cosmos-reason2`,
+  `NVlabs/curobo`, `NVIDIA-ISAAC-ROS/isaac_ros_common` and its `LICENSE`,
+  `isaac-sim/isaac-launchable`; the `nvidia-cosmos` organisation page; the
+  GitHub announcements for Isaac Sim 6.0 early developer release
+  (discussion #538), Isaac Sim 6.0 GA (#655), Isaac Lab 3.0 Beta (release
+  `v3.0.0-beta`) and Beta 2 (discussion #6249); the Newton releases page.
+  PyPI's JSON API for `isaacsim`, `isaaclab`, `newton`, `warp-lang` and
+  `mujoco-warp`, queried with `curl` from this machine — every version,
+  date, `requires_python` and wheel platform tag below comes from there.
+- **Run here:** Warp and Newton on a CPU-only Ubuntu container —
+  [`cpu-run.md`](cpu-run.md).
+- **Not obtained — blocked by this session's egress policy (403 at the
+  proxy), not by the sites:** `docs.isaacsim.omniverse.nvidia.com`,
+  `isaac-sim.github.io` (the Isaac Lab docs), `developer.nvidia.com`,
+  `www.nvidia.com`, `nvidianews.nvidia.com`, `huggingface.co`,
+  `en.wikipedia.org`. What is taken from those — Isaac Sim's RAM, disk,
+  driver and "no RT cores" lines, the licence FAQ, the WebRTC streaming
+  client, Jetson and DGX Spark specifications and prices, the GTC 2026
+  announcements, Isaac ROS's platform table — comes from search-result
+  snippets of the vendor pages corroborated by retailers and trade press.
+  It is marked *(search)* below and carries lower confidence than the rest.
+
+## Versions on 13 September 2026, from PyPI
+
+| Package | Latest | Uploaded | `requires_python` | Wheels | Licence field |
+|---|---|---|---|---|---|
+| `isaacsim` | 6.1.0.0 | 2026-09-09 | `==3.12.*` | manylinux 2.35 x86-64 and aarch64, win_amd64 | "NVIDIA Proprietary Software" |
+| `isaaclab` | 2.3.2.post1 | 2026-02-11 | `==3.11.*` | same three | "NVIDIA Proprietary Software" |
+| `newton` | 1.6.0 | 2026-09-10 | `>=3.10` | pure Python | none (Apache-2.0 in the repository) |
+| `warp-lang` | 1.17.0 | 2026-08-31 | `>=3.10` | macOS 11 arm64, manylinux 2.28 x86-64, manylinux 2.34 aarch64, win_amd64 | Apache-2.0 |
+| `mujoco-warp` | 3.13.0 | 2026-09-09 | `>=3.10` | pure Python | none |
+
+Earlier `isaacsim` uploads: 5.0.0.0 on 2025-08-07 and 5.1.0.0 on
+2025-10-21 (both `==3.11.*`); 6.0.0.0 on 2026-03-16 (the GTC early developer
+release), 6.0.0.1 on 2026-06-05, 6.0.1.0 on 2026-06-22 (all `==3.12.*`).
+`isaaclab` 2.1.0 (2025-04-24) was Python 3.10, 2.2.0 (2025-08-07) onward
+3.11. `newton` 1.0.0 was uploaded on 2026-03-10, a week before GTC; then
+1.1.0 (04-13), 1.2.0 (05-12), 1.3.0 (06-11), 1.4.0 (07-16), 1.5.0 (08-11),
+1.6.0 (09-10) — a release a month.
+
+A consequence, verified here: `pip index versions isaacsim` from a Python
+3.11 interpreter reports 5.1.0.0 as the latest, because pip only lists
+versions the running interpreter can install. The 6.x line is invisible
+until the interpreter is 3.12.
+
+## Physics: Warp and Newton
+
+**Warp** (`NVIDIA/warp`): "a Python framework for GPU-accelerated
+simulation, robotics, and machine learning. Warp takes regular Python
+functions and JIT compiles them to efficient kernel code that can run on the
+CPU or GPU." "The Windows x86-64 and Linux wheels support CPU execution and
+CUDA acceleration." "The macOS wheels support CPU execution but not Metal
+acceleration." Python 3.10+; an NVIDIA GPU only for CUDA. "Warp is provided
+under the Apache License, Version 2.0." Its `warp.sim` module is deprecated
+in favour of Newton.
+
+**Newton** (`newton-physics/newton`): "a GPU-accelerated physics simulation
+engine built upon NVIDIA Warp, specifically targeting roboticists and
+simulation researchers." "Newton was initiated by Disney Research, Google
+DeepMind, and NVIDIA." "Newton is a Linux Foundation project that is
+community-built and maintained. Code is licensed under Apache-2.0"
+(documentation CC-BY-4.0). It "extends and generalizes Warp's deprecated
+`warp.sim` module, and integrates MuJoCo Warp as its primary backend."
+Requirements: Python 3.10+; "Linux (x86-64, aarch64), Windows (x86-64), or
+macOS (CPU only)"; "NVIDIA GPU (Maxwell or newer), driver 545 or newer (CUDA
+12)"; "No local CUDA Toolkit installation required." Install
+`pip install "newton[examples]"`; run `python -m newton.examples
+basic_viewer`. The 1.6.0 notes *(search, GitHub release)*: faster collision
+detection, OpenUSD-authored MPM particles and deformables, a compliant mode
+for the VBD solver, a `newton.Rod` type, and a broader experimental Kamino
+solver. The examples shipped in 1.6.0 (listed by `python -m newton.examples
+--list` here) include solvers named MuJoCo, XPBD, VBD, Featherstone, Kamino
+and ADMM, and MPM, cloth, cable and soft-body examples.
+
+Trade coverage of GTC 2026 *(search)* calls Newton 1.0 "production-ready"
+and quotes a 475× figure against MJX on an RTX PRO 6000; the figure was not
+found in a first-hand source and is not used.
+
+## The simulator: Isaac Sim
+
+`isaac-sim/IsaacSim` README: "NVIDIA Isaac Sim™ is a simulation platform
+built on NVIDIA Omniverse, designed to develop, test, train, and deploy
+AI-powered robots in realistic virtual environments." Requirements:
+"Windows 11 or Linux (Ubuntu 22.04/24.04)"; GPU, workstation — minimum RTX
+4080, recommended RTX 5080 or RTX 5880 Ada, best RTX PRO 6000 or PRO 5000
+Blackwell Workstation; datacenter — minimum A40, recommended L40S or L20,
+best RTX PRO 6000 Blackwell Server. macOS is not listed. Four ways in:
+build from source, "Pre-built wheels for released versions are also
+available on pypi.nvidia.com", a binary archive, a Docker container. Licence
+badge Apache 2.0; "Licensing terms can be found in the License File". The
+`VERSION` file on `main` reads `6.1.0-rc.26`.
+
+The 5.1 requirements page *(search)* adds: RTX 4080 with 16 GB VRAM as the
+minimum, "GPUs without RT Cores (A100, H100) are not supported", 32 GB RAM,
+50 GB free disk (pip install about 25 GB, binary 35 GB, container 20 GB plus
+volumes), driver 580.65.06+ on Linux and 580.88 on Windows. The launchable
+README (read) agrees on the RT-core point: "GPUs with RT cores are required
+for Kit App Streaming."
+
+Timeline, from GitHub and PyPI:
+
+- **5.0**, 2025-08-07 on PyPI — the release open-sourced on GitHub under
+  Apache 2.0, announced at SIGGRAPH 2025 *(search, NVIDIA blog)*.
+- **5.1**, 2025-10-21.
+- **6.0 early developer release**, 2026-03-16 (discussion #538): "Isaac Sim
+  now supports multiple physics backends, including both PhysX and Newton";
+  Kit 110 with "NVIDIA Omniverse NuRec 3D Gaussian splatting libraries";
+  nested rigid-body physics on the GPU; robot authoring tools (Inspector,
+  Poser); "ROS2 Jazzy system-level installations can now be sourced
+  directly" thanks to Python 3.12. "As with other early/experimental
+  functionality, some APIs and schemas may evolve in upcoming updates."
+- **6.0 GA**, 2026-06-08 (discussion #655): "Newton authoring and SIL
+  workflows: Isaac Sim 6.0 expands support for the Newton physics backend";
+  "Isaac Sim MCP: A new deployable Model Context Protocol server exposes
+  Isaac Sim Extensions, APIs, and documentation to AI coding assistants";
+  "Isaac Sim Skills: A new Isaac Sim Skill allows users to launch Isaac Sim
+  and connect to a live, running instance directly from Claude Code";
+  acoustic and structured-light sensors; "Native Windows ROS 2 Support …
+  using Pixi"; Isaac Teleop. "Documentation for Isaac Sim 4.5 will be
+  removed with the release of Isaac Sim 6.1."
+- **6.0.1**, 2026-06-22. **6.1.0**, 2026-09-09 on PyPI, tagged "Isaac Sim
+  6.1.0 GA"; its release-notes link was reported broken the day after
+  (issue #817).
+
+Licence FAQ *(search, docs)*: free with an NVIDIA account under the
+Omniverse individual licence for internal research and development; an
+NVIDIA AI Enterprise licence is needed only to redistribute Isaac Sim (with
+Omniverse Kit) to third parties or deliver it as a service; selling outputs
+(datasets, videos, reports) or your own Python and USD does not need one.
+The building blocks — Omniverse Kit SDK, models, textures — are under the
+"NVIDIA Isaac Sim Additional Software and Materials License", which is why
+the PyPI wheel's licence field reads "NVIDIA Proprietary Software" while
+the repository is Apache 2.0.
+
+## Learning: Isaac Lab
+
+`isaac-sim/IsaacLab` README (`main`): "Isaac Lab is a GPU-accelerated,
+open-source framework designed to unify and simplify robotics research
+workflows, such as reinforcement learning, imitation learning, and motion
+planning." Badges: IsaacSim 5.1.0, Python 3.11, linux-64, windows-64,
+BSD-3 and Apache-2.0. "The Isaac Lab framework is released under BSD-3
+License"; "the `isaaclab_mimic` extension released under Apache 2.0". The
+compatibility table on `main`: `main` and `v2.3.X` — Isaac Sim 4.5 / 5.0 /
+5.1; `v2.2.X` — 4.5 / 5.0; `v2.1.X` and `v2.0.X` — 4.5. So `main` is still
+the 2.3 line, and the PyPI package (2.3.2.post1, Python 3.11) matches it.
+PyPI's licence field for it, "NVIDIA Proprietary Software", contradicts the
+repository's BSD-3 — the packaging metadata, not the licence file, is the
+odd one out.
+
+The 3.0 line lives in tags and a branch, not on PyPI:
+
+- **v3.0.0-beta**, 2026-03-17 (GTC): "Isaac Lab 3.0 Beta is the next major
+  release of Isaac Lab, built on **Isaac Sim 6.0**". "The new
+  `isaaclab_newton` extension enables running Isaac Lab environments
+  **without Isaac Sim** (kit-less mode)" on the "MuJoCo-Warp solver with
+  configurable integrators (`implicitfast`, `euler`)".
+- **v3.0.0-beta2**, announced 2026-06-23 (discussion #6249): "compatible
+  with **Isaac Sim 6.0**"; VBD deformables for cables and soft materials;
+  the Kamino solver; per the release notes *(search)* the multi-backend
+  paths — PhysX, Newton, OVPhysX, Isaac RTX, OVRTX, kit-less — were
+  hardened, with MJWarp, XPBD and Featherstone solvers under Newton.
+- **v3.0.0-beta2.patch1**: "a small patch release … including an update to
+  support Isaac Sim 6.0.1."
+
+No date for a 3.0 GA was found.
+
+## World models: Cosmos
+
+The `nvidia-cosmos` organisation on 2026-09-13: **Cosmos-Predict2.5**
+("specialized for simulating and predicting the future state of the world
+in the form of video"; 2B and 14B base models; robot/action-conditioned and
+policy checkpoints trained on RoboCasa and LIBERO), **Cosmos-Transfer2.5**
+("produces high-quality world simulations conditioned on multiple spatial
+control inputs", built on Predict2.5), **Cosmos-Reason2** ("an open,
+customizable, reasoning vision language model (VLM) for physical AI and
+robotics"; "based on the Qwen3-VL architecture"; Reason2-2B "requires 24GB
+GPU memory", Reason2-8B 32 GB), plus Predict1, Transfer1, Reason1,
+Cosmos-RL and a cookbook. Both READMEs read: "NVIDIA Cosmos source code is
+released under the Apache 2 License" and "NVIDIA Cosmos models are released
+under the NVIDIA Open Model License." Predict2 lists "NVIDIA GPUs with
+Ampere architecture (RTX 30 Series, A100) or newer" and CUDA 12.6. The 2.5
+generation and Reason 2 were announced at CES 2026 *(search)*; Predict 2.5
+merged the former Text2World, Image2World and Video2World into one model.
+
+## The robot brain: GR00T N1.7
+
+`NVIDIA/Isaac-GR00T` README: "NVIDIA Isaac GR00T N1.7 is an open
+vision-language-action (VLA) model for generalized humanoid robot skills";
+it "takes multimodal input, including language and images, to perform
+manipulation tasks in diverse environments", "trained on a diverse mixture
+of robot data including bimanual, semi-humanoid and an expansive humanoid
+dataset." Architecture: a Cosmos-Reason2-2B vision-language backbone (the
+Qwen3-VL lineage) and a flow-matching diffusion transformer that emits
+actions. Checkpoints: `nvidia/GR00T-N1.7-3B` (the base, 3 billion
+parameters), and fine-tunes for DROID, LIBERO (Franka Panda) and
+SimplerEnv (Bridge, Fractal). N1.6 and N1.5 remain on branches. Hardware:
+"Inference: 1 GPU with 16 GB+ VRAM (e.g., RTX 4090, L40, H100, Jetson AGX
+Thor/Orin, DGX Spark)"; "Fine-tuning: 1 or more GPUs with 40 GB+ VRAM
+recommended. We recommend H100 or L40 nodes." Install: clone with
+`--recurse-submodules` and `git-lfs`, `uv sync --python 3.12`, FFmpeg,
+`huggingface-cli login`. Licence: the repository's `LICENSE` is Apache
+License 2.0 (NVIDIA CORPORATION & AFFILIATES, 2026); "Model Weights: NVIDIA
+Open Model License". Early access was announced on 2026-04-17 and the GA
+release, with commercial terms, followed *(search, NVIDIA forum and blog)*.
+
+## Deployment: Isaac ROS, cuRobo, Jetson, DGX Spark
+
+**Isaac ROS** (`NVIDIA-ISAAC-ROS`): "A collection of NVIDIA-accelerated,
+high performance, low latency ROS 2 packages for making autonomous robots";
+`isaac_ros_common` README: "Update 2026-08-18: Compatibility and integration
+updates for the Isaac ROS 4.6.0 release." Its `LICENSE` file is the "NVIDIA
+ISAAC ROS SOFTWARE LICENSE" (17 November 2021) — not Apache. Platforms
+*(search)*: 4.0 arrived with Jetson AGX Thor and JetPack 7.0; 4.6 moves
+Orin to JetPack 7.2 and ROS 2 Jazzy, and is "designed and tested" on
+Jetson, an x86_64 system with an NVIDIA GPU, or a DGX Spark.
+
+**cuRobo** (`NVlabs/curobo`): "a CUDA-accelerated library for robot motion
+generation, built on PyTorch, CUDA, and Warp"; "released under the Apache
+2.0 license."
+
+**Jetson** *(search: NVIDIA press release via investor.nvidia.com, NVIDIA
+technical blog, and retailers — Seeed, Arrow, CNX Software)*: the Jetson
+AGX Thor Developer Kit went on sale 2025-08-25 at $3,499 (T5000 module with
+heat sink, carrier, 140 W supply, Wi-Fi 6E, 1 TB NVMe); up to 2,070 FP4
+TFLOPS, a 2,560-core Blackwell GPU, a 14-core Arm Neoverse V3AE CPU, 128 GB
+LPDDR5X, 40–130 W; "7.5x more AI compute and 3.5x greater energy efficiency"
+than Jetson AGX Orin. The Jetson Orin Nano Super Developer Kit is $249 for
+an Orin Nano 8 GB module at 67 sparse TOPS; an existing Orin Nano kit
+becomes a Super with a software update.
+
+**DGX Spark** *(search)*: GB10 Grace Blackwell, 128 GB unified memory;
+launched October 2025 at $3,999; listed at $4,699 on NVIDIA's own store in
+2026, with retailers between. GR00T's README names it as an inference
+target; Isaac ROS 4.6 names it as a tested platform.
+
+## Renting and streaming
+
+`isaac-sim/isaac-launchable` (read): a Brev launchable with "a Visual Studio
+Code container", an "Isaac Lab 3.0.0-beta2-post1 container", an "Isaac Sim
+6.0.1 container" and "an Omniverse Kit App Streaming client"; "GPUs with RT
+cores are required for Kit App Streaming"; "Brev instances are
+pay-by-the-hour. To make the best use of credits, stop instances when they
+are not in use." "This project is intended for learning purposes. It is not
+intended for production use." NVIDIA's blog *(search)* describes the Isaac
+Lab launchable on "one NVIDIA L40S GPU" with ports exposed for WebRTC.
+
+The Isaac Sim docs *(search)* list a native "Isaac Sim WebRTC Streaming
+Client" for Windows, macOS (x86_64 and arm64) and Linux, version 1.1.5 of
+October 2025, for connecting to a headless instance started with
+`isaac-sim.headless.webrtc.sh`; a browser client at
+`http://<server>:8211/streaming/webrtc-client/?server=<server>` is the
+alternative.
+
+## Licences, side by side
+
+| Piece | Code | Weights or binaries |
+|---|---|---|
+| Warp | Apache-2.0 | — |
+| Newton | Apache-2.0 (Linux Foundation) | — |
+| Isaac Sim | Apache-2.0 on GitHub | wheels "NVIDIA Proprietary Software"; Kit and assets under the Additional Software and Materials License |
+| Isaac Lab | BSD-3 (`isaaclab_mimic` Apache-2.0) | PyPI metadata says proprietary; the repository does not |
+| Cosmos | Apache-2.0 | NVIDIA Open Model License |
+| GR00T N1.7 | Apache-2.0 | NVIDIA Open Model License |
+| cuRobo | Apache-2.0 | — |
+| Isaac ROS | NVIDIA Isaac ROS Software License | — |

@@ -1,0 +1,269 @@
+# Research note: current rates, forecasts, and how the comparison sites argue fixed vs variable
+
+Research date: 2026-09-10 (evening, Eastern). Stream: current rates and forecasts.
+Audience for the article: Ontario-first Canadian homeowners and buyers, 45-65, technically literate, skeptical.
+
+All rates below are advertised "best" rates on comparison sites unless labelled otherwise. They move daily; the article should date-stamp anything it quotes.
+
+## Access and confidence
+
+Fetched in full (WebFetch succeeded, page date shown):
+
+- https://www.ratehub.ca/best-mortgage-rates (page dated Sept 10, 2026)
+- https://www.ratehub.ca/best-mortgage-rates/5-year/fixed (Sept 10, 2026, 9:13 p.m.)
+- https://www.ratehub.ca/best-mortgage-rates/5-year/variable (Sept 10, 2026, 9:13 p.m.)
+- https://www.nesto.ca/mortgage-rates/ (Sept 10, 2026)
+- https://wowa.ca/mortgage-rates (Sept 10, 2026, 6:18 p.m. ET)
+- https://wowa.ca/interest-rate-forecast (page shows Sept 11, 2026; fetched Sept 10 evening ET)
+- https://www.truenorthmortgage.ca/blog/mortgage-rate-forecast (updated Sept 10, 2026, from a Sept 4 version)
+- https://www.frankmortgage.com/learn/mortgage-rate-forecast-2026 and https://www.frankmortgage.com/mortgage-rate-forecast-for-2026 (both Sept 2, 2026; same content, two URLs)
+- https://www.mortgagesandbox.com/mortgage-interest-rate-forecast (undated; data through Sept 2, 2026)
+- https://www.coradvisors.net/2026/08/canadian-mortgage-rate-predictions-2026.html (Aug 2, 2026)
+- https://pegasuslending.com/blog/fixed-vs-variable-mortgage-canada-2026-2/ (Apr 17, 2026)
+- https://lendsimpl.ca/blog/fixed-vs-variable-mortgage-rates-canada-2026 (Apr 13, 2026, updated July 14, 2026)
+- https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/ (primary source)
+- https://www.bankofcanada.ca/2026/09/fad-press-release-2026-09-02/ (primary source, Sept 2 decision)
+- https://www.ratehub.ca/prime-rate (Sept 10, 2026)
+- https://www.nesto.ca/home-buying/bank-of-canada-rate-announcement/ (Sept 2026)
+- https://www.nerdwallet.com/ca/p/best/mortgages/variable-mortgage-rates (Sept 10, 2026) -- SUBSTITUTE for the assigned NerdWallet URL, see below
+- https://www.mpamag.com/ca/mortgage-industry/industry-trends/variable-rates-are-cheaper-than-fixed-canadians-still-arent-biting/580120 (June 24, 2026; trade-press write-up of the Rates.ca report)
+- https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research/housing-research/research-reports/housing-finance/residential-mortgage-industry-report (CMHC Spring 2026 edition, May 12, 2026)
+- https://www.theglobeandmail.com/globe-investor/personal-finance/is-a-variable-rate-mortgage-always-best/article4330257/ (Oct 26, 2010; Milevsky origin)
+- https://tradingeconomics.com/canada/interest-rate (Sept 2026)
+
+Failed twice, fallback used:
+
+- https://www.nerdwallet.com/ca/mortgages/find-the-best-variable-mortgage-rates-in-canada-2 -- HTTP 404 both attempts. The URL appears dead. NerdWallet's live variable-rate page (URL above) was fetched instead and is treated as the NerdWallet source.
+- https://rates.ca/mortgage-report -- HTTP 403 both attempts (bot-blocked). Figures below are [snippet] from a WebSearch summary plus the mpamag.com write-up of the same report. Confidence: medium; the numbers are consistent across both.
+- https://www.canadianmortgagetrends.com/2026/09/shift-to-variable-shorter-term-mortgages-raises-borrowers-rate-exposure-cmhc/ -- HTTP 403 twice. CMHC Q1 2026 figures below are [snippet] from WebSearch. Confidence: medium.
+- https://www.canadianmortgagetrends.com/2008/04/fixed-or-variab/ -- HTTP 403. Milevsky 2008 update figures are [snippet]. Confidence: medium; the 2001 figures are confirmed by the Globe and Mail fetch.
+
+Things the fetches got that look wrong or stale (do not use without checking):
+
+- Ratehub's main page summary said the overnight rate was "held since June 2"; that is a summarizer artifact. The Bank of Canada page says the last change was Oct 29, 2025. Use the BoC date.
+- Ratehub's variable page body copy says variable is "currently around 3.45% vs. 3.79%" while its own rate table on the same page shows 3.30% vs 4.09%. The body copy is stale.
+- Lendsimpl states the overnight rate was "2.75% as of April 2026" and prime "4.95% at Big 5 banks". Both are wrong for April 2026: per the BoC and Ratehub prime history, the overnight rate has been 2.25% since Oct 29, 2025 and prime 4.45%. Prime was 4.95% in March-Sept 2025. Lendsimpl's rate figures (5y fixed 4.29-4.49%, variable 4.10-4.30%) likewise look like 2025 numbers. Treat Lendsimpl as an argument source, not a rate source.
+- Frank Mortgage's page (as fetched) says Japanese 10-year yields "reached over 32%". That is clearly garbled (the figure is more plausibly 3.2%). Not used.
+- Big-bank "posted" 5-year fixed rates differ between Ratehub (Scotia 4.29, BMO 4.51, RBC/TD/CIBC 4.59) and WOWA (RBC 4.89, TD 4.84, BMO 4.74, CIBC 4.59). Ratehub's are probably the banks' advertised "special" rates rather than true posted rates. Do not call either "posted" without checking the bank's own page.
+
+## The anchor facts (primary sources)
+
+- Bank of Canada target for the overnight rate: **2.25%**. Held at the Sept 2, 2026 announcement, the seventh consecutive hold. Bank Rate 2.50%, deposit rate 2.20%.
+  https://www.bankofcanada.ca/2026/09/fad-press-release-2026-09-02/
+- Last change: **Oct 29, 2025**, cut 25 bp from 2.50% to 2.25%.
+  https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/
+- Next announcement: **Oct 28, 2026**; after that Dec 9, 2026. 2026 dates: Jan 28, Mar 18, Apr 29, Jun 10, Jul 15, Sep 2, Oct 28, Dec 9.
+  https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/
+- Big-bank prime rate: **4.45%** at RBC, TD, BMO, Scotiabank, CIBC, National Bank. Unchanged since Oct 29, 2025 (from 4.70%). Prime history: 5.95% (Oct 23, 2024) -> 5.45% (Dec 11, 2024) -> 5.20% (Jan 29, 2025) -> 4.95% (Mar 12, 2025) -> 4.70% (Sept 17, 2025) -> 4.45% (Oct 29, 2025).
+  https://www.ratehub.ca/prime-rate ; WebSearch confirmation via https://wowa.ca/banks/prime-rates-canada and https://www.nesto.ca/mortgage-basics/canada-prime-mortgage-rate/
+- Why the Bank held (its own words, Sept 2): CPI "hovering around 3% in recent months" because of gasoline; core ex-gasoline 2.2%; "the continuing conflict in the Middle East is keeping energy prices high"; "new US tariffs and Canadian counter-measures have been announced" after trade talks broke down; Q2 GDP up 3.3% annualized; unemployment 6.4% in July. Forward guidance is two-sided: "prepared to adjust monetary policy as needed" -- no easing bias.
+  https://www.bankofcanada.ca/2026/09/fad-press-release-2026-09-02/
+- 5-year Government of Canada bond yield (drives fixed rates): about 3.35% on Sept 1 (Frank); "around 3.35%" after a 12-month high near 3.36% in August (nesto); 3.6% (True North, Sept 10 -- higher than the others, unverified).
+  https://www.frankmortgage.com/learn/mortgage-rate-forecast-2026 ; https://www.nesto.ca/home-buying/bank-of-canada-rate-announcement/ ; https://www.truenorthmortgage.ca/blog/mortgage-rate-forecast
+
+## Rates table (as shown on each page, Sept 10, 2026 unless noted)
+
+| Source | Page date | Best 5y fixed | Best 5y variable | 3y fixed | Prime | Overnight |
+|---|---|---|---|---|---|---|
+| Ratehub main https://www.ratehub.ca/best-mortgage-rates | Sept 10, 2026 | 4.09% (insured) | 3.30% (= prime - 1.15%) | 3.94% | 4.45% | 2.25% |
+| Ratehub 5y fixed https://www.ratehub.ca/best-mortgage-rates/5-year/fixed | Sept 10, 2026 | 4.09% insured ("Big 6 Bank", Simplii); uninsured not broken out | 3.30% | -- | 4.45% | 2.25% |
+| Ratehub 5y variable https://www.ratehub.ca/best-mortgage-rates/5-year/variable | Sept 10, 2026 | -- | 3.30% ("Canadian Lender", Ratehub exclusive); 3.44% Meridian; 3.50% "Big 6 Bank"; bank variable specials RBC 3.65, Scotia 3.65, CIBC 3.95, TD 4.04, BMO 4.53 | -- | 4.45% | 2.25% |
+| nesto https://www.nesto.ca/mortgage-rates/ | Sept 10, 2026 | 4.24% insured | 3.45% insured (prime - 1.00%) | 4.29% insured; 3y variable 3.60% | 4.45% | 2.25% |
+| nesto "national average conventional" (same page) | Sept 10, 2026 | 4.92% | 4.16% | 4.88% | | |
+| WOWA https://wowa.ca/mortgage-rates | Sept 10, 2026 | 3.94% insured (Butler, Frank); 4.64% uninsured (nesto, with 1% cash back) | 3.30% ("LOWEST") | 3.89% | not on page | not on page |
+| WOWA big-bank 5y fixed (same page) | Sept 10, 2026 | RBC 4.89, TD 4.84, BMO 4.74, CIBC 4.59 | | | | |
+| NerdWallet https://www.nerdwallet.com/ca/p/best/mortgages/variable-mortgage-rates (substitute URL) | Sept 10, 2026 | not shown | 3.50% (Marathon Mortgage) | -- | not stated | 2.25% |
+| NerdWallet [snippet, WebSearch] | Sept 3-9, 2026 | -- | "just shy of 3.4%" (Sept 3); First National prime - 0.90% = 3.55% (insurable, LTV < 65%) | | 4.45% | 2.25% |
+| True North https://www.truenorthmortgage.ca/blog/mortgage-rate-forecast | Sept 10, 2026 | "up to 4.24%" | 3.49% | -- | 4.45% | 2.25% |
+| Frank Mortgage https://www.frankmortgage.com/learn/mortgage-rate-forecast-2026 | Sept 2, 2026 | 3.99-4.09% | 3.40% | -- | 4.45% | 2.25% |
+| Mortgage Sandbox https://www.mortgagesandbox.com/mortgage-interest-rate-forecast | undated (early Sept 2026) | ~4.60% (looks like a typical, not best, rate) | 4.00% | -- | not stated | 2.25% |
+| Core Advisors https://www.coradvisors.net/2026/08/canadian-mortgage-rate-predictions-2026.html | Aug 2, 2026 | 3.94-4.04% | 3.25-3.50% | -- | 4.45% | 2.25% |
+| Pegasus https://pegasuslending.com/blog/fixed-vs-variable-mortgage-canada-2026-2/ | Apr 17, 2026 | 3.84-4.04% | 3.30-3.35% | -- | 4.45% | 2.25% |
+| Lendsimpl https://lendsimpl.ca/blog/fixed-vs-variable-mortgage-rates-canada-2026 | Apr 13 / Jul 14, 2026 | 4.29-4.49% (STALE, see above) | 4.10-4.30%, "prime - 0.65 to - 0.85" (STALE) | -- | 4.95% (WRONG for 2026) | 2.75% (WRONG for 2026) |
+| Rates.ca via mpamag [snippet] | Apr 2026 data | "around 4.04 per cent" | 3.79% insured, 3.88% uninsured | -- | -- | -- |
+
+Reading of the table:
+
+- Best insured 5-year fixed on Sept 10, 2026 sits in a narrow band: **3.94% (WOWA) to 4.09% (Ratehub)**; nesto's own is 4.24%. Uninsured best 5-year fixed: only WOWA breaks it out, **4.64%** (and that carries a cash-back sweetener).
+- Best 5-year variable: **3.30%** on both Ratehub and WOWA, i.e. **prime - 1.15%**; nesto 3.45% (prime - 1.00%); NerdWallet's table tops out at 3.50%. Big-bank variable specials are 3.65-4.53%.
+- Best 3-year fixed: **3.89% (WOWA) to 3.94% (Ratehub)** -- currently a bit below the 5-year fixed, i.e. the curve is not inverted at the short end the way it was in 2023-24.
+- Spread between best 5y fixed and best 5y variable on Sept 10: **roughly 0.65 to 0.80 percentage points** in variable's favour (WOWA 3.94 vs 3.30 = 0.64; Ratehub 4.09 vs 3.30 = 0.79). Ratehub states the gap explicitly: "a 0.79 percentage point gap." https://www.ratehub.ca/best-mortgage-rates/5-year/fixed
+- nesto's "national average conventional" rates (4.92% fixed, 4.16% variable) are what typical borrowers are actually paying, not the headline bests. Useful for a skeptical audience: the headline rate assumes insured, high-ratio, quick-close, broker channel.
+
+## Forecasts table
+
+| Forecaster (URL) | Date | Overnight end-2026 | Overnight 2027 | Overnight 2028 | 5y fixed end-2026 | 5y fixed 2027 | 5y fixed 2028 | Reasoning given |
+|---|---|---|---|---|---|---|---|---|
+| True North Mortgage https://www.truenorthmortgage.ca/blog/mortgage-rate-forecast | Sept 10, 2026 | 2.25% | 3.25% | 3.25% | 4.39% | 5.27% | 5.35% | July CPI 3.0%; core 2.0%; US trade war escalation; 5y yield 3.6%; oil above $100; US inflation and debt pushing global yields |
+| WOWA https://wowa.ca/interest-rate-forecast | Sept 11, 2026 | 2.50% | 3.25% | 3.50% | 4.36% | 4.49% | 4.57% | Headline 2.8% with energy inflation 19.2% y/y (Strait of Hormuz closure); core near 2%; CUSMA review from July 2026; fixed follows GoC yields not the policy rate. Also forecasts prime 4.70% / 5.45% / 5.70% |
+| Frank Mortgage https://www.frankmortgage.com/learn/mortgage-rate-forecast-2026 | Sept 2, 2026 | no point estimate; fixed "high-3% to mid-4%" | bank range 2.25-3.25%, average 2.75% | -- | -- | 3.9-4.7% fixed; 3.4-4.2% variable | Government borrowing pressuring yields; US 10y near 5%; US trade negotiations "may be a determining factor"; "policy rates ... relatively low by historical standards, through 2027" |
+| Mortgage Sandbox https://www.mortgagesandbox.com/mortgage-interest-rate-forecast | undated, ~Sept 2026 | no number; "remain stable ... or rise" | -- | -- | -- | -- | -- | Energy prices from Middle East conflict; tariffs; inflation 3.0% on gasoline; improved labour market. Links to bank PDFs but does not extract numbers |
+| Core Advisors https://www.coradvisors.net/2026/08/canadian-mortgage-rate-predictions-2026.html | Aug 2, 2026 | TD & CIBC 2.25%; Scotia & NBF 2.75%; RBC 3.25% "by 2027" | -- | -- | TD/CIBC ~4.0-4.3%; Scotia/NBF ~4.5-4.9% | -- | -- | Inflation 2.8%; 2026 GDP 0.7%; US tariffs "top risk"; 5y yield ~3.2%; CMHC housing downgrade (sales -2.8%, prices -0.6%) |
+| Big 6 as compiled by WOWA https://wowa.ca/interest-rate-forecast | pubs Mar-May 2026 | RBC 2.25; TD 2.25; BMO 2.25; Scotia 3.00; CIBC 2.25; NBF 2.25 | RBC 3.25; TD 2.25; BMO 2.25; Scotia 3.00; CIBC 2.75; NBF 2.75 | -- | -- | -- | -- | -- |
+| Trading Economics https://tradingeconomics.com/canada/interest-rate | Sept 2026 | 2.25% | 2.25% | 2.00% | -- | -- | -- | BoC "flagged stronger upside risks to inflation"; uncertain outlook |
+| nesto (market pricing, not forecast) https://www.nesto.ca/mortgage-rates/ | Sept 10, 2026 | "27% probability of a 25-basis-point hike" on Oct 28; "98% chance of a hike" by Dec 9 | -- | -- | -- | -- | -- | Bond-market implied. nesto's own BoC article says markets are "pricing in a partial increase for the December 9 decision" and "most bank economists see the rate frozen at 2.25% through 2026" https://www.nesto.ca/home-buying/bank-of-canada-rate-announcement/ |
+| Ratehub https://www.ratehub.ca/best-mortgage-rates/5-year/fixed | Sept 10, 2026 | -- | -- | -- | "around the 4% range through late 2026" | -- | -- | Unless GoC bond yields shift |
+| Lendsimpl https://lendsimpl.ca/blog/fixed-vs-variable-mortgage-rates-canada-2026 | Apr/Jul 2026 | "60% probability of one more 25 bps cut by September 2026" | -- | -- | -- | -- | -- | Superseded: no cut came |
+
+Consensus reading:
+
+- **End-2026 overnight: 2.25%** is the modal forecast (TD, BMO, CIBC, NBF, RBC, True North, Trading Economics). WOWA's model says 2.50%; Scotiabank 3.00%. Nobody among the fetched sources forecasts a cut before year-end. Nesto's market-pricing numbers are the outlier, pointing to a hike by December; treat as "what bond markets priced on one day," not a forecast.
+- **2027 overnight: split between hold at 2.25% (TD, BMO, Trading Economics) and hikes to 2.75-3.25% (CIBC, NBF, Scotia, RBC, True North, WOWA).** Frank's average of bank forecasts is 2.75%. The direction of the next move is genuinely contested; the only thing the forecasters agree on is that the cutting cycle is over.
+- **5-year fixed end-2026: about 4.35-4.4%** on the two model forecasts (True North 4.39%, WOWA 4.36%); Ratehub says "around 4%". 2027: WOWA 4.49%, Frank 3.9-4.7%, True North 5.27% (True North is the high outlier and its 3.6% bond-yield input is higher than anyone else's).
+- The article should note that the same shops that forecast 3.25% overnight by 2027 are the ones selling mortgages; the Big 6 economists' own numbers (via WOWA and Core Advisors) are a cleaner citation.
+- Driver list every forecaster shares: gasoline/oil from the Middle East conflict keeping headline CPI at ~3% while core sits near 2%; renewed US tariffs and Canadian counter-tariffs after the breakdown of trade talks; GoC 5-year yield in the 3.2-3.6% range pushed up by US Treasury yields and government borrowing; Q2 GDP rebound (3.3%) removing the case for stimulus.
+
+## Fixed-vs-variable arguments, by source
+
+### Ratehub (https://www.ratehub.ca/best-mortgage-rates ; /5-year/fixed ; /5-year/variable)
+
+- Who should choose which: on the fixed page, "For most borrowers, a 5-year fixed-rate mortgage is usually the better choice" for payment stability and reducing renewal risk. On the variable page, the same site lists "lower initial rates and potential long-term savings" for variable. On the main page: it "comes down to your risk tolerance, cash-flow flexibility." Net: Ratehub argues both sides depending on which page you land on. Flag this in the article; it is characteristic of the comparison-site genre.
+- Historical claim: "variable rates have outperformed fixed rates about 80% of the time, according to multiple Canadian mortgage studies." No study named; no Milevsky citation.
+- Product mechanics: fixed-payment variable (VRM) -- payment stays the same, principal/interest split shifts; trigger rate -- "payments no longer cover the full interest owed -- leading to negative amortization."
+- Penalties: variable "usually charge only three months' interest"; fixed carries "potentially high interest-rate differential (IRD) penalties."
+- Convertibility: "convert your variable-rate mortgage to a fixed rate at any time," with current lender or by refinancing.
+- Spread: states the 0.79-point gap explicitly. Gives no historical threshold for what spread justifies variable.
+- Share data: "69% of Canadians choose a fixed-rate mortgage" (unsourced on page) and "25% of mortgages contracted during 2025 were variable-rate mortgages (up from 23% in 2024)" (source not named; likely CMHC). See share section.
+- Sales pitch: "Mortgage Giveaway: Win your first month's mortgage payment on us!"; "personalized mortgage rate quote in under 2 mins"; the 3.30% variable is a "Ratehub.ca Exclusive" from an unnamed "Canadian Lender". Best-rate tables are lead-generation devices; the lender name being hidden is itself a tell.
+
+### nesto (https://www.nesto.ca/mortgage-rates/ ; https://www.nesto.ca/home-buying/bank-of-canada-rate-announcement/)
+
+- Argument: a hedge -- "choosing a 3-year fixed rate may help you manage this uncertainty until you can secure a lower, variable rate." Odd logic given nesto's own page says markets price a hike, not a cut. On the BoC article: "stop planning around cuts that may never arrive."
+- Historical-win claim: not made on the fetched pages.
+- Penalties/mechanics/convertibility: not on the fetched pages.
+- Sales pitch: nesto is a lender; its "national average" comparison frames its own rates as bargains. Mild.
+
+### WOWA (https://wowa.ca/mortgage-rates ; https://wowa.ca/interest-rate-forecast)
+
+- Argument: none on the rate page. The forecast page's implicit argument is that fixed rates follow bond yields, not the BoC, so a BoC hold does not mean fixed rates stay put.
+- Sales pitch: claims rates are collected "three times daily" and sorted "independent of whether the lenders work with us or not." That is an anti-pitch pitch; still a lead-gen site. The uninsured best rate carries "1% cash back" from nesto, which is a promo, not a rate.
+
+### NerdWallet Canada (https://www.nerdwallet.com/ca/p/best/mortgages/variable-mortgage-rates -- substitute URL)
+
+- Argument: variable is "significantly lower than fixed rates" now but "the war in Iran has changed the outlook"; BoC "may have to raise its overnight rate at least once in 2026." Another hold on Oct 28 "remains the likeliest scenario."
+- Historical claim: "Historically, variable rates have saved borrowers more money" -- no study named.
+- Mechanics: distinguishes fixed-payment from variable-payment products; variable-payment is "riskier because the actual size of your mortgage payment will change." Trigger rate not explained on this page.
+- Penalties: not detailed. Convertibility: "may be able to switch to a fixed rate for the rest of the term."
+- Sales pitch: "Explore Quote" buttons to lenders. Mild.
+
+### Rates.ca mortgage report (https://rates.ca/mortgage-report -- 403; via https://www.mpamag.com/ca/mortgage-industry/industry-trends/variable-rates-are-cheaper-than-fixed-canadians-still-arent-biting/580120 and WebSearch [snippet])
+
+- Data type: **share of rate quotes/inquiries on Rates.ca**, not funded mortgages. Important caveat for the article.
+- Numbers: variable "roughly 26 per cent" of quotes in January 2026; fixed "over 70 per cent." Variable quotes ran 11-18% through 2024 (one snippet says "around 7 per cent" of inquiries in 2024 -- the two snippets disagree; use "low teens" or cite both), moved into the 20s in 2025, "peaking at nearly 30%."
+- Argument (Victor Tran, Rates.ca; Leah Zlatkin, LowestRates.ca): borrowers remember 2022-23 payment shocks and want "certainty of fixed payments," especially since the cutting cycle looks done. Rates cited for April 2026: 5y fixed ~4.04%, variable 3.79% insured / 3.88% uninsured -- note variable was higher in April than it is now (3.30%), meaning variable discounts off prime have deepened from about prime - 0.66 to prime - 1.15 over five months while prime stayed at 4.45%. That is a lender-competition story worth a sentence.
+- Sales pitch: Rates.ca is a quote marketplace; the "report" is content marketing built on its own funnel data.
+
+### True North Mortgage (https://www.truenorthmortgage.ca/blog/mortgage-rate-forecast)
+
+- Argument: variable for immediate savings ("A 5-year variable rate is currently lower than most fixed mortgage rates"); 2-3 year fixed for those expecting cuts. Yet its own forecast has the overnight rate rising to 3.25% by 2027 and 5y fixed at 5.27%, which would make today's variable a loser after year one. The page does not reconcile the two.
+- Historical claim, penalties, trigger rate, convertibility: not on the page as fetched.
+- Sales pitch: heavy. "Lowest rate ... Guaranteed", "19,000+ five-star reviews", broker-beats-bank framing, the "Compass" product plug. Treat the forecast numbers as marketing-adjacent.
+
+### Frank Mortgage (https://www.frankmortgage.com/learn/mortgage-rate-forecast-2026)
+
+- Argument: leans fixed: find "a fixed mortgage rate you can afford" and "put it away for five years." Notes "the gap between fixed and variable has grown recently" with only modest variable uptake.
+- Historical claim, penalties, trigger rate, convertibility: not on page.
+- Sales pitch: "Free consultation," "20+ lenders," repeated CTAs. Moderate. Frank is also the lender showing the 3.94% best fixed on WOWA.
+
+### Mortgage Sandbox (https://www.mortgagesandbox.com/mortgage-interest-rate-forecast)
+
+- Argument: fixed for budget certainty; variable has "tariff-driven upside risk"; 3-year fixed is the "strategic middle ground." Rates it cites (4.60% fixed / 4.00% variable) are not best rates and are above the market; the site does not say where they come from.
+- No numeric forecast. No historical-win claim. No penalty/trigger content.
+- Sales pitch: broker referrals, an "AI Advisor," calculators, all "powered by Properti Edge." Heavy.
+
+### Core Advisors (https://www.coradvisors.net/2026/08/canadian-mortgage-rate-predictions-2026.html)
+
+- Argument: acknowledges variable (~3.25-3.5%) is cheaper than fixed (~3.9-4.0%) but says variable borrowers should keep "budget flexibility for potential rate increases." Its most useful contribution is compiling the bank forecasts and stressing that fixed rates track the 5-year bond, not the overnight rate.
+- No historical-win claim, no penalty/trigger content.
+- Sales pitch: a refinance calculator plug at the end. Light.
+
+### Pegasus Lending (https://pegasuslending.com/blog/fixed-vs-variable-mortgage-canada-2026-2/) -- April 17, 2026
+
+- Who should choose fixed: "tight budget," first-time buyer "stretched to qualify," or "value payment certainty more than potential savings."
+- Who should choose variable: "cash flexibility, a short timeline (may move or refinance within three years)," or belief rates fall.
+- Penalties: variable = 3 months' interest, "~$4,000-$5,000 on $600k"; fixed IRD "typically $12,000-$20,000+ at Big Banks"; "~$11,300 more to break a Big Bank fixed mortgage." Worked example is useful but the IRD figure depends on the posted-rate gap at the time and should be recomputed, not quoted.
+- VRM vs ARM: correct. Trigger rate: "the interest rate at which your VRM payment no longer covers any principal." Note: this is the standard lender definition; the point where the payment fails to cover interest is the trigger point (negative amortization). Article should keep the two distinct.
+- Convertibility: "variable-to-fixed conversion at any time ... typically without penalty, at the lender's then-current fixed rate."
+- Spread: "~0.50-0.70% favoring variable" in April; no historical threshold given.
+- Historical-win claim: **not made**; no Milevsky citation.
+- Share data: "Approximately 62% of Canadian mortgages contracted were fixed-rate (2025 CMHC survey)."
+- Sales pitch: broker "up to 0.25% lower" claim; free comparison CTA. Moderate.
+
+### Lendsimpl (https://lendsimpl.ca/blog/fixed-vs-variable-mortgage-rates-canada-2026) -- April 13 / July 14, 2026
+
+- Who should choose fixed: payment certainty, tight budget, believe rates will rise, "psychological security despite the premium." Variable: tolerance for fluctuation, sell/refinance within 3 years, expect holds or cuts, financial flexibility.
+- Historical claim: "saved money roughly 80% of the time over any rolling 5-year period." No citation; no Milevsky.
+- Penalties: fixed = "higher of 3 months' interest or the Interest Rate Differential (IRD)" (~$10-20K+); variable "typically only 3 months' interest" (~$3-5K).
+- VRM vs ARM: correct; notes amortization extends on a VRM if rates rise. Trigger rate mentioned without specifics.
+- Convertibility: "usually at the lender's current posted fixed rate (not the discounted rate)." This is the single most useful caution in the whole set: conversion rights are often to a worse rate than a new customer gets. Worth verifying against a bank's terms.
+- Renewal cohort: "About 1.2 million Canadians will renew in 2026."
+- Rates and policy figures on the page are wrong for 2026 (see Access section). Its "60% probability of one more cut by September 2026" did not happen.
+- Sales pitch: "Get Your Best Rate Quote," "Get Pre-Approved Today," "Book a Broker Call," "30+ lenders," "24 hours," FSRA licence #13763. Heavy.
+
+## The "variable wins ~85-90% of the time" claim -- origin
+
+- None of the 2026 comparison or broker pages names its source. Ratehub says "about 80% ... multiple Canadian mortgage studies"; Lendsimpl says "roughly 80% ... any rolling 5-year period"; NerdWallet says "historically ... saved borrowers more money." Pegasus does not make the claim at all.
+- Origin: Moshe Milevsky, York University (Schulich), 2001 study of 1950-2000. The Globe and Mail (Oct 26, 2010) reports the finding that a variable-rate mortgage "would have beaten out a fixed-rate mortgage almost 90 per cent of the time"; a borrower who stayed variable for 15 years beat fixed "88.1 per cent of the time," and even a "perfect market timer" only won 83.3% of the time. Milevsky's caveat in the same article: "the sensitivity to the borrower's cash flow is of utmost importance."
+  https://www.theglobeandmail.com/globe-investor/personal-finance/is-a-variable-rate-mortgage-always-best/article4330257/
+- 2008 update [snippet, CMT page 403]: data 1950-2007, variable saved interest "90.1% of the time," average saving "$20,630 over 15 years per $100,000 borrowed"; but for borrowers who negotiate big discounts (1.5% off posted fixed, 0.75% off prime), variable wins only "77.1% of the time."
+  https://www.canadianmortgagetrends.com/2008/04/fixed-or-variab/ (403; figures from WebSearch summary)
+- York's own 2004 write-up: https://www.yorku.ca/yfile/2004/04/16/gamble-on-variable-rate-mortgages-says-prof/ [not fetched; listed by WebSearch].
+- WebSearch summary also reports Milevsky has said the study "was never published" yet has been "cited again in hundreds of newspaper articles." The article should say the 88% figure comes from an unpublished 2001 working paper, whose data end in 2000 (or 2007 in the update), i.e. it predates the 2009-2021 zero-rate era and the 2022-23 shock. Nothing in the fetched sources gives a post-2008 recomputation.
+- What spread historically justifies variable: no fetched page gives a threshold. The closest is the 2008 update's finding that when the fixed discount is large relative to the variable discount, variable's win rate drops from 90% to 77%. Do not invent a number.
+
+## Share of Canadians choosing variable vs fixed, 2025-2026
+
+Different sources measure different things. The article must say which.
+
+- CMHC Residential Mortgage Industry Report, Spring 2026 (May 12, 2026), **newly extended mortgages at chartered banks**: variable 38% in January 2025, 29% in June 2025, **45% in December 2025**; 5+-year fixed only 9% in December 2025. February 2026: 5-year fixed 11%; 3-to-5-year fixed 35% (a WebSearch snippet of the same report gives variable 42% in February 2026). "Since Q4 2025, variable mortgage rates at chartered banks fell below fixed-rate mortgages rates ... first time ... since 2022." 2026 renewals are 13% fewer than 2025's. 90+ day delinquency 0.24% in Q4 2025 (from 0.21%).
+  https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research/housing-research/research-reports/housing-finance/residential-mortgage-industry-report
+- CMHC, Q1 2026 [snippet via WebSearch of the 403'd CMT article]: **35.5% of new uninsured mortgages variable**, 49.5% fixed under five years, 14.9% fixed five years or longer (from 22.8% in Q1 2022). Insured: 33.6% variable, 30.7% short fixed, 35.7% 5+ fixed (from 53.2% four years earlier). CMHC's Aled ab Iorwerth: "mortgage-renewal risk is real."
+  https://www.canadianmortgagetrends.com/2026/09/shift-to-variable-shorter-term-mortgages-raises-borrowers-rate-exposure-cmhc/
+- Ratehub: "25% of mortgages contracted during 2025 were variable-rate" (23% in 2024) and "69% of Canadians choose a fixed-rate mortgage." Unsourced on page; the 25% looks like a full-year all-lender figure and is not inconsistent with CMHC's chartered-bank monthly flows rising from 29% to 45% across 2025 only if non-bank lenders skew fixed. Cite only with "according to Ratehub."
+  https://www.ratehub.ca/best-mortgage-rates
+- Pegasus: "Approximately 62% ... fixed-rate (2025 CMHC survey)." Probably the CMHC Mortgage Consumer Survey, a different instrument from the industry report. Not verified.
+  https://pegasuslending.com/blog/fixed-vs-variable-mortgage-canada-2026-2/
+- Rates.ca (quotes, not fundings): variable ~26% of quotes Jan 2026, fixed 70%+.
+  https://www.mpamag.com/ca/mortgage-industry/industry-trends/variable-rates-are-cheaper-than-fixed-canadians-still-arent-biting/580120
+- Safe summary: at the big banks roughly a third to nearly half of new mortgages in late 2025 / early 2026 were variable, the 5-year fixed has fallen to a small minority of new bank mortgages (about 10-15%), and short fixed terms (under five years) are the largest single category. Comparison-site quote data run lower (about a quarter variable), which is consistent with the sites' fixed-leaning audience.
+
+## Sales-pitch flags (summary)
+
+- Ratehub: giveaway banner, "exclusive" rate from an unnamed lender, argues fixed on the fixed page and variable on the variable page.
+- True North: "Lowest rate ... Guaranteed", review-count boasting, product plug; forecast contradicts its own recommendation.
+- Lendsimpl: three CTAs, stale/wrong policy-rate figures, failed cut prediction left on a page "updated July 14."
+- Mortgage Sandbox: AI-advisor and calculator upsell; non-market rates cited without source.
+- Frank: free-consultation CTAs; also appears as the "best rate" lender on WOWA.
+- Pegasus: "up to 0.25% lower" broker claim.
+- nesto, WOWA, NerdWallet, Core Advisors: light.
+- Every 5-year "best fixed" headline is insured/high-ratio. The 45-65 homeowner renewing an uninsured mortgage should expect the uninsured tier: WOWA's 4.64% (with cash-back) or nesto's national average of 4.92%.
+
+## What the article can safely state (with sources)
+
+1. The Bank of Canada's policy rate is 2.25%, unchanged since a 25 bp cut on Oct 29, 2025; held for the seventh straight time on Sept 2, 2026; next decision Oct 28, 2026, then Dec 9. https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/ ; https://www.bankofcanada.ca/2026/09/fad-press-release-2026-09-02/
+2. Big-bank prime is 4.45%, unchanged since Oct 29, 2025; it was 5.95% two years ago. https://www.ratehub.ca/prime-rate
+3. The Bank's Sept 2 statement cites CPI "around 3%" on gasoline, core 2.2% ex-gasoline, Middle East energy prices, new US tariffs and Canadian counter-measures, and Q2 GDP of 3.3%; its guidance is two-sided, not easing. https://www.bankofcanada.ca/2026/09/fad-press-release-2026-09-02/
+4. On Sept 10, 2026 the lowest advertised insured 5-year fixed was 3.94% (WOWA) to 4.09% (Ratehub); the lowest 5-year variable was 3.30%, i.e. prime minus 1.15% (Ratehub and WOWA); best 3-year fixed 3.89-3.94%. https://wowa.ca/mortgage-rates ; https://www.ratehub.ca/best-mortgage-rates
+5. Uninsured borrowers pay more: WOWA's best uninsured 5-year fixed was 4.64% (with a cash-back promo); nesto's national-average conventional rates were 4.92% fixed and 4.16% variable. https://wowa.ca/mortgage-rates ; https://www.nesto.ca/mortgage-rates/
+6. The fixed-variable spread at the best-rate tier is about 0.65-0.80 points in variable's favour (Ratehub: "a 0.79 percentage point gap"). https://www.ratehub.ca/best-mortgage-rates/5-year/fixed
+7. Variable discounts off prime deepened during 2026 even though prime did not move: about prime - 0.66 (3.79% insured) in April per Rates.ca, prime - 1.15 (3.30%) in September per Ratehub/WOWA. https://www.mpamag.com/ca/mortgage-industry/industry-trends/variable-rates-are-cheaper-than-fixed-canadians-still-arent-biting/580120 ; https://www.ratehub.ca/best-mortgage-rates
+8. The 5-year GoC bond yield, which drives fixed rates, is about 3.35% (12-month high near 3.36% in August). https://www.nesto.ca/home-buying/bank-of-canada-rate-announcement/ ; https://www.frankmortgage.com/learn/mortgage-rate-forecast-2026
+9. Big 6 economist forecasts (spring 2026 publications, as compiled by WOWA): all but Scotiabank see 2.25% through end-2026; for 2027, TD and BMO hold at 2.25%, CIBC and National Bank 2.75%, Scotiabank 3.00%, RBC 3.25%. No bank forecasts a cut. https://wowa.ca/interest-rate-forecast ; corroborated by https://www.coradvisors.net/2026/08/canadian-mortgage-rate-predictions-2026.html
+10. Model forecasts for the 5-year fixed at end-2026 cluster near 4.35-4.4% (WOWA 4.36%, True North 4.39%); Ratehub expects "around the 4% range." https://wowa.ca/interest-rate-forecast ; https://www.truenorthmortgage.ca/blog/mortgage-rate-forecast ; https://www.ratehub.ca/best-mortgage-rates/5-year/fixed
+11. Bond markets in early September priced a real chance of a hike by December (nesto: 27% at Oct 28, 98% by Dec 9), which is more hawkish than the bank economists. Cite as market pricing on a date, not a forecast. https://www.nesto.ca/mortgage-rates/
+12. The "variable wins almost 90% of the time" claim traces to Moshe Milevsky's 2001 York University study (1950-2000): 88.1% for a borrower who stayed variable 15 years; updated in 2008 to 90.1% for 1950-2007, but only 77.1% for borrowers who get deep discounts on fixed. It was never formally published and its data end in 2007. https://www.theglobeandmail.com/globe-investor/personal-finance/is-a-variable-rate-mortgage-always-best/article4330257/ ; https://www.canadianmortgagetrends.com/2008/04/fixed-or-variab/ [snippet]
+13. None of the 2026 comparison sites cites that study; they say "about 80%" or "historically" without a source. https://www.ratehub.ca/best-mortgage-rates/5-year/variable ; https://lendsimpl.ca/blog/fixed-vs-variable-mortgage-rates-canada-2026 ; https://www.nerdwallet.com/ca/p/best/mortgages/variable-mortgage-rates
+14. Penalty asymmetry: variable is normally 3 months' interest; fixed is the greater of 3 months' interest or IRD, which at big banks can run into five figures. Worked figures (Pegasus: ~$4-5K vs ~$12-20K on $600K) are illustrative only. https://pegasuslending.com/blog/fixed-vs-variable-mortgage-canada-2026-2/ ; https://www.ratehub.ca/best-mortgage-rates/5-year/variable
+15. Two kinds of variable: fixed-payment VRM (payment constant, principal share shrinks, trigger rate/negative amortization risk) and adjustable-payment ARM (payment moves with prime, no trigger rate). https://www.ratehub.ca/best-mortgage-rates/5-year/variable ; https://pegasuslending.com/blog/fixed-vs-variable-mortgage-canada-2026-2/
+16. Conversion to fixed is usually allowed any time without penalty, but often at the lender's then-current (sometimes posted, not discounted) fixed rate. https://lendsimpl.ca/blog/fixed-vs-variable-mortgage-rates-canada-2026 ; https://pegasuslending.com/blog/fixed-vs-variable-mortgage-canada-2026-2/
+17. Borrower behaviour: at chartered banks, variable was 45% of newly extended mortgages in December 2025 and 5+-year fixed only 9% (CMHC Spring 2026); in Q1 2026, 35.5% of new uninsured and 33.6% of new insured mortgages were variable, and 5+-year fixed fell to 14.9% of uninsured (from 22.8% in Q1 2022) and 35.7% of insured (from 53.2%). https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research/housing-research/research-reports/housing-finance/residential-mortgage-industry-report ; https://www.canadianmortgagetrends.com/2026/09/shift-to-variable-shorter-term-mortgages-raises-borrowers-rate-exposure-cmhc/ [snippet]
+18. Comparison-site quote data run lower: Rates.ca had variable at about 26% of quotes in January 2026 versus low-to-mid teens in 2024; Ratehub says 25% of 2025 mortgages were variable and 69% of Canadians choose fixed. https://www.mpamag.com/ca/mortgage-industry/industry-trends/variable-rates-are-cheaper-than-fixed-canadians-still-arent-biting/580120 ; https://www.ratehub.ca/best-mortgage-rates
+19. What the article should NOT state: a specific spread that "historically justifies" variable (no source gives one); a numeric 2028 forecast as consensus (only True North and WOWA go that far, and they disagree with the banks); any rate figure from Lendsimpl (stale); True North's 5.27% fixed for 2027 as anything but one broker's model.
+
+## Numbers not found
+
+- No fetched page gave a post-2008 recomputation of the Milevsky win rate.
+- No fetched page gave a historical spread threshold for choosing variable.
+- No fetched page gave uninsured best 5-year variable separately (all quoted 3.30% without a tier label except nesto's 3.45% "insured").
+- Desjardins' overnight forecast was not on any fetched page.
+- The BoC's own July 2026 Monetary Policy Report projections were not fetched (out of scope for this stream; another stream may want them).

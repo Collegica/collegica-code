@@ -1,0 +1,56 @@
+# A local agent on your own machine — plan and research
+
+Plan and notes for the second AI article: installing an agent that runs
+entirely on the reader's computer — Gemma 4 as the model, Hermes as the
+agent, Hermes Desktop as the window — and the three ways of serving the
+model: Ollama, Docker Model Runner, vLLM. Started 2026-09-13.
+
+Audience: someone who has used a hosted assistant and wants one whose
+conversations never leave the room — for the reasons the OWL Planner gives
+(bank statements), or for cost, or because the network is not always there.
+
+## What was verified, and how
+
+| Claim | Checked against |
+|---|---|
+| Gemma 4 sizes, modalities, context, 4-bit memory table | Google's model overview, read in full |
+| Ollama tags and sizes; `latest` = `e4b` | ollama.com library and tags pages |
+| Ollama's 4,096-token default; how to raise it; macOS `launchctl` | Ollama FAQ and macOS page |
+| Hermes rejects contexts under 64,000 tokens for tool use | Hermes providers page |
+| Hermes Desktop is the same agent, config, keys, skills | Hermes Desktop page |
+| Where `hermes desktop` puts the app it builds | `hermes_cli/main_desktop.py` and the built bundle on this machine |
+| Docker Model Runner endpoint, enable flag, Gemma 4 on Docker Hub | Docker docs; Docker Hub API |
+| vLLM supports Gemma 4; tool-call flags | vLLM docs |
+| The whole path, Ollama → Gemma 4 12B → Hermes, with a tool-using task | Run on this machine — [`notes/run.md`](notes/run.md) |
+| What LM Studio's Bionic is and where its models run (added 2026-09-13) | Bionic's docs and LM Studio's, read in full — [`notes/bionic.md`](notes/bionic.md); not run |
+| Prefill vs generation, the KV cache, the Strix Halo figures, the llama.cpp flags (added 2026-09-13) | Rob Braxman's video, description and captions read in full; flags checked against llama.cpp's server README — [`notes/braxman.md`](notes/braxman.md); his numbers not reproduced |
+| The good-enough framing, the local-then-hosted pipeline, the ten-run comparison, the model-card checklist (added 2026-09-13) | Greg Isenberg's video, description and captions read in full — [`notes/isenberg.md`](notes/isenberg.md); an overview, nothing to reproduce |
+
+Not run here: Docker Model Runner (disk) and vLLM (no NVIDIA GPU). The
+article says which sections are documented and which were run.
+
+## Decisions
+
+1. **Ollama is the walkthrough; Docker and vLLM are the alternatives**, each
+   with the one fact that decides it — Docker if Docker Desktop is already
+   there, vLLM if the machine is a Linux GPU box.
+2. **The 64K context rule gets its own section.** It is the first thing that
+   breaks, it is documented on both sides, and neither side's quick start
+   mentions it.
+3. **`gemma4:12b`, not `gemma4`.** The default tag is the 9.6 GB E4B; the 12B
+   is smaller on disk and the model Google calls the unified one.
+4. **Measure, don't assert, speed.** Cold load, warm generation, and a real
+   tool-using task, on stated hardware.
+5. **Thinking is a setting, not a given.** Gemma 4 reasons at length by
+   default; the run shows what that costs an interviewer.
+
+## Traps hit
+
+- `ollama run --verbose` piped into `head` lost its statistics (SIGPIPE).
+  Timings were taken through the HTTP API instead.
+- `docker desktop enable model-runner --tcp 12434` is silently mis-parsed;
+  the flag needs `=`.
+- `/Applications/Hermes.app` on this machine is the *setup* app
+  (`com.nousresearch.hermes.setup`); the Desktop app `hermes desktop` builds
+  lives inside the checkout at `apps/desktop/release/mac-arm64/Hermes.app`.
+- A 7.6 GB pull on a disk with 15 GiB free left 721 MiB. Check `df` first.

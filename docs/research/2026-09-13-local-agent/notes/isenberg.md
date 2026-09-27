@@ -1,0 +1,79 @@
+# Good enough for the job — from Greg Isenberg's video, added 2026-09-13
+
+## Access and confidence
+
+- **Read in full:** the video's description (timestamps, "Key Points", a
+  numbered summary of each section) and its auto-generated English
+  captions, 6,444 words, downloaded with yt-dlp and read end to end. *I'm
+  Obsessed With Local AI. Here's Why*, Greg Isenberg, 38 min 46 s, published
+  2026-09-08.
+- **Sponsored:** "Quick shoutout to Google for sponsoring today's episode."
+  Gemma and Google AI Edge are the running examples by his own statement;
+  the other families get a paragraph each.
+- **Nothing to reproduce:** the video contains no measurement. It is an
+  overview for non-technical founders — his words, "explain it for the
+  average person who isn't technical" — with three startup ideas at the
+  end. Product facts were checked where the guide already had a source
+  (Gemma 4 sizes, Ollama's port, the LiteRT-LM repository); nothing else
+  was verified.
+
+## What he claims
+
+- **The framing.** "The business question is where should the intelligence
+  live." The wrong first question is whether the model is smarter than the
+  biggest cloud model; the useful one is "is this model good enough for the
+  job and does running it locally make the product better."
+- **Four pieces.** The model (Gemma, Llama, Qwen, Mistral, Phi), the
+  warehouse (Hugging Face), the software (LM Studio for non-technical
+  people, Ollama for builders; llama.cpp and MLX underneath), the workflow
+  (the product).
+- **Reading a model card:** what it is for, how big, license, hardware
+  people run it on, inputs (text, images, audio, tool use, embeddings),
+  quantised files.
+- **Vocabulary:** parameters ("2B and 4B for edge devices, 12B a middle
+  ground, 26B or 31B workstation territory"), tokens, context window
+  (defined, not warned about), quantisation ("Q4 easier to run, Q8 more
+  quality"), GGUF, `.litertlm`.
+- **The Gemma family:** Gemma 4 E2B / E4B / 12B / 26B / 31B; E4B "the most
+  practical starting point for most local tasks"; EmbeddingGemma (search by
+  meaning), FunctionGemma (tool use), PaliGemma (vision), ShieldGemma
+  (safety), Gemma Scope (interpretability); Google AI Edge, LiteRT-LM, AI
+  Edge Gallery; Gemini and Google Cloud for "frontier-level reasoning."
+- **Three ways to run it:** LM Studio, then its local server "so your
+  computer becomes this little AI server"; Ollama — `ollama run gemma4:e4b`,
+  API on port 11434; Google AI Edge with LiteRT-LM "only if I wanted to
+  build an actual app with a model inside it" — Android, iOS, web, desktop,
+  edge.
+- **RAM cheat sheet:** 8 GB "start small"; 16 GB "useful experiments with
+  models like E4B"; 32 GB "larger local workflows"; a strong GPU or a DGX
+  Spark for the big models. For phones, "think less about model size and
+  more about the job."
+- **The hybrid architecture:** "local handling the private files as a first
+  pass and then cloud handles the heavy thinking when you need it. A human
+  can approve the work before anything important goes out."
+- **The first workflow:** a folder of ten customer notes, the model writes
+  one markdown file. "Pick one folder, one model, one output, and you run it
+  like 10 times." Then a small eval: the same ten notes through Gemma and
+  through a frontier model, compare. "Workflows before fine-tuning."
+- **Other families, one line each:** Llama (ecosystem; read the license),
+  Qwen and DeepSeek (strong; procurement and geopolitics for some buyers),
+  GLM, Mistral (confusing lineup), Phi ("haven't seen it work very well").
+- **Three startup ideas:** a local QA reviewer for home-health visit notes,
+  an offline field-report copilot for restoration contractors, a local
+  pre-send reviewer for professional-services drafts. Each starts as a
+  service, the checklist becomes the product. A "24-month window."
+
+## What the guide takes, and what it leaves
+
+Taken: the framing question; the local-then-hosted pipeline with a person
+approving; the ten-runs-then-compare evaluation, which fits OWL Planner's
+shape (a folder of statements in, a dashboard out) exactly; the model-card
+checklist. Left: the vocabulary section (the guide's size table already
+carries it), the other-families primer, the startup ideas, AI Edge and
+LiteRT-LM (an app-shipping path, not an agent-on-your-machine one), the RAM
+cheat sheet (coarser than the guide's table and unmeasured).
+
+Where the guide disagrees, in the article: E4B as the starting point (the
+guide measured the default tag as larger on disk than the 12B and the
+weaker model), and the silence on the context window, which on this machine
+was the first thing to break.

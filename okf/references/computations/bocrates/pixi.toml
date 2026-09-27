@@ -1,0 +1,16 @@
+[workspace]
+name = "bocrates-example"
+channels = ["conda-forge"]
+platforms = ["osx-arm64", "linux-64"]
+
+[dependencies]
+python = ">=3.11,<3.14"
+pytest = ">=8"
+
+[pypi-dependencies]
+bocrates = { path = ".", editable = true }
+
+[tasks]
+test    = { cmd = "pytest -q", description = "Run the test suite" }
+summary = { cmd = "python analysis/annual_summary.py", description = "Regenerate outputs/" }
+all     = { depends-on = ["test", "summary"], description = "Test, then regenerate" }

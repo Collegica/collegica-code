@@ -1,0 +1,8 @@
+name = "collegica-mcp"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+# Where the OKF bundle is read from. Concept text and the rate data are fetched
+# live from here, so content and rate updates need no redeploy.
+[vars]
+OKF_BASE = "https://www.collegica.org/okf"

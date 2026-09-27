@@ -1,0 +1,21 @@
+{
+  "name": "collegica-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Read-only MCP server for Collegica: the mortgage calculator and the OKF bundle, as tools. A Cloudflare Worker.",
+  "scripts": {
+    "build:index": "node scripts/build-index.mjs",
+    "test": "npm run build:index && node --test \"test/*.test.mjs\"",
+    "dev": "npm run build:index && wrangler dev",
+    "deploy": "npm run build:index && wrangler deploy"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.1",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0",
+    "yaml": "^2.5.0"
+  }
+}

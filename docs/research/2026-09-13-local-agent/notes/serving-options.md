@@ -1,0 +1,81 @@
+# Three ways to serve a local model to Hermes — Ollama, Docker Model Runner, vLLM
+
+Hermes talks to a local model through one thing: an OpenAI-compatible
+`/v1/chat/completions` endpoint, configured as a "custom endpoint" (base URL,
+optional key, model name, `context_length`). Any server that speaks that
+protocol and supports tool calls will do. Three do, for three different
+machines.
+
+## Access and confidence
+
+- **Run on this machine (Apple M4, 24 GB, macOS):** Ollama 0.33.3 with
+  `gemma4:12b`, end to end with Hermes — see [`run.md`](run.md).
+- **Installed here but not run:** Docker Desktop 29.7.2 has Model Runner
+  (client v1.2.6) but it was left disabled: the disk had 721 MiB free after
+  the Ollama pull, and enabling the runner installs its engine images. Facts
+  below are from Docker's documentation, read in full.
+- **Not runnable here:** vLLM needs a Linux machine with an NVIDIA GPU. Facts
+  are from vLLM's quickstart, tool-calling and supported-models pages, and
+  Hermes's providers page, all read in full.
+
+## Ollama — the default for a laptop
+
+- macOS Sonoma+, Windows, Linux. App from ollama.com/download; the app links
+  the `ollama` CLI into your path with your permission. `brew install ollama`
+  gives the server and CLI without the app.
+- `ollama pull gemma4:12b` (7.6 GB), `ollama serve` on port 11434; the
+  OpenAI-compatible base URL is `http://localhost:11434/v1`, no key.
+- **Context:** default 4,096 tokens. `OLLAMA_CONTEXT_LENGTH=65536 ollama
+  serve`, or for the app `launchctl setenv OLLAMA_CONTEXT_LENGTH 65536` then
+  restart it. Cannot be set per request through the OpenAI API. `ollama ps`
+  shows the CONTEXT column — the check that it took.
+- Hermes: `model: {default: gemma4:12b, provider: custom, base_url:
+  http://localhost:11434/v1, context_length: 64000}`, or `hermes model` →
+  *Custom endpoint*. Ollama's own `ollama launch hermes --model gemma4` does
+  this for Hermes's default profile.
+
+## Docker Model Runner — if Docker Desktop is already on the machine
+
+- Requires Docker Desktop 4.40+ (macOS) / 4.41+ (Windows) or Docker Engine.
+  Engines: llama.cpp everywhere; vLLM and Diffusers on Linux with NVIDIA GPUs.
+- Models are OCI artifacts: `docker model pull ai/gemma4` from Docker Hub
+  (`ai/gemma4:latest` is 7.3 GB; 49 tags on 2026-09-13, including `-mlx-`
+  variants for Apple Silicon and `-q4_K_M` GGUFs), or `hf.co/<repo>` from
+  Hugging Face. `docker model run ai/gemma4` chats.
+- Endpoint: from the host, enable TCP once — `docker desktop enable
+  model-runner --tcp=12434` (note the `=`; the space form is mis-parsed) —
+  then `http://localhost:12434/engines/v1` for OpenAI clients. From inside
+  containers, `http://model-runner.docker.internal`. Docker Engine on Linux
+  enables TCP on 12434 by default.
+- Context size and runtime parameters are set per model with `docker model
+  configure` (Docker's "Configuration options" page); the same 64K rule
+  applies for Hermes.
+- Hermes: the same custom-endpoint config with the 12434 base URL.
+
+## vLLM — for a GPU server, not a laptop
+
+- Linux + NVIDIA. `uv pip install vllm --torch-backend=auto`, then `vllm
+  serve <model>`; one model per server, `http://localhost:8000/v1`.
+- Gemma 4 is in vLLM's supported list: `Gemma4ForCausalLM`,
+  `Gemma4ForConditionalGeneration` (E2B/E4B, text+image+video+audio), and
+  `Gemma4UnifiedForConditionalGeneration` for the 12B. Weights from Hugging
+  Face (`google/gemma-4-12B-it`), which needs Google's licence accepted on the
+  Hub.
+- **Tool calls need two flags** or the model's calls come back as plain text:
+  `--enable-auto-tool-choice --tool-call-parser <name>`. Hermes's providers
+  page lists the parsers it has used (`hermes`, `llama3_json`, `mistral`,
+  `deepseek_v3`, `deepseek_v31`, `xlam`, `pythonic`); vLLM's own list is
+  longer and has a `functiongemma` parser. Which parser Gemma 4's format
+  matches was not verified here — test with one tool before trusting it.
+- Context: vLLM uses the model's full window by default and errors if it
+  does not fit; `--max-model-len 65536` (or `auto`) and
+  `--gpu-memory-utilization 0.95` are the knobs Hermes's page recommends.
+- Hermes: custom endpoint, base URL `http://<server>:8000/v1`, key if you
+  started vLLM with `--api-key`.
+
+## Others, in one line each
+
+LM Studio is a first-class Hermes provider (`provider: lmstudio`); llama.cpp's
+own server works as a custom endpoint, with Hermes's warning that its full
+default toolset can overflow a 32K window — restrict the toolset or raise the
+context.

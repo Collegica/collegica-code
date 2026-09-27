@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Session — mind, muscle, money</title>
+<script type="importmap">{ "imports": { "three": "./vendor/three/three.module.js" } }</script>
+<style>
+@font-face { font-family: "Instrument Serif"; src: url("../../../../website/static/fonts/InstrumentSerif-Regular.woff2") format("woff2"); }
+@font-face { font-family: "IBM Plex Sans"; src: url("../../../../website/static/fonts/IBMPlexSans-Regular.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "IBM Plex Sans"; src: url("../../../../website/static/fonts/IBMPlexSans-SemiBold.woff2") format("woff2"); font-weight: 600; }
+:root { --navy: #1F2A4D; --amber: #C97B1E; --paper: #FBFAF7; --paper-2: #F3F0E8; --ink: #1D2229; --muted: #5D6670; --line: #D9DDE3; --rest: #2F6F4F; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.45 "IBM Plex Sans", system-ui, sans-serif; }
+header { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; align-items: center; padding: 1rem 1.25rem; border-bottom: 1px solid var(--line); }
+header h1 { font: 400 1.6rem/1 "Instrument Serif", serif; color: var(--navy); margin: 0 auto 0 0; letter-spacing: -0.02em; }
+select, button { font: inherit; padding: 0.45rem 0.8rem; border: 1px solid var(--navy); border-radius: 6px; background: #fff; color: var(--navy); }
+button.primary { background: var(--navy); color: var(--paper); }
+main { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 1.5rem; padding: 1.25rem; max-width: 72rem; margin: 0 auto; }
+@media (max-width: 48rem) { main { grid-template-columns: 1fr; } }
+.stage { position: relative; aspect-ratio: 1 / 1; background: var(--paper-2); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.stage svg, .stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.stage .viewbtn { position: absolute; right: 0.6rem; bottom: 0.6rem; font-size: 0.85rem; }
+.panel { display: flex; flex-direction: column; gap: 0.6rem; }
+.block { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--amber); font-weight: 600; }
+.name { font: 400 clamp(2.2rem, 5vw, 3.4rem)/1 "Instrument Serif", serif; color: var(--navy); letter-spacing: -0.02em; }
+.cue { color: var(--muted); max-width: 34rem; }
+.timer { font: 600 clamp(3rem, 9vw, 5.5rem)/1 "IBM Plex Sans", sans-serif; font-variant-numeric: tabular-nums; color: var(--ink); margin-top: 0.5rem; }
+.reps { font-size: 1.25rem; font-weight: 600; }
+.next { color: var(--muted); }
+.progress { display: flex; gap: 2px; height: 10px; margin-top: auto; }
+.progress i { display: block; background: var(--line); border-radius: 2px; }
+.progress i.rest { background: #cfe3d8; } .progress i.done { background: var(--navy); } .progress i.rest.done { background: var(--rest); }
+.progress i.now { outline: 2px solid var(--amber); outline-offset: 1px; }
+.controls { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+body.resting .stage { background: #E6F0EA; } body.resting .name { color: var(--rest); }
+body:not(.running) .controls .run { display: none; }
+footer { padding: 1rem 1.25rem; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--line); }
+</style>
+<body>
+<header>
+  <h1>A session</h1>
+  <label>Preview <select id="preview"></select></label>
+  <label>Length <select id="length"><option value="30">30 minutes</option><option value="45">45 minutes</option><option value="60">60 minutes</option></select></label>
+  <button id="start" class="primary">Start</button>
+</header>
+<main>
+  <div class="stage">
+    <svg id="fig2d" viewBox="0 0 100 100" role="img" aria-label="The move, animated"></svg>
+    <canvas id="fig3d" hidden></canvas>
+    <button id="view" class="viewbtn">Show 3D</button>
+  </div>
+  <div class="panel">
+    <span id="block" class="block"></span>
+    <span id="name" class="name"></span>
+    <span id="cue" class="cue"></span>
+    <span id="timer" class="timer"></span>
+    <span id="reps" class="reps"></span>
+    <span id="next" class="next"></span>
+    <div class="controls"><button id="pause" class="run">Pause</button><button id="skip" class="run">Skip</button><button id="stop" class="run">Stop</button></div>
+    <div id="progress" class="progress"></div>
+  </div>
+</main>
+<footer>Everything runs in this page: no account, no upload. Blocks are separated by one minute of rest. Stop when form goes, not when the timer says.</footer>
+<script type="module" src="./player.js"></script>
+</body>
+</html>

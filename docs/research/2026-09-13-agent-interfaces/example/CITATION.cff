@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: "onedoor — one agent core, four doors"
+message: "If you use this example, cite the article it accompanies."
+type: software
+authors:
+  - family-names: Samadi
+    given-names: Behzad
+repository-code: https://github.com/Collegica/collegica/tree/main/docs/research/2026-09-13-agent-interfaces/example
+url: https://www.collegica.org/ai/agent-interfaces/
+license: MIT
+version: 0.1.0
+date-released: 2026-09-13
