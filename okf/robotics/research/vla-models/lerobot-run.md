@@ -15,7 +15,7 @@ generated:
   by: claude/fable-5.1
   at: "2026-09-13T00:00:00Z"
 sources:
-- resource: https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-13-vla-models/notes/configs.py
+- resource: https://github.com/Collegica/collegica-code/blob/main/docs/research/2026-09-13-vla-models/notes/configs.py
 source_file: docs/research/2026-09-13-vla-models/notes/lerobot-run.md
 ---
 
@@ -64,7 +64,7 @@ installs on a machine with no GPU and falls back to CPU at run time.
 
 ## Reading the configurations
 
-[`configs.py`](https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-13-vla-models/notes/configs.py) imports LeRobot, lists its policy packages, and
+[`configs.py`](https://github.com/Collegica/collegica-code/blob/main/docs/research/2026-09-13-vla-models/notes/configs.py) imports LeRobot, lists its policy packages, and
 instantiates each VLA's configuration dataclass with its defaults, printing
 the fields that describe the model's shape. No network is needed for most
 of them; none was available.

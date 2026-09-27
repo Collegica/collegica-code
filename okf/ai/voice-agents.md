@@ -492,7 +492,7 @@ speech. Kokoro reads a sentence — "The quick brown fox jumps over the lazy
 dog, and the meeting moves to half past nine on Thursday" — and that
 5.7-second clip goes to everything that listens. A second clip, "Hey
 Jarvis, what is the weather like today?", goes to the wake-word detector.
-The [script](/ai/research/voice-agents//notes/pipeline.py)
+The [script](https://github.com/Collegica/collegica-code/blob/main/docs/research/2026-09-13-voice-agents/notes/pipeline.py)
 is seventy lines; the [run note](/ai/research/voice-agents/voice-run.md)
 has every number.
 

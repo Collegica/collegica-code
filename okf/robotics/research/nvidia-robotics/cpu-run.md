@@ -14,7 +14,7 @@ generated:
   by: claude/fable-5.1
   at: "2026-09-13T00:00:00Z"
 sources:
-- resource: https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-13-nvidia-robotics/notes/saxpy.py
+- resource: https://github.com/Collegica/collegica-code/blob/main/docs/research/2026-09-13-nvidia-robotics/notes/saxpy.py
 source_file: docs/research/2026-09-13-nvidia-robotics/notes/cpu-run.md
 ---
 
@@ -47,7 +47,7 @@ Newton 1.6.0 pins the earlier one), `newton-usd-schemas 0.5.0`, `usd-core
 
 ## A Warp kernel
 
-[`saxpy.py`](https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-13-nvidia-robotics/notes/saxpy.py): a 10-million-element `y = a*x + y` kernel on the
+[`saxpy.py`](https://github.com/Collegica/collegica-code/blob/main/docs/research/2026-09-13-nvidia-robotics/notes/saxpy.py): a 10-million-element `y = a*x + y` kernel on the
 `cpu` device. Warp will not compile a kernel typed into `python -` (it
 extracts the source with `inspect`, so "Directly evaluating Warp code
 defined as a string using `exec()` is not supported"); it needs a file.

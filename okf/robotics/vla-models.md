@@ -304,7 +304,7 @@ newer is `>= 3.12` and pip silently takes the newest version the interpreter
 is allowed. The same trap as Isaac Sim, one article ago. On Python 3.12 with
 `uv`: 1 min 5 s, 4.9 GB, **0.6.1**.
 
-Then a [short script](/robotics/research/vla-models//notes/configs.py)
+Then a [short script](https://github.com/Collegica/collegica-code/blob/main/docs/research/2026-09-13-vla-models/notes/configs.py)
 imported the package (10 s) and instantiated every VLA's configuration with
 its defaults. That is where the chunk sizes above come from, and the
 backbone names — `HuggingFaceTB/SmolVLM2-500M-Video-Instruct` with

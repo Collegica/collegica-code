@@ -326,7 +326,7 @@ exact float32 as the reference. Search is the median of five passes over
 the thousand queries, k = 64, one thread; every quantized method also gets
 a **rerank** column, where its top 64 are rescored against the float32
 vectors, because that is how compressed indexes are used. The
-[script](/ai/research/turbovec//notes/bench.py)
+[script](https://github.com/Collegica/collegica-code/blob/main/docs/research/2026-09-14-turbovec/notes/bench.py)
 is a hundred lines; the
 [run note](/ai/research/turbovec/turbovec-run.md)
 has every cell.
