@@ -1,0 +1,8 @@
+menu,price_per_guest_cad,min_guests,notes
+Breakfast spread,18.50,15,"pastries, fruit, yogurt, coffee and tea"
+Working lunch,24.00,15,"sandwiches, two salads, dessert squares"
+Hot buffet,38.00,25,"two mains, two sides, salad, dessert"
+Cocktail reception,32.00,30,"eight canapés per guest"
+Vegetarian working lunch,24.00,15,"as working lunch, all vegetarian"
+Delivery beyond 25 km,2.00,,"per km beyond 25 km, one way"
+Staff for service,35.00,,"per server per hour, minimum 3 hours"

@@ -30,11 +30,12 @@ between files work here as they do there.
 | [All Weather, Rebuilt for Canada](https://www.collegica.org/finance/all-weather/) | [`docs/2026-10-28-all-weather`](docs/2026-10-28-all-weather) — the backtest is in `backtest/` |
 | [Train It Before You Use It](https://www.collegica.org/ai/small-business-ai/) | [`docs/2026-10-28-ai-small-business`](docs/2026-10-28-ai-small-business) |
 | [Rich, or Just Acting Rich?](https://www.collegica.org/finance/stop-acting-rich/) | [`docs/2026-10-29-stop-acting-rich`](docs/2026-10-29-stop-acting-rich) |
+| [The Notebook That Holds the Truth About Your Business](https://www.collegica.org/ai/business-notebook/) | [`docs/2026-10-30-single-source-of-truth`](docs/2026-10-30-single-source-of-truth) — the example business's folder, rulebook and the assistant's wiki are in `example/` |
 
 ## For agents
 
 [`okf/`](okf) is the site's knowledge in the
-[Open Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md),
+[Open Knowledge Format](https://github.com/GoogleCloudPlatform/open-knowledge-format/blob/main/SPEC.md),
 the same bundle served at [collegica.org/okf/](https://www.collegica.org/okf/index.md).
 [`apps/collegica-mcp`](apps/collegica-mcp) serves it, and the mortgage
 simulator, over MCP.

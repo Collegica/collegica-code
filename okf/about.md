@@ -18,7 +18,7 @@ source_file: docs/2026-09-12-okf/README.md
 # Collegica as an OKF wiki — design and proof of concept
 
 How the human site at collegica.org becomes readable by agents as an [Open
-Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md)
+Knowledge Format](https://github.com/GoogleCloudPlatform/open-knowledge-format/blob/main/SPEC.md)
 v0.2 bundle, without authoring anything twice. Started 2026-09-12. The proof
 of concept covers the Finance subject; the projection generalises.
 
@@ -239,11 +239,11 @@ Three tiers, from zero setup to proper integration.
    `mkdir -p ~/.claude/skills/collegica && curl -sSL <that URL> -o ~/.claude/skills/collegica/SKILL.md`,
    restart, `/collegica`.
 
-3. **An MCP server** exposing `list_concepts`, `get_concept`, and
-   `run_computation` returning an attested receipt — the integration OKF's
-   executor/attester contract is designed for, and the right answer once
-   agents outside this repository need the bundle. Not built; the
-   `knowledge-catalog` repository's README documents no consumer of its own.
+3. **An MCP server** — the integration OKF's executor/attester contract is
+   designed for. Since built: a read-only server at
+   `https://mcp.collegica.org/mcp` (source in `apps/collegica-mcp`) with
+   `search_concepts`, `read_concept`, `list_signing_months` and
+   `compare_mortgage`; `llms.txt` says how to connect.
 
 ## Extending to the rest of the site
 
