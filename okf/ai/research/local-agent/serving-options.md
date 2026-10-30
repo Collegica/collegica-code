@@ -21,7 +21,7 @@ sources:
 - resource: http://model-runner.docker.internal`
 - resource: http://localhost:8000/v1`
 - resource: http://<server
-source_file: docs/research/2026-09-13-local-agent/notes/serving-options.md
+source_file: docs/2026-09-13-local-agent/notes/serving-options.md
 ---
 
 # Three ways to serve a local model to Hermes — Ollama, Docker Model Runner, vLLM

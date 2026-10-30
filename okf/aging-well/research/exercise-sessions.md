@@ -17,7 +17,7 @@ sources:
   resource: /aging-well/research/routines.md
 - id: clips
   resource: /aging-well/research/exercise-clips.md
-source_file: docs/research/2026-09-13-exercise-sessions/README.md
+source_file: docs/2026-09-13-exercise-sessions/README.md
 ---
 
 # A session you can keep — plan and research
@@ -75,5 +75,5 @@ the demonstrations to a trainer's standard. Both are said in the article.
 
 - [`notes/routines.md`](/aging-well/research/routines.md) — the families, the session structure, the sources.
 - [`clips/`](/aging-well/research/exercise-clips.md) — the five-model dead-bug comparison.
-- [`../../../apps/owl-sessions/`](/apps/owl-sessions.md) — prompts, job log, contact sheets and the library README; the runtime is under `website/sessions/` and `website/static/js/sessions/`.
+- [`../../apps/owl-sessions/`](/apps/owl-sessions.md) — prompts, job log, contact sheets and the library README; the runtime is under `website/sessions/` and `website/static/js/sessions/`.
 - [`hero.md`](hero.md) — the hero image and how it was made.

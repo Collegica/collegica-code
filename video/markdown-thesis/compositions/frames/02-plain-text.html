@@ -1,0 +1,74 @@
+<template>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
+
+    #root {
+      position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "IBM Plex Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    }
+    .f02-bg { position: absolute; inset: 0; background: #FBFAF7; }
+    .f02-stage {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 44px;
+    }
+    .f02-title { font-weight: 600; font-size: 62px; color: #1E2333; letter-spacing: -0.01em; }
+    .f02-title b { color: #C97B1E; }
+    .f02-code {
+      width: 1380px; background: #FFFFFF; border: 2px solid #E2E5EE; border-radius: 16px;
+      padding: 40px 54px; box-shadow: 0 20px 50px rgba(30,35,51,0.10);
+      font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 34px; line-height: 1.75; color: #1E2333;
+    }
+    .f02-mark { color: #3A4366; font-weight: 600; border-radius: 6px; padding: 0 4px; transition: none; }
+    .f02-labels { display: flex; gap: 26px; }
+    .f02-label {
+      font-weight: 600; font-size: 26px; color: #FBFAF7; background: #3A4366;
+      border-radius: 999px; padding: 10px 26px;
+    }
+  </style>
+
+  <div id="root" data-composition-id="02-plain-text" data-start="0" data-duration="12.74" data-width="1920" data-height="1080">
+    <div id="f02-bg" class="clip f02-bg" data-start="0" data-duration="12.74" data-track-index="0"></div>
+    <div id="f02-stage" class="clip f02-stage" data-start="0" data-duration="12.74" data-track-index="1">
+      <div id="f02-title" class="f02-title">Plain text: <b>any program, any decade.</b></div>
+      <div id="f02-code" class="f02-code">
+        <div><span id="f02-m1" class="f02-mark">#</span> The Archive and Its Silences</div>
+        <div>Colonial records were <span id="f02-m2" class="f02-mark">*not*</span> neutral.</div>
+        <div>The archive produces knowledge <span id="f02-m3" class="f02-mark">[@stoler2009, 47]</span>.</div>
+        <div>A remark for the margin.<span id="f02-m4" class="f02-mark">^[A footnote.]</span></div>
+      </div>
+      <div class="f02-labels">
+        <div id="f02-l1" class="f02-label">heading</div>
+        <div id="f02-l2" class="f02-label">italics</div>
+        <div id="f02-l3" class="f02-label">citation</div>
+        <div id="f02-l4" class="f02-label">footnote</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    (function () {
+      var title = document.getElementById("f02-title");
+      var code = document.getElementById("f02-code");
+      var marks = [1, 2, 3, 4].map(function (i) { return document.getElementById("f02-m" + i); });
+      var labels = [1, 2, 3, 4].map(function (i) { return document.getElementById("f02-l" + i); });
+
+      gsap.set(title, { opacity: 0, y: 30 });
+      gsap.set(code, { opacity: 0, y: 24 });
+      gsap.set(labels, { opacity: 0, y: 16 });
+
+      var tl = gsap.timeline({ paused: true });
+      tl.to(title, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 0.3);
+      tl.to(code, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 1.9);
+      var cues = [6.6, 7.6, 8.6, 9.8];
+      cues.forEach(function (t, i) {
+        tl.to(marks[i], { backgroundColor: "#F6E3C8", color: "#8F5410", duration: 0.3 }, t);
+        tl.to(labels[i], { opacity: 1, y: 0, duration: 0.4, ease: "back.out(1.6)" }, t);
+      });
+      tl.to({}, { duration: 12.74 }, 0);
+
+      window.__timelines["02-plain-text"] = tl;
+    })();
+  </script>
+</template>

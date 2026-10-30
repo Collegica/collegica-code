@@ -44,7 +44,7 @@ sources:
 - resource: https://wowa.ca/banks/prime-rates-canada
 - resource: https://www.nesto.ca/mortgage-basics/canada-prime-mortgage-rate/
 - resource: https://www.yorku.ca/yfile/2004/04/16/gamble-on-variable-rate-mortgages-says-prof/
-source_file: docs/research/2026-09-10-fixed-or-variable/notes/rates-and-forecasts.md
+source_file: docs/2026-09-10-fixed-or-variable/notes/rates-and-forecasts.md
 ---
 
 # Research note: current rates, forecasts, and how the comparison sites argue fixed vs variable

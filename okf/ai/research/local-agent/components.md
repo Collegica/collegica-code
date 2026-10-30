@@ -16,7 +16,7 @@ generated:
 sources:
 - resource: http://localhost:11434/v1`
 - resource: http://localhost:11434/v1
-source_file: docs/research/2026-09-13-local-agent/notes/components.md
+source_file: docs/2026-09-13-local-agent/notes/components.md
 ---
 
 # The three components — what each is, checked at the source on 2026-09-13

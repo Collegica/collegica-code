@@ -57,7 +57,7 @@ This article is what happens after the door. It is about **routines**: the
 families of movement worth building a session from, why the order and the
 rests matter as much as the exercises, and how thirty minutes that you
 actually do beats sixty that you plan. Then it introduces
-[**OWL Sessions**](https://www.collegica.org/sessions/), a small app that turns those routines into a
+[**OWL Sessions**](https://www.collegica.org/apps/owl-sessions/), a small app that turns those routines into a
 timed session on your own screen — each move shown by a demonstrator, a
 countdown, a rep count, and one minute of rest in the places a body needs
 it. It runs entirely in the page. Nothing is uploaded, no account exists.
@@ -76,7 +76,7 @@ it. It runs entirely in the page. Nothing is uploaded, no account exists.
 > 3. **Thirty, forty-five or sixty minutes.** The same five blocks, scaled.
 >    The thirty is the one to protect; the others are the same session with
 >    more rounds.
-> 4. **The app runs it.** [OWL Sessions](https://www.collegica.org/sessions/) plays a ten-second clip
+> 4. **The app runs it.** [OWL Sessions](https://www.collegica.org/apps/owl-sessions/) plays a ten-second clip
 >    of each move on a loop under a timer and a rep count, beeps at the
 >    turns, rests you between blocks, and never leaves the page.
 > 5. **The clips are generated and checked, not filmed and certified.** A
@@ -196,8 +196,8 @@ longer; the moves get heavier.
 
 ## OWL Sessions
 
-[OWL Sessions](https://www.collegica.org/sessions/) is the routine above, run for you. It sits
-beside [OWL Planner](https://www.collegica.org/owl/), the money tool of the same framework, and
+[OWL Sessions](https://www.collegica.org/apps/owl-sessions/) is the routine above, run for you. It sits
+beside [OWL Planner](https://www.collegica.org/apps/owl-planner/), the money tool of the same framework, and
 follows the same rules: a browser tab, your own machine, nothing sent
 anywhere.
 
@@ -287,8 +287,8 @@ same tools.
 Research notes — the movement families, the session structure, the
 five-model comparison, and every clip's contact sheet — are in [the
 accompanying folder](/aging-well/research/exercise-sessions.md);
-the app's source is in [`apps/owl-sessions`](/apps/owl-sessions.md)
-and [`website/static/js/sessions`](https://github.com/Collegica/collegica-code/tree/main/website/static/js/sessions).
+the app's source is its own public repository,
+[Collegica/owl-sessions](https://github.com/Collegica/owl-sessions).
 
 - **The framework.** [Planning to Age Well, with AI](/aging-well/ai-planning.md),
   plan two, and its sources.
@@ -301,5 +301,5 @@ and [`website/static/js/sessions`](https://github.com/Collegica/collegica-code/t
 - **The Big Three.** Stuart McGill, *Back Mechanic* (Backfitpro, 2015),
   for the curl-up, side plank and bird dog as a daily set.
 - **The clips.** The [five-model comparison](/aging-well/research/exercise-clips.md)
-  and the [library notes](/apps/owl-sessions.md),
+  and the [library notes](https://github.com/Collegica/owl-sessions/blob/main/library/README.md),
   with the prompt template from the site's `exercise-videos` skill.

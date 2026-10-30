@@ -25,7 +25,7 @@ sources:
   resource: /ai/research/local-agent/braxman.md
 - id: isenberg
   resource: /ai/research/local-agent/isenberg.md
-source_file: docs/research/2026-09-13-local-agent/README.md
+source_file: docs/2026-09-13-local-agent/README.md
 ---
 
 # A local agent on your own machine — plan and research

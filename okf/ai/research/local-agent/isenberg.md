@@ -16,7 +16,7 @@ stale_after: "2026-12-13T00:00:00Z"
 generated:
   by: claude/fable-5.1
   at: "2026-09-13T00:00:00Z"
-source_file: docs/research/2026-09-13-local-agent/notes/isenberg.md
+source_file: docs/2026-09-13-local-agent/notes/isenberg.md
 ---
 
 # Good enough for the job — from Greg Isenberg's video, added 2026-09-13

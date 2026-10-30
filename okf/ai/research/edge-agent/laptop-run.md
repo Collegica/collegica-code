@@ -17,7 +17,7 @@ generated:
   at: "2026-09-13T00:00:00Z"
 sources:
 - resource: http://localhost:9379/v1
-source_file: docs/research/2026-09-13-edge-agent/notes/laptop-run.md
+source_file: docs/2026-09-13-edge-agent/notes/laptop-run.md
 ---
 
 # The laptop run — Gemma 4 E2B and E4B through LiteRT-LM on a 24 GB Mac, 2026-09-13

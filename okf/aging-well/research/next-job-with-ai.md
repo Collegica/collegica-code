@@ -24,7 +24,7 @@ sources:
 - id: coverage
   resource: /aging-well/research/existing-coverage.md
 - resource: https://github.com/eLearningHub/resume-typst
-source_file: docs/research/2026-09-10-next-job-with-ai/README.md
+source_file: docs/2026-09-10-next-job-with-ai/README.md
 ---
 
 # Finding the next job, with AI — after 45

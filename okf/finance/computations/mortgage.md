@@ -52,7 +52,7 @@ executor:
 attester:
   resource: /references/attesters/mortgage-attester.mjs
 source_file: website/static/js/fixed-or-variable/mortgage.js
-sha256: 942a0da1235a4387cd09c48501f6a874c84315b200aba65bd8f7d886859d0deb
+sha256: 811cd185e4a47a9d538587b199a8b7996adad12a94f41a34344d7141243332f4
 ---
 
 # Computation

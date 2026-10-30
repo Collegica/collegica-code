@@ -3,7 +3,7 @@ Small, local-first tools that ship as pages on the site: two built (the OWL Plan
 # Applications
 
 * [OWL Planner](owl-planner.md) - A Pyodide budget tool that reads bank exports and PDF statements entirely in the browser, reconciled against the statements' own totals. Collegica's first shipped app, in its own repository.
-* [OWL Sessions](owl-sessions.md) - Thirty, forty-five or sixty minute exercise sessions from a library of seventeen generated clips, each move shown under a timer and a rep count, a minute of rest between blocks, everything in the page. The muscle tool beside OWL Planner.
+* [OWL Sessions](owl-sessions.md) - Thirty, forty-five or sixty minute exercise sessions from a library of seventeen generated clips, each move shown under a timer and a rep count, a minute of rest between blocks, everything in the page. The muscle tool beside OWL Planner, in its own repository.
 
 # Specifications
 

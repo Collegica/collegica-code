@@ -17,7 +17,7 @@ sources:
   resource: /robotics/research/nvidia-robotics/stack.md
 - id: run
   resource: /robotics/research/nvidia-robotics/cpu-run.md
-source_file: docs/research/2026-09-13-nvidia-robotics/README.md
+source_file: docs/2026-09-13-nvidia-robotics/README.md
 ---
 
 # Train the robot before you build it — plan and research

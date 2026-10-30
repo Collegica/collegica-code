@@ -78,7 +78,7 @@ sources:
 - resource: https://carpentries-incubator.github.io/introduction-to-conda-for-data-scientists/05-managing-cuda-dependencies/index.html
 - resource: https://discuss.pytorch.org/t/difference-in-pip-install-and-conda-install-pytorch-with-gpu/178832
 - resource: https://book.the-turing-way.org/reproducible-research/renv
-source_file: docs/research/2026-09-12-python-reproducibility/notes/tooling.md
+source_file: docs/2026-09-12-python-reproducibility/notes/tooling.md
 ---
 
 # Tooling research — "Environments are not packages"

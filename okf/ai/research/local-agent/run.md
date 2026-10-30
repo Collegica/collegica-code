@@ -16,7 +16,7 @@ generated:
   at: "2026-09-13T00:00:00Z"
 sources:
 - resource: http://localhost:11434/v1
-source_file: docs/research/2026-09-13-local-agent/notes/run.md
+source_file: docs/2026-09-13-local-agent/notes/run.md
 ---
 
 # The measured run — Gemma 4 12B through Ollama and Hermes, 2026-09-13

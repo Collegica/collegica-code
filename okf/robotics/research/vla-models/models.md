@@ -21,7 +21,7 @@ stale_after: "2026-12-13T00:00:00Z"
 generated:
   by: claude/fable-5.1
   at: "2026-09-13T00:00:00Z"
-source_file: docs/research/2026-09-13-vla-models/notes/models.md
+source_file: docs/2026-09-13-vla-models/notes/models.md
 ---
 
 # Vision-language-action models — checked at the source on 2026-09-13

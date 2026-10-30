@@ -4,7 +4,7 @@ type: Application
 title: OWL Planner
 description: A Pyodide budget tool that reads bank exports and PDF statements entirely in the browser,
   reconciled against the statements' own totals. Collegica's first shipped app, in its own repository.
-resource: https://www.collegica.org/owl/
+resource: https://www.collegica.org/apps/owl-planner/
 tags:
 - aging-well
 - finance
@@ -26,11 +26,12 @@ sources:
   title: The article that describes it
 ---
 
-Runs at [collegica.org/owl/](https://www.collegica.org/owl/). Nothing is
-uploaded: the CSV or PDF is parsed in the tab, reconciled against the
-statement's own totals or refused. Built and released independently from
-[its own repository](https://github.com/Collegica/owl-planner) and
-unpacked into the site at deploy time.
+Runs at [collegica.org/apps/owl-planner/](https://www.collegica.org/apps/owl-planner/)
+(formerly /owl/, which redirects there). Nothing is uploaded: the CSV or
+PDF is parsed in the tab, reconciled against the statement's own totals or
+refused. Built and released independently from
+[its own repository](https://github.com/Collegica/owl-planner); the release
+pinned in website/apps.yml is unpacked into the site at deploy time.
 
 Described, with the rules it follows and the prompts to use once you have
 the number, in [A Year of Spending, from Your Own

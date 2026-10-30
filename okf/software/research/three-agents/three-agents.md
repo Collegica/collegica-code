@@ -17,7 +17,7 @@ sources:
   resource: /software/research/three-agents/tools.md
 - id: run
   resource: /software/research/three-agents/run.md
-source_file: docs/research/2026-09-13-three-agents/README.md
+source_file: docs/2026-09-13-three-agents/README.md
 ---
 
 # One repository, three agents — plan and research

@@ -1,0 +1,65 @@
+<template>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap");
+
+    #root {
+      position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "IBM Plex Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    }
+    .f01-bg { position: absolute; inset: 0; background: #FBFAF7; }
+    .f01-stage {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 56px;
+    }
+    .f01-line { font-weight: 600; font-size: 64px; letter-spacing: -0.01em; color: #1E2333; }
+    .f01-files { display: flex; flex-direction: column; gap: 22px; align-items: center; }
+    .f01-file {
+      display: flex; align-items: center; gap: 22px;
+      background: #FFFFFF; border: 2px solid #E2E5EE; border-radius: 14px;
+      padding: 18px 34px; box-shadow: 0 10px 26px rgba(30,35,51,0.08);
+      font-family: "IBM Plex Mono", ui-monospace, monospace; font-weight: 500; font-size: 34px; color: #1E2333;
+    }
+    .f01-doc { width: 34px; height: 42px; border-radius: 4px; background: #3A4366; flex: none; position: relative; }
+    .f01-doc::after { content: ""; position: absolute; left: 7px; right: 7px; top: 11px; height: 3px; background: #FBFAF7; box-shadow: 0 8px 0 #FBFAF7, 0 16px 0 #FBFAF7; }
+    .f01-file.tpl { border-color: #C97B1E; }
+    .f01-file.tpl .f01-doc { background: #C97B1E; }
+    .f01-tag { font-family: "IBM Plex Sans", sans-serif; font-weight: 600; font-size: 24px; color: #8F5410; text-transform: uppercase; letter-spacing: 0.12em; }
+  </style>
+
+  <div id="root" data-composition-id="01-hook" data-start="0" data-duration="11.97" data-width="1920" data-height="1080">
+    <div id="f01-bg" class="clip f01-bg" data-start="0" data-duration="11.97" data-track-index="0"></div>
+    <div id="f01-stage" class="clip f01-stage" data-start="0" data-duration="11.97" data-track-index="1">
+      <div id="f01-line" class="f01-line">Your thesis is already in Word.</div>
+      <div class="f01-files">
+        <div id="f01-a" class="f01-file"><div class="f01-doc"></div>chapter3_final.docx</div>
+        <div id="f01-b" class="f01-file"><div class="f01-doc"></div>chapter3_final_v2.docx</div>
+        <div id="f01-c" class="f01-file"><div class="f01-doc"></div>chapter3_FINAL_after_supervisor.docx</div>
+        <div id="f01-t" class="f01-file tpl"><div class="f01-doc"></div>university-template.docx<span class="f01-tag">must follow</span></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    (function () {
+      var line = document.getElementById("f01-line");
+      var files = ["f01-a", "f01-b", "f01-c"].map(function (id) { return document.getElementById(id); });
+      var tpl = document.getElementById("f01-t");
+
+      gsap.set(line, { opacity: 0, y: 30 });
+      gsap.set(files.concat([tpl]), { opacity: 0, y: 24 });
+
+      var tl = gsap.timeline({ paused: true });
+      tl.to(line, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 0.3);
+      tl.to(files[0], { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.6)" }, 2.3);
+      tl.to(files[1], { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.6)" }, 3.9);
+      tl.to(files[2], { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.6)" }, 5.4);
+      tl.to(files, { opacity: 0.45, duration: 0.5 }, 7.2);
+      tl.to(tpl, { opacity: 1, y: 0, duration: 0.6, ease: "back.out(1.6)" }, 7.4);
+      tl.to({}, { duration: 11.97 }, 0);
+
+      window.__timelines["01-hook"] = tl;
+    })();
+  </script>
+</template>

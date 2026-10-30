@@ -18,7 +18,7 @@ sources:
   resource: /python/research/tooling.md
 - id: pipeline
   resource: /python/research/pipeline.md
-source_file: docs/research/2026-09-12-python-reproducibility/README.md
+source_file: docs/2026-09-12-python-reproducibility/README.md
 ---
 
 # Python reproducibility — plan and research

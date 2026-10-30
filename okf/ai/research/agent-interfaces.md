@@ -17,7 +17,7 @@ sources:
   resource: /ai/research/hermes.md
 - id: protocols
   resource: /ai/research/protocols.md
-source_file: docs/research/2026-09-13-agent-interfaces/README.md
+source_file: docs/2026-09-13-agent-interfaces/README.md
 ---
 
 # One agent, four doors — plan and research

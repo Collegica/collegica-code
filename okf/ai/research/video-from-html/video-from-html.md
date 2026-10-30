@@ -17,7 +17,7 @@ sources:
   resource: /ai/research/video-from-html/tools.md
 - id: run
   resource: /ai/research/video-from-html/run.md
-source_file: docs/research/2026-09-13-video-from-html/README.md
+source_file: docs/2026-09-13-video-from-html/README.md
 ---
 
 # Videos from HTML — plan and research

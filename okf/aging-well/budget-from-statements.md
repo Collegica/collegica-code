@@ -25,7 +25,7 @@ sources:
 - id: owl-planner
   resource: /apps/owl-planner.md
   title: The tool itself
-- resource: https://www.collegica.org/owl/
+- resource: https://www.collegica.org/apps/owl-planner/
 - resource: https://github.com/Collegica/owl-planner
 - resource: https://github.com/halfguru/retire-eh
 - resource: https://github.com/616fun/retirement-planning-toolkit-canada
@@ -54,7 +54,7 @@ your own machine. Nothing is uploaded.
 > **Run it in your browser**
 >
 >
-> The tool runs at [collegica.org/owl](https://www.collegica.org/owl/) — the same engine, in your own
+> The tool runs at [collegica.org/apps/owl-planner](https://www.collegica.org/apps/owl-planner/) — the same engine, in your own
 > browser, with nothing uploaded. Drop your CSV exports, or a PDF statement from
 > CIBC, RBC, Scotiabank or ScotiaLine — it converts in the tab, reconciled
 > against the statement's own totals or refused. Press run. Or start with the
@@ -432,7 +432,7 @@ The tool is [**OWL Planner**](https://github.com/Collegica/owl-planner), MIT
 licensed: two Python files, an expense taxonomy modelled on a planner's
 intake form, and three example configuration files to copy. Clone it, drop
 your exports in `statements/`, and `pixi run budget` — or [run it in your
-browser](https://www.collegica.org/owl/), where the same `budget.py` runs under Pyodide with every
+browser](https://www.collegica.org/apps/owl-planner/), where the same `budget.py` runs under Pyodide with every
 asset served from this site. Your files stay in the tab; your rules stay in
 your browser's storage, exportable as plain YAML and deletable in one click.
 PDF statements from a supported bank convert in the browser too, under the

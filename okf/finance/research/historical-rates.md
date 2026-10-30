@@ -62,7 +62,7 @@ sources:
 - resource: https://www.theglobeandmail.com/investing/personal-finance/household-finances/article-big-banks-prepayment-charges-give-reason-to-consider-fair-penalty/
 - resource: https://www.nesto.ca/featured-articles/mortgage-prepayment-penalties-surge-after-big-banks-cut-posted-rates/
 - resource: https://pegasuslending.com/blog/mortgage-prepayment-penalty-canada/
-source_file: docs/research/2026-09-10-fixed-or-variable/notes/historical-rates.md
+source_file: docs/2026-09-10-fixed-or-variable/notes/historical-rates.md
 ---
 
 # Historical rate data for "Fixed or variable?" — research note

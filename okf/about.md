@@ -12,7 +12,7 @@ tags:
 generated:
   by: claude/fable-5.1
   at: "2026-09-12T00:00:00Z"
-source_file: docs/plans/2026-09-12-okf/README.md
+source_file: docs/2026-09-12-okf/README.md
 ---
 
 # Collegica as an OKF wiki — design and proof of concept

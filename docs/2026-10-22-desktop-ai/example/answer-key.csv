@@ -1,0 +1,21 @@
+file,date,vendor,total,currency,category
+2026-09-02_groceries.txt,2026-09-02,Marché Laurier,28.72,CAD,Groceries
+bus-pass-sept.txt,2026-09-01,STM,97.00,CAD,Transport
+lunch.txt,2026-09-05,Café Olimpico,19.26,CAD,Meals
+staples.txt,2026-09-08,Bureau Plus,24.70,CAD,Office
+receipt (3).txt,2026-09-12,Pharmaprix,20.67,CAD,Other
+taxi.txt,2026-09-14,Taxi Diamond,27.40,CAD,Transport
+dinner-friday.txt,2026-09-19,Restaurant Damas,98.88,CAD,Meals
+refund.txt,2026-09-22,Bureau Plus,-9.76,CAD,Office
+scan_0012.pdf,2026-09-03,IGA,21.77,CAD,Groceries
+scan_0013.pdf,2026-09-09,Via Rail,72.32,CAD,Transport
+scan_0014.pdf,2026-09-15,Indigo,51.39,CAD,Office
+scan_0015.pdf,2026-09-20,Metro,43.85,CAD,Groceries
+scan_0016.pdf,2026-09-26,Amazon.com,12.99,USD,Office
+scan_0017.pdf,2026-09-28,Tim Hortons,5.96,CAD,Meals
+IMG_4401.png,2026-09-04,Jean Coutu,8.61,CAD,Other
+IMG_4402.png,2026-09-10,Provigo,20.31,CAD,Groceries
+IMG_4403.png,2026-09-16,Bixi,7.25,CAD,Transport
+IMG_4404.png,2026-09-21,Sushi Shop,18.34,CAD,Meals
+IMG_4405.png,2026-09-26,Amazon.com,12.99,USD,Office
+IMG_4406.png,2026-09-30,Canadian Tire,28.73,CAD,Other

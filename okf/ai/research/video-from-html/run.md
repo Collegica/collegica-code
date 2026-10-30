@@ -14,7 +14,7 @@ stale_after: "2026-12-13T00:00:00Z"
 generated:
   by: claude/fable-5.1
   at: "2026-09-13T00:00:00Z"
-source_file: docs/research/2026-09-13-video-from-html/notes/run.md
+source_file: docs/2026-09-13-video-from-html/notes/run.md
 ---
 
 # The pipeline, re-run and timed — 2026-09-13

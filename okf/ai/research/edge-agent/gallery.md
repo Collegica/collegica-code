@@ -18,7 +18,7 @@ generated:
   at: "2026-09-13T00:00:00Z"
 sources:
 - resource: http://127.0.0.1:9379/v1`
-source_file: docs/research/2026-09-13-edge-agent/notes/gallery.md
+source_file: docs/2026-09-13-edge-agent/notes/gallery.md
 ---
 
 # The AI Edge Gallery, FunctionGemma, and Hermes on Termux, read 2026-09-13

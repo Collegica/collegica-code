@@ -6,7 +6,7 @@ date-released: 2026-09-12
 authors:
   - family-names: Samadi
     given-names: Behzad
-repository-code: "https://github.com/Collegica/collegica"
+repository-code: "https://github.com/Collegica/collegica-code"
 license: MIT
 abstract: >-
   A deliberately minimal, genuinely runnable example of a reproducible

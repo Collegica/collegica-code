@@ -1,0 +1,72 @@
+<template>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap");
+
+    #root {
+      position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
+      font-family: "IBM Plex Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    }
+    .f06-bg { position: absolute; inset: 0; background: #FBFAF7; }
+    .f06-stage {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 46px;
+    }
+    .f06-os { display: flex; gap: 24px; }
+    .f06-chip { font-weight: 600; font-size: 30px; color: #FBFAF7; background: #3A4366; border-radius: 999px; padding: 12px 34px; }
+    .f06-term {
+      width: 900px; background: #1E2333; border-radius: 16px; padding: 34px 44px;
+      box-shadow: 0 20px 50px rgba(30,35,51,0.22);
+      font-family: "IBM Plex Mono", ui-monospace, monospace; font-weight: 500; font-size: 36px; line-height: 1.8; color: #FBFAF7;
+    }
+    .f06-term .p { color: #C97B1E; margin-right: 18px; }
+    .f06-ai {
+      display: flex; align-items: center; gap: 22px;
+      background: #FFFFFF; border: 2px solid #E2E5EE; border-radius: 16px;
+      padding: 22px 36px; box-shadow: 0 12px 30px rgba(30,35,51,0.09);
+      font-size: 32px; color: #1E2333;
+    }
+    .f06-ai b { color: #8F5410; }
+    .f06-dot { width: 18px; height: 18px; border-radius: 50%; background: #C97B1E; flex: none; }
+  </style>
+
+  <div id="root" data-composition-id="06-commands" data-start="0" data-duration="10.52" data-width="1920" data-height="1080">
+    <div id="f06-bg" class="clip f06-bg" data-start="0" data-duration="10.52" data-track-index="0"></div>
+    <div id="f06-stage" class="clip f06-stage" data-start="0" data-duration="10.52" data-track-index="1">
+      <div class="f06-os">
+        <div id="f06-w" class="f06-chip">Windows</div>
+        <div id="f06-m" class="f06-chip">Mac</div>
+      </div>
+      <div id="f06-term" class="f06-term">
+        <div id="f06-l1"><span class="p">$</span>pixi install</div>
+        <div id="f06-l2"><span class="p">$</span>pixi run import</div>
+        <div id="f06-l3"><span class="p">$</span>pixi run word</div>
+      </div>
+      <div id="f06-ai" class="f06-ai"><div class="f06-dot"></div>Or an AI assistant, with one rule: <b>never change your words.</b></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    (function () {
+      var os = [document.getElementById("f06-w"), document.getElementById("f06-m")];
+      var term = document.getElementById("f06-term");
+      var lines = ["f06-l1", "f06-l2", "f06-l3"].map(function (id) { return document.getElementById(id); });
+      var ai = document.getElementById("f06-ai");
+
+      gsap.set(os, { opacity: 0, y: 20 });
+      gsap.set(term, { opacity: 0, y: 24 });
+      gsap.set(lines, { opacity: 0, x: -16 });
+      gsap.set(ai, { opacity: 0, y: 24 });
+
+      var tl = gsap.timeline({ paused: true });
+      tl.to(os, { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.6)", stagger: 0.25 }, 0.4);
+      tl.to(term, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 1.9);
+      tl.to(lines, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out", stagger: 0.55 }, 2.2);
+      tl.to(ai, { opacity: 1, y: 0, duration: 0.6, ease: "back.out(1.4)" }, 4.5);
+      tl.to({}, { duration: 10.52 }, 0);
+
+      window.__timelines["06-commands"] = tl;
+    })();
+  </script>
+</template>

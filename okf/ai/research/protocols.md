@@ -17,7 +17,7 @@ generated:
   at: "2026-09-13T00:00:00Z"
 sources:
 - resource: https://github.com/ag-ui-protocol/ag-ui
-source_file: docs/research/2026-09-13-agent-interfaces/notes/protocols.md
+source_file: docs/2026-09-13-agent-interfaces/notes/protocols.md
 ---
 
 # The protocols — MCP, AG-UI, and the one that changed its name
