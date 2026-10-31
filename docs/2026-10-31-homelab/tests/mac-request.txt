@@ -1,0 +1,15 @@
+I'm a beginner and want to try a homelab before I buy a mini PC for it. On this Mac (Apple Silicon, Docker Desktop is running), in this folder, please set up:
+
+- Nextcloud, for files, calendar and contacts
+- Frigate, for security cameras with AI object detection. I have no camera yet, so use a generated test video stream instead; don't download anything except the official container images.
+- Home Assistant, for home automation, connected to Frigate if you can
+- Immich, for photos
+
+Rules:
+- Use Docker Compose. Official images only, with pinned versions, not "latest".
+- Only listen on 127.0.0.1. Nothing reachable from my network or the internet.
+- Generate strong passwords and keep them in a .env file that is never printed in full.
+- Keep data in folders under ./data so it is easy to back up.
+- Start everything, then check that each service actually answers, and fix what doesn't.
+- Write README.md for me: what each service is, how to open it, how to stop and start it, what you could not finish, and what I should do differently on a real mini PC (hardware, backups, remote access).
+- Other containers are already running on this Mac. Don't stop, change or remove anything you didn't create, and pick ports that are free.

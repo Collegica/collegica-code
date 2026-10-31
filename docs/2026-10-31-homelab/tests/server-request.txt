@@ -1,0 +1,16 @@
+I want to add some homelab services to my TrueNAS box, using the Coolify that runs on it (a homelab skill describes the box; use the official `coolify` CLI, its API, and SSH for checks).
+
+Please set up, in a NEW Coolify project called "Collegica homelab test":
+- Nextcloud with Postgres, from Coolify's catalogue
+- Home Assistant, from Coolify's catalogue
+- Frigate (cameras with AI object detection). It isn't in the catalogue, so add it as a custom Docker Compose service in the same project, official image, pinned version. I have no camera here: use a generated test stream, and don't download anything except official container images. Use the GPU for detection if no GPU job is running; otherwise the CPU.
+- Connect Home Assistant to Frigate if you can.
+
+Rules:
+- This box also runs production work. Don't stop, restart, change or delete anything you didn't create: not other projects, services or containers, not Docker, not Coolify itself. Never use sudo.
+- Check free memory first and keep this test small (a few GB in total).
+- Home network only: no public domains, nothing through the Cloudflare tunnel.
+- Pinned versions, not "latest". Strong generated passwords, never printed.
+- Make sure the test can't fill the disk.
+- Check from the laptop that each service actually answers, and fix what doesn't.
+- Write README.md: what you created, how to open each service, what you couldn't finish, and the exact commands to remove the whole project later. Don't remove anything yourself.
