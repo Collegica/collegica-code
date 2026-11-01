@@ -1,0 +1,9 @@
+I run a small renovation company in Toronto (my name is Sam Rivera). I've downloaded my data from Gmail, Yahoo, iCloud, Facebook and LinkedIn into ./exports. Please:
+
+1. Build one contacts database (SQLite, contacts.db) with one row per real person, merging duplicates across sources. Keep track of where every field came from. If you're not sure two records are the same person, don't guess: flag it for me.
+2. Enrich it from what's already in my exports: when I last emailed each person and how often, and their current company and title (say which source you trusted, and why).
+3. For each person, work out whether Canada's anti-spam law (CASL) lets me email them about my business today, and until when, with the evidence. Respect anyone who asked me to stop.
+4. Write a script I can re-run when I add new exports, without losing notes I've added myself.
+5. Write README.md for me: what you built, how many people, the merges you weren't sure about, who I can contact and why, and what I should not do.
+
+Rules: work only in this folder. Don't send any email and don't connect to the internet. Don't print full email addresses or phone numbers in your final summary.
