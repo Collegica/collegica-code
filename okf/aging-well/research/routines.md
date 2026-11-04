@@ -13,7 +13,7 @@ generated:
   at: "2026-09-13T00:00:00Z"
 sources:
 - resource: https://www.who.int/publications/i/item/9789240015128
-source_file: docs/2026-09-13-exercise-sessions/notes/routines.md
+source_file: docs/research/2026-09-13-exercise-sessions/notes/routines.md
 ---
 
 # Routines — the families, the session, the sources, 2026-09-13

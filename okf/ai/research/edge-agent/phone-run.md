@@ -20,7 +20,7 @@ generated:
 sources:
 - resource: https://developers.google.com/edge/litert-lm/models/gemma-4
 - resource: https://github.com/google-ai-edge/gallery/releases/tag/1.0.19
-source_file: docs/2026-09-13-edge-agent/notes/phone-run.md
+source_file: docs/research/2026-09-13-edge-agent/notes/phone-run.md
 ---
 
 # The phone run — Gemma 4 E2B on a Galaxy S26 Ultra, 2026-09-14

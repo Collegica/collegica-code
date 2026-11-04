@@ -21,7 +21,7 @@ uncertain.
 ## The simulation
 
 The arithmetic is not in this folder. It lives in
-[`website/static/js/fixed-or-variable/`](../../website/static/js/fixed-or-variable/)
+[`website/static/js/fixed-or-variable/`](../../../website/static/js/fixed-or-variable/)
 because the article's tables and the article's in-page calculator have to be
 the same code — if they diverge, one of them is lying.
 
@@ -41,8 +41,8 @@ the same code — if they diverge, one of them is lying.
 the article's tables and its chart:
 
 ```bash
-node docs/2026-09-10-fixed-or-variable/build.mjs         # tables, as markdown
-node docs/2026-09-10-fixed-or-variable/build.mjs --svg   # tables + the chart
+node docs/research/2026-09-10-fixed-or-variable/build.mjs         # tables, as markdown
+node docs/research/2026-09-10-fixed-or-variable/build.mjs --svg   # tables + the chart
 ```
 
 `--svg` writes `website/static/img/finance/rate-path.svg` and the include

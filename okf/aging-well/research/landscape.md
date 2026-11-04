@@ -87,7 +87,7 @@ sources:
 - resource: https://www.aarp.org/work/careers/aarp-helps-older-workers/
 - resource: https://terms.law/Privacy-Watchdog/ai-services/openai/
 - resource: https://trustscan.dev/blog/opt-out-llm-training-data-2026
-source_file: docs/2026-09-10-next-job-with-ai/notes/landscape.md
+source_file: docs/research/2026-09-10-next-job-with-ai/notes/landscape.md
 ---
 
 # Landscape: middle-aged (45–65) job seekers using AI — facts, evidence, tools

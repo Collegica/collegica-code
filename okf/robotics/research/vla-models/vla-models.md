@@ -18,7 +18,7 @@ sources:
   resource: /robotics/research/vla-models/models.md
 - id: run
   resource: /robotics/research/vla-models/lerobot-run.md
-source_file: docs/2026-09-13-vla-models/README.md
+source_file: docs/research/2026-09-13-vla-models/README.md
 ---
 
 # Words in, joints out — plan and research

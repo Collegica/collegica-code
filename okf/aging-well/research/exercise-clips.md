@@ -14,7 +14,7 @@ stale_after: "2026-12-14T00:00:00Z"
 generated:
   by: claude/fable-5.1
   at: "2026-09-13T00:00:00Z"
-source_file: docs/2026-09-13-exercise-sessions/clips/README.md
+source_file: docs/research/2026-09-13-exercise-sessions/clips/README.md
 ---
 
 # One dead bug, five video models — cost and form, 2026-09-13

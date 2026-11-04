@@ -15,7 +15,7 @@ plan two and has not started it.
 | WHO activity figures (150–300 min, 2+ strength days, 3+ balance days for 65+) | Already cited in the framework article; the guideline publication (25 November 2020) is the source — [`notes/routines.md`](notes/routines.md) |
 | The anti-movement families and the McGill Big Three | Standard strength-coaching taxonomy; McGill's *Back Mechanic* for the Big Three — judgement, not a study |
 | The session structure (five blocks, one-minute rests, 30/45/60) | Design decisions, explained in the note; the plans add up exactly to their lengths (`website/static/js/sessions/plans.js`) |
-| The clips show the exercises they claim | Every clip compared from a 2 fps contact sheet by an editor, not a trainer — [`clips/README.md`](clips/README.md) for the five-model comparison, [`apps/owl-sessions/README.md`](../../apps/owl-sessions/README.md) for the library |
+| The clips show the exercises they claim | Every clip compared from a 2 fps contact sheet by an editor, not a trainer — [`clips/README.md`](clips/README.md) for the five-model comparison, [`apps/owl-sessions/README.md`](../../../apps/owl-sessions/README.md) for the library |
 | The app runs entirely in the page | Its source: no network calls; module scripts, one `<video>`, `AudioContext` beeps |
 
 Not verified: any health claim beyond the WHO figures; the correctness of
@@ -53,5 +53,5 @@ the demonstrations to a trainer's standard. Both are said in the article.
 
 - [`notes/routines.md`](notes/routines.md) — the families, the session structure, the sources.
 - [`clips/`](clips/) — the five-model dead-bug comparison.
-- [`../../apps/owl-sessions/`](../../apps/owl-sessions/) — prompts, job log, contact sheets and the library README; the runtime is under `website/sessions/` and `website/static/js/sessions/`.
+- [`../../apps/owl-sessions/`](../../../apps/owl-sessions/) — prompts, job log, contact sheets and the library README; the runtime is under `website/sessions/` and `website/static/js/sessions/`.
 - [`hero.md`](hero.md) — the hero image and how it was made.

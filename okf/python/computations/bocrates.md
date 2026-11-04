@@ -37,7 +37,7 @@ executor:
   - result
 attester:
   resource: /references/attesters/bocrates-attester.py
-source_file: docs/2026-09-12-python-reproducibility/example/src/bocrates/summary.py
+source_file: docs/research/2026-09-12-python-reproducibility/example/src/bocrates/summary.py
 sha256: a0985d0d94c16cbc24ba7d657de3bd58595748852c7ec72ece298692fe4c7904
 ---
 

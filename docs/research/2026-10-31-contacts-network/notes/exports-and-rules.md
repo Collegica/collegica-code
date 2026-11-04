@@ -6,7 +6,7 @@ Checked **2026-10-31**. Every URL below was read on that date unless marked othe
 - **Blocked:** crtc.gc.ca returned **HTTP 403** to both curl and WebFetch (FAQ `https://crtc.gc.ca/eng/com500/faq500.htm`, bulletins 2012-548 and 2012-549). We did not try to get around it. **No CRTC guidance was read first-hand.** The social-media and "friendship" questions below rest on the statute and regulations only.
 - **WebSearch was unavailable** (session budget used up). Pages were found from known URLs and from links on the pages themselves.
 - **Not loaded / not found:** takeout.google.com itself (it needs a sign-in). Yahoo's data-download dashboard (`yahoo.mydashboard.oath.com` returned an error page without sign-in). No GitHub code search hit for LinkedIn's `Connections.csv` header.
-- **Reused (already verified 2026-10-28):** `docs/2026-10-28-ai-small-business/notes/checks.md` §7 (CASL basics: CEM definition, consent, 6-month/2-year implied consent, s.6(2) content, penalties) and §8 (PIPEDA, cross-border transfers, OPC generative-AI principles, Quebec Law 25). They are not repeated here, only cited.
+- **Reused (already verified 2026-10-28):** `docs/research/2026-10-28-ai-small-business/notes/checks.md` §7 (CASL basics: CEM definition, consent, 6-month/2-year implied consent, s.6(2) content, penalties) and §8 (PIPEDA, cross-border transfers, OPC generative-AI principles, Quebec Law 25). They are not repeated here, only cited.
 - **UNVERIFIED** marks anything we could not confirm from a primary page. It usually means "commonly reported, or from memory". Check those items in a normal browser before publishing.
 
 ---

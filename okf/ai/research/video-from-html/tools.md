@@ -17,7 +17,7 @@ sources:
 - resource: https://github.com/heygen-com/hyperframes
 - resource: https://github.com/hexgrad/kokoro
 - resource: https://huggingface.co/hexgrad/Kokoro-82M
-source_file: docs/2026-09-13-video-from-html/notes/tools.md
+source_file: docs/research/2026-09-13-video-from-html/notes/tools.md
 ---
 
 # The two tools — HyperFrames and Kokoro, checked at the source on 2026-09-13

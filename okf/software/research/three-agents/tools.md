@@ -22,7 +22,7 @@ sources:
 - resource: https://antigravity.google/cli/install.ps1
 - resource: https://git-scm.com/downloads/win
 - resource: https://chatgpt.com/codex/install.sh
-source_file: docs/2026-09-13-three-agents/notes/tools.md
+source_file: docs/research/2026-09-13-three-agents/notes/tools.md
 ---
 
 # The four tools — checked at the source on 2026-09-13

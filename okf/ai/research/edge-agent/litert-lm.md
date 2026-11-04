@@ -18,7 +18,7 @@ generated:
   at: "2026-09-13T00:00:00Z"
 sources:
 - resource: https://github.com/google-ai-edge/LiteRT-LM
-source_file: docs/2026-09-13-edge-agent/notes/litert-lm.md
+source_file: docs/research/2026-09-13-edge-agent/notes/litert-lm.md
 ---
 
 # LiteRT-LM — the runtime, its APIs, and Google's numbers, read 2026-09-13

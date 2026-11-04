@@ -121,7 +121,7 @@ sources:
 - resource: https://www.acm.org/publications/policies/artifact-review-and-badging-current
 - resource: https://www.pyopensci.org/software-peer-review/
 - resource: https://www.pyopensci.org/python-package-guide/
-source_file: docs/2026-09-12-python-reproducibility/notes/pipeline.md
+source_file: docs/research/2026-09-12-python-reproducibility/notes/pipeline.md
 ---
 
 # Pipeline research — "Python for Reproducible Research"

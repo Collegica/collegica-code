@@ -32,10 +32,12 @@ defaults:
 # Prefix rewrites applied to every link in every body. Turns pointers at the
 # GitHub repo or at relative source paths into in-bundle edges.
 link_map:
-  "https://github.com/Collegica/collegica-code/tree/main/docs/2026-09-10-fixed-or-variable": "/finance/research/"
+  "https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-10-fixed-or-variable": "/finance/research/"
   "https://github.com/Collegica/collegica-code/tree/main/website/static/js/fixed-or-variable": "/finance/computations/mortgage.md"
   "../../website/finance/fixed-or-variable/index.md": "/finance/fixed-or-variable.md"
+  "../../../website/finance/fixed-or-variable/index.md": "/finance/fixed-or-variable.md"
   "../../website/static/js/fixed-or-variable/": "/finance/computations/mortgage.md"
+  "../../../website/static/js/fixed-or-variable/": "/finance/computations/mortgage.md"
   "notes/historical-rates.md": "/finance/research/historical-rates.md"
   "notes/rates-and-forecasts.md": "/finance/research/rates-and-forecasts.md"
   "notes/social-discourse.md": "/finance/research/social-discourse.md"
@@ -47,45 +49,45 @@ link_map:
   # Exact rule first: without it the prefix rule below would rewrite the
   # example folder into /ai/research//example. The example is code, not a
   # concept; it stays a pointer at the repository.
-  "https://github.com/Collegica/collegica-code/tree/main/docs/2026-09-13-agent-interfaces/example": "https://github.com/Collegica/collegica-code/tree/main/docs/2026-09-13-agent-interfaces/example"
-  "https://github.com/Collegica/collegica-code/tree/main/docs/2026-09-13-agent-interfaces": "/ai/research/"
-  "https://github.com/Collegica/collegica-code/tree/main/docs/2026-09-13-local-agent": "/ai/research/local-agent/"
-  "https://github.com/Collegica/collegica-code/tree/main/docs/2026-09-13-video-from-html": "/ai/research/video-from-html/"
-  "https://github.com/Collegica/collegica-code/tree/main/docs/2026-09-13-three-agents": "/software/research/three-agents/"
-  "https://github.com/Collegica/collegica-code/tree/main/docs/2026-09-13-nvidia-robotics": "/robotics/research/nvidia-robotics/"
+  "https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-13-agent-interfaces/example": "https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-13-agent-interfaces/example"
+  "https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-13-agent-interfaces": "/ai/research/"
+  "https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-13-local-agent": "/ai/research/local-agent/"
+  "https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-13-video-from-html": "/ai/research/video-from-html/"
+  "https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-13-three-agents": "/software/research/three-agents/"
+  "https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-13-nvidia-robotics": "/robotics/research/nvidia-robotics/"
   "notes/stack.md": "/robotics/research/nvidia-robotics/stack.md"
   "notes/cpu-run.md": "/robotics/research/nvidia-robotics/cpu-run.md"
   "cpu-run.md": "/robotics/research/nvidia-robotics/cpu-run.md"
   # The kernel script is code, not a concept; it stays a pointer at the repository.
-  "saxpy.py": "https://github.com/Collegica/collegica-code/blob/main/docs/2026-09-13-nvidia-robotics/notes/saxpy.py"
-  "https://github.com/Collegica/collegica-code/tree/main/docs/2026-09-13-vla-models": "/robotics/research/vla-models/"
+  "saxpy.py": "https://github.com/Collegica/collegica-code/blob/main/docs/research/2026-09-13-nvidia-robotics/notes/saxpy.py"
+  "https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-13-vla-models": "/robotics/research/vla-models/"
   "notes/models.md": "/robotics/research/vla-models/models.md"
   "notes/lerobot-run.md": "/robotics/research/vla-models/lerobot-run.md"
   "lerobot-run.md": "/robotics/research/vla-models/lerobot-run.md"
-  "configs.py": "https://github.com/Collegica/collegica-code/blob/main/docs/2026-09-13-vla-models/notes/configs.py"
-  "https://github.com/Collegica/collegica-code/tree/main/docs/2026-09-13-voice-agents": "/ai/research/voice-agents/"
-  "https://github.com/Collegica/collegica-code/blob/main/docs/2026-09-13-voice-agents/notes/voice-run.md": "/ai/research/voice-agents/voice-run.md"
+  "configs.py": "https://github.com/Collegica/collegica-code/blob/main/docs/research/2026-09-13-vla-models/notes/configs.py"
+  "https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-13-voice-agents": "/ai/research/voice-agents/"
+  "https://github.com/Collegica/collegica-code/blob/main/docs/research/2026-09-13-voice-agents/notes/voice-run.md": "/ai/research/voice-agents/voice-run.md"
   "../local-agent/index.md": "/ai/local-agent.md"
   "notes/voice-models.md": "/ai/research/voice-agents/voice-models.md"
   "notes/voice-run.md": "/ai/research/voice-agents/voice-run.md"
   "voice-run.md": "/ai/research/voice-agents/voice-run.md"
-  "pipeline.py": "https://github.com/Collegica/collegica-code/blob/main/docs/2026-09-13-voice-agents/notes/pipeline.py"
-  "notes/pipeline.py": "https://github.com/Collegica/collegica-code/blob/main/docs/2026-09-13-voice-agents/notes/pipeline.py"
-  "https://github.com/Collegica/collegica-code/tree/main/docs/2026-09-13-edge-agent/example": "https://github.com/Collegica/collegica-code/tree/main/docs/2026-09-13-edge-agent/example"
-  "https://github.com/Collegica/collegica-code/tree/main/docs/2026-09-13-edge-agent": "/ai/research/edge-agent/"
+  "pipeline.py": "https://github.com/Collegica/collegica-code/blob/main/docs/research/2026-09-13-voice-agents/notes/pipeline.py"
+  "notes/pipeline.py": "https://github.com/Collegica/collegica-code/blob/main/docs/research/2026-09-13-voice-agents/notes/pipeline.py"
+  "https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-13-edge-agent/example": "https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-13-edge-agent/example"
+  "https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-13-edge-agent": "/ai/research/edge-agent/"
   "notes/litert-lm.md": "/ai/research/edge-agent/litert-lm.md"
   "notes/gallery.md": "/ai/research/edge-agent/gallery.md"
   "notes/laptop-run.md": "/ai/research/edge-agent/laptop-run.md"
   "notes/phone-run.md": "/ai/research/edge-agent/phone-run.md"
-  "https://github.com/Collegica/collegica-code/tree/main/docs/2026-09-14-turbovec": "/ai/research/turbovec/"
-  "https://github.com/Collegica/collegica-code/blob/main/docs/2026-09-14-turbovec/notes/turbovec-run.md": "/ai/research/turbovec/turbovec-run.md"
+  "https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-14-turbovec": "/ai/research/turbovec/"
+  "https://github.com/Collegica/collegica-code/blob/main/docs/research/2026-09-14-turbovec/notes/turbovec-run.md": "/ai/research/turbovec/turbovec-run.md"
   "notes/turbovec.md": "/ai/research/turbovec/turbovec.md"
   "notes/turbovec-run.md": "/ai/research/turbovec/turbovec-run.md"
   "turbovec-run.md": "/ai/research/turbovec/turbovec-run.md"
-  "bench.py": "https://github.com/Collegica/collegica-code/blob/main/docs/2026-09-14-turbovec/notes/bench.py"
-  "notes/bench.py": "https://github.com/Collegica/collegica-code/blob/main/docs/2026-09-14-turbovec/notes/bench.py"
-  "results_t1.json": "https://github.com/Collegica/collegica-code/blob/main/docs/2026-09-14-turbovec/notes/results_t1.json"
-  "results_t4.json": "https://github.com/Collegica/collegica-code/blob/main/docs/2026-09-14-turbovec/notes/results_t4.json"
+  "bench.py": "https://github.com/Collegica/collegica-code/blob/main/docs/research/2026-09-14-turbovec/notes/bench.py"
+  "notes/bench.py": "https://github.com/Collegica/collegica-code/blob/main/docs/research/2026-09-14-turbovec/notes/bench.py"
+  "results_t1.json": "https://github.com/Collegica/collegica-code/blob/main/docs/research/2026-09-14-turbovec/notes/results_t1.json"
+  "results_t4.json": "https://github.com/Collegica/collegica-code/blob/main/docs/research/2026-09-14-turbovec/notes/results_t4.json"
   "notes/tools.md": "/ai/research/video-from-html/tools.md"
   "notes/components.md": "/ai/research/local-agent/components.md"
   "notes/serving-options.md": "/ai/research/local-agent/serving-options.md"
@@ -95,15 +97,19 @@ link_map:
   "notes/braxman.md": "/ai/research/local-agent/braxman.md"
   "notes/isenberg.md": "/ai/research/local-agent/isenberg.md"
   "../../website/ai.qmd": "https://www.collegica.org/ai/"
+  "../../../website/ai.qmd": "https://www.collegica.org/ai/"
   "notes/hermes.md": "/ai/research/hermes.md"
   "notes/protocols.md": "/ai/research/protocols.md"
-  "https://github.com/Collegica/collegica-code/tree/main/docs/2026-09-12-python-reproducibility/example": "/python/computations/bocrates.md"
-  "https://github.com/Collegica/collegica-code/tree/main/docs/2026-09-12-python-reproducibility": "/python/research/"
+  "https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-12-python-reproducibility/example": "/python/computations/bocrates.md"
+  "https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-12-python-reproducibility": "/python/research/"
   "../environments-and-packages/index.md": "/python/environments-and-packages.md"
   "../reproducible-research/index.md": "/python/reproducible-research.md"
   "../../website/python/index.qmd": "https://www.collegica.org/python/"
+  "../../../website/python/index.qmd": "https://www.collegica.org/python/"
   "../../website/python/environments-and-packages/index.md": "/python/environments-and-packages.md"
+  "../../../website/python/environments-and-packages/index.md": "/python/environments-and-packages.md"
   "../../slides/problem-solving/reproducibility/index.md": "https://www.collegica.org/slides/problem-solving/reproducibility/"
+  "../../../slides/problem-solving/reproducibility/index.md": "https://www.collegica.org/slides/problem-solving/reproducibility/"
   "notes/tooling.md": "/python/research/tooling.md"
   "notes/pipeline.md": "/python/research/pipeline.md"
   "example/": "/python/computations/bocrates.md"
@@ -115,31 +121,37 @@ link_map:
   "/apps/owl-planner/": "https://www.collegica.org/apps/owl-planner/"
   "notes/": "/aging-well/research/"
   "../../website/aging-well/ai-planning/index.md": "/aging-well/ai-planning.md"
+  "../../../website/aging-well/ai-planning/index.md": "/aging-well/ai-planning.md"
   "../../website/aging-well/budget-from-statements/index.md": "/aging-well/budget-from-statements.md"
+  "../../../website/aging-well/budget-from-statements/index.md": "/aging-well/budget-from-statements.md"
   "../../website/aging-well/next-job/index.md": "/aging-well/next-job.md"
+  "../../../website/aging-well/next-job/index.md": "/aging-well/next-job.md"
   "../brand/": "https://github.com/Collegica/collegica-code/tree/main/video/brand"
-  "../docs/2026-09-10-next-job-with-ai/README.md": "/aging-well/research/next-job-with-ai.md"
+  "../docs/research/2026-09-10-next-job-with-ai/README.md": "/aging-well/research/next-job-with-ai.md"
   "../website/aging-well/budget-from-statements/index.md": "/aging-well/budget-from-statements.md"
   "../website/aging-well/next-job/index.md": "/aging-well/next-job.md"
-  "../../docs/2026-09-10-next-job-with-ai/README.md": "/aging-well/research/next-job-with-ai.md"
-  "../../docs/2026-09-10-next-job-with-ai/notes/github-open-source.md": "/aging-well/research/github-open-source.md"
-  "../../docs/2026-09-10-next-job-with-ai/notes/landscape.md": "/aging-well/research/landscape.md"
+  "../../docs/research/2026-09-10-next-job-with-ai/README.md": "/aging-well/research/next-job-with-ai.md"
+  "../../docs/research/2026-09-10-next-job-with-ai/notes/github-open-source.md": "/aging-well/research/github-open-source.md"
+  "../../docs/research/2026-09-10-next-job-with-ai/notes/landscape.md": "/aging-well/research/landscape.md"
   "funnel/": "/apps/funnel.md"
   # The exercise-sessions article, its research folder and the app it ships.
   "../../website/aging-well/exercise-sessions/index.md": "/aging-well/exercise-sessions.md"
+  "../../../website/aging-well/exercise-sessions/index.md": "/aging-well/exercise-sessions.md"
   "../website/aging-well/exercise-sessions/index.md": "/aging-well/exercise-sessions.md"
   "/apps/owl-sessions/": "https://www.collegica.org/apps/owl-sessions/"
-  "https://github.com/Collegica/collegica-code/blob/main/docs/2026-09-13-exercise-sessions/clips/README.md": "/aging-well/research/exercise-clips.md"
-  "https://github.com/Collegica/collegica-code/tree/main/docs/2026-09-13-exercise-sessions": "/aging-well/research/exercise-sessions.md"
+  "https://github.com/Collegica/collegica-code/blob/main/docs/research/2026-09-13-exercise-sessions/clips/README.md": "/aging-well/research/exercise-clips.md"
+  "https://github.com/Collegica/collegica-code/tree/main/docs/research/2026-09-13-exercise-sessions": "/aging-well/research/exercise-sessions.md"
   "https://github.com/Collegica/collegica-code/blob/main/apps/owl-sessions/README.md": "/apps/owl-sessions.md"
   "https://github.com/Collegica/collegica-code/tree/main/apps/owl-sessions": "/apps/owl-sessions.md"
   "clips/README.md": "/aging-well/research/exercise-clips.md"
   "../../apps/owl-sessions/README.md": "/apps/owl-sessions.md"
+  "../../../apps/owl-sessions/README.md": "/apps/owl-sessions.md"
   "notes/routines.md": "/aging-well/research/routines.md"
   "owl-sessions/": "/apps/owl-sessions.md"
-  "../../docs/2026-09-13-exercise-sessions/": "/aging-well/research/exercise-sessions.md"
+  "../../docs/research/2026-09-13-exercise-sessions/": "/aging-well/research/exercise-sessions.md"
   "clips/": "/aging-well/research/exercise-clips.md"
   "../../apps/owl-sessions/": "/apps/owl-sessions.md"
+  "../../../apps/owl-sessions/": "/apps/owl-sessions.md"
   "morning-digest/": "/apps/morning-digest.md"
   "parse-and-gap/": "/apps/parse-and-gap.md"
 
@@ -148,15 +160,15 @@ copies:
   - { from: website/static/js/fixed-or-variable/mortgage.js, to: references/computations/mortgage.js }
   - { from: website/static/js/fixed-or-variable/rates.json,  to: references/data/rates.json }
   # The Python reproducible-research example, as a runnable tree.
-  - { from: docs/2026-09-12-python-reproducibility/example/data/overnight.csv,          to: references/computations/bocrates/data/overnight.csv }
-  - { from: docs/2026-09-12-python-reproducibility/example/src/bocrates/__init__.py,    to: references/computations/bocrates/src/bocrates/__init__.py }
-  - { from: docs/2026-09-12-python-reproducibility/example/src/bocrates/summary.py,     to: references/computations/bocrates/src/bocrates/summary.py }
-  - { from: docs/2026-09-12-python-reproducibility/example/analysis/annual_summary.py,  to: references/computations/bocrates/analysis/annual_summary.py }
-  - { from: docs/2026-09-12-python-reproducibility/example/tests/test_summary.py,       to: references/computations/bocrates/tests/test_summary.py }
-  - { from: docs/2026-09-12-python-reproducibility/example/pyproject.toml,              to: references/computations/bocrates/pyproject.toml }
-  - { from: docs/2026-09-12-python-reproducibility/example/pixi.toml,                   to: references/computations/bocrates/pixi.toml }
-  - { from: docs/2026-09-12-python-reproducibility/example/pixi.lock,                   to: references/computations/bocrates/pixi.lock }
-  - { from: docs/2026-09-12-python-reproducibility/example/CITATION.cff,                to: references/computations/bocrates/CITATION.cff }
+  - { from: docs/research/2026-09-12-python-reproducibility/example/data/overnight.csv,          to: references/computations/bocrates/data/overnight.csv }
+  - { from: docs/research/2026-09-12-python-reproducibility/example/src/bocrates/__init__.py,    to: references/computations/bocrates/src/bocrates/__init__.py }
+  - { from: docs/research/2026-09-12-python-reproducibility/example/src/bocrates/summary.py,     to: references/computations/bocrates/src/bocrates/summary.py }
+  - { from: docs/research/2026-09-12-python-reproducibility/example/analysis/annual_summary.py,  to: references/computations/bocrates/analysis/annual_summary.py }
+  - { from: docs/research/2026-09-12-python-reproducibility/example/tests/test_summary.py,       to: references/computations/bocrates/tests/test_summary.py }
+  - { from: docs/research/2026-09-12-python-reproducibility/example/pyproject.toml,              to: references/computations/bocrates/pyproject.toml }
+  - { from: docs/research/2026-09-12-python-reproducibility/example/pixi.toml,                   to: references/computations/bocrates/pixi.toml }
+  - { from: docs/research/2026-09-12-python-reproducibility/example/pixi.lock,                   to: references/computations/bocrates/pixi.lock }
+  - { from: docs/research/2026-09-12-python-reproducibility/example/CITATION.cff,                to: references/computations/bocrates/CITATION.cff }
 
 directories:
   finance:
@@ -446,7 +458,7 @@ concepts:
 
   # ---- The research --------------------------------------------------------
   - id: finance/research/fixed-or-variable
-    source: docs/2026-09-10-fixed-or-variable/README.md
+    source: docs/research/2026-09-10-fixed-or-variable/README.md
     type: Research Report
     title: "Fixed or variable — research plan and simulation notes"
     description: >-
@@ -461,7 +473,7 @@ concepts:
       - { id: social-discourse,  resource: /finance/research/social-discourse.md }
 
   - id: finance/research/historical-rates
-    source: docs/2026-09-10-fixed-or-variable/notes/historical-rates.md
+    source: docs/research/2026-09-10-fixed-or-variable/notes/historical-rates.md
     type: Research Note
     title: "Historical rate data, 2021–2026"
     description: >-
@@ -474,7 +486,7 @@ concepts:
     auto_sources: true
 
   - id: finance/research/rates-and-forecasts
-    source: docs/2026-09-10-fixed-or-variable/notes/rates-and-forecasts.md
+    source: docs/research/2026-09-10-fixed-or-variable/notes/rates-and-forecasts.md
     type: Research Note
     title: "Current rates and forecasts, September 2026"
     description: >-
@@ -487,7 +499,7 @@ concepts:
     auto_sources: true
 
   - id: finance/research/social-discourse
-    source: docs/2026-09-10-fixed-or-variable/notes/social-discourse.md
+    source: docs/research/2026-09-10-fixed-or-variable/notes/social-discourse.md
     type: Research Note
     title: "What borrowers and brokers say, 2021–2026"
     description: >-
@@ -744,7 +756,7 @@ concepts:
 
   # ---- Research ------------------------------------------------------------
   - id: python/research/python-reproducibility
-    source: docs/2026-09-12-python-reproducibility/README.md
+    source: docs/research/2026-09-12-python-reproducibility/README.md
     type: Research Report
     title: "Python reproducibility — plan and research"
     description: >-
@@ -758,7 +770,7 @@ concepts:
       - { id: pipeline, resource: /python/research/pipeline.md }
 
   - id: python/research/tooling
-    source: docs/2026-09-12-python-reproducibility/notes/tooling.md
+    source: docs/research/2026-09-12-python-reproducibility/notes/tooling.md
     type: Research Note
     title: "pixi, Poetry and uv — environment and packaging tooling, September 2026"
     description: >-
@@ -772,7 +784,7 @@ concepts:
     auto_sources: true
 
   - id: python/research/pipeline
-    source: docs/2026-09-12-python-reproducibility/notes/pipeline.md
+    source: docs/research/2026-09-12-python-reproducibility/notes/pipeline.md
     type: Research Note
     title: "Explore → Organize → Share — the notebook-to-repository research"
     description: >-
@@ -786,7 +798,7 @@ concepts:
 
   # ---- The computation and its data ---------------------------------------
   - id: python/computations/bocrates
-    source: docs/2026-09-12-python-reproducibility/example/src/bocrates/summary.py
+    source: docs/research/2026-09-12-python-reproducibility/example/src/bocrates/summary.py
     build: reference
     type: Attested Computation
     title: "bocrates — annual averages of the Bank of Canada overnight rate"
@@ -851,7 +863,7 @@ concepts:
       concept is its description.
 
   - id: references/data/overnight
-    source: docs/2026-09-12-python-reproducibility/example/data/overnight.csv
+    source: docs/research/2026-09-12-python-reproducibility/example/data/overnight.csv
     build: reference
     type: Dataset
     title: "Bank of Canada overnight rate, monthly, 2021–2026"
@@ -883,7 +895,7 @@ concepts:
 
   # ---- About the bundle itself ---------------------------------------------
   - id: about
-    source: docs/2026-09-12-okf/README.md
+    source: docs/proposals/2026-09-12-okf/README.md
     type: Research Report
     title: How this bundle is made
     description: >-
@@ -921,7 +933,7 @@ concepts:
 
   # ---- Research ------------------------------------------------------------
   - id: ai/research/agent-interfaces
-    source: docs/2026-09-13-agent-interfaces/README.md
+    source: docs/research/2026-09-13-agent-interfaces/README.md
     type: Research Report
     title: "One agent, four doors — plan and research"
     description: >-
@@ -935,7 +947,7 @@ concepts:
       - { id: protocols, resource: /ai/research/protocols.md }
 
   - id: ai/research/hermes
-    source: docs/2026-09-13-agent-interfaces/notes/hermes.md
+    source: docs/research/2026-09-13-agent-interfaces/notes/hermes.md
     type: Research Note
     title: "Hermes Agent — what the video shows, what the docs say, what the source says"
     description: >-
@@ -948,7 +960,7 @@ concepts:
     auto_sources: true
 
   - id: ai/research/protocols
-    source: docs/2026-09-13-agent-interfaces/notes/protocols.md
+    source: docs/research/2026-09-13-agent-interfaces/notes/protocols.md
     type: Research Note
     title: "The protocols — MCP, AG-UI, and the one that changed its name"
     description: >-
@@ -1000,7 +1012,7 @@ concepts:
       - { id: vllm-models, resource: https://docs.vllm.ai/en/latest/models/supported_models.html, title: vLLM supported models }
 
   - id: ai/research/local-agent/local-agent
-    source: docs/2026-09-13-local-agent/README.md
+    source: docs/research/2026-09-13-local-agent/README.md
     type: Research Report
     title: "A local agent on your own machine — plan and research"
     description: >-
@@ -1017,7 +1029,7 @@ concepts:
       - { id: isenberg,   resource: /ai/research/local-agent/isenberg.md }
 
   - id: ai/research/local-agent/components
-    source: docs/2026-09-13-local-agent/notes/components.md
+    source: docs/research/2026-09-13-local-agent/notes/components.md
     type: Research Note
     title: "The three components — Gemma 4, Ollama, Hermes and Hermes Desktop"
     description: >-
@@ -1030,7 +1042,7 @@ concepts:
     auto_sources: true
 
   - id: ai/research/local-agent/serving-options
-    source: docs/2026-09-13-local-agent/notes/serving-options.md
+    source: docs/research/2026-09-13-local-agent/notes/serving-options.md
     type: Research Note
     title: "Three ways to serve a local model — Ollama, Docker Model Runner, vLLM"
     description: >-
@@ -1043,7 +1055,7 @@ concepts:
     auto_sources: true
 
   - id: ai/research/local-agent/run
-    source: docs/2026-09-13-local-agent/notes/run.md
+    source: docs/research/2026-09-13-local-agent/notes/run.md
     type: Research Note
     title: "The measured run — Gemma 4 12B through Ollama and Hermes on a 24 GB Mac"
     description: >-
@@ -1055,7 +1067,7 @@ concepts:
     auto_sources: true
 
   - id: ai/research/local-agent/bionic
-    source: docs/2026-09-13-local-agent/notes/bionic.md
+    source: docs/research/2026-09-13-local-agent/notes/bionic.md
     type: Research Note
     title: "LM Studio Bionic — an agent with the runtime inside it"
     description: >-
@@ -1068,7 +1080,7 @@ concepts:
     auto_sources: true
 
   - id: ai/research/local-agent/braxman
-    source: docs/2026-09-13-local-agent/notes/braxman.md
+    source: docs/research/2026-09-13-local-agent/notes/braxman.md
     type: Research Note
     title: "Prefill, the KV cache, and a Strix Halo — from Rob Braxman's video"
     description: >-
@@ -1104,7 +1116,7 @@ concepts:
       - { id: faiss-pypi, resource: https://pypi.org/project/faiss-cpu/, title: faiss-cpu on PyPI }
 
   - id: ai/research/turbovec/turbovec-report
-    source: docs/2026-09-14-turbovec/README.md
+    source: docs/research/2026-09-14-turbovec/README.md
     type: Research Report
     title: "Sixteen times smaller — plan and research"
     description: >-
@@ -1118,7 +1130,7 @@ concepts:
       - { id: run,  resource: /ai/research/turbovec/turbovec-run.md }
 
   - id: ai/research/turbovec/turbovec
-    source: docs/2026-09-14-turbovec/notes/turbovec.md
+    source: docs/research/2026-09-14-turbovec/notes/turbovec.md
     type: Research Note
     title: "turbovec and TurboQuant — checked at the source on 2026-09-14"
     description: >-
@@ -1133,7 +1145,7 @@ concepts:
     auto_sources: true
 
   - id: ai/research/turbovec/turbovec-run
-    source: docs/2026-09-14-turbovec/notes/turbovec-run.md
+    source: docs/research/2026-09-14-turbovec/notes/turbovec-run.md
     type: Research Note
     title: "turbovec against FAISS on four CPU cores — the run"
     description: >-
@@ -1183,7 +1195,7 @@ concepts:
       - { id: sherpa-onnx-repo, resource: https://github.com/k2-fsa/sherpa-onnx, title: sherpa-onnx }
 
   - id: ai/research/voice-agents/voice-agents
-    source: docs/2026-09-13-voice-agents/README.md
+    source: docs/research/2026-09-13-voice-agents/README.md
     type: Research Report
     title: "A voice in the room — plan and research"
     description: >-
@@ -1199,7 +1211,7 @@ concepts:
       - { id: run,    resource: /ai/research/voice-agents/voice-run.md }
 
   - id: ai/research/voice-agents/voice-models
-    source: docs/2026-09-13-voice-agents/notes/voice-models.md
+    source: docs/research/2026-09-13-voice-agents/notes/voice-models.md
     type: Research Note
     title: "Local voice agents — the field checked at the source on 2026-09-13"
     description: >-
@@ -1214,7 +1226,7 @@ concepts:
     auto_sources: true
 
   - id: ai/research/voice-agents/voice-run
-    source: docs/2026-09-13-voice-agents/notes/voice-run.md
+    source: docs/research/2026-09-13-voice-agents/notes/voice-run.md
     type: Research Note
     title: "The household cascade on a machine with no GPU — the run"
     description: >-
@@ -1224,7 +1236,7 @@ concepts:
       what did not run because the model hub was unreachable.
     tags: [ai, voice, benchmark, kokoro, sherpa-onnx, silero, openwakeword]
   - id: ai/research/local-agent/isenberg
-    source: docs/2026-09-13-local-agent/notes/isenberg.md
+    source: docs/research/2026-09-13-local-agent/notes/isenberg.md
     type: Research Note
     title: "Good enough for the job — from Greg Isenberg's video"
     description: >-
@@ -1266,7 +1278,7 @@ concepts:
       - { id: hermes-termux, resource: https://hermes-agent.nousresearch.com/docs/getting-started/termux, title: Hermes on Android (Termux) }
 
   - id: ai/research/edge-agent/edge-agent
-    source: docs/2026-09-13-edge-agent/README.md
+    source: docs/research/2026-09-13-edge-agent/README.md
     type: Research Report
     title: "An agent in your pocket — plan and research"
     description: >-
@@ -1282,7 +1294,7 @@ concepts:
       - { id: phone-run, resource: /ai/research/edge-agent/phone-run.md }
 
   - id: ai/research/edge-agent/litert-lm
-    source: docs/2026-09-13-edge-agent/notes/litert-lm.md
+    source: docs/research/2026-09-13-edge-agent/notes/litert-lm.md
     type: Research Note
     title: "LiteRT-LM — the runtime, its APIs, and Google's numbers"
     description: >-
@@ -1296,7 +1308,7 @@ concepts:
     auto_sources: true
 
   - id: ai/research/edge-agent/gallery
-    source: docs/2026-09-13-edge-agent/notes/gallery.md
+    source: docs/research/2026-09-13-edge-agent/notes/gallery.md
     type: Research Note
     title: "The AI Edge Gallery, FunctionGemma, and Hermes on Termux"
     description: >-
@@ -1309,7 +1321,7 @@ concepts:
     auto_sources: true
 
   - id: ai/research/edge-agent/laptop-run
-    source: docs/2026-09-13-edge-agent/notes/laptop-run.md
+    source: docs/research/2026-09-13-edge-agent/notes/laptop-run.md
     type: Research Note
     title: "The laptop run — Gemma 4 E2B and E4B through LiteRT-LM on a 24 GB Mac"
     description: >-
@@ -1322,7 +1334,7 @@ concepts:
     auto_sources: true
 
   - id: ai/research/edge-agent/phone-run
-    source: docs/2026-09-13-edge-agent/notes/phone-run.md
+    source: docs/research/2026-09-13-edge-agent/notes/phone-run.md
     type: Research Note
     title: "The phone run — Gemma 4 E2B on a Galaxy S26 Ultra"
     description: >-
@@ -1361,7 +1373,7 @@ concepts:
       - { id: kokoro-onnx, resource: https://github.com/thewh1teagle/kokoro-onnx, title: kokoro-onnx }
 
   - id: ai/research/video-from-html/video-from-html
-    source: docs/2026-09-13-video-from-html/README.md
+    source: docs/research/2026-09-13-video-from-html/README.md
     type: Research Report
     title: "Videos from HTML — plan and research"
     description: >-
@@ -1374,7 +1386,7 @@ concepts:
       - { id: run,   resource: /ai/research/video-from-html/run.md }
 
   - id: ai/research/video-from-html/tools
-    source: docs/2026-09-13-video-from-html/notes/tools.md
+    source: docs/research/2026-09-13-video-from-html/notes/tools.md
     type: Research Note
     title: "HyperFrames and Kokoro — checked at the source"
     description: >-
@@ -1387,7 +1399,7 @@ concepts:
     auto_sources: true
 
   - id: ai/research/video-from-html/run
-    source: docs/2026-09-13-video-from-html/notes/run.md
+    source: docs/research/2026-09-13-video-from-html/notes/run.md
     type: Research Note
     title: "The pipeline, re-run and timed"
     description: >-
@@ -1428,7 +1440,7 @@ concepts:
       - { id: gh-manual, resource: https://cli.github.com/manual/, title: GitHub CLI manual }
 
   - id: software/research/three-agents/three-agents
-    source: docs/2026-09-13-three-agents/README.md
+    source: docs/research/2026-09-13-three-agents/README.md
     type: Research Report
     title: "One repository, three agents — plan and research"
     description: >-
@@ -1441,7 +1453,7 @@ concepts:
       - { id: run,   resource: /software/research/three-agents/run.md }
 
   - id: software/research/three-agents/tools
-    source: docs/2026-09-13-three-agents/notes/tools.md
+    source: docs/research/2026-09-13-three-agents/notes/tools.md
     type: Research Note
     title: "The four tools — git and gh, Antigravity, Claude Code, ChatGPT and Codex"
     description: >-
@@ -1456,7 +1468,7 @@ concepts:
     auto_sources: true
 
   - id: software/research/three-agents/run
-    source: docs/2026-09-13-three-agents/notes/run.md
+    source: docs/research/2026-09-13-three-agents/notes/run.md
     type: Research Note
     title: "Three CLIs, one question — the probe"
     description: >-
@@ -1498,7 +1510,7 @@ concepts:
       - { id: isaac-launchable, resource: https://github.com/isaac-sim/isaac-launchable, title: Isaac launchable for Brev }
 
   - id: robotics/research/nvidia-robotics/nvidia-robotics
-    source: docs/2026-09-13-nvidia-robotics/README.md
+    source: docs/research/2026-09-13-nvidia-robotics/README.md
     type: Research Report
     title: "Train the robot before you build it — plan and research"
     description: >-
@@ -1512,7 +1524,7 @@ concepts:
       - { id: run,   resource: /robotics/research/nvidia-robotics/cpu-run.md }
 
   - id: robotics/research/nvidia-robotics/stack
-    source: docs/2026-09-13-nvidia-robotics/notes/stack.md
+    source: docs/research/2026-09-13-nvidia-robotics/notes/stack.md
     type: Research Note
     title: "NVIDIA's robotics stack — Warp, Newton, Isaac Sim, Isaac Lab, Cosmos, GR00T, Isaac ROS, Jetson"
     description: >-
@@ -1525,7 +1537,7 @@ concepts:
     auto_sources: true
 
   - id: robotics/research/nvidia-robotics/cpu-run
-    source: docs/2026-09-13-nvidia-robotics/notes/cpu-run.md
+    source: docs/research/2026-09-13-nvidia-robotics/notes/cpu-run.md
     type: Research Note
     title: "Warp and Newton on a machine with no GPU — the run"
     description: >-
@@ -1562,7 +1574,7 @@ concepts:
       - { id: oxe-repo, resource: https://github.com/google-deepmind/open_x_embodiment, title: Open X-Embodiment }
 
   - id: robotics/research/vla-models/vla-models
-    source: docs/2026-09-13-vla-models/README.md
+    source: docs/research/2026-09-13-vla-models/README.md
     type: Research Report
     title: "Words in, joints out — plan and research"
     description: >-
@@ -1577,7 +1589,7 @@ concepts:
       - { id: run,    resource: /robotics/research/vla-models/lerobot-run.md }
 
   - id: robotics/research/vla-models/models
-    source: docs/2026-09-13-vla-models/notes/models.md
+    source: docs/research/2026-09-13-vla-models/notes/models.md
     type: Research Note
     title: "Vision-language-action models — RT-2 to π0.7, checked at the source"
     description: >-
@@ -1591,7 +1603,7 @@ concepts:
     auto_sources: true
 
   - id: robotics/research/vla-models/lerobot-run
-    source: docs/2026-09-13-vla-models/notes/lerobot-run.md
+    source: docs/research/2026-09-13-vla-models/notes/lerobot-run.md
     type: Research Note
     title: "LeRobot on a machine with no GPU and no Hugging Face — the run"
     description: >-
@@ -1668,7 +1680,7 @@ concepts:
       - { id: who, resource: https://www.who.int/publications/i/item/9789240015128, title: "WHO guidelines on physical activity and sedentary behaviour (2020)", author: process:who }
 
   - id: aging-well/research/exercise-sessions
-    source: docs/2026-09-13-exercise-sessions/README.md
+    source: docs/research/2026-09-13-exercise-sessions/README.md
     type: Research Report
     title: "A session you can keep — plan and research"
     description: >-
@@ -1683,7 +1695,7 @@ concepts:
       - { id: clips,    resource: /aging-well/research/exercise-clips.md }
 
   - id: aging-well/research/routines
-    source: docs/2026-09-13-exercise-sessions/notes/routines.md
+    source: docs/research/2026-09-13-exercise-sessions/notes/routines.md
     type: Research Note
     title: "Routines — the families, the session, the sources"
     description: >-
@@ -1695,7 +1707,7 @@ concepts:
     auto_sources: true
 
   - id: aging-well/research/exercise-clips
-    source: docs/2026-09-13-exercise-sessions/clips/README.md
+    source: docs/research/2026-09-13-exercise-sessions/clips/README.md
     type: Research Note
     title: "One dead bug, five video models — cost and form"
     description: >-
@@ -1768,7 +1780,7 @@ concepts:
 
   # ---- Research ------------------------------------------------------------
   - id: aging-well/research/next-job-with-ai
-    source: docs/2026-09-10-next-job-with-ai/README.md
+    source: docs/research/2026-09-10-next-job-with-ai/README.md
     type: Research Report
     title: "Finding the next job, with AI — research report and series plan"
     description: >-
@@ -1785,7 +1797,7 @@ concepts:
       - { id: coverage,   resource: /aging-well/research/existing-coverage.md }
 
   - id: aging-well/research/landscape
-    source: docs/2026-09-10-next-job-with-ai/notes/landscape.md
+    source: docs/research/2026-09-10-next-job-with-ai/notes/landscape.md
     type: Research Note
     title: "The landscape: labour-market facts, what the ATS really does, and the Ontario rules"
     description: Primary sources on long-term unemployment after 45, re-employment pay, ATS and knockout questions, and the Ontario AI-disclosure requirement.
@@ -1794,7 +1806,7 @@ concepts:
     auto_sources: true
 
   - id: aging-well/research/github-open-source
-    source: docs/2026-09-10-next-job-with-ai/notes/github-open-source.md
+    source: docs/research/2026-09-10-next-job-with-ai/notes/github-open-source.md
     type: Research Note
     title: "Open-source AI job-search tools on GitHub"
     description: Around thirty repositories surveyed — auto-appliers, résumé tailoring, ATS matching — and which ones refuse to auto-submit.
@@ -1803,7 +1815,7 @@ concepts:
     auto_sources: true
 
   - id: aging-well/research/x-discourse
-    source: docs/2026-09-10-next-job-with-ai/notes/x-discourse.md
+    source: docs/research/2026-09-10-next-job-with-ai/notes/x-discourse.md
     type: Research Note
     title: "X discourse: AI in the job hunt, mid-career and older workers"
     description: Around twenty fetched posts with engagement figures, the Workday age-discrimination case, and a viral post identified as satire.
@@ -1812,7 +1824,7 @@ concepts:
     auto_sources: true
 
   - id: aging-well/research/existing-coverage
-    source: docs/2026-09-10-next-job-with-ai/notes/existing-coverage.md
+    source: docs/research/2026-09-10-next-job-with-ai/notes/existing-coverage.md
     type: Research Note
     title: "Existing coverage of AI-assisted job search for older workers"
     description: Around thirty-five pieces surveyed, what each owns, and the gaps that map onto habits Collegica had already published.

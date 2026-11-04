@@ -44,7 +44,7 @@ pronunciation; the on-screen text and URL stay spelled correctly.
 `website/static/img/software/markdown-thesis-hero.*` was generated with GPT
 Image 2 (HiggsField `gpt_image_2`, 16:9, 2K, high quality; job
 `b83bd911-008f-4419-a78b-e122802eefd4`, 2026-10-03), with the layout and
-typefaces named in the prompt as in `docs/2026-09-13-edge-agent/hero.md`. The
+typefaces named in the prompt as in `docs/research/2026-09-13-edge-agent/hero.md`. The
 model drew eight dots in the mark; a patch of blank paper from below it covers
 the centre one, leaving the real seven. The PNG is that corrected 2688 × 1520;
 the JPG is rows 60–1404 resized to 1774 × 887, plus a 900-wide variant.

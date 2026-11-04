@@ -39,7 +39,7 @@ sources:
 - resource: https://x.com/Simon_Ingari/status/1986335384121336208
 - resource: https://x.com/devXritesh/status/2041069724331864326
 - resource: https://x.com/ShaziGoalie/status/1872761813634564519
-source_file: docs/2026-09-10-next-job-with-ai/notes/x-discourse.md
+source_file: docs/research/2026-09-10-next-job-with-ai/notes/x-discourse.md
 ---
 
 # X (Twitter) discourse: using AI to find a job, mid-career and older workers

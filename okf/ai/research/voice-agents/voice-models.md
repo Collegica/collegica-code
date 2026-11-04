@@ -27,7 +27,7 @@ generated:
   at: "2026-09-13T00:00:00Z"
 sources:
 - resource: http://localhost:3900/mcp`
-source_file: docs/2026-09-13-voice-agents/notes/voice-models.md
+source_file: docs/research/2026-09-13-voice-agents/notes/voice-models.md
 ---
 
 # Local voice agents — the field checked at the source on 2026-09-13

@@ -22,7 +22,7 @@ sources:
   resource: /ai/research/edge-agent/laptop-run.md
 - id: phone-run
   resource: /ai/research/edge-agent/phone-run.md
-source_file: docs/2026-09-13-edge-agent/README.md
+source_file: docs/research/2026-09-13-edge-agent/README.md
 ---
 
 # An agent in your pocket — plan and research

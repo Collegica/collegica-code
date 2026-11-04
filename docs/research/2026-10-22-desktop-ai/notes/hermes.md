@@ -1,6 +1,6 @@
 # Hermes Agent and Hermes Desktop — checked at the source on 2026-10-22
 
-Builds on `docs/2026-09-13-local-agent/notes/` (components, run, serving
+Builds on `docs/research/2026-09-13-local-agent/notes/` (components, run, serving
 options) and the article `website/ai/local-agent/index.md`. That work used
 Hermes CLI v0.21.2 and a Desktop build (bundle 0.17.2) that `hermes desktop`
 compiled inside the checkout. Facts already recorded there (64K context

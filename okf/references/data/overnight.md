@@ -18,7 +18,7 @@ sources:
   resource: https://www.bankofcanada.ca/valet/observations/V39079/csv?start_date=2021-01-01
   title: Bank of Canada Valet — overnight rate target (V39079)
   author: process:bankofcanada
-source_file: docs/2026-09-12-python-reproducibility/example/data/overnight.csv
+source_file: docs/research/2026-09-12-python-reproducibility/example/data/overnight.csv
 sha256: 068f0beb3ee99bc106dfa4bf6097e15419dd39efe9350f3f18f7c7e643cc5e51
 ---
 

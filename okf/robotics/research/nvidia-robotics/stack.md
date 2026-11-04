@@ -20,7 +20,7 @@ generated:
   at: "2026-09-13T00:00:00Z"
 sources:
 - resource: http://<server
-source_file: docs/2026-09-13-nvidia-robotics/notes/stack.md
+source_file: docs/research/2026-09-13-nvidia-robotics/notes/stack.md
 ---
 
 # NVIDIA's robotics stack — checked at the source on 2026-09-13

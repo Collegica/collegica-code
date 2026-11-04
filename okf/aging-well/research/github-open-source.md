@@ -74,7 +74,7 @@ sources:
 - resource: https://github.com/emredurukn/awesome-job-boards
 - resource: https://github.com/yuhonas/awesome-job-seeking
 - resource: https://github.com/Rohianon/awesome-ai-job-search
-source_file: docs/2026-09-10-next-job-with-ai/notes/github-open-source.md
+source_file: docs/research/2026-09-10-next-job-with-ai/notes/github-open-source.md
 ---
 
 # Open-source AI job-search tools on GitHub — research findings (Sept 2026)

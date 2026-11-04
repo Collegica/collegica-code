@@ -17,7 +17,7 @@ sources:
   resource: /aging-well/research/routines.md
 - id: clips
   resource: /aging-well/research/exercise-clips.md
-source_file: docs/2026-09-13-exercise-sessions/README.md
+source_file: docs/research/2026-09-13-exercise-sessions/README.md
 ---
 
 # A session you can keep — plan and research

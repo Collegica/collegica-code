@@ -19,7 +19,7 @@ sources:
   resource: /finance/research/rates-and-forecasts.md
 - id: social-discourse
   resource: /finance/research/social-discourse.md
-source_file: docs/2026-09-10-fixed-or-variable/README.md
+source_file: docs/research/2026-09-10-fixed-or-variable/README.md
 ---
 
 # Fixed or variable — research and simulation
@@ -65,8 +65,8 @@ the same code — if they diverge, one of them is lying.
 the article's tables and its chart:
 
 ```bash
-node docs/2026-09-10-fixed-or-variable/build.mjs         # tables, as markdown
-node docs/2026-09-10-fixed-or-variable/build.mjs --svg   # tables + the chart
+node docs/research/2026-09-10-fixed-or-variable/build.mjs         # tables, as markdown
+node docs/research/2026-09-10-fixed-or-variable/build.mjs --svg   # tables + the chart
 ```
 
 `--svg` writes `website/static/img/finance/rate-path.svg` and the include

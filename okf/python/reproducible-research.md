@@ -433,7 +433,7 @@ Research notes, including what could not be verified and the numbers I chose not
 to print, are in [the accompanying
 folder](/python/research/).
 The worked example is
-[`docs/2026-09-12-python-reproducibility/example/`](/python/computations/bocrates.md).
+[`docs/research/2026-09-12-python-reproducibility/example/`](/python/computations/bocrates.md).
 
 - **The notebook study.** Pimentel, Murta, Braganholo & Freire, *A Large-Scale
   Study About Quality and Reproducibility of Jupyter Notebooks*, MSR 2019,

@@ -63,7 +63,7 @@ sources:
 - resource: https://x.com/WOWA_Canada/status/2070262610142839264
 - resource: https://www.cbc.ca/news/canada/london/ontario-couple-mortgage-nightmare-1.6750229
 - resource: https://globalnews.ca/news/9976480/variable-rate-fixed-rate-mortgages-canada-interest/
-source_file: docs/2026-09-10-fixed-or-variable/notes/social-discourse.md
+source_file: docs/research/2026-09-10-fixed-or-variable/notes/social-discourse.md
 ---
 
 # Social discourse: fixed or variable, Canada (Reddit, X, hindsight stories)

@@ -70,7 +70,7 @@ sources:
 - resource: https://www.jobshinobi.com/blog/how-to-track-job-search-metrics-applications-to-interviews
 - resource: https://www.careerplug.com/recruiting-metrics-and-kpis/
 - resource: https://tech.yahoo.com/ai/chatgpt/articles/looking-job-50-7-chatgpt-080000708.html
-source_file: docs/2026-09-10-next-job-with-ai/notes/existing-coverage.md
+source_file: docs/research/2026-09-10-next-job-with-ai/notes/existing-coverage.md
 ---
 
 # Existing coverage: AI-assisted job search for mid-career / older workers

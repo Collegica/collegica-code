@@ -3,14 +3,14 @@
 // module the in-page calculator uses, so the two can never disagree.
 //
 //   node build.mjs           → tables (markdown) on stdout
-//   node build.mjs --svg     → also writes ../../website/static/img/finance/rate-path.svg
+//   node build.mjs --svg     → also writes ../../../website/static/img/finance/rate-path.svg
 
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const here = dirname(fileURLToPath(import.meta.url));
-const root = join(here, "..", "..");
+const root = join(here, "..", "..", "..");
 const lib = join(root, "website", "static", "js", "fixed-or-variable");
 const { compare, replay, chartSvg, labelOf } = await import(join(lib, "mortgage.js"));
 const rates = JSON.parse(readFileSync(join(lib, "rates.json"), "utf8"));

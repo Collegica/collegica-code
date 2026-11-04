@@ -16,7 +16,7 @@ generated:
   at: "2026-09-13T00:00:00Z"
 sources:
 - resource: https://github.com/NousResearch/hermes-agent
-source_file: docs/2026-09-13-agent-interfaces/notes/hermes.md
+source_file: docs/research/2026-09-13-agent-interfaces/notes/hermes.md
 ---
 
 # Hermes Agent — what the video shows, what the docs say, what the source says

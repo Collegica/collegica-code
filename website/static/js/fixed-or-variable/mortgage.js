@@ -3,7 +3,7 @@
 // Plain ES module, no dependencies. Runs the same in Node (docs/…/build.mjs
 // generates the article's tables and chart from it) and in the browser (the
 // calculator on the page imports it). Rate inputs come from rates.json, which
-// is sourced line by line in docs/2026-09-10-fixed-or-variable/notes/.
+// is sourced line by line in docs/research/2026-09-10-fixed-or-variable/notes/.
 //
 // Canadian convention throughout: rates are annual, compounded semi-annually.
 
