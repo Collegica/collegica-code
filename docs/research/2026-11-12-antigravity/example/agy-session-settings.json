@@ -1,0 +1,48 @@
+{
+ "toolPermission": "proceed-in-sandbox",
+ "enableTerminalSandbox": true,
+ "permissions": {
+  "allow": [
+   "command(ls)",
+   "command(cat)",
+   "command(head)",
+   "command(tail)",
+   "command(wc)",
+   "command(mv)",
+   "command(cp)",
+   "command(mkdir)",
+   "command(diff)",
+   "command(cmp)",
+   "command(shasum)",
+   "command(sha256sum)",
+   "command(md5)",
+   "command(stat)",
+   "command(grep)",
+   "command(sort)",
+   "command(uniq)",
+   "command(awk)",
+   "command(sed)",
+   "command(find)",
+   "command(echo)",
+   "command(printf)",
+   "command(python3)",
+   "command(cd)",
+   "command(pwd)",
+   "command(file)",
+   "command(tr)",
+   "command(cut)"
+  ],
+  "deny": [
+   "command(rm)",
+   "command(sudo)",
+   "command(curl)",
+   "command(wget)",
+   "command(git)",
+   "unsandboxed(*)",
+   "read_url(*)",
+   "execute_url(*)",
+   "mcp(*)"
+  ]
+ },
+ "allowNonWorkspaceAccess": false
+}

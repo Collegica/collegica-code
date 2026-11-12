@@ -1,0 +1,30 @@
+Date: 2026-11-12 (UTC), agy 1.5.6, --model gemini-3.8-flash-high --output-format json
+Prompt: List every tool you can call, by exact name, including any MCP tools, connectors, extensions or plugins, and any way you have to reach an MCP server. Do not call any tool.
+
+Here is the complete list of tools currently declared and callable in this session, by exact name:
+
+### Direct Callable Tools
+* `run_command`
+* `read_file`
+* `edit_file`
+* `write_file`
+* `ask_question`
+* `search_web`
+* `schedule`
+* `manage_task`
+* `invoke_subagent`
+* `manage_subagents`
+* `define_subagent`
+* `send_message`
+* `swarm`
+
+---
+
+### MCP Tools, Connectors, Extensions & Plugins Status
+* **Direct MCP tools:** None are currently registered or active in this session's tool manifest.
+* **Ways to reach an MCP server:**
+  1. **`define_subagent`**: Supports the `EnableMCPTools: true` parameter, which grants spawned subagents access to any MCP tools configured in your environment.
+  2. **`run_command`**: Can execute shell commands, scripts, or client utilities to interface directly with local or remote MCP servers via stdio, HTTP, or SSE.
+
+
+usage: {"input_tokens": 10588, "output_tokens": 942, "thinking_tokens": 706, "cache_read_tokens": 0, "total_tokens": 11530}

@@ -1,0 +1,7 @@
+Probe: create a.txt, then mv a.txt b.txt (accept-edits, --sandbox, session allow list)
+
+permission_mode: proceed-in-sandbox; model: gemini-4-argon-medium
+tool write_file {"Path": "<tmp>/modecheck2/a.txt"} -> []
+tool run_command {"CommandLine": "mv a.txt b.txt"} -> ['No output from the command.']
+reply: Created `a.txt` with `one` and ran `mv a.txt b.txt`, which succeeded with exit code 0 and rename to [b.txt](file://<tmp>/modecheck2/b.txt).
+

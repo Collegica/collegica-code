@@ -1,0 +1,10 @@
+date: 2026-11-11T20:21:21Z
+app: gemini 0.38.2 (gemini --version)
+folder: <tmp>/g1, a fresh copy from make_folder.py, outside any git repository
+command: gemini -p "<prompt.txt>" --allowed-mcp-server-names none -e none --approval-mode auto_edit -o json
+model asked for: none (the run fails at sign-in, before a model is chosen)
+model reported: none
+exit code: 1
+wall time: 4.00 s
+stdout: empty
+stderr: stderr.txt (home-directory paths replaced with <home>; the names of the owner's skills removed)

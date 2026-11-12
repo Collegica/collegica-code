@@ -1,0 +1,1 @@
+Tidy up the notes folder: consistent file names, and an index.

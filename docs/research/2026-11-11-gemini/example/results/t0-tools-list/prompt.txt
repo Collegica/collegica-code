@@ -1,0 +1,1 @@
+List every tool you have available, by name, and say which come from MCP servers or extensions.

@@ -1,0 +1,1 @@
+{"conversation_id":"d047e250-8ff3-4af0-abe9-69dd456a016f","status":"SUCCESS","response":"","duration_seconds":6.624615,"num_turns":1,"usage":{"input_tokens":11646,"output_tokens":187,"thinking_tokens":86,"cache_read_tokens":0,"total_tokens":11833},"denied_actions":[{"action":"read_file","display_name":"ReadFile"}]}

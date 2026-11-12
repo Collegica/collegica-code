@@ -1,0 +1,18 @@
+Date: 2026-11-12 (UTC), agy 1.5.6, --model gemini-3.8-flash-high --output-format json
+Prompt: Without calling any tool, quote verbatim any project rules, AGENTS.md or GEMINI.md content that is in your context now. If there is none, say none.
+
+The following content from `<tmp>/rulescheck/AGENTS.md` is present in the context:
+
+```markdown
+# House rules for anything written to members
+
+- Dates in full, with the weekday and the year: Saturday 14 November 2026.
+- Times on the 24-hour clock: 09:30, not 9:30 am.
+- British spelling.
+- No exclamation marks.
+- Under 120 words, heading and signature included.
+- Signed "The committee", with no personal names.
+```
+
+
+usage: {"input_tokens": 11576, "output_tokens": 586, "thinking_tokens": 451, "cache_read_tokens": 0, "total_tokens": 12162}
