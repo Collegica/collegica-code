@@ -91,6 +91,32 @@ Windows keeps its two terminals apart rather than folding them together —
 native PowerShell and WSL are different shells with different commands, and
 the article says which one each command is for.
 
+> **What has changed since September**
+>
+>
+> *Added 12 November 2026.* The test below is a record of 13 September and is
+> left as it ran. Four things about Antigravity have moved since:
+>
+> - **It reads `AGENTS.md` and `GEMINI.md`.** Antigravity CLI follows the rules
+>   in the folder's `GEMINI.md` and `AGENTS.md`, and a global `~/.gemini/GEMINI.md`
+>   ([migration guide](https://antigravity.google/docs/cli/gcli-migration)). A test
+>   here in November confirmed it reads `AGENTS.md`. `.agents/agents/` defines
+>   subagents only. So `AGENTS.md` is now a file all three can read (Claude Code
+>   reads it when there is no `CLAUDE.md`, as [Working with Claude, Tested](../../ai/claude/index.md) found).
+> - **The free models changed.** Gemini 3.7 Flash, 3.6 Flash and 3.1 Pro are now
+>   Enterprise only; Google marks Claude Sonnet and Opus 4.6 and gpt-oss-120b for
+>   removal on 18 November 2026. The current list is on Google's
+>   [models page](https://antigravity.google/docs/models).
+> - **There is a fourth mode, `auto`.** It approves edits and runs commands in the
+>   sandbox, and needs the sandbox and a personal account
+>   ([modes](https://antigravity.google/docs/cli/modes)). On the account tested here
+>   in November, `agy` 1.5.6 still answered "not available for this account". A
+>   headless set-up that works without skipping approvals is in
+>   [Working with Antigravity, Tested](../../ai/antigravity/index.md).
+> - **Antigravity CLI replaced Gemini CLI for personal accounts** on 18 June 2026
+>   ([Google's notice](https://developers.google.com/gemini-code-assist/docs/deprecations/code-assist-individuals)).
+>   The Gemini chat app is not affected.
+
 > **TL;DR**
 >
 >
@@ -103,9 +129,10 @@ the article says which one each command is for.
 >    model "requires a newer version," Antigravity because its build was "no
 >    longer supported." All three ship weekly. `codex update`, `agy update`,
 >    `claude update`.
-> 3. **Each agent reads a different file.** `CLAUDE.md` for Claude Code,
->    `AGENTS.md` for Codex, `.agents/` for Antigravity. Keep one set of rules in
->    the repository and point the others at it.
+> 3. **Each agent has its own file, and `AGENTS.md` is the one they share.**
+>    `CLAUDE.md` for Claude Code, `AGENTS.md` for Codex, `GEMINI.md` or
+>    `AGENTS.md` for Antigravity (corrected November 2026). Keep one set of
+>    rules in the repository and point the others at it.
 > 4. **Headless means deny-by-default.** Asked from a script, Antigravity
 >    auto-denied every command and file read it could not prompt for, through
 >    four configurations, and answered on the fifth — the documented sandbox
@@ -204,10 +231,12 @@ files. **Antigravity IDE** is the editor, a VS Code-family application
 (its user directory is `~/.antigravity/`, and on this machine the Claude
 Code extension is installed inside it). **Antigravity CLI** is `agy`. And
 there are extensions for VS Code, JetBrains, Zed, Xcode and Visual Studio.
-Free for individuals — the model list on the free tier is Gemini 3.8, 3.7
-and 3.6 Flash, Gemini 3.1 Pro, Claude Sonnet and Opus 4.6, and gpt-oss-120b,
-with weekly rate limits; Google AI Pro and Ultra buy more quota. No
-bring-your-own-key.
+Free for individuals, with weekly rate limits; Google AI Pro and Ultra buy
+more quota and more models. In September the free tier offered Gemini 3.8,
+3.7 and 3.6 Flash, Gemini 3.1 Pro, Claude Sonnet and Opus 4.6, and
+gpt-oss-120b; that list has since shrunk (see the box at the top, and
+Google's [models page](https://antigravity.google/docs/models) for today's).
+No bring-your-own-key.
 
 **Install.** The app from [antigravity.google/download](https://antigravity.google/download).
 Requirements and the CLI install both differ by platform:
@@ -262,11 +291,14 @@ act is a resource — `read_file(path)`, `write_file(path)`, `command(prefix)`,
 *deny*, *ask*, *allow*, with deny winning. Reads and writes inside the
 workspace are auto-allowed; everything else defaults to *ask*. The CLI adds
 three execution modes cycled with Shift+Tab — `default` pauses for a diff
-review before every write, `accept-edits` does not, `plan` outlines first —
+review before every write, `accept-edits` does not, `plan` outlines first
+(a fourth, `auto`, has been added since; see the box at the top) —
 and an optional OS sandbox, no VM: `sandbox-exec` on macOS, namespaces on
 Linux, with no network unless a domain is allowed.
 
-**What it reads.** Custom subagents live in `.agents/agents/<name>.md` in the
+**What it reads.** The rules in `GEMINI.md` and `AGENTS.md` in the folder, and
+`~/.gemini/GEMINI.md` for you everywhere (missing here in September;
+corrected November 2026). Custom subagents live in `.agents/agents/<name>.md` in the
 repository or `~/.gemini/config/agents/` globally; the docs list Rules,
 Skills, Hooks and Plugins under *Customizations*. CLI settings are in
 `~/.gemini/antigravity-cli/settings.json`.
@@ -408,9 +440,10 @@ it to add the rule itself.
 |---|---|---|
 | Claude Code | `CLAUDE.md`, `CLAUDE.local.md`, `.claude/rules/`, `.claude/skills/` | `~/.claude/CLAUDE.md` |
 | Codex, ChatGPT | `AGENTS.md` (and `AGENTS.override.md`), walked from the Git root | `~/.codex/AGENTS.md` |
-| Antigravity | `.agents/agents/` for subagents; Rules, Skills, Hooks under Customizations | `~/.gemini/config/` |
+| Antigravity | `GEMINI.md`, `AGENTS.md`; `.agents/agents/` for subagents; Rules, Skills, Hooks under Customizations | `~/.gemini/GEMINI.md`, `~/.gemini/config/` |
 
-Three agents, three filenames, one repository. The way to keep them from
+Three agents, three filenames, one repository, and since the November
+correction one filename, `AGENTS.md`, that all three can read. The way to keep them from
 diverging is to refuse to write the rules three times. Put them in one file
 — this site's video projects keep `AGENTS.md` and `CLAUDE.md` identical,
 which is the cheap version — or keep the rules in `AGENTS.md` and make
