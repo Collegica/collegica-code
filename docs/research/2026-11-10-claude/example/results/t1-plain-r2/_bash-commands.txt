@@ -1,0 +1,4 @@
+ls -la && find . -maxdepth 3 -not -path './.git/*' | head -200; echo ---; cat <home>/... 2>/dev/null
+----
+for f in README.md members.csv notes/"Meeting sept 8.md" notes/notes_2026-09-22.md notes/"oct6 meeting notes.md" notes/"2026.10.20 minutes.md" notes/"Nov 3 (final).md"; do echo "=== $f ==="; cat "$f"; echo; done
+----

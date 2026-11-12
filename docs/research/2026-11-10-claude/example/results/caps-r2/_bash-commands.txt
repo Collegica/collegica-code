@@ -1,0 +1,8 @@
+ls -la && for f in $(find . -type f -not -name CLAUDE.md -not -path './.git/*' | head -20); do echo "=== $f"; cat "$f"; done
+----
+ls -la <tmp>/caps-r2/folder
+----
+ls -la notes && head -50 README.md members.csv notes/*
+----
+wc -w <tmp>/caps-r2/folder/notice.md
+----

@@ -1,0 +1,39 @@
+{
+ "started_utc": "2026-11-11T20:21:08+00:00",
+ "wall_s": 15.0,
+ "exit": 0,
+ "session": "01a1cc45-7d53-7302-acd9-a284f96e01b1",
+ "usage": {
+  "input_tokens": 42259,
+  "cached_input_tokens": 30336,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 393,
+  "reasoning_output_tokens": 56
+ },
+ "command": [
+  "codex",
+  "exec",
+  "-m",
+  "gpt-6.1-sol",
+  "--skip-git-repo-check",
+  "--json",
+  "-o",
+  "<tmp>/tools-check-3/turn1-last-message.md",
+  "-s",
+  "workspace-write",
+  "-C",
+  "<tmp>/tools-check-3/folder",
+  "<-c ...enabled=false for each MCP server and plugin in ~/.codex/config.toml, and plugins._default.enabled=false>",
+  "--disable",
+  "plugins",
+  "--disable",
+  "apps",
+  "--disable",
+  "computer_use",
+  "--disable",
+  "memories",
+  "-c",
+  "notify=[]",
+  "<prompt>"
+ ]
+}

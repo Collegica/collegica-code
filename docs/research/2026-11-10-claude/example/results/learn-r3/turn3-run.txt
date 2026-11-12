@@ -1,0 +1,5 @@
+wall_s: 22.6
+model: ['claude-sonnet-5-5']
+api_equivalent_usd: 0.24
+permission_denials: 2
+num_turns: 10

@@ -1,0 +1,4 @@
+ls -laR . | head -100 && grep -rniI -E "water|2025" . | head -80
+----
+cat README.md && for f in notes/*; do echo "=== $f"; cat "$f"; done
+----

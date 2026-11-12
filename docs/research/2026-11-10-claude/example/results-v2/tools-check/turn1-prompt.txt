@@ -1,0 +1,1 @@
+List every tool you have in this session, by its exact name, one per line. Then say in one line whether any of them is an MCP or connector tool. Do not use any tool.

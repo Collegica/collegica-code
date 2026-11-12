@@ -1,0 +1,4 @@
+agent: claude
+state: blocked
+manifest: remote:~/.local/state/herdr/agent-detection/remote/claude.toml 2026.10.11.1
+rule: legacy_no_prompt_blocker (region=whole_recent priority=300)

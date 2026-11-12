@@ -1,0 +1,1 @@
+The available records don’t state the club’s 2025 water cost. The [8 September minutes](<notes/Meeting sept 8.md:15>) say Paolo didn’t have last year’s figure with him. The $486.75 total recorded in November is for 2026.

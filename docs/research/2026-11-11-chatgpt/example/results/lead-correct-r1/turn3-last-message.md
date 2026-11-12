@@ -1,0 +1,1 @@
+Saved [notice.md](notice.md) using the committee’s latest notes and checked it against all member communication rules.

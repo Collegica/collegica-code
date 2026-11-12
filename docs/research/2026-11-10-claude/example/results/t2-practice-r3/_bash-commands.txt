@@ -1,0 +1,4 @@
+ls -la && find . -type f -not -name CLAUDE.md -not -path './.git/*' | head -50
+----
+for f in README.md notes/* members.csv; do echo "=== $f"; cat "$f"; echo; done
+----

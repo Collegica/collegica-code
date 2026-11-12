@@ -1,0 +1,1 @@
+The available records don’t state what the club paid for water in 2025. The [8 September minutes](< <tmp>/t5-plain-r2/folder/notes/Meeting sept 8.md>:15) say Paolo did not have last year’s figure with him.

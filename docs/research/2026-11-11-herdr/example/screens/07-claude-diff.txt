@@ -1,0 +1,20 @@
+diff --git a/seeds.py b/seeds.py
+index 699132a..d56adeb 100644
+--- a/seeds.py
++++ b/seeds.py
+@@ -15,6 +15,15 @@ def total_by_member(swaps):
+     return totals
+ 
+ 
++def total_by_kind(swaps):
++    totals = {}
++    for _member, kind, count in swaps:
++        totals[kind] = totals.get(kind, 0) + count
++    return totals
++
++
+ if __name__ == "__main__":
+     for member, count in total_by_member(SWAPS).items():
+         print(f"{member}: {count}")
++    for kind, count in total_by_kind(SWAPS).items():
++        print(f"{kind}: {count}")

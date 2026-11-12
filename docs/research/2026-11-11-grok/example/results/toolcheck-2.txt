@@ -1,0 +1,35 @@
+Date: 2026-11-11, grok 1.0.70, -m grok-4.7; model reported: grok-4.7-build
+Flags: --disallowed-tools search_tool,use_tool,CallMcpTool,FetchMcpResource,ListMcpResources (other flags as in notes/test.md; Claude/Cursor compatibility variables: MCP only)
+Prompt: List every tool you can call, by exact name, including any MCP tools or connectors, and any way you have to reach an MCP server. Do not call any tool.
+
+I can call these 27 tools:
+
+1. `x_user_search`
+2. `x_semantic_search`
+3. `x_keyword_search`
+4. `x_thread_fetch`
+5. `run_terminal_command`
+6. `read_file`
+7. `search_replace`
+8. `list_dir`
+9. `grep`
+10. `kill_command_or_subagent`
+11. `todo_write`
+12. `get_command_or_subagent_output`
+13. `spawn_subagent`
+14. `scheduler_create`
+15. `scheduler_delete`
+16. `scheduler_list`
+17. `monitor`
+18. `workflow`
+19. `enter_plan_mode`
+20. `exit_plan_mode`
+21. `ask_user_question`
+22. `send_feedback`
+23. `image_gen`
+24. `image_edit`
+25. `image_to_video`
+26. `reference_to_video`
+27. `write`
+
+No MCP tools are available to call. The only MCP server in this session is [connector], and it failed to connect because authentication is required. No tools or connectors from it were exposed, and there is no separate tool for listing, connecting to, or calling an MCP server.

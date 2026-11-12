@@ -1,0 +1,6 @@
+ls -laR . | head -100; grep -rIil water . | head -50
+----
+for f in README.md members.csv notes/*; do echo "=== $f"; cat "$f"; echo; done
+----
+head -n 100 README.md members.csv notes/*
+----

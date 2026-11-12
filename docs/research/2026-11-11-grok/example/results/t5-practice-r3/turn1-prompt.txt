@@ -1,0 +1,3 @@
+Answer only from the files in this folder. If the answer is not in them, say so, and say what the files do contain on the subject.
+
+What did the club pay for water in 2025?

@@ -1,0 +1,4 @@
+agent: codex
+state: blocked
+manifest: remote:~/.local/state/herdr/agent-detection/remote/codex.toml 2026.10.11.1
+rule: startup_update (region=bottom_non_empty_lines(20) priority=950)

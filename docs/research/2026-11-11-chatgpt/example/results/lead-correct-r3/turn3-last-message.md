@@ -1,0 +1,1 @@
+Saved [notice.md](notice.md). Checked all house rules: 55 words, including the heading and signature.

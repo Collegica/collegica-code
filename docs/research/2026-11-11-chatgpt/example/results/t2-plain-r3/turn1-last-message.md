@@ -1,0 +1,1 @@
+Saved the members’ work-day notice as [notice.md](notice.md), including the date, time, gloves, soup, tool sharpening, and winter water shut-off.

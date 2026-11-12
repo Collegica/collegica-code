@@ -1,0 +1,3 @@
+models: ['claude-fable-5-2']
+first event: 2026-11-11T13:15:43.403Z
+last event: 2026-11-11T13:16:00.150Z

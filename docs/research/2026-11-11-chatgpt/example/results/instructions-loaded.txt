@@ -1,0 +1,24 @@
+# Was an instruction file loaded? Read from each run's Codex session log on 11 November 2026, after the runs.
+# yes = the log holds an <INSTRUCTIONS> block, before the first turn, holding a Markdown file (the only one in reach is the folder's AGENTS.md).
+# run turn session loaded
+t2-plain-r1 turn1 01a1cc47-48dc-7ab3-82a6-f5741db457db no
+t2-plain-r2 turn1 01a1cc47-48db-7411-b1ed-cb2ee13f6cd3 no
+t2-plain-r3 turn1 01a1cc47-48db-7503-86ab-b997667d363a no
+t2-practice-r1 turn1 01a1cc47-8ab7-71f3-899b-b438a69e84f7 yes
+t2-practice-r2 turn1 01a1cc47-8ab8-7f90-b611-afc8e4c327a3 yes
+t2-practice-r3 turn1 01a1cc47-8ad3-7371-93fa-609bdd0ad6dc yes
+lead-caps-r1 turn1 01a1cc5c-0962-7773-9551-0d18a958ab72 yes
+lead-caps-r2 turn1 01a1cc5c-0961-7bb3-b5d2-5127eace577a yes
+lead-caps-r3 turn1 01a1cc5c-0961-7350-ae63-9fe937efa251 yes
+lead-claudemd-r1 turn1 01a1cc5c-4c57-7c80-8914-c4339e989f0d no
+lead-claudemd-r2 turn1 01a1cc5c-4c57-7f92-a834-25a9d8eda219 no
+lead-claudemd-r3 turn1 01a1cc5c-4c57-72b2-bdb5-2dd882411ec2 no
+lead-correct-r1 turn1 01a1cc5c-ebb5-7ff1-9928-075edb71bf48 no
+lead-correct-r1 turn2 01a1cc5c-ebb5-7ff1-9928-075edb71bf48 no
+lead-correct-r1 turn3 01a1cc5d-6c36-7903-9821-3a7214ee74ff yes
+lead-correct-r2 turn1 01a1cc5c-ebb5-75e0-8f3a-c00592642459 no
+lead-correct-r2 turn2 01a1cc5c-ebb5-75e0-8f3a-c00592642459 no
+lead-correct-r2 turn3 01a1cc5d-78b4-71f2-9740-246630a29925 yes
+lead-correct-r3 turn1 01a1cc5c-ebb5-7ff1-b0c0-58c63f94a608 no
+lead-correct-r3 turn2 01a1cc5c-ebb5-7ff1-b0c0-58c63f94a608 no
+lead-correct-r3 turn3 01a1cc5d-7d51-7b61-af48-db18e947b737 yes

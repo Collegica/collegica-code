@@ -1,0 +1,1 @@
+Saved the work day notice in [notice.md](notice.md).

@@ -1,0 +1,65 @@
+
+  Environment
+  └ Version: 1.0.70 [unknown]
+  └ CWD: <tmp>/scratch
+  └ Project trusted: no
+
+  Project Instructions (1)
+  └ ~/.claude/Claude.md (global, [token count redacted]) [claude]
+
+  Permissions
+  └ Source: ~/.claude/settings.json (settings)
+  └ [count redacted] loaded
+
+  Login Policy
+  └ disable_api_key_auth: (unset)
+  └ force_login_team_uuid: (none)
+  └ api_key_auth_disabled: false
+
+  Skills ([count redacted])
+  └ [skill]  user            (names and count redacted)
+  └ [skill]  user [claude]   (names and count redacted)
+  └ [skill]  plugin: [claude] (names and count redacted)
+
+  Agents (3)
+  └ general-purpose  builtin
+  └ explore          builtin
+  └ plan             builtin
+
+  Plugins ([count redacted])
+  └ [plugin]  user enabled, some carrying skills or an MCP server (names and counts redacted)
+
+  Marketplaces (None)
+
+  MCP Servers ([count redacted])
+  └ [connector]  (http) plugin:
+  └ [connector]s from Claude Code's set-up  [claude] [disabled]
+
+  LSP Servers (None)
+
+  Hooks (None)
+
+  Config Sources
+  └ User: ~/.grok/config.toml
+  └ Project: (none)
+
+  Experiments (None)
+
+  Harness Compatibility
+  └ cursor
+    └ skills     on   (default)
+    └ rules      on   (default)
+    └ agents     on   (default)
+    └ mcps       OFF  (env)
+    └ hooks      on   (default)
+    └ sessions   on   (default)
+  └ claude
+    └ skills     on   (default)
+    └ rules      on   (default)
+    └ agents     on   (default)
+    └ mcps       OFF  (env)
+    └ hooks      on   (default)
+    └ sessions   on   (default)
+  └ codex
+    └ sessions   on   (default)
+

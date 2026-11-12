@@ -1,0 +1,6 @@
+ls -la && for f in *; do echo "=== $f"; cat "$f"; done
+----
+ls -la
+----
+ls -la notes && cat README.md && cat notes/*
+----

@@ -1,0 +1,37 @@
+Date: 2026-11-11, grok 1.0.70, -m grok-4.7; model reported: grok-4.7-build
+Flags: --disallowed-tools CallMcpTool,GetMcpTools,FetchMcpResource,ListMcpResources (other flags as in notes/test.md; Claude/Cursor compatibility variables: MCP only)
+Prompt: List every tool you can call, by exact name, including any MCP tools or connectors. Do not call any tool.
+
+I can call these tools by exact name:
+
+1. `x_user_search`
+2. `x_semantic_search`
+3. `x_keyword_search`
+4. `x_thread_fetch`
+5. `run_terminal_command`
+6. `read_file`
+7. `search_replace`
+8. `list_dir`
+9. `grep`
+10. `kill_command_or_subagent`
+11. `todo_write`
+12. `get_command_or_subagent_output`
+13. `spawn_subagent`
+14. `scheduler_create`
+15. `scheduler_delete`
+16. `scheduler_list`
+17. `monitor`
+18. `search_tool`
+19. `use_tool`
+20. `workflow`
+21. `enter_plan_mode`
+22. `exit_plan_mode`
+23. `ask_user_question`
+24. `send_feedback`
+25. `image_gen`
+26. `image_edit`
+27. `image_to_video`
+28. `reference_to_video`
+29. `write`
+
+MCP tools are not listed as separate callable names in this session. They are reached only through `search_tool` and `use_tool`. I did not query the MCP catalog, because you said not to call any tool. The only MCP status I was given is that the [connector] server failed to connect (auth required).

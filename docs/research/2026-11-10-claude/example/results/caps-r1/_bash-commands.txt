@@ -1,0 +1,12 @@
+ls -la; cat *notes* 2>/dev/null
+----
+cat README.md; echo ----; cat members.csv; echo ----; ls -la notes; for f in notes/*; do echo "=== $f"; cat "$f"; echo; done
+----
+cat README.md; echo ----; cat members.csv; echo ----; ls -la notes
+----
+cat "notes/Meeting sept 8.md"; echo; echo =====; cat notes/notes_2026-09-22.md; echo; echo =====; cat "notes/oct6 meeting notes.md"; echo; echo =====; cat "notes/2026.10.20 minutes.md"; echo; echo =====; cat "notes/Nov 3 (final).md"
+----
+cat notes/notes_2026-09-22.md; echo; echo "#####"; cat "notes/oct6 meeting notes.md"; echo; echo "#####"; cat "notes/2026.10.20 minutes.md"; echo; echo "#####"; cat "notes/Nov 3 (final).md"
+----
+wc -w notice.md; grep -c '!' notice.md
+----

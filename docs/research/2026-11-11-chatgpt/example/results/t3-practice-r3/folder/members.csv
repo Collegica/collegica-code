@@ -1,0 +1,25 @@
+name,email,plot,joined,fee_paid_cad,note
+Tessa Varga,tessa.varga@example.com,1,2021-01-01,45.00,
+Ibrahim Solheim,ibrahim.solheim@example.com,2,2022-06-08,45.00,
+Nell Okonjo,nell.okonjo@example.com,3,2023-11-15,45.00,
+Paolo Drummond,paolo.drummond@example.com,4,2024-04-22,45.00,
+Wren Castellan,wren.castellan@example.com,5,2025-09-01,22.50,half season
+Odile Fairweather,odile.fairweather@example.com,6,2026-02-08,45.00,
+Bram Lindqvist,bram.lindqvist@example.com,7,2021-07-15,45.00,
+Sunniva Abara,sunniva.abara@example.com,8,2022-12-22,45.00,
+Kasimir Thorne,kasimir.thorne@example.com,9,2023-05-01,45.00,
+Leontyne Quist,leontyne.quist@example.com,10,2024-10-08,,reminder sent 28 Sept
+Dov Marchetti,dov.marchetti@example.com,11,2025-03-15,45.00,
+Marisol Ellery,marisol.ellery@example.com,12,2026-08-22,45.00,
+Bram Lindqvist ,BRAM.LINDQVIST@EXAMPLE.COM,7,2021-07-15,45.00,
+Anselm Novak,anselm.novak@example.com,13,2021-01-01,45.00,
+Yeva Hartigan,yeva.hartigan@example.com,14,2022-06-08,22.50,half season
+Corwin Bellamy,corwin.bellamy@example.com,15,2023-11-15,45.00,
+Philippa Osei,philippa.osei@example.com,16,2024-04-22,45.00,
+Idris Rasku,idris.rasku@example.com,17,2025-09-01,45,
+Greta Whitlock,greta.whitlock@example.com,18,2026-02-08,45.00,
+Lucan Demir,lucan.demir@example.com,19,2021-07-15,45.00,
+Sabela Pascoe,sabela.pascoe@example.com,20,2022-12-22,45.00,
+Torin Ainsley,torin.ainsley@example.com,21,2023-05-01,45.00,
+Mireille Kovalenko,mireille.kovalenko@example.com,22,2024-10-08,45.00,
+sabela pascoe,sabela.pascoe@example.com,20,,-45.00,refund: moved away 1 Oct

@@ -1,0 +1,1 @@
+Saved [notice.md](notice.md), using the committee’s notes and checked against all house rules.

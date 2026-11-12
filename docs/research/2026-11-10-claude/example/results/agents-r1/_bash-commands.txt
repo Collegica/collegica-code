@@ -1,0 +1,6 @@
+ls -la && for f in $(find . -maxdepth 2 -type f ! -name AGENTS.md | head -20); do echo "=== $f"; cat "$f"; done
+----
+ls -laR <tmp>/agents-r1/folder
+----
+tail -n +1 README.md members.csv notes/*
+----

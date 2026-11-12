@@ -1,0 +1,14 @@
+ls -laR . && echo ---- && for f in notes/*; do echo "=== $f"; wc -c "$f"; cat "$f"; echo; done
+----
+ls -laR <tmp>/t3-practice-r3/folder
+----
+cd <tmp>/t3-practice-r3/folder/notes && ls -la && shasum -a 256 *.md && wc -c *.md
+----
+mv -n "Meeting sept 8.md" 2026-09-08-committee-meeting.md && mv -n notes_2026-09-22.md 2026-09-22-committee-meeting.md && mv -n "oct6 meeting notes.md" 2026-10-06-committee-meeting.md && mv -n "2026.10.20 minutes.md" 2026-10-20-committee-meeting.md && mv -n "Nov 3 (final).md" 2026-11-03-committee-meeting.md && ls -la
+----
+ls -la . .. && shasum -a 256 2026-*.md && head -1 2026-*.md && grep -o '(2026[^)]*)' index.md | tr -d '()' | xargs ls -l
+----
+ls -la . .. && shasum -a 256 2026-*.md && head -1 2026-*.md
+----
+grep -o '(2026[^)]*)' <tmp>/t3-practice-r3/folder/notes/index.md
+----

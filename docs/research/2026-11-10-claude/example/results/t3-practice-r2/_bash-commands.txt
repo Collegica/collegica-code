@@ -1,0 +1,16 @@
+ls -laR . && for f in notes/*; do echo "=== $f"; cat -A "$f" 2>/dev/null || cat -vet "$f"; done
+----
+ls -laR <tmp>/t3-practice-r2/folder
+----
+shasum -a 256 notes/*.md README.md members.csv && wc -c notes/*.md
+----
+cd <tmp>/t3-practice-r2/folder/notes && mv -n "Meeting sept 8.md" 2026-09-08-committee-meeting.md && mv -n "notes_2026-09-22.md" 2026-09-22-committee-meeting.md && mv -n "oct6 meeting notes.md" 2026-10-06-committee-meeting.md && mv -n "2026.10.20 minutes.md" 2026-10-20-committee-meeting.md && mv -n "Nov 3 (final).md" 2026-11-03-committee-meeting.md && ls -la
+----
+cd <tmp>/t3-practice-r2/folder && shasum -a 256 notes/*.md README.md members.csv && wc -c notes/*-committee-meeting.md && ls -A notes && head -1 notes/*-committee-meeting.md && grep -o '([^)]*\.md)' notes/index.md | tr -d '()' | while read -r f; do test -f "notes/$f" && echo "link ok: $f"; done
+----
+shasum -a 256 <tmp>/t3-practice-r2/folder/notes/2026-09-08-committee-meeting.md <tmp>/t3-practice-r2/folder/notes/2026-09-22-committee-meeting.md <tmp>/t3-practice-r2/folder/notes/2026-10-06-committee-meeting.md <tmp>/t3-practice-r2/folder/notes/2026-10-20-committee-meeting.md <tmp>/t3-practice-r2/folder/notes/2026-11-03-committee-meeting.md <tmp>/t3-practice-r2/folder/README.md <tmp>/t3-practice-r2/folder/members.csv
+----
+ls -lA <tmp>/t3-practice-r2/folder/notes
+----
+grep -H -m1 '^# ' <tmp>/t3-practice-r2/folder/notes/2026-09-08-committee-meeting.md <tmp>/t3-practice-r2/folder/notes/2026-09-22-committee-meeting.md <tmp>/t3-practice-r2/folder/notes/2026-10-06-committee-meeting.md <tmp>/t3-practice-r2/folder/notes/2026-10-20-committee-meeting.md <tmp>/t3-practice-r2/folder/notes/2026-11-03-committee-meeting.md
+----

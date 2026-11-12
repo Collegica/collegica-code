@@ -1,0 +1,1 @@
+You've hit your 5-hour limit · resets 11pm ([time zone redacted])

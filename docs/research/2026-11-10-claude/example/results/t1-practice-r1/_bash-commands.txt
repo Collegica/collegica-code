@@ -1,0 +1,8 @@
+ls -laR . && for f in notes/*; do echo "=== $f ==="; cat "$f"; echo; done
+----
+ls -laR notes; head -n 1000 notes/*
+----
+ls -la
+----
+cat README.md; echo ----; cat members.csv
+----

@@ -1,0 +1,5 @@
+agent: codex
+state: blocked
+manifest: remote:~/.local/state/herdr/agent-detection/remote/codex.toml 2026.10.11.1
+rule: trust_directory (region=top_non_empty_lines(20) priority=950)
+evidence: "\n  Folder access\n  ~/.herdr/worktrees/garden/task-readme\n\n  Note: You’re in a subdirectory of a Git project. Trusting will apply to the repository root:\n  $SCRATCH/..."

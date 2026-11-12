@@ -1,0 +1,29 @@
+ls -la && wc -l members.csv && cat -A members.csv 2>/dev/null | head -300 || cat -vet members.csv | head -300
+----
+cat -vet members.csv; echo ----; cat README.md; echo ----; ls -la notes; for f in notes/*; do echo "=== $f"; cat -v "$f"; done
+----
+cat -vet members.csv; echo ----; cat README.md; echo ----; ls -la notes
+----
+cat "notes/Meeting sept 8.md" "notes/notes_2026-09-22.md" "notes/oct6 meeting notes.md" "notes/2026.10.20 minutes.md" "notes/Nov 3 (final).md"
+----
+python3 -I -c "
+import csv
+rows=list(csv.DictReader(open('members.csv')))
+vals=[float(r['fee_paid_cad']) for r in rows if r['fee_paid_cad'].strip()]
+print('rows',len(rows),'raw sum',sum(vals))
+seen={};
+for r in rows:
+    k=r['email'].strip().lower(); seen.setdefault(k,[]).append(r)
+print('unique emails',len(seen),'unique plots',len({r['plot'] for r in rows}))
+tot=0
+for k,rs in seen.items():
+    if k.startswith('bram'): rs=rs[:1]
+    s=sum(float(r['fee_paid_cad'] or 0) for r in rs); tot+=s
+    if s!=45: print(k,s)
+print('net',tot)
+"
+----
+awk -F, 'NR>1 {s+=$5; n++} END {printf "rows=%d raw_sum=%.2f\n", n, s}' members.csv; awk -F, 'NR>1 {e=tolower($2); if (!(($1 e $5) in seen0) ) {} ; key=e "|" $5; if (key in seen) next; seen[key]=1; t[e]+=$5} END {for (e in t) {tot+=t[e]; m++; if (t[e]>0) p++; if (t[e]!=45) print e, t[e]} printf "members=%d paying=%d net=%.2f\n", m, p, tot}' members.csv
+----
+awk -F, 'NR>1 {s+=$5; n++} END {printf "rows=%d raw_sum=%.2f\n", n, s}' members.csv; awk -F, 'NR>1 {e=tolower($2); key=e "#" $5; if (key in seen) next; seen[key]=1; t[e]+=$5} END {for (e in t) {tot+=t[e]; m++; if (t[e]>0) p++; if (t[e]!=45) print e, t[e]} printf "members=%d paying=%d net=%.2f\n", m, p, tot}' members.csv
+----

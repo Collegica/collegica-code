@@ -1,0 +1,6 @@
+ls -la; find . -maxdepth 3 -not -path '*/.git/*' | head -200
+----
+cat README.md; echo ----; cat members.csv; for f in notes/*; do echo "==== $f"; cat "$f"; done
+----
+cat README.md members.csv; grep -r "" notes/
+----

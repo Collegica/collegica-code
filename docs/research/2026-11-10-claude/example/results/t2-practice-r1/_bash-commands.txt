@@ -1,0 +1,6 @@
+ls -la && for f in *; do [ -f "$f" ] && echo "=== $f" && cat "$f"; done
+----
+ls -laR <tmp>/t2-practice-r1/folder
+----
+tail -n +1 README.md members.csv notes/*
+----

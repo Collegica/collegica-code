@@ -1,0 +1,1 @@
+Write the notice to members about the work day, from the committee's notes. Save it as notice.md.

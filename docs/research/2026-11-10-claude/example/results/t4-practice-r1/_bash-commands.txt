@@ -1,0 +1,10 @@
+ls -la && wc -l members.csv && cat -A members.csv 2>/dev/null | head -300 || cat -vet members.csv | head -300
+----
+cat -vet members.csv; echo ----; cat README.md; echo ----; ls -la notes; for f in notes/*; do echo "=== $f"; cat -v "$f"; done
+----
+cat -vet members.csv; echo ----; cat README.md; echo ----; ls -la notes
+----
+cat notes/*.md
+----
+awk -F, 'NR>1{raw+=$5; k=tolower($2); if(seen[k,$5]++){dup+=$5; next} net+=$5; p[k]+=$5} END{printf "raw=%.2f dup=%.2f net=%.2f people=%d\n",raw,dup,net,length(p); for(k in p){c[p[k]]++}; for(v in c) print v, c[v]}' members.csv
+----

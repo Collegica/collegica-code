@@ -1,0 +1,1 @@
+Corrected [notice.md](notice.md) to follow all house rules and checked it is under 120 words. Created [AGENTS.md](AGENTS.md) with the rules and a reminder to check them before saving member communications.

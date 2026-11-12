@@ -1,0 +1,30 @@
+ls -la && wc -l members.csv && cat -A members.csv 2>/dev/null | head -300 || cat -vet members.csv | head -300
+----
+cat -vet members.csv; echo ---; cat README.md; echo ---; ls -la notes; for f in notes/*; do echo "=== $f"; cat -vet "$f"; done
+----
+ls -la notes && cat -vet members.csv | grep -n -e 'M-' -e '\^' -e ' \$$' ; file members.csv
+----
+cd notes && tail -n +1 *.md
+----
+python3 -I -c '
+import csv
+from decimal import Decimal as D
+rows=list(csv.DictReader(open("members.csv")))
+raw=sum(D(r["fee_paid_cad"] or "0") for r in rows)
+print("rows",len(rows),"raw sum",raw)
+seen=set();tot=D(0);gross=D(0);ref=D(0);plots=set()
+for r in rows:
+    k=(r["email"].strip().lower(),r["plot"],r["fee_paid_cad"],r["joined"])
+    if k in seen: print("dup",r["name"]);continue
+    seen.add(k)
+    v=D(r["fee_paid_cad"] or "0"); tot+=v
+    if v>0: gross+=v
+    else: ref+=v
+    plots.add(r["email"].strip().lower())
+print("net",tot,"gross",gross,"refunds",ref,"unique emails",len(plots))
+from collections import Counter
+print(Counter(r["fee_paid_cad"] for r in rows))
+'
+----
+awk -F, 'NR>1{n++; s+=$5; c[$5]++} END{printf "rows %d raw sum %.2f\n", n, s; for(k in c) print "[" k "]", c[k]}' members.csv
+----

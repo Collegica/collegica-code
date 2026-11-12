@@ -1,0 +1,12 @@
+cd "<tmp>/t3-plain-r3/folder" && ls -laR . && echo ---- && find . -type f -not -name '.DS_Store' -exec sh -c 'echo "=== $1 ($(wc -c <"$1") bytes)"; head -c 600 "$1"; echo' _ {} \;
+----
+ls -laR
+----
+cat README.md; for f in notes/*; do echo "=== $f"; cat "$f"; echo; done; echo; head -5 members.csv; grep -rn "notes" --include="*" . | grep -v "^./notes/" | head
+----
+grep -rn -i -E "notes|minutes|\.md" README.md members.csv notes
+----
+cd notes && mv -n "Meeting sept 8.md" 2026-09-08-minutes.md && mv -n notes_2026-09-22.md 2026-09-22-minutes.md && mv -n "oct6 meeting notes.md" 2026-10-06-minutes.md && mv -n "2026.10.20 minutes.md" 2026-10-20-minutes.md && mv -n "Nov 3 (final).md" 2026-11-03-minutes.md && ls -l
+----
+mv -n "notes/Meeting sept 8.md" notes/2026-09-08-minutes.md && mv -n notes/notes_2026-09-22.md notes/2026-09-22-minutes.md && mv -n "notes/oct6 meeting notes.md" notes/2026-10-06-minutes.md && mv -n "notes/2026.10.20 minutes.md" notes/2026-10-20-minutes.md && mv -n "notes/Nov 3 (final).md" notes/2026-11-03-minutes.md && ls -l notes
+----

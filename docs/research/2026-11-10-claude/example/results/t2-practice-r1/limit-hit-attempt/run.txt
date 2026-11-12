@@ -1,0 +1,3 @@
+models: ['<synthetic>']
+first event: 2026-11-11T03:28:03.047Z
+last event: 2026-11-11T03:28:05.234Z

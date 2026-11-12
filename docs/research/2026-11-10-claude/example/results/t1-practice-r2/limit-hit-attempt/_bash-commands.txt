@@ -1,0 +1,4 @@
+ls -la . notes && for f in notes/*; do echo "=== $f ==="; cat "$f"; echo; done
+----
+ls -laR
+----

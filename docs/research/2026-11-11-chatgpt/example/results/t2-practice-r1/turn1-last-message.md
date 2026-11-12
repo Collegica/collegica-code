@@ -1,0 +1,1 @@
+Saved the notice as [notice.md](notice.md), following the committee’s notes and house rules.

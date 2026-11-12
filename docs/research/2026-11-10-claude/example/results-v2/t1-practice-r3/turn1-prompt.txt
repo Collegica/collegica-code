@@ -1,0 +1,5 @@
+Goal: a list of the committee's open actions, so nothing is forgotten before the garden closes for winter.
+
+Read every file in notes/. An action is something a named person, or the committee, agreed to do. It is open unless a later note says it was done. If an action was carried over, list it once, with its latest date.
+
+Write actions.md with one table: action, who, due date, the note it was last mentioned in. Under the table, list anything you were unsure about and why. Do not change any other file.

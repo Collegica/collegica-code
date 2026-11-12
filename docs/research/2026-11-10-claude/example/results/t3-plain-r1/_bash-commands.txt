@@ -1,0 +1,10 @@
+ls -laR . && find . -type f -not -name '.DS_Store' -exec sh -c 'echo "=== $1"; head -c 600 "$1"; echo' _ {} \;
+----
+ls -laR <tmp>/t3-plain-r1/folder
+----
+cat README.md && for f in notes/*; do echo "=== $f"; cat "$f"; echo; done; grep -rn "notes/\|\.md" README.md members.csv
+----
+tail -n +1 README.md notes/*.md && head -3 members.csv
+----
+cd <tmp>/t3-plain-r1/folder/notes && mv -n "Meeting sept 8.md" 2026-09-08-minutes.md && mv -n notes_2026-09-22.md 2026-09-22-minutes.md && mv -n "oct6 meeting notes.md" 2026-10-06-minutes.md && mv -n "2026.10.20 minutes.md" 2026-10-20-minutes.md && mv -n "Nov 3 (final).md" 2026-11-03-minutes.md && ls
+----

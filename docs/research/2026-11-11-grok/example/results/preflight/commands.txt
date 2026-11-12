@@ -1,0 +1,19 @@
+Pre-flight checks, 2026-11-11 about 20:10-20:25 UTC, grok 1.0.70, in an empty
+scratch folder outside any git repository. No prompt was sent: the app is not
+signed in (see models.txt).
+
+models.txt               grok models
+inspect.txt              grok inspect
+inspect-mcp-env-off.txt  GROK_CLAUDE_MCPS_ENABLED=false GROK_CURSOR_MCPS_ENABLED=false grok inspect
+
+Scrubbed for export: home paths shortened to ~ and <tmp>/; the names of the
+owner's skills, plugins and MCP servers replaced by [skill], [plugin] and
+[connector], and the token count and the counts of skills, plugins,
+permission rules and MCP servers redacted. Their origin markers ([claude],
+plugin:, [disabled]) are kept.
+
+What the last two show: with the two environment variables set, the
+"Harness Compatibility" section reads "mcps OFF (env)" for claude and cursor,
+and the MCP servers that come from ~/.claude.json are marked
+[disabled]. The one that comes with a plugin is not; the plan in
+notes/test.md denies it per run with --deny MCPTool and --disallowed-tools.

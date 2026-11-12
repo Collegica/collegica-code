@@ -1,0 +1,1 @@
+Saved [notice.md](notice.md) with the work-day details, under 120 words and following the house rules.

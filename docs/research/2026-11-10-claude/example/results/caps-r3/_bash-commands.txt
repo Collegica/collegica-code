@@ -1,0 +1,8 @@
+ls -la; ls memory 2>/dev/null
+----
+cat README.md; echo ----; cat members.csv; echo ----; ls -la notes; for f in notes/*; do echo "=== $f"; cat "$f"; echo; done
+----
+cat README.md members.csv; ls -la notes
+----
+cd notes && tail -n +1 "Meeting sept 8.md" "notes_2026-09-22.md" "oct6 meeting notes.md" "2026.10.20 minutes.md" "Nov 3 (final).md"
+----
