@@ -1,0 +1,30 @@
+[workspace]
+authors = ["Sam Rivera <sam@example.com>"]
+channels = ["conda-forge"]
+name = "river-gauges"
+platforms = ["osx-arm64", "linux-64", "win-64"]
+version = "0.1.0"
+
+[tasks.analyse]
+cmd = "python analyse.py"
+description = "Grid the gauge readings into a GeoTIFF and a picture"
+inputs = ["analyse.py", "data/gauges.csv"]
+outputs = ["output/flow.tif", "output/flow.png"]
+
+[dependencies]
+python = ">=3.15.2,<3.16"
+gdal = ">=3.13.3,<4"
+opencv = ">=5.0.0,<6"
+
+[pypi-dependencies]
+pandas = ">=3.1.1, <4"
+scikit-learn = ">=1.9.1, <2"
+
+[feature.dev.tasks]
+test = "python -m pytest -q tests"
+
+[feature.dev.dependencies]
+pytest = ">=9.2.0,<10"
+
+[environments]
+dev = ["dev"]
