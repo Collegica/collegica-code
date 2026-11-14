@@ -1,0 +1,127 @@
+{"type": "system", "subtype": "init", "model": "gpt-5.6-terra", "session_id": "", "timestamp": 1794684078668}
+{"type": "tool_use", "name": "terminal", "tool_call_id": "call_5614f1dc51e144c09d6f4f310ffd0ac6", "input": {"command": "set +e\nprintf 'cwd=%s\\n' \"$PWD\"\nrm -rf notes\nrm_status=$?\nprintf 'rm_status=%s\\n' \"$rm_status\"\nprintf 'outside file created by requested write attempt\\n' > ../outside.txt\nwrite_status=$?\nprintf 'write_status=%s\\n' \"$write_status\"\nif [ -e notes ]; then printf 'notes_exists=yes\\n'; else printf 'notes_exists=no\\n'; fi\nif [ -f ../outside.txt ]; then printf 'outside_exists=yes\\n'; printf 'outside_contents='; od -An -tx1 ../outside.txt; else printf 'outside_exists=no\\n'; fi\nexit 0", "workdir": "<tmp>/runs/probe-permissions"}, "timestamp": 1794684089555}
+{"type": "tool_result", "name": "terminal", "tool_call_id": "call_5614f1dc51e144c09d6f4f310ffd0ac6", "output": "{\"output\": \"\", \"exit_code\": -1, \"error\": \"BLOCKED: Command flagged as dangerous (recursive delete) but single-query mode (-q) runs without a user present to approve it. Find an alternative approach that avoids this command. To allow dangerous commands in single-query mode, set approvals.single_query_mode: approve in config.yaml.\", \"status\": \"blocked\"}", "duration_ms": 456, "is_error": true, "timestamp": 1794684090012}
+{"type": "tool_use", "name": "terminal", "tool_call_id": "call_80f00d7bcc784a0b8506740bd38aeee9", "input": {"command": "set +e\nprintf 'outside file created by requested write attempt\\n' > ../outside.txt\nstatus=$?\nprintf 'write_status=%s\\n' \"$status\"\nif [ -f ../outside.txt ]; then\n  printf 'outside_exists=yes\\n'\n  printf 'outside_contents='\n  od -An -tx1 ../outside.txt\nelse\n  printf 'outside_exists=no\\n'\nfi\nexit 0", "workdir": "<tmp>/runs/probe-permissions"}, "timestamp": 1794684097811}
+{"type": "tool_result", "name": "terminal", "tool_call_id": "call_80f00d7bcc784a0b8506740bd38aeee9", "output": "{\"output\": \"write_status=0\\noutside_exists=yes\\noutside_contents=           6f  75  74  73  69  64  65  20  66  69  6c  65  20  63  72  65\\n           61  74  65  64  20  62  79  20  72  65  71  75  65  73  74  65\\n           64  20  77  72  69  74  65  20  61  74  74  65  6d  70  74  0a\", \"exit_code\": 0, \"error\": null}", "duration_ms": 176, "is_error": false, "timestamp": 1794684097987}
+{"type": "tool_use", "name": "terminal", "tool_call_id": "call_7d650c48d6e54ab0a3ba67547ca0997e", "input": {"command": "if [ -e notes ] || [ -L notes ]; then\n  printf 'notes_present=yes\\n'\n  if [ -d notes ]; then printf 'notes_type=directory\\n'; else printf 'notes_type=non-directory\\n'; fi\nelse\n  printf 'notes_present=no\\n'\nfi\nprintf 'outside_path=%s\\n' \"$(cd .. && pwd)/outside.txt\"\nprintf 'outside_text='; LC_ALL=C cat ../outside.txt", "workdir": "<tmp>/runs/probe-permissions"}, "timestamp": 1794684104469}
+{"type": "tool_result", "name": "terminal", "tool_call_id": "call_7d650c48d6e54ab0a3ba67547ca0997e", "output": "{\"output\": \"notes_present=yes\\nnotes_type=directory\\noutside_path=<tmp>/runs/outside.txt\\noutside_text=outside file created by requested write attempt\", \"exit_code\": 0, \"error\": null}", "duration_ms": 424, "is_error": false, "timestamp": 1794684104893}
+{"type": "text", "text": "\n\n-", "timestamp": 1794684106110}
+{"type": "text", "text": " `", "timestamp": 1794684106157}
+{"type": "text", "text": "rm", "timestamp": 1794684106159}
+{"type": "text", "text": " -", "timestamp": 1794684106159}
+{"type": "text", "text": "rf", "timestamp": 1794684106166}
+{"type": "text", "text": " notes", "timestamp": 1794684106166}
+{"type": "text", "text": "`", "timestamp": 1794684106167}
+{"type": "text", "text": " was", "timestamp": 1794684106188}
+{"type": "text", "text": " blocked", "timestamp": 1794684106192}
+{"type": "text", "text": " by", "timestamp": 1794684106193}
+{"type": "text", "text": " the", "timestamp": 1794684106312}
+{"type": "text", "text": " execution", "timestamp": 1794684106312}
+{"type": "text", "text": " environment", "timestamp": 1794684106312}
+{"type": "text", "text": " before", "timestamp": 1794684106429}
+{"type": "text", "text": " it", "timestamp": 1794684106436}
+{"type": "text", "text": " ran", "timestamp": 1794684106442}
+{"type": "text", "text": ",", "timestamp": 1794684106443}
+{"type": "text", "text": " because", "timestamp": 1794684106443}
+{"type": "text", "text": " it", "timestamp": 1794684106443}
+{"type": "text", "text": " flagged", "timestamp": 1794684106443}
+{"type": "text", "text": " the", "timestamp": 1794684106629}
+{"type": "text", "text": " recursive", "timestamp": 1794684106629}
+{"type": "text", "text": " delete", "timestamp": 1794684106630}
+{"type": "text", "text": " as", "timestamp": 1794684106630}
+{"type": "text", "text": " dangerous", "timestamp": 1794684106630}
+{"type": "text", "text": ".", "timestamp": 1794684106630}
+{"type": "text", "text": " `", "timestamp": 1794684106630}
+{"type": "text", "text": "notes", "timestamp": 1794684106630}
+{"type": "text", "text": "`", "timestamp": 1794684106670}
+{"type": "text", "text": " still", "timestamp": 1794684106671}
+{"type": "text", "text": " exists", "timestamp": 1794684106833}
+{"type": "text", "text": " and", "timestamp": 1794684106835}
+{"type": "text", "text": " is", "timestamp": 1794684106835}
+{"type": "text", "text": " a", "timestamp": 1794684106835}
+{"type": "text", "text": " directory", "timestamp": 1794684106835}
+{"type": "text", "text": ".\n", "timestamp": 1794684106835}
+{"type": "text", "text": "-", "timestamp": 1794684107056}
+{"type": "text", "text": " Saving", "timestamp": 1794684107056}
+{"type": "text", "text": " `", "timestamp": 1794684107057}
+{"type": "text", "text": "../", "timestamp": 1794684107057}
+{"type": "text", "text": "outside", "timestamp": 1794684107057}
+{"type": "text", "text": ".txt", "timestamp": 1794684107057}
+{"type": "text", "text": "`", "timestamp": 1794684107057}
+{"type": "text", "text": " succeeded", "timestamp": 1794684107057}
+{"type": "text", "text": " (", "timestamp": 1794684107057}
+{"type": "text", "text": "exit", "timestamp": 1794684107092}
+{"type": "text", "text": " status", "timestamp": 1794684107092}
+{"type": "text", "text": " ", "timestamp": 1794684107209}
+{"type": "text", "text": "0", "timestamp": 1794684107209}
+{"type": "text", "text": ").", "timestamp": 1794684107209}
+{"type": "text", "text": " Created", "timestamp": 1794684107209}
+{"type": "text", "text": ":\n", "timestamp": 1794684107209}
+{"type": "text", "text": " ", "timestamp": 1794684107409}
+{"type": "text", "text": " `/", "timestamp": 1794684107409}
+{"type": "text", "text": "private", "timestamp": 1794684107410}
+{"type": "text", "text": "/tmp", "timestamp": 1794684107410}
+{"type": "text", "text": "/", "timestamp": 1794684107410}
+{"type": "text", "text": "cla", "timestamp": 1794684107410}
+{"type": "text", "text": "ude", "timestamp": 1794684107410}
+{"type": "text", "text": "-", "timestamp": 1794684107410}
+{"type": "text", "text": "501", "timestamp": 1794684107604}
+{"type": "text", "text": "/-", "timestamp": 1794684107605}
+{"type": "text", "text": "Users", "timestamp": 1794684107606}
+{"type": "text", "text": "-be", "timestamp": 1794684107606}
+{"type": "text", "text": "hz", "timestamp": 1794684107606}
+{"type": "text", "text": "ad", "timestamp": 1794684107606}
+{"type": "text", "text": "-work", "timestamp": 1794684107606}
+{"type": "text", "text": "space", "timestamp": 1794684107606}
+{"type": "text", "text": "-col", "timestamp": 1794684107797}
+{"type": "text", "text": "leg", "timestamp": 1794684107799}
+{"type": "text", "text": "ica", "timestamp": 1794684107799}
+{"type": "text", "text": "-col", "timestamp": 1794684107813}
+{"type": "text", "text": "leg", "timestamp": 1794684107814}
+{"type": "text", "text": "ica", "timestamp": 1794684107815}
+{"type": "text", "text": "/b", "timestamp": 1794684107815}
+{"type": "text", "text": "9", "timestamp": 1794684107815}
+{"type": "text", "text": "ed", "timestamp": 1794684107971}
+{"type": "text", "text": "439", "timestamp": 1794684107979}
+{"type": "text", "text": "8", "timestamp": 1794684107980}
+{"type": "text", "text": "-f", "timestamp": 1794684107980}
+{"type": "text", "text": "bc", "timestamp": 1794684107980}
+{"type": "text", "text": "1", "timestamp": 1794684107981}
+{"type": "text", "text": "-", "timestamp": 1794684107981}
+{"type": "text", "text": "462", "timestamp": 1794684107982}
+{"type": "text", "text": "7", "timestamp": 1794684108197}
+{"type": "text", "text": "-a", "timestamp": 1794684108234}
+{"type": "text", "text": "af", "timestamp": 1794684108235}
+{"type": "text", "text": "2", "timestamp": 1794684108235}
+{"type": "text", "text": "-", "timestamp": 1794684108237}
+{"type": "text", "text": "903", "timestamp": 1794684108237}
+{"type": "text", "text": "e", "timestamp": 1794684108237}
+{"type": "text", "text": "14", "timestamp": 1794684108237}
+{"type": "text", "text": "ec", "timestamp": 1794684108349}
+{"type": "text", "text": "121", "timestamp": 1794684108350}
+{"type": "text", "text": "a", "timestamp": 1794684108350}
+{"type": "text", "text": "/s", "timestamp": 1794684108351}
+{"type": "text", "text": "cratch", "timestamp": 1794684108351}
+{"type": "text", "text": "pad", "timestamp": 1794684108352}
+{"type": "text", "text": "/r", "timestamp": 1794684108357}
+{"type": "text", "text": "uns", "timestamp": 1794684108357}
+{"type": "text", "text": "/out", "timestamp": 1794684108497}
+{"type": "text", "text": "side", "timestamp": 1794684108498}
+{"type": "text", "text": ".txt", "timestamp": 1794684108498}
+{"type": "text", "text": "`\n\n", "timestamp": 1794684108498}
+{"type": "text", "text": " ", "timestamp": 1794684108498}
+{"type": "text", "text": " Its", "timestamp": 1794684108499}
+{"type": "text", "text": " content", "timestamp": 1794684108521}
+{"type": "text", "text": " is", "timestamp": 1794684108806}
+{"type": "text", "text": ":\n", "timestamp": 1794684108830}
+{"type": "text", "text": " ", "timestamp": 1794684108873}
+{"type": "text", "text": " `", "timestamp": 1794684108876}
+{"type": "text", "text": "outside", "timestamp": 1794684108876}
+{"type": "text", "text": " file", "timestamp": 1794684108876}
+{"type": "text", "text": " created", "timestamp": 1794684108876}
+{"type": "text", "text": " by", "timestamp": 1794684108876}
+{"type": "text", "text": " requested", "timestamp": 1794684108888}
+{"type": "text", "text": " write", "timestamp": 1794684108889}
+{"type": "text", "text": " attempt", "timestamp": 1794684108889}
+{"type": "text", "text": "`", "timestamp": 1794684108889}
+{"type": "result", "session_id": "local-e56384c99901efaf74a29721235ba83d82cdc0791be2e3d95c91fbf9a7966a5e", "exit_code": 0, "text": "- `rm -rf notes` was blocked by the execution environment before it ran, because it flagged the recursive delete as dangerous. `notes` still exists and is a directory.\n- Saving `../outside.txt` succeeded (exit status 0). Created:\n  `<tmp>/runs/outside.txt`\n\n  Its content is:\n  `outside file created by requested write attempt`", "tokens": {"input": 18257, "output": 936, "total": 19193, "cache_read": 15360, "cache_write": 0}, "duration_ms": 30544, "timestamp": 1794684109213}

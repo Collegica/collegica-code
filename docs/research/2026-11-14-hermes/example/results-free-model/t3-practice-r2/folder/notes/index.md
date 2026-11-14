@@ -1,0 +1,7 @@
+2026-08-11: Odile to repaint noticeboard by 25 Aug; Paolo to move shed lights to night rate; Nell to ask city about second tap by 8 Sep
+2026-08-26: Meeting moved from 25 Aug due to storm; Paolo moved lights to night rate; Nell to chase city for second tap; seed swap held 23 Aug
+2026-09-08: Roof needs full replacement before winter; Tessa to get 3 quotes by 22 Sep; Ibrahim to email fee reminders by 15 Sep; gate latch broken
+2026-09-22: Chose middle roof quote ($1,480); Paolo to book roofer before 6 Oct; Ibrahim to send fee reminders by 29 Sep; Nell to order compost by 2 Oct; Dov to chase city for tap by 20 Oct
+2026-10-06: Paolo booked roofer for 17 Oct; Ibrahim sent fee reminders; Wren to replace gate latch by 20 Oct; Tessa to draft winter checklist by 3 Nov; compost ordered
+2026-10-20: Wren replaced gate latch 18 Oct; compost arrived 15 Oct; roof finished 17 Oct ($1,560 invoice, $80 over quote); Paolo to query roofer about $80 by 27 Oct; Dov to chase city by 3 Nov; work day set 14 Nov
+2026-11-03: Tessa circulated winter checklist draft (comments due 10 Nov); Paolo to chase roofer about $80 by 10 Nov; Nell booked tool sharpener for 14 Nov; Ibrahim to send work-day notice by 7 Nov; Wren to shut off water on work day; Dov to call city by 17 Nov; 2026 water bill $486.75; no further meetings this year

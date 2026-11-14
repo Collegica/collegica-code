@@ -1,0 +1,83 @@
+{"type": "system", "subtype": "init", "model": "gpt-5.6-terra", "session_id": "", "timestamp": 1794684066644}
+{"type": "text", "text": "#", "timestamp": 1794684069096}
+{"type": "text", "text": " House", "timestamp": 1794684069168}
+{"type": "text", "text": " rules", "timestamp": 1794684069232}
+{"type": "text", "text": " for", "timestamp": 1794684069232}
+{"type": "text", "text": " anything", "timestamp": 1794684069232}
+{"type": "text", "text": " written", "timestamp": 1794684069232}
+{"type": "text", "text": " to", "timestamp": 1794684069232}
+{"type": "text", "text": " members", "timestamp": 1794684069233}
+{"type": "text", "text": "-", "timestamp": 1794684069233}
+{"type": "text", "text": " Dates", "timestamp": 1794684069420}
+{"type": "text", "text": " in", "timestamp": 1794684069420}
+{"type": "text", "text": " full", "timestamp": 1794684069420}
+{"type": "text", "text": ",", "timestamp": 1794684069421}
+{"type": "text", "text": " with", "timestamp": 1794684069421}
+{"type": "text", "text": " the", "timestamp": 1794684069436}
+{"type": "text", "text": " weekday", "timestamp": 1794684069436}
+{"type": "text", "text": " and", "timestamp": 1794684069437}
+{"type": "text", "text": " the", "timestamp": 1794684069574}
+{"type": "text", "text": " year", "timestamp": 1794684069575}
+{"type": "text", "text": ":", "timestamp": 1794684069575}
+{"type": "text", "text": " Saturday", "timestamp": 1794684069575}
+{"type": "text", "text": " ", "timestamp": 1794684069575}
+{"type": "text", "text": "14", "timestamp": 1794684069575}
+{"type": "text", "text": " November", "timestamp": 1794684069575}
+{"type": "text", "text": " ", "timestamp": 1794684069575}
+{"type": "text", "text": "202", "timestamp": 1794684069777}
+{"type": "text", "text": "6", "timestamp": 1794684069781}
+{"type": "text", "text": ".\n", "timestamp": 1794684069781}
+{"type": "text", "text": "-", "timestamp": 1794684069781}
+{"type": "text", "text": " Times", "timestamp": 1794684069781}
+{"type": "text", "text": " on", "timestamp": 1794684069781}
+{"type": "text", "text": " the", "timestamp": 1794684069781}
+{"type": "text", "text": " ", "timestamp": 1794684069781}
+{"type": "text", "text": "24", "timestamp": 1794684069977}
+{"type": "text", "text": "-hour", "timestamp": 1794684069978}
+{"type": "text", "text": " clock", "timestamp": 1794684069979}
+{"type": "text", "text": ":", "timestamp": 1794684069979}
+{"type": "text", "text": " ", "timestamp": 1794684069980}
+{"type": "text", "text": "09", "timestamp": 1794684069980}
+{"type": "text", "text": ":", "timestamp": 1794684069980}
+{"type": "text", "text": "30", "timestamp": 1794684069980}
+{"type": "text", "text": ",", "timestamp": 1794684070176}
+{"type": "text", "text": " not", "timestamp": 1794684070177}
+{"type": "text", "text": " ", "timestamp": 1794684070177}
+{"type": "text", "text": "9", "timestamp": 1794684070177}
+{"type": "text", "text": ":", "timestamp": 1794684070177}
+{"type": "text", "text": "30", "timestamp": 1794684070177}
+{"type": "text", "text": " am", "timestamp": 1794684070177}
+{"type": "text", "text": ".\n", "timestamp": 1794684070177}
+{"type": "text", "text": "-", "timestamp": 1794684070387}
+{"type": "text", "text": " British", "timestamp": 1794684070387}
+{"type": "text", "text": " spelling", "timestamp": 1794684070387}
+{"type": "text", "text": ".\n", "timestamp": 1794684070387}
+{"type": "text", "text": "-", "timestamp": 1794684070387}
+{"type": "text", "text": " No", "timestamp": 1794684070387}
+{"type": "text", "text": " ex", "timestamp": 1794684070387}
+{"type": "text", "text": "clamation", "timestamp": 1794684070387}
+{"type": "text", "text": " marks", "timestamp": 1794684070532}
+{"type": "text", "text": ".\n", "timestamp": 1794684070535}
+{"type": "text", "text": "-", "timestamp": 1794684070535}
+{"type": "text", "text": " Under", "timestamp": 1794684070536}
+{"type": "text", "text": " ", "timestamp": 1794684070536}
+{"type": "text", "text": "120", "timestamp": 1794684070536}
+{"type": "text", "text": " words", "timestamp": 1794684070536}
+{"type": "text", "text": ",", "timestamp": 1794684070536}
+{"type": "text", "text": " heading", "timestamp": 1794684070719}
+{"type": "text", "text": " and", "timestamp": 1794684070723}
+{"type": "text", "text": " signature", "timestamp": 1794684070723}
+{"type": "text", "text": " included", "timestamp": 1794684070723}
+{"type": "text", "text": ".\n", "timestamp": 1794684070723}
+{"type": "text", "text": "-", "timestamp": 1794684070723}
+{"type": "text", "text": " Signed", "timestamp": 1794684070724}
+{"type": "text", "text": " \"", "timestamp": 1794684070724}
+{"type": "text", "text": "The", "timestamp": 1794684070918}
+{"type": "text", "text": " committee", "timestamp": 1794684070918}
+{"type": "text", "text": "\",", "timestamp": 1794684070919}
+{"type": "text", "text": " with", "timestamp": 1794684070919}
+{"type": "text", "text": " no", "timestamp": 1794684070919}
+{"type": "text", "text": " personal", "timestamp": 1794684070920}
+{"type": "text", "text": " names", "timestamp": 1794684070920}
+{"type": "text", "text": ".", "timestamp": 1794684070920}
+{"type": "result", "session_id": "local-7aaca940eb858d28ccf857b7f7faae35b913b006a95f74bf00cf002c26452cb9", "exit_code": 0, "text": "# House rules for anything written to members\n\n- Dates in full, with the weekday and the year: Saturday 14 November 2026.\n- Times on the 24-hour clock: 09:30, not 9:30 am.\n- British spelling.\n- No exclamation marks.\n- Under 120 words, heading and signature included.\n- Signed \"The committee\", with no personal names.", "tokens": {"input": 4726, "output": 86, "total": 4812, "cache_read": 0, "cache_write": 0}, "duration_ms": 4662, "timestamp": 1794684071307}

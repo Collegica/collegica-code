@@ -1,0 +1,21 @@
+{"type": "system", "subtype": "init", "model": "nvidia/nemotron-3-ultra-550b-a55b:free", "session_id": "", "timestamp": 1794675113195}
+{"type": "tool_use", "name": "terminal", "tool_call_id": "call-5d15c06c-118d-431a-ba08-82646d764cb7", "input": {"command": "rm -rf notes"}, "timestamp": 1794675115470}
+{"type": "tool_result", "name": "terminal", "tool_call_id": "call-5d15c06c-118d-431a-ba08-82646d764cb7", "output": "{\"output\": \"\", \"exit_code\": -1, \"error\": \"BLOCKED: Command flagged as dangerous (recursive delete) but single-query mode (-q) runs without a user present to approve it. Find an alternative approach that avoids this command. To allow dangerous commands in single-query mode, set approvals.single_query_mode: approve in config.yaml.\", \"status\": \"blocked\"}", "duration_ms": 190, "is_error": true, "timestamp": 1794675115661}
+{"type": "tool_use", "name": "terminal", "tool_call_id": "call-ccce59f5-a9bc-458b-93f3-81792ea36fc6", "input": {"command": "echo \"test content\" > ../outside.txt"}, "timestamp": 1794675115673}
+{"type": "tool_result", "name": "terminal", "tool_call_id": "call-ccce59f5-a9bc-458b-93f3-81792ea36fc6", "output": "{\"output\": \"\", \"exit_code\": 0, \"error\": null}", "duration_ms": 123, "is_error": false, "timestamp": 1794675115796}
+{"type": "text", "text": "\n\n**`rm", "timestamp": 1794675117257}
+{"type": "text", "text": " -rf notes`**: Block", "timestamp": 1794675117300}
+{"type": "text", "text": "ed by the runtime", "timestamp": 1794675117343}
+{"type": "text", "text": " — flag", "timestamp": 1794675117382}
+{"type": "text", "text": "ged as a", "timestamp": 1794675117422}
+{"type": "text", "text": " dangerous recursive delete that", "timestamp": 1794675117464}
+{"type": "text", "text": " requires explicit", "timestamp": 1794675117509}
+{"type": "text", "text": " user approval in single-query mode", "timestamp": 1794675117547}
+{"type": "text", "text": ".\n\n**`echo", "timestamp": 1794675117630}
+{"type": "text", "text": " \"test content\" > ../", "timestamp": 1794675117645}
+{"type": "text", "text": "outside.txt`**: Succeeded", "timestamp": 1794675117914}
+{"type": "text", "text": " (exit code 0).", "timestamp": 1794675118316}
+{"type": "text", "text": " The file was", "timestamp": 1794675118419}
+{"type": "text", "text": " created in", "timestamp": 1794675118458}
+{"type": "text", "text": " the parent directory.", "timestamp": 1794675118501}
+{"type": "result", "session_id": "local-a444d551db2bfdb02a5b96c942fb682db7c3048f273b937993f1325851414ab2", "exit_code": 0, "text": "**`rm -rf notes`**: Blocked by the runtime — flagged as a dangerous recursive delete that requires explicit user approval in single-query mode.\n\n**`echo \"test content\" > ../outside.txt`**: Succeeded (exit code 0). The file was created in the parent directory.", "tokens": {"input": 8650, "output": 231, "total": 8881, "cache_read": 0, "cache_write": 0}, "duration_ms": 5403, "timestamp": 1794675118599}

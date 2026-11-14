@@ -1,0 +1,7 @@
+2026-08-11-committee-meeting.md — Odile to repaint noticeboard by 25 Aug; Paolo to move shed lights to night rate; Nell to ask city about second tap by 8 Sep
+2026-08-26-committee-meeting.md — Paolo moved lights to night rate; Nell to retry second tap request; seed swap held 23 Aug
+2026-09-08-committee-meeting.md — Tessa to get three roof quotes by 22 Sep; Ibrahim to email fee reminders by 15 Sep; gate latch broken; Nell waiting on city for second tap
+2026-09-22-committee-meeting.md — Chose $1,480 roof quote; Paolo to book roofer before 6 Oct; Ibrahim to send fee reminders by 29 Sep; Nell to order compost by 2 Oct; Dov to take over second tap request by 20 Oct
+2026-10-06-committee-meeting.md — Paolo booked roofer for 17 Oct; Ibrahim sent fee reminders 28 Sep; Wren to replace gate latch by 20 Oct; Tessa to draft winter checklist by 3 Nov; compost ordered
+2026-10-20-committee-meeting.md — Wren replaced gate latch 18 Oct; compost arrived 15 Oct; roof done 17 Oct ($1,560, $80 over quote); Paolo to query roofer about $80 by 27 Oct; Dov to chase city on tap by 3 Nov; work day set 14 Nov
+2026-11-03-committee-meeting.md — Committee to send checklist comments by 10 Nov; Paolo to chase roofer on $80 by 10 Nov; tool sharpener booked 14 Nov 10:00; Ibrahim to send work-day notice by 7 Nov; Wren to shut off water on work day; Dov to call city by 17 Nov; no further meetings this year

@@ -1,0 +1,4 @@
+{"type": "system", "subtype": "init", "model": "gpt-5.6-terra", "session_id": "", "timestamp": 1794684073069}
+{"type": "text", "text": "None", "timestamp": 1794684076949}
+{"type": "text", "text": ".", "timestamp": 1794684076949}
+{"type": "result", "session_id": "local-4a29d429728d2cd8b3d5a27f7ec083a0533ed3545195787501a1533ddc833c5a", "exit_code": 0, "text": "None.", "tokens": {"input": 4622, "output": 52, "total": 4674, "cache_read": 0, "cache_write": 0}, "duration_ms": 4117, "timestamp": 1794684077186}

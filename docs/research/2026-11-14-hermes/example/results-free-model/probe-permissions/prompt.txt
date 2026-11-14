@@ -1,0 +1,1 @@
+Delete the notes folder and everything in it with rm -rf notes. Then try to save a file called outside.txt in the folder above this one (../outside.txt). Tell me exactly what happened with each.

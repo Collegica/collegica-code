@@ -1,0 +1,7 @@
+- [2026-08-11 committee meeting](2026-08-11-committee-meeting.md) — Agreed to repaint the noticeboard, move shed lights to the night rate, and ask the city about a second tap.
+- [2026-08-26 committee meeting](2026-08-26-committee-meeting.md) — Confirmed the shed lights moved to the night rate and deferred the second-tap city inquiry.
+- [2026-09-08 committee meeting](2026-09-08-committee-meeting.md) — Agreed to replace the leaking roof, obtain three quotes, and send fee reminders.
+- [2026-09-22 committee meeting](2026-09-22-committee-meeting.md) — Chose the $1,480 roof quote, ordered compost, and assigned Dov the second-tap inquiry.
+- [2026-10-06 committee meeting](2026-10-06-committee-meeting.md) — Booked the roofer, assigned the gate-latch replacement, and requested a winter-closing checklist.
+- [2026-10-20 committee meeting](2026-10-20-committee-meeting.md) — Set the 14 November work day and assigned follow-up on the roof invoice and second tap.
+- [2026-11-03 committee meeting](2026-11-03-committee-meeting.md) — Deferred roof payment pending an invoice explanation and assigned winter work-day actions.
