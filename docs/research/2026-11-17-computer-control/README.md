@@ -17,6 +17,7 @@ output and the changed files. The briefs are in `example/`.
 | Codex CLI | 0.166.0, `gpt-6.1-sol`, low effort | run 1 stopped: Claude "Not logged in". Run 2 (network and `~/.claude` writable) stopped: Claude's own permission check refused to write. Run 3 (brief adds `--permission-mode acceptEdits`): worked, 78.25 |
 | Grok Build | 1.0.70, `grok-4.6-build` | headless stopped: "a headless run cannot ask for approval" (twice, once with `--allow` rules). With `--permission-mode auto`: worked, 78.25, about 2 minutes |
 | Hermes Agent | v0.23.2, ChatGPT Terra (`gpt-5.6-terra`) | worked first time, 78.25, about 1 minute |
+| Claude Code via `hc` to a new Antigravity terminal | Gemini 3.8 Flash, auto mode | stopped at the trust-folder dialog until the owner approved it; then worked, 78.25 (`example/results/antigravity/`) |
 
 Independent check: each `total.py` was run by hand on `sample.csv` and printed
 78.25 (12 x 2.50 + 2 x 14.00 + 3 x 6.75). All three files are in `example/results/`.
