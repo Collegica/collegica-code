@@ -18,6 +18,7 @@ output and the changed files. The briefs are in `example/`.
 | Grok Build | 1.0.70, `grok-4.6-build` | headless stopped: "a headless run cannot ask for approval" (twice, once with `--allow` rules). With `--permission-mode auto`: worked, 78.25, about 2 minutes |
 | Hermes Agent | v0.23.2, ChatGPT Terra (`gpt-5.6-terra`) | worked first time, 78.25, about 1 minute |
 | Claude Code via `hc` to a new Antigravity terminal | Gemini 3.8 Flash, auto mode | stopped at the trust-folder dialog until the owner approved it; then worked, 78.25 (`example/results/antigravity/`) |
+| Claude Code (this Mac) to Claude Code 2.1.325 on a second computer (Linux under WSL2), `hc exec --on`, `--permission-mode acceptEdits` | worked; the remote Claude could not run the program without approval and said so; I ran it there: 78.25 (`example/results/atlas/`) |
 
 Independent check: each `total.py` was run by hand on `sample.csv` and printed
 78.25 (12 x 2.50 + 2 x 14.00 + 3 x 6.75). All three files are in `example/results/`.
@@ -45,9 +46,8 @@ found the file in the folder and described it.
 ## Not tested
 
 Grok Bot, ChatGPT Work or Computer Use, connected hosts, SSH projects; a
-second computer (the only other machine, atlas, has none of these assistants
-installed, and installing and signing in there was not done); the host going
-offline; local versus cloud marker file. These need the owner's accounts.
+the host going offline (not disconnected, since other work uses that machine);
+local versus cloud marker file. The first group needs the owner's accounts.
 
 ## For the owner
 
