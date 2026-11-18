@@ -80,3 +80,22 @@ fleet-scale and driving-business material in the brief is not used.
   has an RTX 3070, which is below the stated minimum).
 - Cosmos Transfer 2.5's repository says it is no longer under active
   development and points to Cosmos 3; the article says to check the version.
+
+## Added 18 November: Omniverse, LiDAR and physics in Isaac Sim
+
+Sources gathered by a second research agent and spot-checked by re-reading
+four pages: RTX Lidar (6.x, updated 14 Oct 2026), Omniverse particle fields
+(updated 17 Nov 2026), Newton in Isaac Sim, the Isaac Sim licence FAQ, plus
+the NuRec release notes (26.04 and 26.09 LiDAR entries). Used in the article.
+
+Not confirmed, so not claimed: that RTX Lidar returns hits from a
+ParticleField (no NVIDIA page says it does or does not; a search snippet
+mentions "experimental lidar rendering of NuRec-trained splats" in ovrtx
+0.7.0, not opened); PhysX timestep or speed figures; a method to derive
+collision from a splat; GPU convex-hull vertex limits (search snippet only);
+Omniverse pricing (none published on the pages read). The Newton 1.0 post (16 March 2026) was re-read and confirms the GA, "production-ready" and 252x/475x figures; the Isaac Lab 3.0 backend list comes from the agent's reading of the Isaac Lab docs and was not re-read.
+
+Unreadable: 404 on Isaac Lab physics-backend and Isaac Sim fundamentals
+pages and a lidar scan-pattern page; 403 on the Omniverse collider-compounds
+page; the PhysX Limitations page redirects to the home page. The Isaac Sim
+6.0 and 6.1 release notes and 5.x physics pages were not read.
