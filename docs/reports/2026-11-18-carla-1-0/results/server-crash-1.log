@@ -1,0 +1,11 @@
+5.8.0-0+UE5 1018 0
+Disabling core dumps.
+LowLevelFatalError [File:./Runtime/VulkanRHI/Private/VulkanMemory.cpp] [Line: 3114] 
+Out Of Memory, trying to allocate 268435456 bytes
+
+Signal 11 caught.
+Malloc Size=262146 LargeMemoryPoolOffset=262162 
+Malloc Size=262146 LargeMemoryPoolOffset=524338 
+CommonUnixCrashHandler: Signal=11
+Engine crash handling finished; re-raising signal 11 for the default handler. Good bye.
+CarlaUnreal.sh: line 5:    63 Segmentation fault      (core dumped) "$UE_PROJECT_ROOT/CarlaUnreal/Binaries/Linux/CarlaUnreal-Linux-Shipping" CarlaUnreal "$@"

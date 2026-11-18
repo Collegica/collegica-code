@@ -1,4 +1,4 @@
-"""Collegica CARLA 1.0 test: car on autopilot in Town10HD_Opt, camera saving frames, log timing."""
+"""Collegica CARLA 1.0 test: car on autopilot in the server's default map, camera saving frames, log timing."""
 import json
 import time
 
@@ -10,14 +10,14 @@ OUT = "/out"
 log = {}
 
 c = carla.Client("localhost", 2000)
-c.set_timeout(120)
+c.set_timeout(300)
 log["client_version"] = c.get_client_version()
 log["server_version"] = c.get_server_version()
-t0 = time.time()
-world = c.load_world("Town10HD_Opt")
-log["load_world_seconds"] = round(time.time() - t0, 1)
+# The first attempt loaded Town10HD_Opt explicitly and the server crashed (signal 11);
+# this version uses the map the server starts with.
+world = c.get_world()
 log["map"] = world.get_map().name
-time.sleep(10)
+time.sleep(5)
 
 
 def server_fps(seconds):

@@ -1,0 +1,11 @@
+{
+  "client_version": "1.0",
+  "server_version": "1.0",
+  "map": "Carla/Maps/Town10HD_Opt",
+  "idle_fps": 6261.6,
+  "car_spawned": true,
+  "driving_fps": 52.4,
+  "distance_driven_m": 90.0,
+  "camera_frames_received": 2094,
+  "frames_saved": 104
+}
