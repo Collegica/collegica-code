@@ -47,17 +47,17 @@ second one; they were not investigated.
 ## After: it runs (driver 580.173.02, TrueNAS 25.10.8)
 
 `setup/drive_test.py` (client 1.0 in a `python:3.10-slim` container beside the
-server container, with the wheel taken from the CARLA image) was run twice
-against the same server:
+server container, with the wheel taken from the CARLA image) was run three
+times against the server:
 
-| | Run 1 | Run 2 |
-|---|---|---|
-| Server and client version | 1.0 / 1.0 | 1.0 / 1.0 |
-| Map | Town10HD_Opt | Town10HD_Opt |
-| Server frames per second, car driving, camera 1280 x 720 | 47.8 | 52.4 |
-| Camera frames received in 40 s | 1,912 | 2,094 |
-| Frames saved (every 20th) | 95 | 104 |
-| Distance the car drove in 40 s | 74 m | 90 m |
+| | Run 1 | Run 2 | Run 3 |
+|---|---|---|---|
+| Server and client version | 1.0 / 1.0 | 1.0 / 1.0 | 1.0 / 1.0 |
+| Map | Town10HD_Opt | Town10HD_Opt | Town10HD_Opt |
+| Server frames per second, car driving, camera 1280 x 720 | 47.8 | 52.4 | 50.0 |
+| Camera frames received in 40 s | 1,912 | 2,094 | 2,000 |
+| Frames saved (every 20th) | 95 | 104 | 99 |
+| Distance the car drove in 40 s | 74 m | 90 m | 89 m |
 
 Resource use (server container, `docker stats` and `nvidia-smi`): idle after
 start, about 5.2 GB of memory and 4.2 GB on the graphics card; during driving
