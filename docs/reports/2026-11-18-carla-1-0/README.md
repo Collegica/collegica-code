@@ -30,6 +30,27 @@ was written for the test and never ran.
   folder (`-ABSLOG`).
 - The container did not run out of memory (`OOMKilled` false, exit code 1).
 
+## Second attempt: atlas (RTX 2080, Windows driver 610.88, WSL2)
+
+The owner asked for a newer driver. On TrueNAS the driver only comes with a
+whole-system upgrade (the box runs 24.10.2.4 with nothing newer on its update
+channel; 25.04 and 25.10 are separate trains), which means a reboot and a
+major version jump, so it was not done. Instead CARLA 1.0 was tried on atlas,
+a Windows machine whose WSL2 Linux has an RTX 2080 (8 GB) and a much newer
+driver (610.88), Docker 29.9.2 and the NVIDIA container runtime. The same
+command exited with code 1 within seconds and printed nothing useful; the
+Vulkan loader again only mentioned a skipped Mesa virtio driver. The
+likely reason, not proven: WSL2 gives containers CUDA and Direct3D 12 (the
+`/usr/lib/wsl/lib` folder holds `libcuda`, `libd3d12` and `libdxcore`) but no
+NVIDIA Vulkan driver, and CARLA's Unreal Engine 5.8 build needs Vulkan on
+Linux. Image and container were removed from atlas afterwards.
+
+Epic's hardware page (shown for Unreal Engine 5.9, not 5.8) gives no minimum
+NVIDIA driver number; it says to use the latest stable driver and notes that
+Nanite on Vulkan needs the `VK_KHR_shader_atomic_int64` extension. A real test
+of 1.0 therefore wants either a Windows run of the Windows build on a card
+with a current driver, or a native Linux machine, neither of which was tried.
+
 ## What this does not show
 
 The cause was not found. It could be the driver (550.127.05 is the version
