@@ -67,9 +67,13 @@ Frames: [the drone at 30 m](frames/drone-30m.jpg),
   started at +29 m in AirSim's frame (z points down, so 29 m below its
   origin) and climbed 58 m to reach "30 m"; and the land command returned
   after half a second with the drone still at 31 m.
-- **Licence:** the Hugging Face listing says MIT for CARLA-Air's code and
-  CC-BY for CARLA's assets, matching the GitHub README's licence section
-  (its badge still says "Custom (Non-Commercial)"). The frames above are
+- **Licence (corrected 18 November 2026):** the Hugging Face listing and the
+  GitHub README's licence section say MIT for CARLA-Air's code and CC-BY for
+  CARLA's assets, but the README badge says "Custom (Non-Commercial)", and
+  the repository's LICENSE file, read on 18 November, is a custom
+  "CarlaAir License" for "academic and non-commercial research purposes only",
+  with the bundled CARLA and Colosseum parts MIT. Treat CARLA-Air as
+  non-commercial. The frames above are
   CARLA's Town10HD rendered by us; credit CARLA if they are published.
 - **Headroom:** the box had about 8 GB free; the run used a third of that.
   Higher quality settings, more sensors or PX4 would need more.
@@ -79,3 +83,12 @@ Frames: [the drone at 30 m](frames/drone-30m.jpg),
 The container is stopped and removed. Still on the TrueNAS: the dataset
 `Storage2T/collegica-drone-sim` (16 GB: the unpacked simulator, the zip, the
 frames) and the 388 MB image `collegica/drone-sim:carlaair-0.1.7`.
+
+
+## Update, 18 November 2026
+
+CARLA 1.0 (Unreal Engine 5.8) was released on 17 November 2026. This test ran
+CARLA-Air's bundled CARLA 0.9.16 (Unreal Engine 4.26), which CARLA now calls
+obsolete. CARLA-Air's latest release is v0.1.7 (March 2026). The 1.0 numbers
+are not measured here. Sources: https://carla.org/2026/11/17/release-1.0/ and
+https://github.com/carla-simulator/carla/releases/tag/1.0.
