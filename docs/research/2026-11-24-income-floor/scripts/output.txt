@@ -1,0 +1,30 @@
+1. Public floor at 65, per month and per year
+   average CPP + full OAS   1,620.84/month     19,450/year
+   maximum CPP + full OAS   2,270.15/month     27,242/year
+
+2. CPP by start age (monthly)
+   age 60: average   549.34   maximum   964.90
+   age 65: average   858.34   maximum 1,507.65
+   age 70: average 1,218.84   maximum 2,140.86
+   OAS at 70 (full pension, +36%): 1,037.00  (Canada.ca shows 1,037.00)
+
+3. Break-even age for waiting from 65 to 70 on CPP (no tax, indexed)
+   real return 0%: break-even at age 81.9
+   real return 2%: break-even at age 84.4
+   real return 4%: break-even at age 88.5
+
+4. What a dollar of floor replaces (25x rule, 4% withdrawal)
+   recurring need 48,000, floor      0: gap 48,000, pot at 25x 1,200,000
+   recurring need 48,000, floor 19,450: gap 28,550, pot at 25x   713,750
+   recurring need 48,000, floor 27,242: gap 20,758, pot at 25x   518,950
+
+5. A hypothetical annuity (NOT a quote): payout rate p => premium per $1,000/yr = 1000/p
+   payout 5%: $  20,000 per $1,000/yr   (4% rule: $25,000)
+   payout 6%: $  16,667 per $1,000/yr   (4% rule: $25,000)
+   payout 7%: $  14,286 per $1,000/yr   (4% rule: $25,000)
+
+6. A non-indexed income loses buying power: value of $1,000 after n years at 2% inflation
+   10 years: $820
+   20 years: $673
+   25 years: $610
+   30 years: $552
