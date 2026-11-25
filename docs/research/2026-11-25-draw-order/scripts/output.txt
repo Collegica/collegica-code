@@ -1,0 +1,41 @@
+Household A: RRSP 600,000, TFSA 100,000
+   strategy                                  spend/yr   tax 65-94  clawback yrs
+   Registered last (RRIF minimums only)        43,692     196,632             0
+   Registered first (RRSP before TFSA)         43,692     185,960             0
+   Meltdown, fill to 58,523 taxable            43,692     180,654             0
+   Meltdown, fill to 90,000 taxable            42,576     191,111             0
+   Meltdown, fill to 117,045 taxable           41,372     214,973             6
+
+Household B: RRSP 1,200,000, TFSA 100,000
+   strategy                                  spend/yr   tax 65-94  clawback yrs
+   Registered last (RRIF minimums only)        65,185     341,013             0
+   Registered first (RRSP before TFSA)         65,188     326,931             0
+   Meltdown, fill to 58,523 taxable            65,405     334,610             0
+   Meltdown, fill to 90,000 taxable            64,660     325,004             0
+   Meltdown, fill to 117,045 taxable           61,765     373,412            14
+
+After-tax estate by age at death, spending held at a sustainable level
+(RRSP/RRIF balance taxed in the year of death, federal brackets, no spouse rollover)
+Household A at 40,000 a year
+   strategy                                  dies at 75  dies at 85  lives to 95
+   Registered last (RRIF minimums only)         400,275     289,131      142,741
+   Registered first (RRSP before TFSA)          422,610     309,045      152,775
+   Meltdown, fill to 58,523 taxable             447,283     335,340      148,827
+
+Household B at 60,000 a year
+   strategy                                  dies at 75  dies at 85  lives to 95
+   Registered last (RRIF minimums only)         711,588     486,498      200,680
+   Registered first (RRSP before TFSA)          732,673     506,855      226,196
+   Meltdown, fill to 58,523 taxable             724,217     498,231      211,373
+
+Sensitivity: Household A, real return 0% and 4%
+   real return 0%
+      Registered last             37,260
+      Registered first            37,260
+      Meltdown to 58,523          37,260
+      Meltdown to 90,000          36,715
+   real return 4%
+      Registered last             50,941
+      Registered first            50,939
+      Meltdown to 58,523          50,980
+      Meltdown to 90,000          49,414
