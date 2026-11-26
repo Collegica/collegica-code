@@ -29,6 +29,7 @@ sources:
   resource: /aging-well/next-job.md
   title: The companion on the job search after 45
 - resource: https://www.collegica.org/slides/aging-well/ai-planning/
+- resource: https://www.collegica.org/finance/sequence-protection/
 - resource: https://www.who.int/publications/i/item/9789241550543
 - resource: https://www.who.int/publications/i/item/9789240015128
 - resource: https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/rrsps-related-plans.html
@@ -419,10 +420,11 @@ A first draft in five moves. The order matters more than the precision.
    wrong by 20–30% on their first guess. A few months of statements and a
    [small local tool](/aging-well/budget-from-statements.md) will get you a
    measured figure rather than a guessed one.
-2. **Set the floor.** Three to six months of that spending, in cash, in a
-   separate account. This is your **sequence protection** — the buffer that stops
-   an early market downturn forcing you to sell into it. Sequence-of-returns risk
-   is the single most underrated danger in the first years of drawdown.
+2. **Set aside emergency cash.** Three to six months of that spending, in a
+   separate account, for the broken furnace or the gap between jobs. Do not
+   count on it against a market fall early in retirement, known as
+   sequence-of-returns risk: in [our replay of 2008](https://www.collegica.org/finance/sequence-protection/),
+   six months of cash made almost no difference.
 3. **Clear high-interest debt.** Anything above roughly 8–10% is a guaranteed
    negative return no portfolio reliably beats. Take any employer match first —
    an immediate 50–100% return — then attack the debt.
@@ -449,8 +451,8 @@ you accumulate toward:
   to indefinite accumulation, and to move money to your kids in their 30s
   when a down payment helps rather than as an inheritance decades later when
   it mostly doesn't. It is also not a substitute for the first two ideas on
-  this list — it is what steps 2–4 of the plan above are *for*: the cash
-  floor, the cleared debt and the guaranteed income exist so that spending
+  this list — it is what steps 2–4 of the plan above are *for*: the emergency
+  cash, the cleared debt and the guaranteed income exist so that spending
   the rest, on the Phase 1 travel and ventures above, is the plan working as
   intended rather than a plan failing to save.
 

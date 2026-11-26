@@ -119,6 +119,7 @@ link_map:
   "../budget-from-statements/index.md": "/aging-well/budget-from-statements.md"
   "../ai-planning/index.md": "/aging-well/ai-planning.md"
   "/apps/owl-planner/": "https://www.collegica.org/apps/owl-planner/"
+  "../../finance/sequence-protection/index.md": "https://www.collegica.org/finance/sequence-protection/"
   "notes/": "/aging-well/research/"
   "../../website/aging-well/ai-planning/index.md": "/aging-well/ai-planning.md"
   "../../../website/aging-well/ai-planning/index.md": "/aging-well/ai-planning.md"

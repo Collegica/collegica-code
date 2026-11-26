@@ -1,0 +1,70 @@
+data 2000-01 to 2023-09; $1,000,000, spending $40,000 a year indexed to CPI; invested part 60% TSX, rest 10-year bonds
+
+Calendar-year returns used, for checking against published figures
+year       TSX   bonds   bills     CPI
+2008    -32.9%   14.8%    2.5%    1.2%
+2009     34.9%   -4.3%    0.4%    1.3%
+2020      5.3%    9.3%    0.5%    0.7%
+2022     -5.9%  -12.1%    2.0%    6.3%
+
+Retiring into 2008: retire 2008-06, measured to 2023-09
+strategy                        left at end   low, 2 years
+no cash                             617,439        718,984
+0.5 yr, spent in downturns          615,372        723,118
+2 yr, spent in downturns            592,116        739,730
+2 yr, spent first                   633,451        736,249
+2 yr, held as a fixed 8%            590,805        738,418
+5 yr, spent in downturns            534,457        772,953
+5 yr, held as a fixed 20%           551,037        768,294
+
+Retiring into 2020: retire 2020-02, measured to 2023-09
+strategy                        left at end   low, 2 years
+no cash                             807,087        876,769
+0.5 yr, spent in downturns          806,949        879,195
+2 yr, spent in downturns            805,483        886,473
+2 yr, spent first                   803,940        885,758
+2 yr, held as a fixed 8%            806,012        886,203
+5 yr, spent in downturns            802,552        901,028
+5 yr, held as a fixed 20%           803,888        900,423
+
+A calmer start: retire 2009-04, measured to 2023-09
+strategy                        left at end   low, 2 years
+no cash                           1,027,619      1,000,000
+0.5 yr, spent in downturns        1,010,599      1,000,000
+2 yr, spent in downturns            958,487      1,000,000
+2 yr, spent first                 1,005,523      1,000,000
+2 yr, held as a fixed 8%            952,723      1,000,000
+5 yr, spent in downturns            854,262      1,000,000
+5 yr, held as a fixed 20%           846,775      1,000,000
+
+Retiring into the 2000 peak: retire 2000-09, measured to 2023-09
+strategy                        left at end   low, 2 years
+no cash                             492,798        683,910
+0.5 yr, spent in downturns          488,059        687,090
+2 yr, spent in downturns            465,465        700,747
+2 yr, spent first                   525,626        697,923
+2 yr, held as a fixed 8%            456,904        702,472
+5 yr, spent in downturns            377,551        732,545
+5 yr, held as a fixed 20%           403,803        730,968
+
+Every start month 2000-01 to 2013-09, each measured over 10 years
+strategy                        median left   worst left  beats no cash
+no cash                             987,778      796,749        0 of 165
+0.5 yr, spent in downturns          976,276      796,461        7 of 165
+2 yr, spent in downturns            945,571      780,000        3 of 165
+2 yr, spent first                   980,806      812,353       50 of 165
+2 yr, held as a fixed 8%            947,295      776,254        0 of 165
+5 yr, spent in downturns            882,244      736,215        0 of 165
+5 yr, held as a fixed 20%           891,278      745,520        0 of 165
+
+Sensitivity, retire 2008-06, left at end / low in first two years
+base               617,439 /  718,984 |   592,116 /  739,730 |   590,805 /  738,418
+late yield 2%      586,347 /  718,984 |   565,120 /  739,730 |   563,158 /  738,418
+late yield 4%      649,945 /  718,984 |   620,340 /  739,730 |   619,609 /  738,418
+all equity         650,550 /  549,730 |   654,715 /  583,215 |   627,878 /  577,965
+40% equity         575,326 /  818,019 |   550,971 /  831,590 |   551,923 /  831,071
+spend 50,000       442,073 /  712,598 |   410,419 /  738,530 |   412,829 /  736,838
+trigger 0%         617,439 /  718,984 |   601,194 /  737,172 |   590,805 /  738,418
+trigger 20%        617,439 /  718,984 |   586,703 /  740,308 |   590,805 /  738,418
+cash pays +1%      617,439 /  718,984 |   604,435 /  740,301 |   601,945 /  738,883
+cash pays +2%      617,439 /  718,984 |   616,669 /  740,877 |   613,239 /  739,348
