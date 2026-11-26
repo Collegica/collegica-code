@@ -1,0 +1,35 @@
+One account, read from a statement (made up)
+holding                     value  MER+TER  $ a year
+Balanced mutual fund       60,000    2.18%     1,308
+Global equity ETF          30,000    0.22%        66
+Canadian bond ETF          10,000    0.11%        11
+fixed account fees                               100
+all-in                    100,000    1.49%     1,485
+
+$100,000 plus $6,000 a year for 25 years, 4% real before fees
+no fee: 516,459
+   fee     ending       gap   share  fees charged  lost growth
+ 0.25%    492,643    23,816    4.6%        16,176        7,639
+ 1.00%    428,133    88,326   17.1%        59,378       28,948
+ 2.20%    343,554   172,905   33.5%       114,344       58,561
+
+Spending from $500,000 for 25 years, ending at zero
+ 0.25%    30,039 a year        +0 vs 0.25%
+ 1.00%    27,878 a year    -2,162 vs 0.25%
+ 2.20%    24,571 a year    -5,469 vs 0.25%
+
+Sensitivity: ending-balance gap between 2.2% and 0.25%
+real 2%, 10 years:    26,416  (14.4% of the cheaper result)
+real 2%, 25 years:    98,890  (29.0% of the cheaper result)
+real 2%, 35 years:   173,667  (37.0% of the cheaper result)
+real 4%, 10 years:    31,080  (14.4% of the cheaper result)
+real 4%, 25 years:   149,089  (30.3% of the cheaper result)
+real 4%, 35 years:   307,346  (39.2% of the cheaper result)
+real 6%, 10 years:    36,494  (14.4% of the cheaper result)
+real 6%, 25 years:   225,103  (31.2% of the cheaper result)
+real 6%, 35 years:   548,226  (40.9% of the cheaper result)
+
+Switching: years of saved fees needed to repay a one-time cost
+account transfer fee $150                         150    0.1 years
+redemption charge 3%                            3,000    1.5 years
+tax on $30,000 gain, half taxable, 30% rate     4,500    2.3 years
