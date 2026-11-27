@@ -1,4 +1,4 @@
-// Builds src/generated/concepts.json: one metadata record per OKF concept, read
+// Builds src/generated/concepts.json: one metadata record per published OKF concept, read
 // from the frontmatter of ../../okf/**/*.md. The Worker searches this list and
 // only serves paths that appear in it; the full text of a concept is fetched
 // live from the site, so a redeploy is needed only when concepts are added.
@@ -26,7 +26,7 @@ for (const file of walk(okf)) {
   const m = text.match(/^---\n([\s\S]*?)\n---\n/);
   if (!m) continue;
   const fm = parse(m[1]);
-  if (!fm || !fm.type) continue; // index.md and log.md carry no concept type
+  if (!fm || !fm.type || fm.status === "draft") continue; // no indexes or lifecycle drafts
   concepts.push({
     path: relative(okf, file),
     type: fm.type,

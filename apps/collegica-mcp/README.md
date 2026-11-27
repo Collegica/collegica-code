@@ -51,6 +51,12 @@ npm run dev         # wrangler dev on http://127.0.0.1:8787  (MCP at /mcp)
 `npm test` needs no network. `npm run dev` runs the real Workers runtime and reads
 from the live site.
 
+## Public corpus and freshness
+
+The concept index is built from the exported OKF bundle, not from private member content or website preview files. Concepts marked `status: draft` are excluded from both search and direct reads on the public MCP. This does not change what the static OKF website itself publishes.
+
+The Worker exposes `index_built_at` in search results. Deploy after published concepts are added or their lifecycle status changes so the search list follows the currently published corpus.
+
 ## Deploy
 
 Live at **https://mcp.collegica.org** (MCP at `/mcp`; `GET /` describes it).
