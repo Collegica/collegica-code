@@ -1,9 +1,9 @@
 // Reading the OKF bundle the way llms.txt says to: state the trust tier, flag
-// draft/deprecated, and refuse to present a stale fact as current.
+// deprecated concepts, and refuse to present a stale fact as current.
 
 import index from "./generated/concepts.json" with { type: "json" };
 
-export const concepts = index.concepts;
+export const concepts = index.concepts.filter((concept) => concept.status !== "draft");
 export const indexBuiltAt = index.builtAt;
 
 /** absent/empty → unverified; only agent/process actors → machine-confirmed; any human: → human-reviewed. */

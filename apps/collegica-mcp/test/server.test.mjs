@@ -50,6 +50,29 @@ test("search filters by type and tag, and an empty query lists", async () => {
   } finally { await s.close(); }
 });
 
+test("public MCP excludes lifecycle drafts from search and direct reads", async () => {
+  const draftPaths = ["apps/funnel.md", "apps/morning-digest.md", "apps/parse-and-gap.md"];
+  const requested = [];
+  const s = await serve({ fetchFn: async (url) => {
+    requested.push(url);
+    throw new Error("unpublished concept must not be fetched");
+  } });
+  try {
+    for (const query of ["funnel", "morning digest", "parse and gap", ""]) {
+      const response = await call(s.client, "search_concepts", { query, limit: 50 });
+      assert.equal(response.isError, false);
+      assert.ok(response.data.results.every((row) => row.status !== "draft"));
+      assert.ok(response.data.results.every((row) => !draftPaths.includes(row.path)));
+    }
+    for (const path of draftPaths) {
+      const response = await call(s.client, "read_concept", { path });
+      assert.equal(response.isError, true);
+      assert.match(response.data.error, /Unknown concept path/);
+    }
+    assert.deepEqual(requested, []);
+  } finally { await s.close(); }
+});
+
 test("read_concept returns text with provenance, and pages long concepts", async () => {
   const s = await serve();
   try {
